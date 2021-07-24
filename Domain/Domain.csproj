@@ -1,0 +1,546 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>7.10.3077</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6AA6D6C8-6535-4792-B90B-B8DE324B860A}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon />
+    <AssemblyKeyContainerName />
+    <AssemblyName>Domain</AssemblyName>
+    <AssemblyOriginatorKeyFile />
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Domain</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject />
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>0.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile />
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile />
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn />
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile />
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile />
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn />
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib">
+      <Name>mscorlib</Name>
+      <HintPath>mscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <Name>System.Runtime.Serialization</Name>
+      <HintPath>System.Runtime.Serialization.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="cn.justwin.Domain.Entities\BasicArea.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\BasicCity.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\BasicCodeList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\BasicCodeType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\BasicConfig.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\BasicPrivilege.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\BasicProvince.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\BasicSerialNumber.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\BudConModify.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\BudConModifyTask.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\BudConsReport.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\BudConsTask.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\BudConsTaskRes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\BudContractConsReport.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\BudContractConsTask.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\BudContractResource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\BudContractTask.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\BudContractTaskAudit.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\BudIndirectDiaryCost.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\BudIndirectDiaryDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\BudModify.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\BudModifyTask.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\BudModifyTaskRes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\BudPreReimburseApply.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\BudPreReimburseApplyDetail.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\BudPreReimburseModify.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\BudPreReimburseModifyDetail.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\BudTask.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\BudTaskChange.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\BudTaskResource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\CalCalendar.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\ConBalanceItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\ConConfigContract.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\ConContractType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\ConIncometContract.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\ConIncometPayment.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\ConPayoutContract.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\ConPayoutModify.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\ConPayoutPayment.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\EPMDatumClass.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\EquBudCostAccounting.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\EquConnectionItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\EquCutterProReport.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\EquEquipment.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\EquEquipmentType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\EquGrapProReport.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\EquRepairApply.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\EquRepairCompanyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\EquRepairPlan.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\EquRepairReport.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\EquRepairStock.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\EquShipDayReport.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\EquShipMonthReport.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\EquShipOilRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\EquShipRefuelApply.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\EquShipTechnicalParas.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\EquTeamReport.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\EquTrailingProReport.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\Mail.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\PCPettyCash.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\PopupRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\PopupSetting.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\PrivBusiDataRole.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\PrivRole.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\PrivUserRole.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\PrjMilestone.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\PrjMilestoneDetail.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\PTBULLETINMAIN.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\PTdbm.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\PTDBSJ.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\PTDBSJToday.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\PTDTXLX.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\PTLOGIN.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\PTMK.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\PTPrjInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\PTPrjInfoEngineeringType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\PTPrjInfoKind.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\PTPrjInfoRank.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\PTPrjInfoStateChange.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\PTPrjInfoZTB.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\PTPrjInfoZTBDetail.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\PTPrjInfoZTBUser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\PTPrjMember.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\PTRetMsg.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\PTRole.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\PTStartReport.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\PTStopMsg.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\PTWarning.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\PTyhmc.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\PTYHMCPrivilege.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\ResAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\ResMapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\ResResource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\ResResourceType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\ResUnit.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\SAMonthSalary.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\SAPayoff.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\SAPersonalTax.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\SASalaryBooks.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\SASalaryBooksItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\SASalaryItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\SAUserSalaryBooks.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\SmTreasury.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\SmWantplan.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\WFBusinessClass.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\WFBusinessCode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\WFInstance.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\WFInstanceMain.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\WFprivilege.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\WFTemplate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\WFTemplateNode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\WFTemplatePrivilege.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\XPMBasicCodeList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\XPMBasicCodeType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Entities\XPMBasicContactCorp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="cn.justwin.Domain.BudConModify.Map.BudConModify.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.BudConModify.Map.BudConModifyTask.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Budget.Map.BudTask.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Budget.Map.BudTaskChange.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Budget.Map.BudTaskResource.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.BudgetRpt.Map.BudConsReport.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.BudgetRpt.Map.BudConsTask.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.BudgetRpt.Map.BudConsTaskRes.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.BudModify.Map.BudModify.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.BudModify.Map.BudModifyTask.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.BudModify.Map.BudModifyTaskRes.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.ConBudget.Map.BudContractConsReport.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.ConBudget.Map.BudContractConsTask.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.ConBudget.Map.BudContractResource.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.ConBudget.Map.BudContractTask.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.ConBudget.Map.BudContractTaskAudit.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Contract.Map.ConBalanceItem.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Contract.Map.ConConfigContract.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Contract.Map.ConContractType.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Contract.Map.ConIncometContract.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Contract.Map.ConIncometPayment.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Contract.Map.ConPayoutContract.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Contract.Map.ConPayoutModify.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Contract.Map.ConPayoutPayment.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Equ.Map.EquBudCostAccounting.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Equ.Map.EquConnectionItem.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Equ.Map.EquCutterProReport.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Equ.Map.EquEquipment.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Equ.Map.EquEquipmentType.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Equ.Map.EquGrapProReport.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Equ.Map.EquRepairApply.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Equ.Map.EquRepairCompanyInfo.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Equ.Map.EquRepairPlan.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Equ.Map.EquRepairReport.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Equ.Map.EquRepairStock.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Equ.Map.EquShipDayReport.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Equ.Map.EquShipMonthReport.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Equ.Map.EquShipOilRecord.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Equ.Map.EquShipRefuelApply.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Equ.Map.EquShipTechnicalParas.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Equ.Map.EquTeamReport.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Equ.Map.EquTrailingProReport.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.HR.Map.PTdbm.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.HR.Map.PTRole.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.HR.Map.PTyhmc.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.OA.Map.Mail.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.OA.Map.PopupRecord.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.OA.Map.PopupSetting.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.OA.Map.PTBULLETINMAIN.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.OA.Map.PTDBSJ.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.OA.Map.PTDBSJToday.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.OA.Map.PTDTXLX.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.OA.Map.PTLOGIN.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.OA.Map.PTMK.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.OA.Map.PTWarning.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.OA.Map.PTYHMCPrivilege.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.PettyCash.Map.BudIndirectDiaryCost.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.PettyCash.Map.BudIndirectDiaryDetails.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.PettyCash.Map.BudPreReimburseApply.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.PettyCash.Map.BudPreReimburseApplyDetail.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.PettyCash.Map.BudPreReimburseModify.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.PettyCash.Map.BudPreReimburseModifyDetail.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.PettyCash.Map.PCPettyCash.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Priv.Map.PrivBusiDataRole.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Priv.Map.PrivRole.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Priv.Map.PrivUserRole.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Project.Map.PrjMilestone.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Project.Map.PrjMilestoneDetail.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Project.Map.PTPrjInfo.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Project.Map.PTPrjInfoEngineeringType.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Project.Map.PTPrjInfoKind.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Project.Map.PTPrjInfoRank.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Project.Map.PTPrjInfoStateChange.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Project.Map.PTPrjInfoZTB.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Project.Map.PTPrjInfoZTBDetail.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Project.Map.PTPrjInfoZTBUser.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Project.Map.PTPrjMember.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Project.Map.PTRetMsg.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Project.Map.PTStartReport.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Project.Map.PTStopMsg.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.QuaitySafety.Map.EPMDatumClass.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Resource.Map.ResAttribute.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Resource.Map.ResMapping.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Resource.Map.ResResource.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Resource.Map.ResResourceType.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Resource.Map.ResUnit.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Salary.Map.SAMonthSalary.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Salary.Map.SAPayoff.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Salary.Map.SAPersonalTax.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Salary.Map.SASalaryBooks.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Salary.Map.SASalaryBooksItem.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Salary.Map.SASalaryItem.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Salary.Map.SAUserSalaryBooks.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Stock.Map.SmTreasury.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.Stock.Map.SmWantplan.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.System.Map.BasicArea.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.System.Map.BasicCity.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.System.Map.BasicCodeList.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.System.Map.BasicCodeType.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.System.Map.BasicConfig.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.System.Map.BasicPrivilege.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.System.Map.BasicProvince.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.System.Map.BasicSerialNumber.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.System.Map.XPMBasicCodeList.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.System.Map.XPMBasicCodeType.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.System.Map.XPMBasicContactCorp.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.WF.Map.WFBusinessClass.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.WF.Map.WFBusinessCode.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.WF.Map.WFInstance.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.WF.Map.WFInstanceMain.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.WF.Map.WFprivilege.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.WF.Map.WFTemplate.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.WF.Map.WFTemplateNode.hbm.xml" />
+    <EmbeddedResource Include="cn.justwin.Domain.WF.Map.WFTemplatePrivilege.hbm.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent />
+    <PostBuildEvent />
+  </PropertyGroup>
+</Project>

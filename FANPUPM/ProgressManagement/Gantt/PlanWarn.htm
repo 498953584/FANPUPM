@@ -1,0 +1,214 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <title>总体进度视图</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link type="text/css" href="Css/Gantt.css" rel="Stylesheet" />
+
+    <script type="text/javascript" src="../../Script/jquery.js"></script>
+
+    <style type="text/css">
+        .warningRow
+        {
+            color: Red;
+        }
+    </style>
+</head>
+<body>
+    <div id="divDate">
+        <table>
+            <tr>
+                <td>
+                    顶层时间刻度：
+                </td>
+                <td>
+                    <select style="margin-right: 5px;" onchange="changeTopTimeScale(this.value)">
+                        <option value="year">年</option>
+                        <option value="halfyear">半年</option>
+                        <option value="quarter">季度</option>
+                        <option value="month">月</option>
+                        <option value="week" selected="selected">周</option>
+                        <option value="day">日</option>
+                        <option value="hour">时</option>
+                    </select>
+                </td>
+                <td>
+                    底层时间刻度：
+                </td>
+                <td>
+                    <select onchange="changeBottomTimeScale(this.value)" style="margin-right: 5px;">
+                        <option value="year">年</option>
+                        <option value="halfyear">半年</option>
+                        <option value="quarter">季度</option>
+                        <option value="month">月</option>
+                        <option value="week">周</option>
+                        <option value="day" selected="selected">日</option>
+                        <option value="hour">时</option>
+                    </select>
+                </td>
+               <!-- <td>
+                    版本：
+                </td>
+                <td>
+                    <select id="version" style="width: 72px;" onchange="params.version=this.value;LoadProject(params, project);">
+                    </select>
+                </td>-->
+            </tr>
+        </table>
+    </div>
+    <!-- <div id="buttons" class="divFooter">
+        <input class="inputBtns" type="button" value="放大" onclick="zoomIn()" />
+        <input class="inputBtns" type="button" value="缩小" onclick="zoomOut()" />
+    </div>-->
+    <div id="viewCt">
+    </div>
+</body>
+</html>
+
+<script src="../../Gantt/scripts/boot.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+
+    /* 创建项目甘特图对象，设置列配置，创建右键菜单*/
+
+    var project = new PlusProject();
+    project.setReadOnly(true);  //只读
+    var width = $(this).width() - 2;
+    var height = $(this).height() - $('#buttons').height() - $('#divDate').height() - 5;
+    project.setStyle("width:100%;height:" + height + "px;");
+
+    //自定义预警信息列
+    var eralyWarnColumn = {
+        header: "预警信息",
+        field: "EarlyWarn",
+        width: 150
+    };
+
+    project.setColumns([
+    new PlusProject.IDColumn({ header: "标示", width: "50px" }), //序号
+    new PlusProject.StatusColumn(), //状态信息[可以显示备注和里程碑]
+    new PlusProject.NameColumn(), //任务名称
+    eralyWarnColumn,
+    new PlusProject.PredecessorLinkColumn(), //前置任务
+    new PlusProject.DurationColumn(), //工期
+    new PlusProject.StartColumn(), //开始时间
+    new PlusProject.FinishColumn(), //结束时间
+    new PlusProject.ActualStartColumn(), //实际开始时间
+    new PlusProject.ActualFinishColumn(), //实际结束时间
+    new PlusProject.PercentCompleteColumn(), //完成百分比
+    new PlusProject.WorkColumn(), //工时
+    new PlusProject.OutlineLevelColumn()//任务层次
+]);
+
+    project.render(document.getElementById("viewCt"));
+
+    //不显示甘特图
+    project.setShowGanttView(false);
+
+    var params = mini.getParams();  //...?id=100        获取URL的项目id信息
+    var projectUID = params.id;
+
+    //设置版本
+//    var maxVersion = 1;
+//    var options = '';
+//    var text = '版本';
+
+//    for (i = maxVersion; i >= 1; i--) {
+//        options += ' <option value=' + i + '>' + text + i + '.0' + '</option>';
+//    }
+
+//    $('#version').html(options);
+//    $('#version option:first').attr('selected', 'selected');
+
+    var version = $('#version').val();
+    params = { projectuid: projectUID };
+
+    if (projectUID == null) {   //如果没有传递项目id，则加载JSON格式项目数据演示和操作
+        LoadJSONProject("data/project.txt", project);
+        alert("无项目参数");
+    }
+    else {
+        LoadProject(params, project);
+    }
+
+    //预警信息提示
+    project.on("drawcell", function (e) {
+        var task = e.record, column = e.column, field = e.field;
+        if (field == "EarlyWarn") {
+            var plannedStart = task.Start;
+            var plannedFinish = task.Finish;
+            var actualStart = task.ActualStart;
+            var actualFinish = task.ActualFinish;
+            var critical = task.Critical2;
+            var complete = task.PercentComplete;
+            //            var startMessage = getWarningMessage(plannedStart, actualStart, true);
+            var finishMessage = getWarningMessage(plannedFinish, actualFinish, complete);
+
+            var mergerMessage = finishMessage;
+            if (mergerMessage.length > 0 && critical == '1') {
+                mergerMessage = '（关键）' + mergerMessage;
+            }
+            e.cellHtml = '<span >' + mergerMessage + '</span>';
+            if (mergerMessage != '') {
+                e.rowCls = "warningRow";
+            }
+
+        }
+    });
+
+    //开始/结束时间 与 实际开始/结束时间的比较
+    function getWarningMessage(planned, actual, percent) {
+        var warningMessage = '';
+        var currentDay = new Date();
+        if (planned != null && planned != '' && actual != null && actual != '') {
+            if (actual.getTime() == planned.getTime() && percent<100) {
+                warningMessage = '任务没有按时完工。';
+            }else if (actual.getTime() > planned.getTime()) {
+                warningMessage = '任务没有按时完工，且晚于计划完工日期。';
+            }
+        }
+        return warningMessage;
+    }
+
+    //右键菜单弹出
+    //    var menu = new ProjectMenu();
+    //    project.setContextMenu(menu);
+
+    //    //监听菜单的opening事件，此事件在菜单显示前激发。可以控制菜单项的显示和可操作。
+    //    menu.on("opening", function(e) {
+    //        var project = this.owner;       //PlusProject对象
+    //        var task = project.getSelected();
+
+    //        if (!task) {
+    //            e.cancel = true;
+    //            return;
+    //        }
+
+    //        this.edit.disable();
+    //        this.remove.disable();
+    //        this.add.disable();
+    //        this.remove.disable();
+    //        this.upgrade.disable();
+    //        this.downgrade.disable();
+    //    });
+
+    /* 业务代码：升级、降级任务 */
+
+    function changeTopTimeScale(value) {
+        project.setTopTimeScale(value)
+    }
+
+    function changeBottomTimeScale(value) {
+        project.setBottomTimeScale(value)
+    }
+
+    function zoomIn() {
+        project.zoomIn();
+    }
+
+    function zoomOut() {
+        project.zoomOut();
+    }
+
+</script>
+

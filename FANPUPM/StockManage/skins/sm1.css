@@ -1,0 +1,617 @@
+﻿table
+{
+	border-collapse:collapse;
+}
+*
+{
+    font-size: 12px;
+    font-weight: normal;
+}
+html,body,form
+{
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	border-width: 0px;
+}
+
+.tab
+{
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	border-collapse: separate;
+	border-spacing: 0px 0px;
+	border-width: 0px;
+}
+/*Modify Zhang FuJun 20110826 */
+.select_row
+{
+ background-color:#EAF4FD;}
+/*End*/
+/*所有的服务器端按钮形状*/
+input[type=submit]
+{
+     cursor:pointer;
+}
+.tab tr
+{
+    cursor:default;
+}
+.tab td
+{
+	padding: 0px;
+	margin: 0px;
+}
+.bottonrow
+{
+	height: 24px;
+	background-image: url(../skins/img/top11.gif);
+	background-repeat: repeat-x;
+}
+
+.headerrow
+{
+	height: 20px;
+	background-color: #E4ECF1;
+	text-align: center;
+	font-weight: bold;
+	letter-spacing: 10px;
+	display: block;
+}
+
+.pagediv
+{
+	width: 100%;
+	height: 100%;
+	/*overflow: auto; 这个样式在safari中gridview的显示有问题*/
+	border: solid 0px red;
+	margin: 0px;
+	padding: 0px;
+}
+
+a
+{
+	color:black;
+	text-decoration: underline;
+}
+/*a:link
+{
+	color:black;
+}*/
+a:visited
+{
+	/*color: red;*/
+}
+a:hover, a:active, a:focus
+{
+	color: blue;
+}
+.al
+{
+	color:blue;
+	text-decoration:underline;
+	cursor:pointer;
+	}
+
+/*----------------------------gridview--------------------------------------------------------------------------------*/
+.gvdata
+{
+	width: 100%;
+	/*table-layout: fixed;*/
+	border-collapse: separate;
+	border-spacing: 0px 0px;
+	border-width: 0px;
+	border-bottom: solid 1px #CADEED;
+	border-top: solid 1px #CADEED;
+	border-left:solid 1px #CBDEED;
+	border-right:solid 1px #CBDEED;
+}
+table.gvdata th
+{
+	white-space: nowrap;
+	overflow: hidden;
+	font-weight: normal;
+	text-align: center;
+	border-color: #CADEED;
+	color:#727FAA;
+	padding-left: 6px;
+	padding-right:6px;
+}
+
+table.gvdata td
+{
+	white-space: nowrap;
+	/*overflow: hidden;*/
+	padding-left: 6px;
+	padding-right:6px;
+	font-weight: normal;
+	border-color: #CADEED;
+}
+
+table.gvdata tr
+{
+	height: 22px;
+}
+
+.header
+{
+	background-color: #EEF2F5;
+}
+
+.rowa
+{
+	background-color: #fbfbfb;
+}
+
+.rowb
+{
+	background-color: #ffffff;
+}
+
+.footer
+{
+}
+
+/*----------------------------gridview--------------------------------------------------------------------------------*/
+
+/*----------------------------input-----------------------------------------------------------------------------------*/
+
+/*td.bottonrow input
+{
+    background-image:url(../skins/img/_r2_c2.gif);
+    border:solid 1px #B5CCDE; 
+    height:21px;
+    width:60px;
+    margin-left:10px;
+}
+
+td.bottonrow input:hover
+{
+    background-image:url(../skins/img/_r2_c2.gif);
+    border:solid 1px red; 
+    height:21px;
+    width:60px;
+    margin-left:10px;
+}*/
+
+input[type=button]
+{
+	/*background-image: url(../skins/img/_r2_c2.gif);
+	border: solid 1px #B5CCDE;
+	height: 21px;
+	width: 60px;
+	margin-left: 1px;
+	margin-right: 9px;
+	*/
+	  background: #fff url(/images1/btnBack3.jpg);
+      text-align: center; vertical-align: middle; width: 51px; height: 20px; border-style: none;
+      border-left:solid 1px #dadada;
+      border-right:solid 1px #dadada;
+}
+
+input[type=submit]
+{
+	/*background-image: url(../skins/img/_r2_c2.gif);
+	border: solid 1px #B5CCDE;
+	height: 21px;
+	width: 60px;
+	margin-left: 1px;
+	margin-right: 9px;*/
+	  background: #fff url(/images1/btnBack3.jpg);
+      text-align: center; vertical-align: middle; width: 51px; height: 20px; border-style: none;
+      border-left:solid 1px #dadada;
+      border-right:solid 1px #dadada;
+}
+
+input[type=button]:hover
+{
+	cursor: pointer;
+	/*background-image: url(../skins/img/_r2_c2.gif);
+	height: 21px;
+	width: 60px;
+	
+	margin-left: 1px;
+	margin-right: 9px;*/
+}
+/*
+input[type=submit]:hover
+{
+	cursor: pointer;
+	background-image: url(../skins/img/_r2_c2.gif);
+	height: 21px;
+	width: 60px;
+	
+	margin-left: 1px;
+	margin-right: 9px;
+}
+*/
+input[type=text]
+{
+	border: solid 1px #B5CCDE;
+	width: 99%;
+	height: 15px;
+}
+
+input[type=text]:hover
+{
+	width: 99%;
+	height: 15px;
+}
+
+input[type=text]:focus
+{
+	width: 99%;
+	height: 15px;
+}
+
+textarea
+{
+	border: solid 1px #B5CCDE;
+	width: 99%;
+	height: 70px;
+}
+
+textarea:hover
+{
+	width: 99%;
+	height: 70px;
+}
+
+textarea:focus
+{
+	width: 99%;
+	height: 70px;
+}
+
+/*----------------------------input-----------------------------------------------------------------------------------*/
+
+
+/*----------------------------query-----------------------------------------------------------------------------------*/
+
+.queryTd
+{
+	width:180px;
+	text-align:right;
+}
+
+.viewTable
+{
+	width:100%;
+	border:1px solid #CADEED;
+}
+
+.viewTable tr
+{
+	height:25px;
+}
+
+.viewTable td
+{
+	border-right: solid 1px #CADEED;
+	border-top: solid 1px #CADEED;
+	padding:6px;
+}
+.viewTable .descTd
+{
+	text-align:right;
+    vertical-align:top;
+    width:15%;
+}
+.viewTable .elemTd
+{
+    width:35%;
+    vertical-align:top;
+}
+
+.queryTable
+{
+	border-collapse:collapse;
+	margin:3px 0px;
+}
+
+.queryTable .descTd
+{
+	text-align:right;
+}
+
+/*----------------------------query-----------------------------------------------------------------------------------*/
+
+/*合同选项卡样式*/
+.xxk{
+        height:20px; width:55px; border:0px solid #aa0000; font-size:12px; text-align:center;  float:left; line-height:25px;
+        cursor:pointer;  background-image:url('/images1/Con_08.jpg'); margin-left:2px;
+    }
+    .xxkd{
+        height:20px; width:55px; border:0px solid #aa0000; font-size:12px; text-align:center;  float:left; line-height:25px;
+        cursor:pointer; background-image:url('/images1/Con_06.jpg'); margin-left:2px; 
+    }
+ .divTag
+ {
+	background-image:url('/images1/Con_03.jpg');  height:27px; 
+ }
+
+#framContract
+{
+	border-top: solid 0px Red;/*#CADEED*/
+}
+
+/*----------------------------link----------------------------------------------------------------------------------*/
+.link
+{
+	cursor: pointer; 
+	text-decoration: 
+	underline; color: Blue;
+}
+
+/*---------------------------new-----------------------------------------------------------------------------------*/
+
+#header
+{
+	height:20px; 
+    background: url(/images1/divTopBack.jpg) repeat-x; 
+    text-align: center;
+    vertical-align: middle;
+    font-size:13px;
+    font-weight:bold;
+}
+
+#header td
+{
+	/*左右固定，但是上下也固定*/
+	/*position:fixed;*/
+    width:100%;
+    padding-top:3px;
+}
+
+#header *
+{
+	font-weight:bold;
+	font-size:13px;
+}
+
+.tableContent{
+    width: 540px;margin-left:0px; margin-right:auto;
+    vertical-align:top;
+}
+.tableContent td{
+
+}
+
+.divHeader{
+    height:20px; 
+    background: url(/images1/divTopBack.jpg) repeat-x; 
+    text-align: center;
+    vertical-align: middle;
+    font-size:13px;
+    font-weight:bold;
+}
+.divHeader *
+{
+	font-size:13px;
+}
+ .resTotal
+{
+    background-color:white; 
+    width: 34%; 
+    font-size:13px; 
+    font-weight:bold;
+     text-align:center;
+     height:20px;
+}
+.divContent{
+    margin-top:0px; margin-bottom:0px;
+    overflow:auto;height:412px; text-align:center
+}
+.divFooter{
+    height:24px;text-align:right;
+    background: url(/images1/divBottomBack.jpg) repeat-x;
+    text-align: center; vertical-align: middle;
+    
+}
+.tableHeader{
+    width: 540px; height: 100%; margin-left: auto; margin-right: auto
+ }
+ .tableFooter{
+    width: 600px; height: 100%; margin-left: auto; margin-right: auto;
+        text-align: right; vertical-align: middle
+ }
+ 
+ .spanSelect{                                  
+    display:block; height:18px;border:1px solid #B5CCDE; text-align:left;
+ }
+ 
+ .spanSelect img{
+    cursor: pointer;
+ }
+ 
+ #btnSave,#btnCancel {
+    background: #fff url(/images1/btnBack2.jpg);
+                    text-align: center; vertical-align: middle; width: 51px; height: 20px; border-style: none
+ }
+ 
+ .mustInput input{
+	 background-color:#FFFDEA	
+ }
+ .mustInput span{
+	background-color:#FFFDEA	
+ }
+ .mustInput select
+ {
+	border: solid 1px #B5CCDE;
+	background-color:#FFFDEA;
+ }
+ 
+ .mustInput textarea
+ {
+	background-color:#FFFDEA;	
+ }
+ 
+ .mustInput option{
+
+ }
+ 
+ 
+ .tableContent .descTd{
+    width:19%;
+    text-align:right;
+}
+.tableContent .elemTd{
+    width:31%;
+    text-align:left;
+}
+  .groupInfo{
+            text-align:left; padding-left:10px; font-weight:bold; 
+        }
+        
+        
+ .tableContent .noteTd
+{
+	 width:19%;
+    text-align:right;
+	vertical-align:top;
+	padding-top:8px;
+	}
+
+/*分割线*/	
+.sp
+{
+	border:solid 0.5px #B5CCDE;
+}
+
+.lineTable
+{
+	border-collapse:collapse;
+	border:solid 1px #B5CCDE;
+	width:100%;
+}
+.lineTable tr
+{
+	border-collapse:collapse;
+	border:solid 1px #B5CCDE;
+}
+
+.lineTable td
+{
+	border-collapse:collapse;
+	border:solid 1px #B5CCDE;
+}
+
+.unlineTable
+{
+	border-style:none;
+	width:100%;
+}
+.unlineTable td
+{
+	text-align:left;
+	vertical-align:middle;
+}
+
+/*-------------------------button-------------*/
+  .selectTree
+  {
+		color:Blue;  
+        text-decoration:underline;             
+    }
+ 
+/*-------------------------------预警颜色--------------------------------------------*/
+.highLevel
+{
+	color: rgb(255, 0, 0);
+}
+.midLevel
+{
+	color: rgb(255, 153, 0);
+}
+.lowLevel
+{
+	color: rgb(255, 204, 0);
+}
+
+
+/*-------------------------------打印-------------------------------*/
+/*背景色 #f1f7fc
+边框色 #929aa0
+*/
+#print .viewTable
+{
+    border:1px solid Black;
+}
+
+#print .viewTable td
+{
+    border-right: solid 1px Black;
+    border-top: solid 1px Black;
+}
+
+#print .gvdata{
+    border:1px solid Black;
+}
+
+#print .gvdata td{
+    border:1px solid Black;
+}
+
+#print th{
+    color:Black;
+    border:1px solid Black;
+    background-color:#f1f7fc;
+}
+
+#print .divHeader
+{
+	font-size:15px;
+    font-weight:bold;
+}
+
+
+/*---------------------------指标对比表--------------------------------*/
+#diffTitle{
+    width: 100%; 
+    font-weight: bold; 
+    font-size: 13px;
+    text-align: center; 
+    vertical-align: middle;
+    padding-top:4px;
+    padding-bottom:4px;
+    margin-top:10px;
+}
+
+/*------------------流程样式----------------------*/
+.tableAudit td
+{
+ height:27px;
+}
+  .td-label
+ {
+  text-align:right;
+  padding-right:6px;
+  vertical-align:middle;
+  width:100px;
+ }
+.td-content
+ {
+ text-align:left;
+ padding-left:6px;
+ }
+ 
+ .tableFooter2
+{
+	width: 100%;
+	text-align: right;
+}
+
+
+/*-------------------- TrvwView选中央视 --------------------*/
+.trvw_select a
+{
+	background-color: #3399FF;
+	color: White;
+}
+trvw_select
+{
+	background-color: White;
+}

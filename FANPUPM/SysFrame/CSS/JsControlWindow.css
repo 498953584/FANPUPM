@@ -1,0 +1,45 @@
+.ajaxWindow_window_body {
+	BORDER-LEFT-COLOR: #0099cc; BORDER-BOTTOM-COLOR: #0099cc; BORDER-TOP-COLOR: #0099cc; BACKGROUND-COLOR: #ffffff; BORDER-RIGHT-COLOR: #0099cc
+}
+.ajaxWindow_window_body_active {
+	BORDER-LEFT-COLOR: #0099cc; BORDER-BOTTOM-COLOR: #0099cc; BORDER-TOP-COLOR: #0099cc; BACKGROUND-COLOR: #ffffff; BORDER-RIGHT-COLOR: #0099cc
+}
+.ajaxWindow_window_caption {
+	COLOR: #13151e; BORDER-BOTTOM: #abc2e7 1px solid
+}
+.ajaxWindow_window_caption_active {
+	COLOR: #13151e; BORDER-BOTTOM: #abc2e7 1px solid
+}
+.ajaxWindow_window_button {
+	BACKGROUND-COLOR: transparent
+}
+.ajaxWindow_window_button_hover {
+	BACKGROUND-COLOR: #ffffff
+}
+.ajaxWindow_window_button_active_hover {
+	BACKGROUND-COLOR: #ffffff
+}
+.ajaxWindow_window_caption_text {
+	PADDING-LEFT: 10px; FONT-WEIGHT: bold; PADDING-TOP: 3px; BORDER-BOTTOM: #abc2e7 0px solid
+}
+.ajaxWindow_desktop_body {
+	BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 1px solid
+}
+.ajaxWindow_desktop_client {
+	BACKGROUND-COLOR: #ffffff
+}
+.ajaxWindow_taskbar_body {
+	BACKGROUND-IMAGE: url(/menu/images/label_bg.jpg); PADDING-TOP: 3px; BORDER-BOTTOM: #adbed6 1px solid; HEIGHT: 20px; BACKGROUND-COLOR: #f0f8ff
+}
+.ajaxWindow_taskbar_button {
+	MARGIN-LEFT: 1px
+}
+.ajaxWindow_taskbar_button_selected {
+	MARGIN-LEFT: 1px
+}
+.ajaxWindow_taskbar_button_text {
+	PADDING-TOP: 7px; HEIGHT: 100%
+}
+.common_dragging_area {
+	BACKGROUND-COLOR: #ff0000
+}

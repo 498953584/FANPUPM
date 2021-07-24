@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="BudTaskChange" table="Bud_TaskChange" lazy="true" >
+    <id name="TaskChangeId">
+      <column name="TaskChangeId" sql-type="nvarchar" length="200" not-null="true" />
+    </id>
+    <property name="PrjId">
+      <column name="PrjId" sql-type="nvarchar" length="200" not-null="false" />
+    </property>
+    <property name="Version">
+      <column name="Version" sql-type="int" not-null="false" />
+    </property>
+    <property name="VersionCode">
+      <column name="VersionCode" sql-type="nvarchar" length="200" not-null="false" />
+    </property>
+    <property name="FlowState">
+      <column name="FlowState" sql-type="int" not-null="false" />
+    </property>
+    <property name="Note">
+      <column name="Note" sql-type="nvarchar(max)" not-null="false" />
+    </property>
+    <property name="InputUser">
+      <column name="InputUser" sql-type="varchar" length="8" not-null="false" />
+    </property>
+    <property name="InputDate">
+      <column name="InputDate" sql-type="datetime" not-null="false" />
+    </property>
+  </class>
+</hibernate-mapping>

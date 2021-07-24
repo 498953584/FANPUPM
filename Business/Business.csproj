@@ -1,0 +1,1706 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>7.10.3077</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E252310C-7562-46E9-98F9-7B726D984A8D}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon />
+    <AssemblyKeyContainerName />
+    <AssemblyName>Business</AssemblyName>
+    <AssemblyOriginatorKeyFile />
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Business</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject />
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>0.0</OldToolsVersion>
+    <PublishUrl>发布\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile />
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile />
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn />
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile />
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile />
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn />
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ChineseToSpell">
+      <HintPath>..\lib\ChineseToSpell.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib">
+      <Name>mscorlib</Name>
+      <HintPath>mscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+      <HintPath>System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Name>System.Configuration</Name>
+      <HintPath>System.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <Name>System.Core</Name>
+      <HintPath>System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+      <HintPath>System.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+      <HintPath>System.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.XML" />
+    <Reference Include="WibuCmNET">
+      <HintPath>..\lib\WibuCmNET.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnnexList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AnnexListModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Business.BaseClass\Bulletin.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Business.BaseClass\MaterialIn.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Business.BaseClass\SelfEvent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Business.EPCAction.Basic\SelfEventAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.common.baseclass\BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.common.baseclass\NBasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.common.baseclass\OpType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.common.baseclass\PageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.common.baseclass\Security.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.common.data\Conn.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.common.EncryptDogA\EncryptDogA.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.common.EncryptDog\EncryptDog.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.datas\WokLog.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.data\publicDbOpClass.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.data\SqlStringConstructor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action.sl\StockAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\AccountReportAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\AddressListDb.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\AduitAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\AffairAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\AlertMessage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\AlertPoint.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\AnnexAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\AnnexAssistAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\ApplicationAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\BaseEditPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\BaseListPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\BasicHelperAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\BidQuoteAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\BooksCommonClass.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\Browse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\BulletinManage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\CalendarInfoAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\CalendarRemindSetaction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\CBSAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\CheckAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\CheckClassAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\CodingAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\CommonInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\ComType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\ConferenceManage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\ConstructOrganizeAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\ConstructWBSTaskAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\ContactCorp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\ContactCorpAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\ContAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\ContractAlertAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\ContractPayAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\ControlPoint.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\CorporationAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\CostAlertAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\CostApproveAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\CostInputPriAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\CostInputSlaveAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\CostSubjectAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\CriterionAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\CryReport.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\CustomManageAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\DatumClass.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\DeptManageDb.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\DevelopmentInputAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\DocumentAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\DutyManageDb.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\dzyjwbyjAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\eFileAuthorizationAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\eFileInfoAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\eFileLendAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\EntStandardAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\EquimentmaintainSearchInfoAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\EquipmentAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\EquipmentAttemperAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\EquipmentCheckAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\EquipmentMaintainAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\ExperProjectAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\ExportAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\FileCommonClass.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\FileUpload.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\FlowAuditAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\FlowChartAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\FlowRoleAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\FlowTemplateAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\FundApplication.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\GoodsBackAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\GoodsInAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\GoodsOutAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\HROrgAdjustAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\HROrgAveragePayAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\HROrgManpowerPlanAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\HROrgPostLevelAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\HRPersonnelCommonAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\IAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\inputReceiptAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\ItemProgAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\KnowledgeDataAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\KnowledgeFileAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\KnowledgeFileUp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\KnowledgeTypeAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\loginLogDb.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\LogManageClass.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\MailManage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\MaterialApplyAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\MaterialInitAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\MeasureDataAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\mgReport1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\ModuleAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\NewsAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\OABooksApplyAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\OABooksApplyMainAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\OABooksDiscardAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\OABooksDiscardMainAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\OABooksInStorageAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\OABooksLendAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\OABooksLibraryAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\OABooksStorageAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\OAFileCatalogAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\OAFileClassesAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\OAFileDestroyAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\OAFileDestroyMainAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\OAFileLendAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\OAFileLibraryAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\OAOfficeCommonClas.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\OAOfficeResApplicationCollectAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\OAOfficeResApplicationCollectDetailAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\OAOfficeResDepartmentApplicationAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\OAOfficeResDepartmentApplicationDetailAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\OAOfficeResJoinDrawItemAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\OAOfficeResJoinDrawItemSetAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\OAOfficeResPersonalApplicationAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\OAOfficeResPersonalApplicationDetailAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\OAOfficeResRationSetAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\OAVotingInfoAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\OAVotingOptionAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\OAVotingRecrodAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\OAWFApplyItemAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\OfficeCommonClass.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\OrderReportAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\PageHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\PageType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\PersonnelAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\PlanAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\PMAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\PmTypeAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\PriceItemAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\PrivProjectListAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\PrjInfoAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\ProductValueAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\ProgressImplementAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\ProgressPlanAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\ProgressProceedAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\ProgSortAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\ProjectAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\ProjectBalanecAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\ProjectFilesUpAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\ProjectForepartAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\ProjectInfoCommon.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\ProjectOverAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\PTDBSJAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\PTDictionaryItemAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\PTDRoleAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\PTDUTYAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\PTMultiClassesAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\ptOfficeResClassAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\ptOfficeResDepotAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\ptOfficeResInStorageAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\ptOfficeResInStorageDetailAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\ptOfficeResResourcesAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\ptOfficeResStockAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\ptOfficeResStockCheckAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\ptOfficeResStockCheckDetailAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\PublicInterface.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\PublicResourceAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\QuaitySafetyFileAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\QualityGoalAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\QualitySafetyFileUp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\QueryItemAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\RecieveMsgAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\remindManageDbClass.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\ReputationAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\ResourceBindAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\ResourceCategoryAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\ResourceItemAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\roleManageDb.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\RoleProjectAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\SafetyMeasureAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\SalaryESTAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\SalaryGAAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\SalaryGADAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\SalaryIPIAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\SalaryITAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\SalaryItemAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\SalaryPAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\SalarySAAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\SalaryTAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\SalaryTIAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\SchedulePlanAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\SearchAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\sqlErr.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\StatAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\StuffFirstAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\StuffSupplyAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\SuperviseAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\SysManageDb.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\SystemInfoAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\SystemModule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\TableAccountAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\TaskBookAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\TaskRelationAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\TaskResourceAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\TechnologyJDAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\TechnologyStandardAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\TempAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\TempWbsAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\TenderAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\UnitTypeAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\userManageDb.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\UserRightMenu.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\ValidatorClass.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\ValidState.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\WaitingJob.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\WFBusinessClassAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\WorkFlowCount.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.action\workLogDb.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\AffairModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\AnnexBaseInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\AnnexInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\AnnexModuleSettingsInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\BaseInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\BaseInfo1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\BasicType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\BidCorp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\BidCorpCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\BidInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\BidInfoCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\CBSFeeNodeInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\CBSHypotaxisTableInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\CheckClassInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\CheckInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\CodeLibInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\CodeLibraryInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\CodeLibTypeInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\CodingInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\CodingInfoCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\CodingType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\CodingTypeCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ConferenceInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ConferenceInfoCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.Model\ConferenceTemplate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.Model\ConstructionLogModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ConstructionTeamInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ConstructOrganizeCollectin.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ConstructOrganizeInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ConstructTaskBook.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ConstructTaskBookCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ContactCorp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ContactCorpCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ContactCorpInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ContactProvideInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ContractAlertInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ContractAskPayInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ContractCorpType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ContractCountInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ContractMainInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ContractPayInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ContractStockBillInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ContractTaskInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ContractUpdateInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\CorporationInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\CorpTypeInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\CostApproveInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\CostCbsInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\CostInputPri.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\CostInputSlave.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\CostSubjectCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\CostSubjectInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\CriterionModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\CriterionModelCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\DeptCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\DeptInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\DevelopmentInputCollectin.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\DevelopmentInputInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\Document.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\DocumentAlter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\DocumentClass.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\DocumentCommunion.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\dzyjwbyjModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\eFileAuthorization.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\eFileInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\eFileLend.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\EntStandardCollectin.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\EntStandardInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\EquipmentAttemperCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\EquipmentAttemperInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\EquipmentCheckCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\EquipmentCheckInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\EquipmentCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\EquipmentInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\EquipmentMaintainCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\EquipmentMaintainFittingCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\EquipmentMaintainFittingInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\EquipmentMaintainInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\EquipmentMonthInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\EquipmentPlanDetailInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\EquipmentPlanInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ExpertProjectCollectin.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ExpertProjectInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\FundAppInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\GoodsInBill.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\GoodsOutBill.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\HRLeaveApplication.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\HRLeaveStat.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\HROrgAdjust.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\HROrgAveragePay.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\HROrgManpowerPlan.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\HROrgPostLevel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\InputItemCollectin.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\InputItemInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\inputReceiptItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\inputReceiptItemCollectin.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\inputReceiptReportCollectin.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\inputReceiptReportInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\inputReceiptYear.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\inputReceiptYearCollectin.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\InviteBid.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\InviteBidCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\IPriceItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\IResource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\IResourcePrice.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\IResourceUnit.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ItemProgInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\IUnitType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\JoinType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\KnowledgeDataModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\KnowledgeDataModelCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\KnowledgeFileModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\KnowledgeFileModelCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\KnowledgeTypeModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\KnowledgeTypeModelCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\MaterialApplyBill.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\MaterialApplyBillCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\MaterialApplyResource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\MaterialApplyResourceCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\MaterialBackInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\MaterialInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\MaterialInfoColl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\MeasureDataInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\Module.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ModuleCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\MonthPlanInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\MonthPlanInfoCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\MonthPlanResourceInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\MonthPlanResourceInfoCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\MonthProductValue.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\MonthProductValueCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\MonthProductValueDetail.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\MonthProductValueDetailCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\News.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\OABooksApply.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\OABooksApplyMain.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\OABooksDiscard.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\OABooksDiscardMain.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\OABooksInStorage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\OABooksLend.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\OABooksLibrary.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\OABooksStorage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\OACalendarInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\OACalendarRemindSet.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\OAFileCatalog.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\OAFileClasses.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\OAFileDestroy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\OAFileDestroyMain.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\OAFileLend.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\OAFileLibrary.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\OAOfficeResApplicationCollect.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\OAOfficeResApplicationCollectDetail.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\OAOfficeResDepartmentApplication.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\OAOfficeResDepartmentApplicationDetail.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\OAOfficeResJoinDrawItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\OAOfficeResJoinDrawItemSet.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\OAOfficeResPersonalApplication.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\OAOfficeResPersonalApplicationDetail.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\OAOfficeResRationSet.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\OAVotingInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\OAVotingOption.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\OAVotingRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\OAWFApplyItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\OpenBidInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\OpenBidInfoCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\OwnerDesignInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\Placard.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\PMModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\PriceItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\PriceItemCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\PrivProjectList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\PrjDisModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\PrjInfoModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\PrjPlanAssignInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ProgressEvaluateCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ProgressEvaluateInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ProgressImplementCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ProgressImplementInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ProgressPlanCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ProgressPlanInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ProgressProceedCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ProgressProceedInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ProgSortInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ProjectBalanec.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ProjectDocumentInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ProjectFilesUpInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ProjectForepart.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ProjectForepartCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ProjectForepartExtend.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ProjectForepartExtendCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ProjectInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ProjectState.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\PTDBSJ.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\PTDictionaryItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\PTDRole.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\PTDUTY.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\PTDZYJCYLXRFZModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\PTMultiClasses.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ptOfficeResClass.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ptOfficeResDepot.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ptOfficeResInStorage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ptOfficeResInStorageDetail.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ptOfficeResResources.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ptOfficeResStock.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ptOfficeResStockCheck.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ptOfficeResStockCheckDetail.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\QualityFileInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\QualityGoalInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\QualitySafeFileModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\QualitySafeFileModelCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\QueryItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\QueryItemCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\RecieveMsgModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\Reputation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ResourceAnalyze.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ResourceAnalyzeCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ResourceBasicCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ResourceBasicInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ResourceCategory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ResourceCategoryCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ResourceImportM.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ResourceImportMCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ResourceInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ResourceItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ResourceItemCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ResourcePrice.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ResourceStyle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ResourceTypeStyle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ResourceUnit.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\RoleProjectModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\SafetyMeasureInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\SalaryGADModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\SalaryGAModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\SalaryIncomeTaxModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\SalaryIPIModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\SalaryItemModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\SalaryPModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\SalarySAModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\SalaryTIModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\SalaryTModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ScheduleCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ScheduleInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\ScheduleResourceInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\SearchInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\SLTaskResource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\SMSLog.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\StuffFirstMain.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\StuffFirstMainCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\StuffFirstStuff.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\StuffFirstStuffCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\SubContractInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\SuperviseInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\SupplyPlanDetail.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\SupplyPlanDetailCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\SupplyPlanMain.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\SupplyPlanMainCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\SystemInfoModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\TableAccountModelInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\TaskBookRation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\TaskBookRationCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\TaskBookResource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\TaskBookResourceCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\TaskListInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\TaskRelation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\TaskRelationCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\TaskResource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\TechnologyJDInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\TechnologyStandardCollectin.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\TechnologyStandardInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\TempResourceInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\TempResourceInfoCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\TempWbsInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\TempWbsInfoCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\UnitType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\UnitTypeCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\UserCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\UserInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\UserPointValue.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\WBSBidTask.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\WBSBidTaskCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm.model\WFBusinessClass.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.pm.entpm\PageHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.ProjectWeb\Global.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.sysManage.common\Calendar.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.sysManage.common\CreatDepTree.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.sysManage.PageOrder\PageOrderInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.sysManage.publicStringOperation\PublicClass.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="myxml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="person.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PTDZYJCYLXRFZAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StRex.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StrToPinyin.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="_PrivateImplementationDetails_{D7E47967-2C4C-4D39-AF14-F3B1AA08FA8E}.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{2b952cda-8504-48e6-8807-d61a744c7263}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PMControls\PMControls.csproj">
+      <Project>{4c35e837-2fe0-4883-9cea-badf40f1d868}</Project>
+      <Name>PMControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PMLibrary\PMLibrary.csproj">
+      <Project>{b37bb9ce-5fc5-4b55-a2cc-fce4e9c5780e}</Project>
+      <Name>PMLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebUtil\WebUtil.csproj">
+      <Project>{96d4e6dd-fdbd-4f0c-a1e6-899e47ab2bd0}</Project>
+      <Name>WebUtil</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent />
+    <PostBuildEvent />
+  </PropertyGroup>
+</Project>

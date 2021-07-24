@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="EquCutterProReport" table="Equ_CutterProReport" lazy="true" >
+		<id name="ProductionId">
+			<column name="ProductionId" sql-type="nvarchar" length="64" not-null="true" />
+		</id>
+		<property name="DayId">
+			<column name="DayId" sql-type="nvarchar" length="100" not-null="true" />
+		</property>
+		<property name="Location_X">
+			<column name="Location_X" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="Location_Y">
+			<column name="Location_Y" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="Longth">
+			<column name="Longth" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="Width">
+			<column name="Width" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="Height">
+			<column name="Height" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="ReportQty">
+			<column name="ReportQty" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="UnitPrice">
+			<column name="UnitPrice" sql-type="decimal" not-null="false" />
+		</property>
+	</class>
+</hibernate-mapping>

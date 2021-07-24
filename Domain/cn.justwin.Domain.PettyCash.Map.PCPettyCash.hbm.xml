@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="PCPettyCash" table="PC_PettyCash" lazy="true" >
+		<id name="Id">
+			<column name="Id" sql-type="nvarchar" length="200" not-null="true" />
+		</id>
+		<property name="Applicant">
+			<column name="Applicant" sql-type="varchar" length="8" not-null="true" />
+		</property>
+		<property name="ApplicationDate">
+			<column name="ApplicationDate" sql-type="datetime" not-null="true" />
+		</property>
+		<property name="Cash">
+			<column name="Cash" sql-type="decimal" not-null="true" />
+		</property>
+		<property name="Account">
+			<column name="Account" sql-type="nvarchar" length="200" not-null="true" />
+		</property>
+		<property name="Bank">
+			<column name="Bank" sql-type="nvarchar" length="200" not-null="true" />
+		</property>
+		<property name="Payer">
+			<column name="Payer" sql-type="nvarchar" length="200" not-null="true" />
+		</property>
+		<property name="Matter">
+			<column name="Matter" sql-type="nvarchar" length="200" not-null="true" />
+		</property>
+		<property name="CashDate">
+			<column name="CashDate" sql-type="datetime" not-null="true" />
+		</property>
+		<property name="PrjTypeCode">
+			<column name="PrjTypeCode" sql-type="nvarchar" length="200" not-null="false" />
+		</property>
+		<property name="ApplicationReason">
+			<column name="ApplicationReason" sql-type="nvarchar(max)" not-null="false" />
+		</property>
+		<property name="FlowState">
+			<column name="FlowState" sql-type="int" not-null="true" />
+		</property>
+		<property name="InputUser">
+			<column name="InputUser" sql-type="varchar" length="8" not-null="true" />
+		</property>
+		<property name="InputDate">
+			<column name="InputDate" sql-type="datetime" not-null="true" />
+		</property>
+		<property name="ModifyUser">
+			<column name="ModifyUser" sql-type="varchar" length="8" not-null="true" />
+		</property>
+		<property name="ModifyDate">
+			<column name="ModifyDate" sql-type="datetime" not-null="true" />
+		</property>
+		<property name="RepayCash">
+			<column name="RepayCash" sql-type="decimal" not-null="true" />
+		</property>
+		<property name="RepayFlowState">
+			<column name="RepayFlowState" sql-type="int" not-null="true" />
+		</property>
+		<property name="State">
+			<column name="State" sql-type="char" length="1" not-null="true" />
+		</property>
+		<property name="CleanDate">
+			<column name="CleanDate" sql-type="datetime" not-null="true" />
+		</property>
+		<property name="CleanNote">
+			<column name="CleanNote" sql-type="nvarchar(max)" not-null="false" />
+		</property>
+		<property name="IsRepay">
+			<column name="IsRepay" sql-type="bit" not-null="true" />
+		</property>
+		<property name="Payee">
+			<column name="Payee" sql-type="nvarchar" length="200" not-null="false" />
+		</property>
+		<many-to-one name="Project" class="cn.justwin.Domain.Entities.PTPrjInfo, Domain" not-null="false" not-found="ignore"
+								 insert="false" update="false" column="PrjTypeCode" lazy="false">
+		</many-to-one>
+	</class>
+</hibernate-mapping>

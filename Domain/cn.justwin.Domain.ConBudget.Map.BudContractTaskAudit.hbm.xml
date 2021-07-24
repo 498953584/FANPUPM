@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="BudContractTaskAudit" table="Bud_ContractTaskAudit" lazy="true" >
+    <id name="ContractTaskAuditId">
+      <column name="ContractTaskAuditId" sql-type="nvarchar" not-null="true" />
+    </id>
+    <property name="PrjId">
+      <column name="PrjId" sql-type="nvarchar" length="200" not-null="false" />
+    </property>
+    <property name="PrjName">
+      <column name="PrjName" sql-type="nvarchar" length="200" not-null="false" />
+    </property>
+    <property name="FlowState">
+      <column name="FlowState" sql-type="int" not-null="false" />
+    </property>
+    <property name="InputDate">
+      <column name="InputDate" sql-type="datetime" length="100" not-null="false" />
+    </property>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="EquRepairApply" table="Equ_RepairApply" lazy="true" >
+		<id name="ApplyId">
+			<column name="ApplyId" sql-type="nvarchar" length="64" not-null="true" />
+		</id>
+		<property name="RepairId">
+			<column name="RepairId" sql-type="nvarchar" length="64" not-null="false" />
+		</property>
+		<property name="EquId">
+			<column name="EquId" sql-type="nvarchar" length="64" not-null="true" />
+		</property>
+		<property name="LastRepairDate">
+			<column name="LastRepairDate" sql-type="datetime" not-null="false" />
+		</property>
+		<property name="LastRepairContents">
+			<column name="LastRepairContents" sql-type="nvarchar" length="500" not-null="false" />
+		</property>
+		<property name="LastRepairCosts">
+			<column name="LastRepairCosts" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="PlanRepairCosts">
+			<column name="PlanRepairCosts" sql-type="decimal" not-null="true" />
+		</property>
+		<property name="PlanStartDate">
+			<column name="PlanStartDate" sql-type="datetime" not-null="true" />
+		</property>
+		<property name="PlanEndDate">
+			<column name="PlanEndDate" sql-type="datetime" not-null="true" />
+		</property>
+		<property name="PlanRepareContents">
+			<column name="PlanRepareContents" sql-type="nvarchar" length="500" not-null="false" />
+		</property>
+		<property name="ApplyUser">
+			<column name="ApplyUser" sql-type="nvarchar" length="50" not-null="false" />
+		</property>
+		<property name="ApplyDate">
+			<column name="ApplyDate" sql-type="datetime" not-null="false" />
+		</property>
+		<property name="RepairType">
+			<column name="RepairType" sql-type="int" not-null="true" />
+		</property>
+		<property name="RepairFlag">
+			<column name="RepairFlag" sql-type="int" not-null="true" />
+		</property>
+		<property name="RepairPlaceFlag">
+			<column name="RepairPlaceFlag" sql-type="int" not-null="true" />
+		</property>
+		<property name="FlowState">
+			<column name="FlowState" sql-type="int" not-null="true" />
+		</property>
+		<property name="InputUser">
+			<column name="InputUser" sql-type="varchar" length="8" not-null="true" />
+		</property>
+		<property name="InputDate">
+			<column name="InputDate" sql-type="datetime" not-null="true" />
+		</property>
+		<property name="Note">
+			<column name="Note" sql-type="nvarchar(max)" not-null="false" />
+		</property>
+	</class>
+</hibernate-mapping>

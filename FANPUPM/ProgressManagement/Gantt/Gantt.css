@@ -1,0 +1,39 @@
+﻿body 
+{
+ font-size:12px; margin:1px 0px 0px 0px; padding:1px 1px;
+}
+table
+{
+ font-size:12px;  
+}
+.divFooter
+{
+    height: 26px;
+    text-align: right;
+    background: url(/images1/divBottomBack.jpg) repeat-x;
+    text-align:left;
+    vertical-align: middle;
+    margin-bottom:1px;
+}
+.inputBtns
+{
+    background: #fff url(/images1/btnBack2.jpg);
+    text-align: center;
+    vertical-align: middle;
+    width: 51px;
+    height: 20px;
+    margin-top: 2px;
+    border-style: none;
+     cursor:pointer;
+}
+.inputLBtns
+{
+	background: #fff url(/images1/btnBack.jpg);
+    text-align: center;
+    vertical-align: middle;
+    width: 71px;
+    height: 20px;
+    margin-top: 2px;
+    border-style: none;
+     cursor:pointer;
+	}

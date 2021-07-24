@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="ConConfigContract" table="Con_Config_Contract" lazy="true" >
+		<id name="Id">
+			<column name="Id" sql-type="nvarchar" length="200" not-null="true" />
+		</id>
+		<property name="ContractId">
+			<column name="ContractId" sql-type="nvarchar" length="200" not-null="true" />
+		</property>
+		<property name="PayoutAlarmDays">
+			<column name="PayoutAlarmDays" sql-type="int" not-null="false" />
+		</property>
+		<property name="IncomeAlarmDays">
+			<column name="IncomeAlarmDays" sql-type="int" not-null="false" />
+		</property>
+		<property name="HighPayAlarmLimit">
+			<column name="HighPayAlarmLimit" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="HighBalanceAlarmLimit">
+			<column name="HighBalanceAlarmLimit" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="MidPayAlarmUpperLimit">
+			<column name="MidPayAlarmUpperLimit" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="MidPayAlarmLowerLimit">
+			<column name="MidPayAlarmLowerLimit" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="MidBalanceAlarmUpperLimit">
+			<column name="MidBalanceAlarmUpperLimit" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="MidBalanceAlarmLowerLimit">
+			<column name="MidBalanceAlarmLowerLimit" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="LowPayAlarmUpperLimit">
+			<column name="LowPayAlarmUpperLimit" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="LowPayAlarmLowerLimit">
+			<column name="LowPayAlarmLowerLimit" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="LowBalanceAlarmUpperLimit">
+			<column name="LowBalanceAlarmUpperLimit" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="LowBalanceAlarmLowerLimit">
+			<column name="LowBalanceAlarmLowerLimit" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="IsPayoutAlarm">
+			<column name="IsPayoutAlarm" sql-type="bit" not-null="true" />
+		</property>
+		<property name="IsPaymentAlarm">
+			<column name="IsPaymentAlarm" sql-type="bit" not-null="true" />
+		</property>
+		<property name="IsIncomeAlarm">
+			<column name="IsIncomeAlarm" sql-type="bit" not-null="true" />
+		</property>
+		<property name="IsBalanceAlarm">
+			<column name="IsBalanceAlarm" sql-type="bit" not-null="true" />
+		</property>
+	</class>
+</hibernate-mapping>

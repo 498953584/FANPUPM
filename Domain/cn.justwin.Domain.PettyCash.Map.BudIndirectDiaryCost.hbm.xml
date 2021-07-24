@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="BudIndirectDiaryCost" table="Bud_IndirectDiaryCost" lazy="true" >
+		<id name="InDiaryId">
+			<column name="InDiaryId" sql-type="nvarchar" length="200" not-null="true" />
+		</id>
+		<property name="ProjectId">
+			<column name="ProjectId" sql-type="nvarchar" length="200" not-null="true" />
+		</property>
+		<property name="Name">
+			<column name="Name" sql-type="nvarchar" length="200" not-null="true" />
+		</property>
+		<property name="Department">
+			<column name="Department" sql-type="nvarchar" length="200" not-null="false" />
+		</property>
+		<property name="IssuedBy">
+			<column name="IssuedBy" sql-type="nvarchar" length="200" not-null="true" />
+		</property>
+		<property name="FlowState">
+			<column name="FlowState" sql-type="int" not-null="true" />
+		</property>
+		<property name="InputUser">
+			<column name="InputUser" sql-type="nvarchar" length="200" not-null="true" />
+		</property>
+		<property name="InputDate">
+			<column name="InputDate" sql-type="datetime" not-null="true" />
+		</property>
+		<property name="IndireCode">
+			<column name="IndireCode" sql-type="nvarchar" length="200" not-null="false" />
+		</property>
+		<property name="PettyCashId">
+			<column name="PettyCashId" sql-type="nvarchar" length="200" not-null="false" />
+		</property>
+		<property name="InssuedByCode">
+			<column name="InssuedByCode" sql-type="varchar" length="8" not-null="false" />
+		</property>
+		<property name="InputUserCode">
+			<column name="InputUserCode" sql-type="varchar" length="8" not-null="false" />
+		</property>
+		<property name="Type">
+			<column name="Type" sql-type="char" length="1" not-null="true" />
+		</property>
+		<property name="IsAudit">
+			<column name="IsAudit" sql-type="bit" not-null="true" />
+		</property>
+		<property name="AuditDate">
+			<column name="AuditDate" sql-type="datetime" not-null="true" />
+		</property>
+		<property name="CostType">
+			<column name="CostType" sql-type="char" length="1" not-null="true" />
+		</property>
+		<property name="InputDate2">
+			<column name="InputDate2" sql-type="datetime" not-null="true" />
+		</property>
+		<property name="ApplyId">
+			<column name="ApplyId" sql-type="nvarchar" length="200" not-null="false" />
+		</property>
+		
+		<property name="Code">
+			<column name="Code" sql-type="varchar" length="200" not-null="false" />
+		</property>
+	</class>
+</hibernate-mapping>

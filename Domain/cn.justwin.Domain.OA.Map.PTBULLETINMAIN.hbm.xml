@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="PTBULLETINMAIN" table="PT_BULLETIN_MAIN" lazy="true" >
+    <id name="I_BULLETINID">
+			<column name="I_BULLETINID"></column>
+    </id>
+    <property name="CorpCode">
+      <column name="CorpCode" sql-type="nvarchar" length="4000" not-null="false" />
+    </property>
+    <property name="V_RELUSERCODE">
+      <column name="V_RELUSERCODE" sql-type="varchar" length="8" not-null="false" />
+    </property>
+    <property name="V_RELEASEUSER">
+      <column name="V_RELEASEUSER" sql-type="varchar" length="50" not-null="false" />
+    </property>
+    <property name="V_TITLE">
+      <column name="V_TITLE" sql-type="varchar" length="200" not-null="false" />
+    </property>
+    <property name="V_CONTENT">
+      <column name="V_CONTENT" sql-type="varchar(max)" not-null="false" />
+    </property>
+    <property name="URL">
+      <column name="URL" sql-type="varchar" length="100" not-null="false" />
+    </property>
+    <property name="DTM_RELEASETIME">
+      <column name="DTM_RELEASETIME" sql-type="datetime" not-null="false" />
+    </property>
+    <property name="DTM_EXPRIESDATE">
+      <column name="DTM_EXPRIESDATE" sql-type="datetime" not-null="false" />
+    </property>
+    <property name="I_RELEASEBOUND">
+      <column name="I_RELEASEBOUND" sql-type="int" not-null="false" />
+    </property>
+    <property name="DeptRange">
+      <column name="DeptRange" sql-type="nvarchar" length="4000" not-null="false" />
+    </property>
+    <property name="AuditState">
+      <column name="AuditState" sql-type="int" not-null="false" />
+    </property>
+  </class>
+</hibernate-mapping>

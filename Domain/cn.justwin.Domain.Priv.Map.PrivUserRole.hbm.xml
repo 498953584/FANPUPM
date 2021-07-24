@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="PrivUserRole" table="Priv_UserRole" lazy="true" >
+		<id name="Id">
+			<column name="Id" sql-type="nvarchar" length="200" not-null="true" />
+		</id>
+		<property name="UserCode">
+			<column name="UserCode" sql-type="varchar" length="8" not-null="false" />
+		</property>
+		<property name="RoleId">
+			<column name="RoleId" sql-type="nvarchar" length="200" not-null="false" />
+		</property>
+	</class>
+</hibernate-mapping>

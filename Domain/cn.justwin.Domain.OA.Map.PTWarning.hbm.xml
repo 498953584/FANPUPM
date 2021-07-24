@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="PTWarning" table="PT_Warning" lazy="true" >
+		<id name="WarningId">
+			<column name="WarningId" sql-type="int" not-null="true" />
+			<generator class="identity"></generator>
+		</id>
+		<property name="WarningTitle">
+			<column name="WarningTitle" sql-type="nvarchar" length="200" not-null="false" />
+		</property>
+		<property name="WarningContent">
+			<column name="WarningContent" sql-type="nvarchar(max)" not-null="false" />
+		</property>
+		<property name="UserCode">
+			<column name="UserCode" sql-type="nvarchar" length="20" not-null="false" />
+		</property>
+		<property name="RelationsTable">
+			<column name="RelationsTable" sql-type="nvarchar" length="100" not-null="false" />
+		</property>
+		<property name="RelationsColumn">
+			<column name="RelationsColumn" sql-type="nvarchar" length="200" not-null="false" />
+		</property>
+		<property name="RelationsKey">
+			<column name="RelationsKey" sql-type="nvarchar" length="200" not-null="false" />
+		</property>
+		<property name="URI">
+			<column name="URI" sql-type="nvarchar" length="400" not-null="false" />
+		</property>
+		<property name="IsValid">
+			<column name="IsValid" sql-type="bit" not-null="false" />
+		</property>
+		<property name="InputDate">
+			<column name="InputDate" sql-type="datetime" not-null="false" />
+		</property>
+		<property name="IsOpened" type="bool">
+			<column name="IsOpened" sql-type="bit" length="1" not-null="false" />
+		</property>
+	</class>
+</hibernate-mapping>

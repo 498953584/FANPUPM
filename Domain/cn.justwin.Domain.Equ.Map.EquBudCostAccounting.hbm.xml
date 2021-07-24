@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="EquBudCostAccounting" table="Equ_BudCostAccounting" lazy="true" >
+		<id name="BudId">
+			<column name="BudId" sql-type="nvarchar" length="64" not-null="true" />
+		</id>
+		<property name="EquId">
+			<column name="EquId" sql-type="nvarchar" length="64" not-null="true" />
+		</property>
+		<property name="ReportUser">
+			<column name="ReportUser" sql-type="nvarchar" length="50" not-null="true" />
+		</property>
+		<property name="ReportDate">
+			<column name="ReportDate" sql-type="datetime" not-null="true" />
+		</property>
+		<property name="UpkeepAnnexId">
+			<column name="UpkeepAnnexId" sql-type="nvarchar" length="100" not-null="false" />
+		</property>
+		<property name="MaintenanceCosts">
+			<column name="MaintenanceCosts" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="SmallRepairCosts">
+			<column name="SmallRepairCosts" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="SailRepairCosts">
+			<column name="SailRepairCosts" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="EngineRepairCosts">
+			<column name="EngineRepairCosts" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="MaterialsAnnexId">
+			<column name="MaterialsAnnexId" sql-type="nvarchar" length="100" not-null="false" />
+		</property>
+		<property name="OilCosts">
+			<column name="OilCosts" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="CleaningCosts">
+			<column name="CleaningCosts" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="WaterCosts">
+			<column name="WaterCosts" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="AccessoriesCosts">
+			<column name="AccessoriesCosts" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="PipeAndGraftAnnexId">
+			<column name="PipeAndGraftAnnexId" sql-type="nvarchar" length="100" not-null="false" />
+		</property>
+		<property name="LabourCosts">
+			<column name="LabourCosts" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="MaterialsCosts">
+			<column name="MaterialsCosts" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="EngineCosts">
+			<column name="EngineCosts" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="LabourAnnexId">
+			<column name="LabourAnnexId" sql-type="nvarchar" length="100" not-null="false" />
+		</property>
+		<property name="MealsCosts">
+			<column name="MealsCosts" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="WorkerWelfareCosts">
+			<column name="WorkerWelfareCosts" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="TrafficCosts">
+			<column name="TrafficCosts" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="LaborProtecteCosts">
+			<column name="LaborProtecteCosts" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="PowerAnnexId">
+			<column name="PowerAnnexId" sql-type="nvarchar" length="100" not-null="false" />
+		</property>
+		<property name="FuelCosts">
+			<column name="FuelCosts" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="OtherCosts">
+			<column name="OtherCosts" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="FlowState">
+			<column name="FlowState" sql-type="int" not-null="true" />
+		</property>
+		<property name="InputUser">
+			<column name="InputUser" sql-type="nvarchar" length="8" not-null="true" />
+		</property>
+		<property name="InputDate">
+			<column name="InputDate" sql-type="datetime" not-null="true" />
+		</property>
+		<property name="Note">
+			<column name="Note" sql-type="nvarchar(max)" not-null="false" />
+		</property>
+	</class>
+</hibernate-mapping>

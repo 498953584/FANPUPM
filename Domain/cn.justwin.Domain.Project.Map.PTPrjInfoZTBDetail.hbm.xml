@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="PTPrjInfoZTBDetail" table="PT_PrjInfo_ZTB_Detail" lazy="true" >
+    <id name="PrjGuid">
+      <column name="PrjGuid" sql-type="uniqueidentifier" not-null="true" />
+    </id>
+    <property name="ProjPeopleName">
+      <column name="ProjPeopleName" sql-type="nvarchar" length="200" not-null="false" />
+    </property>
+    <property name="ProjPeopleSex">
+      <column name="ProjPeopleSex" sql-type="char" length="1" not-null="false" />
+    </property>
+    <property name="ProjPeopleAge">
+      <column name="ProjPeopleAge" sql-type="int" not-null="false" />
+    </property>
+    <property name="ProjPeopleTel">
+      <column name="ProjPeopleTel" sql-type="nvarchar" length="200" not-null="false" />
+    </property>
+    <property name="ProjInfoOrigin">
+      <column name="ProjInfoOrigin" sql-type="nvarchar(max)" not-null="false" />
+    </property>
+    <property name="ProjElseRequest">
+      <column name="ProjElseRequest" sql-type="nvarchar(max)" not-null="false" />
+    </property>
+    <property name="ProjApplyDate">
+      <column name="ProjApplyDate" sql-type="datetime" not-null="false" />
+    </property>
+    <property name="ProjTenderDate">
+      <column name="ProjTenderDate" sql-type="datetime" not-null="false" />
+    </property>
+    <property name="ProjApprovalDate">
+      <column name="ProjApprovalDate" sql-type="datetime" not-null="false" />
+    </property>
+    <property name="ProjRegistDeadline">
+      <column name="ProjRegistDeadline" sql-type="int" not-null="false" />
+    </property>
+    <property name="ProgAgent">
+      <column name="ProgAgent" sql-type="varchar" length="8" not-null="false" />
+    </property>
+    <property name="BuildingTypeNo">
+      <column name="BuildingTypeNo" sql-type="int" not-null="false" />
+    </property>
+    <property name="ProjStartDate">
+      <column name="ProjStartDate" sql-type="datetime" not-null="false" />
+    </property>
+    <property name="BusinessManager">
+      <column name="BusinessManager" sql-type="varchar" length ="8" not-null="false" />
+    </property>
+    <property name="ProjStartRemark">
+      <column name="ProjStartRemark" sql-type="nvarchar(max)" not-null="false" />
+    </property>
+    <property name="ProjTenderBeginDate">
+      <column name="ProjTenderBeginDate" sql-type="datetime" not-null="false" />
+    </property>
+    <property name="TenderCeilingPrice">
+      <column name="TenderCeilingPrice" sql-type="decimal" not-null="false" />
+    </property>
+    <property name="TenderUnit">
+      <column name="TenderUnit" sql-type="nvarchar" length="200" not-null="false" />
+    </property>
+    <property name="TenderQuote">
+      <column name="TenderQuote" sql-type="decimal" not-null="false" />
+    </property>
+    <property name="TenderAppraiseMethod">
+      <column name="TenderAppraiseMethod" sql-type="nvarchar" length="500" not-null="false" />
+    </property>
+    <property name="TenderAverage">
+      <column name="TenderAverage" sql-type="decimal" not-null="false" />
+    </property>
+    <property name="ProjTenderCostContent">
+      <column name="ProjTenderCostContent" sql-type="nvarchar" length="500" not-null="false" />
+    </property>
+    <property name="ProjTenderAnswerDate">
+      <column name="ProjTenderAnswerDate" sql-type="datetime" not-null="false" />
+    </property>
+    <property name="ProjTenderEarnestMoney">
+      <column name="ProjTenderEarnestMoney" sql-type="decimal" not-null="false" />
+    </property>
+    <property name="ProjTenderPayWay">
+      <column name="ProjTenderPayWay" sql-type="nvarchar" length="50" not-null="false" />
+    </property>
+    <property name="ProjTenderContent">
+      <column name="ProjTenderContent" sql-type="nvarchar" length="500" not-null="false" />
+    </property>
+    <property name="ProjTenderRemark">
+      <column name="ProjTenderRemark" sql-type="nvarchar(max)" not-null="false" />
+    </property>
+    <property name="SuccessBidDate">
+      <column name="SuccessBidDate" sql-type="datetime" not-null="false" />
+    </property>
+    <property name="SuccessBidPrice">
+      <column name="SuccessBidPrice" sql-type="decimal" not-null="false" />
+    </property>
+    <property name="SuccessBidRemark">
+      <column name="SuccessBidRemark" sql-type="nvarchar(max)" not-null="false" />
+    </property>
+    <property name="OutBidDate">
+      <column name="OutBidDate" sql-type="datetime" not-null="false" />
+    </property>
+    <property name="OutBidIsReturn">
+      <column name="OutBidIsReturn" sql-type="bit" not-null="false" />
+    </property>
+    <property name="OutBidRemark">
+      <column name="OutBidRemark" sql-type="nvarchar(max)" not-null="false" />
+    </property>
+    <property name="ProjFlowSate">
+      <column name="ProjFlowSate" sql-type="int" not-null="false" />
+    </property>
+    <property name="EngineeringType">
+      <column name="EngineeringType" sql-type="nvarchar" length="20" not-null="false" />
+    </property>
+    <property name="Grade">
+      <column name="Grade" sql-type="nvarchar" length="64" not-null="false" />
+    </property>
+    <property name="EngineeringSubType">
+      <column name="EngineeringSubType" sql-type="nvarchar" length="20" not-null="false" />
+    </property>
+    <property name="Telephone">
+      <column name="Telephone" sql-type="nvarchar" length="64" not-null="false" />
+    </property>
+    <property name="InputDate">
+      <column name="InputDate" sql-type="datetime" not-null="false" />
+    </property>
+    <property name="IsTender">
+      <column name="IsTender" sql-type="bit" not-null="true" />
+    </property>
+    <property name="InputUser">
+      <column name="InputUser" sql-type="nvarchar" length="20" not-null="false" />
+    </property>
+    <property name="OwnerLinkMan">
+      <column name="OwnerLinkMan" sql-type="nvarchar" length="30" not-null="false" />
+    </property>
+    <property name="OwnerLinkPhone">
+      <column name="OwnerLinkPhone" sql-type="nvarchar" length="30" not-null="false" />
+    </property>
+    <property name="ActualRunDate">
+      <column name="ActualRunDate" sql-type="datetime" not-null="false" />
+    </property>
+    <property name="PrjDutyPerson">
+      <column name="PrjDutyPerson" sql-type="nvarchar" length="30" not-null="false" />
+    </property>
+    <property name="PrjApprovalOf">
+      <column name="PrjApprovalOf" sql-type="nvarchar" length="30" not-null="false" />
+    </property>
+    <property name="PrjFundWorkable">
+      <column name="PrjFundWorkable" sql-type="nvarchar" length="200" not-null="false" />
+    </property>
+    <property name="ForecastProfitRate">
+      <column name="ForecastProfitRate" sql-type="decimal" not-null="false" />
+    </property>
+    <property name="ManagementMargin">
+      <column name="ManagementMargin" sql-type="decimal" not-null="false" />
+    </property>
+    <property name="MigrantQualityMarginRate">
+      <column name="MigrantQualityMarginRate" sql-type="decimal" not-null="false" />
+    </property>
+    <property name="WithholdingTaxRate">
+      <column name="WithholdingTaxRate" sql-type="decimal" not-null="false" />
+    </property>
+    <property name="PerformanceBond">
+      <column name="PerformanceBond" sql-type="decimal" not-null="false" />
+    </property>
+    <property name="ElseMargin">
+      <column name="ElseMargin" sql-type="decimal" not-null="false" />
+    </property>
+    <property name="EngineeringEstimates">
+      <column name="EngineeringEstimates" sql-type="nvarchar" length="30" not-null="false" />
+    </property>
+    <property name="MemberFlowState">
+      <column name="MemberFlowState" sql-type="int" not-null="false" />
+    </property>
+    <property name="CompletedFlowState">
+      <column name="CompletedFlowState" sql-type="int" not-null="false" />
+    </property>
+    <property name="CompletedDate">
+      <column name="CompletedDate" sql-type="datetime" not-null="false" />
+    </property>
+    <property name="ProjPeopleDep">
+      <column name="ProjPeopleDep" sql-type="nvarchar" length="200" not-null="false" />
+    </property>
+    <property name="ProjPeopleDuty">
+      <column name="ProjPeopleDuty" sql-type="nvarchar" length="200" not-null="false" />
+    </property>
+    <property name="OwnerAddress">
+      <column name="OwnerAddress" sql-type="nvarchar" length="200" not-null="false" />
+    </property>
+    <property name="CompletedNote">
+      <column name="CompletedNote" sql-type="nvarchar(max)" not-null="false" />
+    </property>
+    <property name="PrjManagerRequire">
+      <column name="PrjManagerRequire" sql-type="nvarchar(max)" not-null="false" />
+    </property>
+    <property name="TechnicalLeaderRequire">
+      <column name="TechnicalLeaderRequire" sql-type="nvarchar(max)" not-null="false" />
+    </property>
+    <property name="PrequalificationRequire">
+      <column name="PrequalificationRequire" sql-type="nvarchar" length="200" not-null="false" />
+    </property>
+    <property name="QualificationPassDate">
+      <column name="QualificationPassDate" sql-type="datetime" not-null="false" />
+    </property>
+    <property name="QualificationPassReason">
+      <column name="QualificationPassReason" sql-type="nvarchar(max)" not-null="false" />
+    </property>
+    <property name="QualificationFailData">
+      <column name="QualificationFailData" sql-type="datetime" not-null="false" />
+    </property>
+    <property name="QualificationFailReason">
+      <column name="QualificationFailReason" sql-type="nvarchar(max)" not-null="false" />
+    </property>
+    <property name="Province">
+      <column name="Province" sql-type="nvarchar" length="50" not-null="false" />
+    </property>
+    <property name="City">
+      <column name="City" sql-type="nvarchar" length="50" not-null="false" />
+    </property>
+    <property name="SetUpFlowState">
+      <column name="SetUpFlowState" sql-type="int" not-null="false" />
+    </property>
+    <property name="PrjProperty">
+      <column name="PrjProperty" sql-type="nvarchar" length="200" not-null="false" />
+    </property>
+    <property name="PrjReadOne">
+      <column name="PrjReadOne" sql-type="nvarchar" length="200" not-null="false" />
+    </property>
+    <property name="QualificationMargin">
+      <column name="QualificationMargin" sql-type="decimal" not-null="true" />
+    </property>
+    <property name="QualificationReadOne">
+      <column name="QualificationReadOne" sql-type="nvarchar" length="200" not-null="false" />
+    </property>
+    <property name="TenderProspect">
+      <column name="TenderProspect" sql-type="datetime" not-null="false" />
+    </property>
+    <property name="TenderReadOne">
+      <column name="TenderReadOne" sql-type="nvarchar" length="200" not-null="false" />
+    </property>
+		<property name="AfforestArea">
+			<column name="AfforestArea" sql-type="nvarchar" length="200" not-null="false" />
+		</property>
+		<property name="ParkArea">
+			<column name="ParkArea" sql-type="nvarchar" length="200" not-null="false" />
+		</property>
+		<!--<bag name="KindLst" table="PT_PrjInfo_Kind" inverse="true" lazy="false" access="none" >
+			<key column="PrjGuid"></key>
+			<one-to-many class="cn.justwin.Domain.Entities.PTPrjInfoKind, Domain" not-found="ignore"/>
+		</bag>-->
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--<?xml-stylesheet type="text/xsl" href="WOCWebToolBox.xsl" charset="gb2312"?>
+ edited with XMLSPY v5 rel. 4 U (http://www.xmlspy.com) by fengzi (ccxx) -->
+
+
+<WOCWebToolBox width="100px" linkstyle="WOCWebToolBox.xsl"><!--此处更改右部宽度-->
+
+	<info expandmutex="true" slip="1" respondover="false">
+
+	<background left="background_left.gif" right="background_right.gif" leftcolor="#6898E7" rightcolor="#CDE3FC"/>
+
+		<scrollimage height="15px" autoscroll="0" upnormal="scrollupnormal.gif" upover="scrollupover.gif" downnormal="scrolldownnormal.gif" downover="scrolldownover.gif"/><!--此处可以更改最上方按钮的高度-->
+		
+
+<pageimage upimage="pageup.gif" downimage="pagedown.gif" upcolor="darkblue" downcolor="white" width="25px" height="89px"/><!--此处更改左部宽度和高度-->
+
+<pagescroll scrollup_n="pagescrollup1.gif" scrollup_d="pagescrollup2.gif" scrolldown_n="pagescrolldown1.gif" 
+scrolldown_d="pagescrolldown2.gif"/>
+
+
+<handlerimage width="9px" up="handlerup.gif" down="handlerdown.gif" back="handlerback.gif" 
+open="handleropen.gif" close="handlerclose.gif"/> <!--此处更改分隔条-->
+
+
+
+<paneltitle height="29px" fontcolor="white" image="1" normalimage="panelnormal.gif" overimage="panelover.gif" 
+downimage="paneldown.gif"/>
+
+
+
+<buttoninfo buttonstyle="BS_IMGTXT | BS_IMGTOPTOTEXT" selectable="1" backimage="1" buttonheight="20px" 
+normalimage="buttonnormal.gif" overimage="buttonover.gif" downimage="buttondown.gif"/>
+
+<!--
+		    buttontype 的类型说明:
+		    
+			BS_IMAGE					//表示工具箱按钮仅显示图片
+			BS_TEXT						//表示工具箱按钮仅显示文本
+			BS_IMGTXT 					//表示工具箱按钮同时显示文本和图片
+			BS_IMGLEFTTOTEXT			//图片在文字的左边
+			BS_IMGTOPTOTEXT	 			//图片在文字的上边
+			
+			expandstyle 伸缩属性类型说明:
+			
+			MUTEX		//互相排斥
+			NOMUTEX 	//不相互排斥
+			
+			slip	=	"1";		//启用伸缩滑动效果
+			slip	=	"0";		//关闭伸缩滑动效果
+		-->
+	</info>
+</WOCWebToolBox>

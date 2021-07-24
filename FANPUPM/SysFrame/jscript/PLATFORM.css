@@ -1,0 +1,177 @@
+﻿BODY
+{
+	padding:0px;
+	margin:0px;
+	overflow:hidden;
+	font-size:9pt;
+	font-family:Verdana;
+	/* ck.change.del
+	scrollbar-face-color: #DCDDE0;
+	scrollbar-highlight-color: #FFFFFF;
+	scrollbar-shadow-color: #DCDDE0;
+	scrollbar-arrow-color: #00169C;
+	scrollbar-track-color: #EFEFEF;
+	*/
+}
+
+TD
+{
+	font-size:9pt;
+	font-family:Verdana;
+}
+
+DIV
+{
+	font-size:9pt;
+	font-family:Verdana;
+}
+
+SPAN
+{
+	font-size:9pt;
+	font-family:Verdana;
+}
+
+TABLE
+{
+	border-collapse:collapse;
+	font-size: 9pt;
+	font-family:Verdana;
+}
+
+INPUT
+{
+	font-size:9pt;
+	font-family:Verdana;
+}
+
+TEXTAREA
+{
+	font-size:9pt;
+	font-family:Verdana;
+}
+
+BUTTON
+{
+	font-size:9pt;
+	font-family:Verdana;
+}
+
+.ajaxWindow_window_body
+{ 
+	background-color:#ffffff;
+	/*#abc2e7;*/
+	border-color: #0099cc; 
+}
+
+
+.ajaxWindow_window_body_active
+{
+	background-color: #ffffff; 
+	border-color:#a9bce6;
+	/*#abc2e7;*/
+}
+
+.ajaxWindow_window_caption
+{
+	/* ck.change.del
+	background-color:#f7fbff;
+	*/
+	color:#13151e;
+	border-bottom:solid 1px #abc2e7;
+}
+
+.ajaxWindow_window_caption_active
+{
+	/* ck.change.del
+	background-color:#f7fbff;
+	*/
+	color:#13151e;
+	border-bottom:solid 1px #abc2e7;
+}
+
+.ajaxWindow_window_button
+{
+	background-color:Transparent;
+}
+
+.ajaxWindow_window_button_hover
+{
+	background-color:#ffffff;
+}
+
+.ajaxWindow_window_button_active_hover
+{
+	background-color:#ffffff;
+}
+
+.ajaxWindow_window_caption_text
+{
+	padding-left:10px;
+	padding-top:3px;
+	border-bottom:solid 0px #abc2e7;
+	font-weight:bold;
+}
+
+.ajaxWindow_desktop_body
+{
+	border:solid 1px #cccccc;
+}
+
+.ajaxWindow_desktop_client
+{
+	background-color:#ffffff;
+}
+
+/* 任务栏样式border:red 1px solid; */
+.ajaxWindow_taskbar_body
+{
+	padding-top:3px;
+	background-color:#f0f8ff;
+	height:20px;
+	border-bottom:solid 1px #adbed6;
+	background-image:url(../images/label_bg.jpg)
+}
+
+.ajaxWindow_taskbar_button
+{
+	/*
+	background-color:#eef5ff;
+	width:100px;
+	border-top:solid 1 #bac1da;
+	border-right:solid 1 #bac1da;
+	border-left:solid 1 #bac1da;
+	margin-left:5px;
+	height:100%;
+	color:#13151e;padding-top:3px;
+	font-weight:bold;
+	*/margin-left:1px;
+	
+}
+
+.ajaxWindow_taskbar_button_selected
+{
+	/*
+	background-color:#cbd9f4;
+	width:100px;
+	border-top:solid 1 #6b9ad9;
+	border-right:solid 1 #6b9ad9;
+	border-left:solid 1 #6b9ad9;
+	margin-left:5px;
+	height:100%;
+	color:#13151e;padding-top:3px;
+	font-weight:bold;
+	*/margin-left:1px;
+	
+}
+
+.ajaxWindow_taskbar_button_text
+{
+	height:100%;
+	padding-top:7px;
+}
+
+.common_dragging_area
+{
+	background-color:#ff0000;
+}

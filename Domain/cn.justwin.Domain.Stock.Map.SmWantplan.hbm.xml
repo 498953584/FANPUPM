@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SmWantplan" table="Sm_Wantplan" lazy="true" >
+		<id name="swcode">
+			<column name="swcode" sql-type="nvarchar" length="64" not-null="true" />
+		</id>
+		<property name="swid">
+			<column name="swid" sql-type="nvarchar" length="50" not-null="true" />
+		</property>
+		<property name="flowstate">
+			<column name="flowstate" sql-type="int" not-null="true" />
+		</property>
+		<property name="person">
+			<column name="person" sql-type="nvarchar" length="64" not-null="true" />
+		</property>
+		<property name="intime">
+			<column name="intime" sql-type="datetime"  not-null="true" />
+		</property>
+		<property name="acceptstate">
+			<column name="acceptstate" sql-type="int" not-null="true" />
+		</property>
+		<property name="annx">
+			<column name="annx" sql-type="nvarchar" length="128" not-null="false" />
+		</property>
+		<property name="explain">
+			<column name="explain" sql-type="nvarchar" length="2048" not-null="false" />
+		</property>
+		<property name="procode">
+			<column name="procode" sql-type="nvarchar" length="64" not-null="false" />
+		</property>
+		<property name="ContainPending">
+			<column name="ContainPending" sql-type="bit" not-null="false"/>
+		</property>
+		<property name="EquipmentId">
+			<column name="EquipmentId" sql-type="nvarchar" length="500" not-null="false"/>
+		</property>
+	</class>
+</hibernate-mapping>

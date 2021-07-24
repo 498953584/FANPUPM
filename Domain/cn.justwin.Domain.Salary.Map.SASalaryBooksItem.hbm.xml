@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="SASalaryBooksItem" table="SA_SalaryBooksItem" lazy="true" >
+    <id name="Id" column="Id"></id>
+    <property name="No" type="int">
+      <column name="No" sql-type="int" not-null="true" />
+    </property>
+    <property name="BooksId" type="String">
+      <column name="BooksId" sql-type="nvarchar" length="200" not-null="true" />
+    </property>
+    <property name="ItemId" type="String">
+      <column name="ItemId" sql-type="nvarchar" length="200" not-null="true" />
+    </property>
+    <property name="DefaultValue" type="Decimal">
+      <column name="DefaultValue" sql-type="decimal" not-null="false" />
+    </property>
+    <property name="IsFormula" type="Boolean">
+      <column name="IsFormula" sql-type="bit" not-null="true" />
+    </property>
+    <property name="Formula" type="String">
+      <column name="Formula" sql-type="nvarchar" length="4000" not-null="false" />
+    </property>
+    <property name="IsShow" type="Boolean">
+      <column name="IsShow" sql-type="bit" not-null="true" />
+    </property>
+  </class>
+</hibernate-mapping>

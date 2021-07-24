@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9E981E7B-337B-4736-AC96-2001116ED311}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>App_Code</RootNamespace>
+    <AssemblyName>App_Code</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Web.UI.WebControls">
+      <HintPath>..\lib\Microsoft.Web.UI.WebControls.dll</HintPath>
+    </Reference>
+    <Reference Include="PluSoft">
+      <HintPath>..\lib\PluSoft.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CacheParameter.cs" />
+    <Compile Include="cn.justwin.opm.action\ExceptionInfoAction.cs" />
+    <Compile Include="cn.justwin.opm.model\ExceptionInfoModel.cs" />
+    <Compile Include="cn.justwin.SMS\SMS.cs" />
+    <Compile Include="com.justwin.phoozyan\PhoozyanHelpAction.cs" />
+    <Compile Include="com.jwsoft.common.baseclass\OPMPageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.common.baseclass\SubwayBasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="com.jwsoft.phoozyan\CommunicationAction.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.action.ContractManage\Contract.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.action.ContractManage\ContractClass.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.action.Provider\ProviderAssess.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.action\BillOfDocExtrDetail.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.action\BillOfDocExtrMain.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.action\BindBudgetAction.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.action\BulletionAction.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.action\DepositoryClass.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.action\DepositoryInfo.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.action\DutyUserAction.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.action\EPM_IntendanceInfoAction.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.action\Fund_Loan_Repayment.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.action\Fund_Plan_MonthMainAction.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.action\Fund_Prj_Accoun.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.action\Fund_Report.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.action\GodoEntryDetail.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.action\GodoEntryMain.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.action\GroupAction.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.action\IntendanceMasterAction.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.action\IntendancePhotoListAction.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.action\InventoryDetail.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.action\InventoryMain.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.action\MakeThumbnail.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.action\MenuAction.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.action\PrintLogin.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.action\ProviderClass.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.action\ProviderGoods.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.action\ProviderInfo.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.action\PrvdAccessory.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.action\RealTime.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.action\RedeployDetail.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.action\RedeployMain.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.action\RoleUserAction.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.action\SpoilageDetail.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.action\SpoilageMain.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.action\TemplatesAction.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.model\BillOfDocExtrDetail.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.model\BillOfDocExtrMain.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.model\BindBudget.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.model\ContInfo.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.model\DepositoryClass.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.model\DepositoryInfo.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.model\EPM_IntendanceInfo.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.model\Fund_Plan_MonthMainInfo.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.model\GodoEntryDetail.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.model\GodoEntryMain.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.model\IntendanceMaster.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.model\IntendancePhotoList.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.model\InventoryDetail.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.model\InventoryMain.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.model\ProviderClassModel.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.model\ProviderGoodsModel.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.model\ProviderInfoModel.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.model\PrvdAccessoryModel.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.model\RealTime.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.model\RedeployDetail.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.model\RedeployMain.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.model\SpoilageDetail.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.model\SpoilageMain.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.model\storageInfo.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.model\Templates.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.model\Thumbnai.cs" />
+    <Compile Include="com.jwsoft.pm.entpm.model\ThumbnaiJson.cs" />
+    <Compile Include="ConstructionLog.cs" />
+    <Compile Include="ConverRMB.cs" />
+    <Compile Include="ConvertChineseNum.cs" />
+    <Compile Include="DBProject.cs" />
+    <Compile Include="DBUtil.cs" />
+    <Compile Include="EquStyleEnum.cs" />
+    <Compile Include="FileView.cs" />
+    <Compile Include="MainPlan.cs" />
+    <Compile Include="MainPlanAndAction.cs" />
+    <Compile Include="MergerFolder.cs" />
+    <Compile Include="PlanDetail.cs" />
+    <Compile Include="PlanDetailAction.cs" />
+    <Compile Include="PMPrjAction.cs" />
+    <Compile Include="ProjectTree.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Schedule.cs" />
+    <Compile Include="StorageInfo.cs" />
+    <Compile Include="SummModel.cs" />
+    <Compile Include="SummModelAcion.cs" />
+    <Compile Include="TreeUtil.cs" />
+    <Compile Include="WebUtil.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Business\Business.csproj">
+      <Project>{e252310c-7562-46e9-98f9-7b726d984a8d}</Project>
+      <Name>Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PmBusinessLogic\PmBusinessLogic.csproj">
+      <Project>{190c4559-1f8b-405c-9353-7260920c73d5}</Project>
+      <Name>PmBusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PmDataAccess\PmDataAccess.csproj">
+      <Project>{c88c8762-f698-44de-b4d5-0c599d2b9278}</Project>
+      <Name>PmDataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebUtil\WebUtil.csproj">
+      <Project>{96d4e6dd-fdbd-4f0c-a1e6-899e47ab2bd0}</Project>
+      <Name>WebUtil</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

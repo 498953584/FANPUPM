@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="PopupSetting" table="PopupSetting" lazy="true" >
+		<id name="Id">
+			<column name="Id" sql-type="nvarchar" length="200" not-null="true" />
+		</id>
+		<property name="UserCode">
+			<column name="UserCode" sql-type="varchar" length="8" not-null="true" />
+		</property>
+		<property name="Module">
+			<column name="Module" sql-type="nvarchar" length="30" not-null="true" />
+		</property>
+		<property name="IsValid">
+			<column name="IsValid" sql-type="bit" not-null="true" />
+		</property>
+	</class>
+</hibernate-mapping>

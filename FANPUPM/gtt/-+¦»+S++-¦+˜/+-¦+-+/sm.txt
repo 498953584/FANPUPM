@@ -1,0 +1,1 @@
+Regsvr32 c:/pjgrid2.ocx

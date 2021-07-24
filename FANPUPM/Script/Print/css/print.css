@@ -1,0 +1,15 @@
+﻿
+.noprint
+{
+	display: none;
+}
+
+html, body, form
+{
+	width: 21cm;
+
+	margin: 0px;
+	padding: 0px;
+	border-width: 0px;
+	overflow: visible;
+}

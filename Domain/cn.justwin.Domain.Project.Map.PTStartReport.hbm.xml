@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="PTStartReport" table="PT_StartReport" lazy="true" >
+		<id name="ReportId" column="ReportId" />
+		<property name="PrjGuid" type="String">
+			<column name="PrjGuid" sql-type="nvarchar" length="200" not-null="true" />
+		</property>
+		<property name="SingleProjectName" type="StringClob">
+			<column name="SingleProjectName" sql-type="nvarchar(max)" not-null="false" />
+		</property>
+		<property name="ProjectPlace" type="StringClob">
+			<column name="ProjectPlace" sql-type="nvarchar(max)" not-null="false" />
+		</property>
+		<property name="ConstructionUnit" type="StringClob">
+			<column name="ConstructionUnit" sql-type="nvarchar(max)" not-null="false" />
+		</property>
+		<property name="ApplyStartDate" type="DateTime">
+			<column name="ApplyStartDate" sql-type="datetime" length="8" not-null="false" />
+		</property>
+		<property name="RealityStartDate" type="DateTime">
+			<column name="RealityStartDate" sql-type="datetime" length="8" not-null="false" />
+		</property>
+		<property name="ParentPrjId" type="String">
+			<column name="ParentPrjId" sql-type="nvarchar" length="200" not-null="false"></column>
+		</property>
+		<property name="ImplDep" type="String">
+			<column name="ImplDep" sql-type="nvarchar" length="50" not-null="false"></column>
+		</property>
+		<property name="MainContent" type="StringClob">
+			<column name="MainContent" sql-type="nvarchar(max)" not-null="false" />
+		</property>
+		<property name="PrepareCondition" type="StringClob">
+			<column name="PrepareCondition" sql-type="nvarchar(max)" not-null="false" />
+		</property>
+		<property name="ExistenceProblem" type="StringClob">
+			<column name="ExistenceProblem" sql-type="nvarchar(max)" not-null="false" />
+		</property>
+		<property name="SupervisorUnitOpinion" type="StringClob">
+			<column name="SupervisorUnitOpinion" sql-type="nvarchar(max)" not-null="false" />
+		</property>
+		<property name="BuildUnitOpinion" type="StringClob">
+			<column name="BuildUnitOpinion" sql-type="nvarchar(max)" not-null="false" />
+		</property>
+		<property name="ApplyUnit" type="StringClob">
+			<column name="ApplyUnit" sql-type="nvarchar(max)" not-null="false" />
+		</property>
+		<property name="AuditUnit" type="StringClob">
+			<column name="AuditUnit" sql-type="nvarchar(max)" not-null="false" />
+		</property>
+		<property name="FlowState" type="int">
+			<column name="FlowState" sql-type="int" length="4" not-null="false" />
+		</property>
+		<property name="ActualPrincipal" type="string">
+			<column name="ActualPrincipal" sql-type="nvarchar" not-null="false" length="50"></column>
+		</property>
+		<property name="InputUser" type="String">
+			<column name="InputUser" sql-type="nvarchar" length="50" not-null="true" />
+		</property>
+		<property name="InputDate" type="DateTime">
+			<column name="InputDate" sql-type="datetime" length="8" not-null="true" />
+		</property>
+	</class>
+</hibernate-mapping>

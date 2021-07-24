@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="ResAttribute" table="Res_Attribute" lazy="true" >
+		<id name="AttributeId">
+			<column name="AttributeId" sql-type="nvarchar" length="500" not-null="true" />
+		</id>
+		<property name="ResourceTypeId">
+			<column name="ResourceTypeId" sql-type="nvarchar" length="500" not-null="false" />
+		</property>
+		<property name="AttributeName">
+			<column name="AttributeName" sql-type="nvarchar" length="1000" not-null="false" />
+		</property>
+		<property name="InputUser">
+			<column name="InputUser" sql-type="nvarchar" length="20" not-null="false" />
+		</property>
+		<property name="InputDate">
+			<column name="InputDate" sql-type="datetime" not-null="false" />
+		</property>
+	</class>
+</hibernate-mapping>

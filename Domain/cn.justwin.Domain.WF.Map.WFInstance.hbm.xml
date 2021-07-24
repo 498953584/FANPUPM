@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="WFInstance" table="WF_Instance" lazy="true" >
+    <id name="NoteID">
+      <column name="NoteID" sql-type="int" not-null="true" />
+			<generator class="identity" />
+    </id>
+    <property name="ID">
+      <column name="ID" sql-type="int" not-null="false" />
+    </property>
+    <property name="NodeID">
+      <column name="NodeID" sql-type="int" not-null="false" />
+    </property>
+    <property name="NodeName">
+      <column name="NodeName" sql-type="varchar"  length="50" not-null="false" />
+    </property>
+    <property name="Operator">
+      <column name="Operator" sql-type="varchar" length="8" not-null="false" />
+    </property>
+    <property name="TheOrder">
+      <column name="TheOrder" sql-type="decimal" not-null="false" />
+    </property>
+    <property name="Sing">
+      <column name="Sing" sql-type="int" not-null="false" />
+    </property>
+    <property name="AuditDate">
+      <column name="AuditDate" sql-type="datetime" not-null="false" />
+    </property>
+    <property name="AuditResult">
+      <column name="AuditResult" sql-type="int" not-null="false" />
+    </property>
+    <property name="AuditInfo">
+      <column name="AuditInfo" sql-type="varchar" length="2000" not-null="false" />
+    </property>
+    <property name="IsSendMsg">
+      <column name="IsSendMsg" sql-type="char" not-null="false" />
+    </property>
+    <property name="IsAllPass">
+      <column name="IsAllPass" sql-type="char" not-null="false" />
+    </property>
+    <property name="ArriveTime">
+      <column name="ArriveTime" sql-type="datetime" not-null="false" />
+    </property>
+    <property name="During">
+      <column name="During" sql-type="int" not-null="false" />
+    </property>
+    <property name="OutOfTime">
+      <column name="OutOfTime" sql-type="datetime" not-null="false" />
+    </property>
+    <property name="IsInsertedFrontNode">
+      <column name="IsInsertedFrontNode" sql-type="char" not-null="false" />
+    </property>
+    <property name="AuditRemark">
+      <column name="AuditRemark" sql-type="varchar" length="2000" not-null="false" />
+    </property>
+  </class>
+</hibernate-mapping>

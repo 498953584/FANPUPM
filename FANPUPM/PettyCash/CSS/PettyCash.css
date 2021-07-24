@@ -1,0 +1,85 @@
+﻿.tab2
+{
+	border: 2px solid Black;
+	text-align: center;
+	margin: 0 auto;
+	width: 670px;
+}
+
+.tab2 tr, .tab2 th
+{
+	border: 1px solid Black;
+	height: 25px;
+}
+
+.tab2 td, .tab2 td
+{
+	padding-left: 5px;
+	border: 1px solid Black;
+	text-align: left;
+}
+
+.tab2 input[type=text]
+{
+	width: 200px;
+	border: none;
+	padding-bottom: 0px;
+}
+
+.tab2 textarea
+{
+	border: none;
+	width: 99%;
+}
+
+.descTd
+{
+	width: 110px;
+}
+
+.inputTd
+{
+	width: 221px;
+}
+
+.descTd span
+{
+	margin: 0px;
+	color: Red;
+}
+
+.tabHeader
+{
+	border: none;
+	text-align: center;
+	margin: 0 auto;
+	width: 670px;
+}
+
+.tabHeader tr
+{
+	height: 25px;
+}
+
+.tabHeader input[type=text]
+{
+	border: none;
+	width: 200px;
+}
+
+#gvwPettyCash
+{
+	border-top: none;
+}
+
+.title
+{
+	font-size: 22px;
+	font-weight: bold;
+}
+
+
+#tabAudit tr
+{
+	height: 80px;
+}

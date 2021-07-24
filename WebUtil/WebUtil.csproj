@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>7.10.3077</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{96D4E6DD-FDBD-4F0C-A1E6-899E47AB2BD0}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon />
+    <AssemblyKeyContainerName />
+    <AssemblyName>WebUtil</AssemblyName>
+    <AssemblyOriginatorKeyFile />
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>WebUtil</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject />
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>0.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile />
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile />
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn />
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile />
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile />
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn />
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\lib\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Jint">
+      <HintPath>..\lib\Jint.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\lib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Memcached.ClientLibrary">
+      <HintPath>..\lib\Memcached.ClientLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib">
+      <Name>mscorlib</Name>
+      <HintPath>mscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+      <HintPath>System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Name>System.Configuration</Name>
+      <HintPath>System.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <Name>System.Core</Name>
+      <HintPath>System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+      <HintPath>System.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <Name>System.Runtime.Serialization</Name>
+      <HintPath>System.Runtime.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+      <HintPath>System.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.Xml</Name>
+      <HintPath>System.Xml.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="cn.justwin.Excel\ExcelUtility.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.pdf\PDFService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.pdf\Point.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Serialize\ISerializable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Serialize\JsonSerializer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Serialize\XmlSerializer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Web\Annex.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Web\CacheHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Web\CalculatorHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Web\ConfigHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Web\CsvHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Web\DateTimeHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Web\DecimalUtility.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Web\DirectoryUtility.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Web\DropDownlistUtil.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Web\FileHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Web\JwDebug.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Web\Log4netHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Web\MailUtility.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Web\RTXUtility.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Web\SelectInput.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Web\SharpZipLibWrap.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Web\StringHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MyWebsite\StopAppDomainRestartOnFolderDeleteModule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="cn.justwin.Web.CSS.style.css" />
+    <EmbeddedResource Include="cn.justwin.Web.Img.Popup_icon.bmp" />
+    <EmbeddedResource Include="cn.justwin.Web.Js.SelectInput.js" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent />
+    <PostBuildEvent />
+  </PropertyGroup>
+</Project>

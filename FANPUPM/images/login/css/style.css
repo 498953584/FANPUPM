@@ -1,0 +1,72 @@
+@charset "utf-8";
+/* CSS Document */
+body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div{margin:0;padding:0;border:0;}
+body{ margin:0px; padding:0px;
+ background-color:#ebebeb;
+ font-family:"宋体"; font-size:12px;}
+ #container{ margin:100px auto; padding:0;
+            width:644px; height:389px;}
+#header{ float:left;
+         margin:0px; padding:0px;
+         width:644px; height:142px;}
+#pagebody-1{ float:left;
+             margin:0px; padding:0px;
+			 width:644px; height:177px;}
+#leftbody{ float:left;
+           margin:0px; padding:0px;
+		   width:337px; height:177px;}
+#rightbody{ float:left;
+           margin:0px; padding:0px;
+		   width:307px; height:177px;
+		   background-image:url(/images/login/imgs/huadong03.jpg);
+		   background-repeat:no-repeat;}
+#username{ float:left;
+           margin:0px; padding:0px;
+		   width:213px; height:85px;}
+#username ul{ float:left;
+              margin-top:25px; padding:0px;
+			  list-style:none; 
+			  width:213px; height:55px;
+			  text-align:center;}
+#username ul li{ float:right;
+                display:inline;
+                 margin:0px; padding:0px;
+				 font:12px 宋体; color:#000000;
+				 width:200px; height:25px;
+				 }	
+.name{border:1px #5b5b5b solid;width:120px;height:16px; float:right;}
+.yhm{width:55px; display:inline; float:left; height:18px; line-height:20px; margin-left:10px;}
+#button-1{ float:left; margin:0px; padding:0px;
+             width:213px; height:37px;
+			 vertical-align:middle;}
+#button-1 ul{float:left; display:inline; margin-left:16px!important; padding:0px;
+             width:213px; height:37px;
+			 list-style:none;}
+#button-1 ul li{ float:right; display:inline; margin-top:5px;padding-left:5px; width:86px; height:20px; vertical-align:middle;
+                  font-size:12px; color:#5b5b5b;}
+#button-1 input{margin:0; padding:0; height:20px; vertical-align:middle;}
+#button{ float:left;
+         margin-top:5px; padding:0px;
+		 width:213px; height:26px; text-align:center;}
+#button ul{ float:right; margin:0px; padding:0px; width:213px; height:26px; list-style:none;}	
+#button ul li{float:right;
+              margin-left:10px;
+              padding:0px;
+             width:52px; height:26px;
+			font-size:12px; color:#000000;  
+				 }	
+
+
+#footer-1{ float:left;
+         margin:0px; padding:0px;
+		 width:644px; height:70px;
+		 background-image:url(/images/login/imgs/huadong_04.jpg);
+		 background-repeat:no-repeat;}
+#footer-1 p{ float:right;
+             display:inline;
+             margin:0px; padding-top:17px;
+			 width:307px; height:25px;
+			 font-size:12px; color:#666666;}			 
+
+
+

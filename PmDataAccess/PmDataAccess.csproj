@@ -1,0 +1,1043 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>7.10.3077</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C88C8762-F698-44DE-B4D5-0C599D2B9278}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon />
+    <AssemblyKeyContainerName />
+    <AssemblyName>PmDataAccess</AssemblyName>
+    <AssemblyOriginatorKeyFile />
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>PmDataAccess</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject />
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>0.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>发布\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile />
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile />
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn />
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile />
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile />
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn />
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib">
+      <Name>mscorlib</Name>
+      <HintPath>mscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+      <HintPath>System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Name>System.Configuration</Name>
+      <HintPath>System.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <Name>System.Core</Name>
+      <HintPath>System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+      <HintPath>System.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Entity">
+      <Name>System.Data.Entity</Name>
+      <HintPath>System.Data.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <Name>System.Runtime.Serialization</Name>
+      <HintPath>System.Runtime.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.Xml</Name>
+      <HintPath>System.Xml.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountManage.DAL\fund_accountInfoAccess.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AccountManage.DAL\fund_AccountOperateAcccess.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AccountManage.DAL\fund_ReqinfoAccess.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AccountManage.Model\fund_accountInfoModle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AccountManage.Model\fund_AccountOperateModle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AccountManage.Model\fund_ReqinfoModle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="cn.justwin.AccountManage.accBaise\basieModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.AccountManage.prjaccount\prjaccount.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.AccountManage.prjaccount\prjaccountModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.AccountManage\fund_baise.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractDAL\Config.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractDAL\ContractPayend.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractDAL\ContractType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractDAL\IncomentPaymentApply.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractDAL\IncometBalance.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractDAL\IncometContract.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractDAL\IncometInvoice.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractDAL\IncometModify.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractDAL\IncometPayment.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractDAL\InvoiceType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractDAL\PayendFeedback.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractDAL\PaymentTarget.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractDAL\PayoutBalance.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractDAL\PayoutContract.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractDAL\PayoutInvoice.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractDAL\PayoutModify.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractDAL\PayoutPayment.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractDAL\PayoutTarget.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractModel\ConfigModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractModel\ContractPayendModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractModel\ContractTypeModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractModel\IncomentPaymentApplyModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractModel\IncometBalanceModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractModel\IncometContractModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractModel\IncometInvoiceModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractModel\IncometModifyModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractModel\IncometPaymentModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractModel\InvoiceTypeInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractModel\PayendFeedbackModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractModel\PaymentTargetModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractModel\PayoutBalanceModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractModel\PayoutContractModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractModel\PayoutInvoiceInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractModel\PayoutModifyModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractModel\PayoutPaymentModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractModel\PayoutTargetModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\Basic_CodeList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\Basic_CodeType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\Basic_ContactInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\Basic_Privilege.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\Bud_ConsReport.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\Bud_ConsTask.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\Bud_ConsTaskRes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\Bud_ContractResource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\Bud_ContractTask.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\Bud_ContractTaskAudit.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\Bud_CostAccounting.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\Bud_IndirectBudget.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\Bud_IndirectDiaryCost.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\Bud_IndirectDiaryDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\Bud_IndirectMonthBudget.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\Bud_OrganizationBudget.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\Bud_OrganizationMonthBudget.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\Bud_OrgDiaryCost.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\Bud_OrgDiaryDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\Bud_PrjTaskInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\Bud_Task.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\Bud_TaskChange.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\Bud_TaskResource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\Bud_Template.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\Bud_TemplateItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\Bud_TemplateResource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\Bud_TemplateType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\ConstructOrganizeService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\DB2SqlHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\DBHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\Department.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\plus_progress.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\plus_progress_privilege.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\plus_progress_version.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\plus_report.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\plus_reportDetail.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\pm2Entities.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\PT_d_bm.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\PT_PrjInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\PT_PrjInfo_EngineeringType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\PT_PrjInfo_Kind.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\PT_PrjInfo_Rank.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\PT_PrjInfo_ZTB.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\PT_PrjInfo_ZTB_Detail.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\PT_PrjInfo_ZTB_Stock.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\PT_PrjInfo_ZTB_User.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\PT_PrjMember.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\PT_Prj_Completed.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\PT_Prj_Completed_Annex.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\PT_Prj_Completed_Detail.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\PT_Warning.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\PT_yhmc.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\Res_Attribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\Res_Price.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\Res_PriceType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\Res_Resource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\Res_ResourceTemp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\Res_ResourceType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\Res_Template.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\Res_TemplateItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\Res_Unit.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\SqlHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\vGetCurBudVersion.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\vSupplierProject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\V_PCSupplier.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\v_pt_d_bm.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\XPM_Basic_CodeList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\XPM_Basic_CodeType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.DAL\XPM_Basic_ContactCorp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Ent_Ept_EquipmentsDAL\EquipmentsDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Ent_Ept_Equipments\EquipmentsModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.epm.datum\CriterionService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.epm.datum\datumClassModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.epm.datum\datumClassService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.epm.datum\DatumModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.epm.datum\DatumService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.epm.datum\DautmCriterion.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.epm.prog\progModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.epm.prog\progService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.fileInfoDal\FileInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.fileInfoDal\FileType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.fileInfoDal\PersonalFile.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.fileInfoModel\FileInfoModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.fileInfoModel\FileTypeModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.fileInfoModel\PersonalFileModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Files\filesModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Files\filesService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Files\fileTypeService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Fund.AccounIncome.Dal\AccounIncomeServer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Fund.AccounIncome.Model\AccounIncomeModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Fund.AccounPayout.Dal\AccounPayoutDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Fund.AccounPayout.Model\AccounPayoutModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Fund.Account\AccounModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Fund.Account\AccountService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Fund.Account\ActivityModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Fund.FundConfig\configDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Fund.FundConfig\configModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Fund.FundConfig\configPName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Fund.MonthPlan\MonthDetailModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Fund.MonthPlan\MonthDetailService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Fund.PlanSummary.DAL\PlanSummaryDetailDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Fund.PlanSummary.DAL\PlanSummaryMainDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Fund.PlanSummary.Model\PlanSummaryDetail.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Fund.PlanSummary.Model\PlanSummaryMain.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Fund.PrjLoad\PrjLoadModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Fund.PrjLoad\PrjLoadService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Fund.prjReturn\prjReturnDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Fund.prjReturn\PrjReturnModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Fund.RequestPayment.DAL\RequestPayDetailService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Fund.RequestPayment.DAL\RequestPayMainService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Fund.RequestPayment.Model\RequestPayDetailModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Fund.RequestPayment.Model\RequestPayMainModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Model\DepartmentInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.opm.BuildDiary\BuildDiaryAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.opm.BuildDiary\BuildDiaryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.opm.BuildDiary\BuildDiary_mxAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.opm.BuildDiary\BuildDiary_mxModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.opm.Public\GridViewStringSub.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.popupDAL\PopupRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.popupDAL\PopupSetting.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.popupModel\PopupRecordInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.prj\TechnologyTellModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.prj\TechnologyTellService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.resourceDAL\PriceType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.resourceDAL\Resource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.salaryDAL\Formula.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.salaryDAL\MonthSalary.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.salaryDAL\SalaryDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.salaryDAL\SalaryTemplate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.salaryDAL\TaxStartPoint.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.salaryDAL\UserSalaryItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.salarykDAL\SamTemplateItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.salarykDAL\SetSalary.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.salaryModel\FormulaModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.salaryModel\MonthSalaryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.salaryModel\SalaryDetailsModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.salaryModel\SalaryTemplateModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.salaryModel\SamTemplateItemModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.salaryModel\SetSalaryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.salaryModel\TaxStartPointModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.salaryModel\UserSalaryItemModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\ContractMain.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockDAL.PTBULLETINMAIN\PTBulletinMain.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockDAL.PTBULLETINMAIN\PTBulletinMainModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockDAL\AlarmNum.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockDAL\AllocationAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockDAL\AllocationModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockDAL\AllocationStockModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockDAL\AnnexList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockDAL\AnnexSettings.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockDAL\BackStock.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockDAL\BalanceStock.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockDAL\basicSetDal.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockDAL\EPMTaskResource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockDAL\IEPInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockDAL\IEPInfoModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockDAL\InExPlan.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockDAL\InExPlanModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockDAL\MaterialBack.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockDAL\MaterialWantPlan.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockDAL\MeterialPlanStock.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockDAL\ModifyStock.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockDAL\OutReserve.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockDAL\OutStock.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockDAL\PrjInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockDAL\PTbdmService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockDAL\PTDbsj.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockDAL\PTDRoleService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockDAL\PtdutyService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockDAL\PtYhmcService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockDAL\Purchase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockDAL\PurchaseStock.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockDAL\receiveNoteDal.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockDAL\Refunding.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockDAL\ResourceEdit.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockDAL\ResourcePTAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockDAL\ResourceSelectAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockDAL\ResourceTypeAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockDAL\SendGoods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockDAL\SendNote.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockDAL\SmPurchaseplan.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockDAL\SmPurchaseplanStock.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockDAL\SmWastage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockDAL\SmWastageStock.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockDAL\sm_receiveGoods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockDAL\Stocktake.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockDAL\StocktakeDetail.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockDAL\Storage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockDAL\StorageStock.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockDAL\Treasury.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockDAL\TreasuryPermitService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockDAL\TreasuryStock.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockModel\AlarmNumModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockModel\AnnexListModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockModel\AnnexSettingsModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockModel\BackStockModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockModel\BalanceStockModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockModel\basicSetModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockModel\ContractMainModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockModel\EPMTaskResourceModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockModel\MaterialBackModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockModel\MaterialPlanStockModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockModel\MaterialWantPlanModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockModel\ModifyStockModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockModel\OutReserveModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockModel\OutStockModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockModel\PrjInfoModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockModel\PTbdm.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockModel\PTDbsjModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockModel\PTDRole.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockModel\Ptduty.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockModel\PtYhmc.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockModel\PurchaseModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockModel\PurchaseStockModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockModel\receiveGoods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockModel\RefundingModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockModel\ResourceGaugeModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockModel\ResourceModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockModel\ResourceNewPriceModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockModel\ResourcePriceModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockModel\ResourcePTModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockModel\ResourceStyle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockModel\ResourceType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockModel\SendGoodsModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockModel\SendNodteModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockModel\SmPurchaseplanModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockModel\SmPurchaseplanStockModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockModel\SmWastageModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockModel\SmWastageStockModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockModel\sm_receiveNote.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockModel\StocktakeDetailModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockModel\StocktakeModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockModel\StorageModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockModel\StorageStockModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockModel\TreasuryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockModel\TreasuryPermit.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockModel\TreasuryStockModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.TableTopDAL\DesktopDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.TableTopDAL\DeskTopDalModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.TableTopDAL\Desktop_Weblink.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.TableTopDAL\menuModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.VehiclesDAL\InsuranceAndReviewService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.VehiclesDAL\MainService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.VehiclesDAL\ReimbursementService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.VehiclesDAL\TypeAndStateService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.VehiclesModel\InsuranceAndReviewModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.VehiclesModel\MainModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.VehiclesModel\Reimbursement.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.VehiclesModel\TypeAndState.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.XPMBasicContactCorp\BasicContactCorp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.XPMBasicContactCorp\BasicContactCorpModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="DAL.Pm2.csdl" />
+    <EmbeddedResource Include="DAL.Pm2.msl" />
+    <EmbeddedResource Include="DAL.Pm2.ssdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Business\Business.csproj">
+      <Project>{e252310c-7562-46e9-98f9-7b726d984a8d}</Project>
+      <Name>Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebUtil\WebUtil.csproj">
+      <Project>{96d4e6dd-fdbd-4f0c-a1e6-899e47ab2bd0}</Project>
+      <Name>WebUtil</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent />
+    <PostBuildEvent />
+  </PropertyGroup>
+</Project>

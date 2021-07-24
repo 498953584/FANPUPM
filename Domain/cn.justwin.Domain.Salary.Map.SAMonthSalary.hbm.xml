@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="SAMonthSalary" table="SA_MonthSalary" lazy="true" >
+    <id name="Id" column="Id"></id>
+    <property name="UserCode" type="String">
+      <column name="UserCode" sql-type="varchar" length="8" not-null="true" />
+    </property>
+    <property name="Year" type="int">
+      <column name="Year" sql-type="int" not-null="true" />
+    </property>
+    <property name="Month" type="int">
+      <column name="Month" sql-type="int" not-null="true" />
+    </property>
+    <property name="ItemId" type="String">
+      <column name="ItemId" sql-type="nvarchar" length="200" not-null="true" />
+    </property>
+    <property name="Cost" type="Decimal">
+      <column name="Cost" sql-type="decimal" not-null="true" />
+    </property>
+  </class>
+</hibernate-mapping>

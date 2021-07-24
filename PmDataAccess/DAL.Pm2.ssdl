@@ -1,0 +1,1926 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Pm2Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="Pm2ModelStoreContainer">
+    <EntitySet Name="Basic_CodeList" EntityType="Pm2Model.Store.Basic_CodeList" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Basic_CodeType" EntityType="Pm2Model.Store.Basic_CodeType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Basic_ContactInfo" EntityType="Pm2Model.Store.Basic_ContactInfo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Basic_Privilege" EntityType="Pm2Model.Store.Basic_Privilege" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Bud_ConsReport" EntityType="Pm2Model.Store.Bud_ConsReport" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Bud_ConsTask" EntityType="Pm2Model.Store.Bud_ConsTask" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Bud_ConsTaskRes" EntityType="Pm2Model.Store.Bud_ConsTaskRes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Bud_ContractResource" EntityType="Pm2Model.Store.Bud_ContractResource" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Bud_ContractTask" EntityType="Pm2Model.Store.Bud_ContractTask" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Bud_ContractTaskAudit" EntityType="Pm2Model.Store.Bud_ContractTaskAudit" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Bud_CostAccounting" EntityType="Pm2Model.Store.Bud_CostAccounting" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Bud_IndirectBudget" EntityType="Pm2Model.Store.Bud_IndirectBudget" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Bud_IndirectDiaryCost" EntityType="Pm2Model.Store.Bud_IndirectDiaryCost" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Bud_IndirectDiaryDetails" EntityType="Pm2Model.Store.Bud_IndirectDiaryDetails" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Bud_IndirectMonthBudget" EntityType="Pm2Model.Store.Bud_IndirectMonthBudget" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Bud_OrganizationBudget" EntityType="Pm2Model.Store.Bud_OrganizationBudget" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Bud_OrganizationMonthBudget" EntityType="Pm2Model.Store.Bud_OrganizationMonthBudget" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Bud_OrgDiaryCost" EntityType="Pm2Model.Store.Bud_OrgDiaryCost" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Bud_OrgDiaryDetails" EntityType="Pm2Model.Store.Bud_OrgDiaryDetails" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Bud_PrjTaskInfo" EntityType="Pm2Model.Store.Bud_PrjTaskInfo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Bud_Task" EntityType="Pm2Model.Store.Bud_Task" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Bud_TaskChange" EntityType="Pm2Model.Store.Bud_TaskChange" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Bud_TaskResource" EntityType="Pm2Model.Store.Bud_TaskResource" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Bud_Template" EntityType="Pm2Model.Store.Bud_Template" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Bud_TemplateItem" EntityType="Pm2Model.Store.Bud_TemplateItem" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Bud_TemplateResource" EntityType="Pm2Model.Store.Bud_TemplateResource" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Bud_TemplateType" EntityType="Pm2Model.Store.Bud_TemplateType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="plus_BackProject" EntityType="Pm2Model.Store.plus_BackProject" store:Type="Tables" store:Schema="dbo" store:Name="plus_BackProject">
+      <DefiningQuery>
+							SELECT
+							[plus_BackProject].[ProjectGuid] AS [ProjectGuid],
+							[plus_BackProject].[Start] AS [Start],
+							[plus_BackProject].[Finish] AS [Finish],
+							[plus_BackProject].[Calendars] AS [Calendars],
+							[plus_BackProject].[Version] AS [Version]
+							FROM [dbo].[plus_BackProject] AS [plus_BackProject]
+						</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="plus_progress" EntityType="Pm2Model.Store.plus_progress" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="plus_progress_privilege" EntityType="Pm2Model.Store.plus_progress_privilege" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="plus_progress_version" EntityType="Pm2Model.Store.plus_progress_version" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="plus_report" EntityType="Pm2Model.Store.plus_report" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="plus_reportDetail" EntityType="Pm2Model.Store.plus_reportDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PT_d_bm" EntityType="Pm2Model.Store.PT_d_bm" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PT_Prj_Completed" EntityType="Pm2Model.Store.PT_Prj_Completed" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PT_Prj_Completed_Annex" EntityType="Pm2Model.Store.PT_Prj_Completed_Annex" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PT_Prj_Completed_Detail" EntityType="Pm2Model.Store.PT_Prj_Completed_Detail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PT_PrjInfo" EntityType="Pm2Model.Store.PT_PrjInfo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PT_PrjInfo_EngineeringType" EntityType="Pm2Model.Store.PT_PrjInfo_EngineeringType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PT_PrjInfo_Kind" EntityType="Pm2Model.Store.PT_PrjInfo_Kind" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PT_PrjInfo_Rank" EntityType="Pm2Model.Store.PT_PrjInfo_Rank" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PT_PrjInfo_ZTB" EntityType="Pm2Model.Store.PT_PrjInfo_ZTB" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PT_PrjInfo_ZTB_Detail" EntityType="Pm2Model.Store.PT_PrjInfo_ZTB_Detail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PT_PrjInfo_ZTB_Stock" EntityType="Pm2Model.Store.PT_PrjInfo_ZTB_Stock" store:Type="Tables" store:Schema="dbo" store:Name="PT_PrjInfo_ZTB_Stock">
+      <DefiningQuery>
+							SELECT
+							[PT_PrjInfo_ZTB_Stock].[PrjGuid] AS [PrjGuid],
+							[PT_PrjInfo_ZTB_Stock].[grade] AS [grade],
+							[PT_PrjInfo_ZTB_Stock].[businessman] AS [businessman],
+							[PT_PrjInfo_ZTB_Stock].[telephone] AS [telephone]
+							FROM [dbo].[PT_PrjInfo_ZTB_Stock] AS [PT_PrjInfo_ZTB_Stock]
+						</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="PT_PrjInfo_ZTB_User" EntityType="Pm2Model.Store.PT_PrjInfo_ZTB_User" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PT_PrjMember" EntityType="Pm2Model.Store.PT_PrjMember" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PT_Warning" EntityType="Pm2Model.Store.PT_Warning" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PT_yhmc" EntityType="Pm2Model.Store.PT_yhmc" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Res_Attribute" EntityType="Pm2Model.Store.Res_Attribute" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Res_Price" EntityType="Pm2Model.Store.Res_Price" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Res_PriceType" EntityType="Pm2Model.Store.Res_PriceType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Res_Resource" EntityType="Pm2Model.Store.Res_Resource" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Res_ResourceTemp" EntityType="Pm2Model.Store.Res_ResourceTemp" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Res_ResourceType" EntityType="Pm2Model.Store.Res_ResourceType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Res_Template" EntityType="Pm2Model.Store.Res_Template" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Res_TemplateItem" EntityType="Pm2Model.Store.Res_TemplateItem" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Res_Unit" EntityType="Pm2Model.Store.Res_Unit" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="XPM_Basic_CodeList" EntityType="Pm2Model.Store.XPM_Basic_CodeList" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="XPM_Basic_CodeType" EntityType="Pm2Model.Store.XPM_Basic_CodeType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="XPM_Basic_ContactCorp" EntityType="Pm2Model.Store.XPM_Basic_ContactCorp" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="V_PCSupplier" EntityType="Pm2Model.Store.V_PCSupplier" store:Type="Views" store:Schema="dbo" store:Name="V_PCSupplier">
+      <DefiningQuery>
+							SELECT
+							[V_PCSupplier].[SupplierId] AS [SupplierId],
+							[V_PCSupplier].[ProjectId] AS [ProjectId]
+							FROM [dbo].[V_PCSupplier] AS [V_PCSupplier]
+						</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="v_pt_d_bm" EntityType="Pm2Model.Store.v_pt_d_bm" store:Type="Views" store:Schema="dbo" store:Name="v_pt_d_bm">
+      <DefiningQuery>
+							SELECT
+							[v_pt_d_bm].[i_bmdm] AS [i_bmdm],
+							[v_pt_d_bm].[i_sjdm] AS [i_sjdm],
+							[v_pt_d_bm].[v_bmbm] AS [v_bmbm],
+							[v_pt_d_bm].[CorpCode] AS [CorpCode],
+							[v_pt_d_bm].[V_BMMC] AS [V_BMMC],
+							[v_pt_d_bm].[v_bmqc] AS [v_bmqc],
+							[v_pt_d_bm].[i_xh] AS [i_xh],
+							[v_pt_d_bm].[v_bmjx] AS [v_bmjx],
+							[v_pt_d_bm].[i_xjbm] AS [i_xjbm],
+							[v_pt_d_bm].[i_jb] AS [i_jb],
+							[v_pt_d_bm].[c_sfyx] AS [c_sfyx],
+							[v_pt_d_bm].[adss] AS [adss],
+							[v_pt_d_bm].[yb] AS [yb],
+							[v_pt_d_bm].[fx] AS [fx]
+							FROM [dbo].[v_pt_d_bm] AS [v_pt_d_bm]
+						</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vGetCurBudVersion" EntityType="Pm2Model.Store.vGetCurBudVersion" store:Type="Views" store:Schema="dbo" store:Name="vGetCurBudVersion">
+      <DefiningQuery>
+							SELECT
+							[vGetCurBudVersion].[TaskChangeId] AS [TaskChangeId],
+							[vGetCurBudVersion].[PrjId] AS [PrjId],
+							[vGetCurBudVersion].[CurVersion] AS [CurVersion]
+							FROM [dbo].[vGetCurBudVersion] AS [vGetCurBudVersion]
+						</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vSupplierProject" EntityType="Pm2Model.Store.vSupplierProject" store:Type="Views" store:Schema="dbo" store:Name="vSupplierProject">
+      <DefiningQuery>
+							SELECT
+							[vSupplierProject].[SupplierId] AS [SupplierId],
+							[vSupplierProject].[ProjectId] AS [ProjectId]
+							FROM [dbo].[vSupplierProject] AS [vSupplierProject]
+						</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__Basic_Cod__TypeC__37A6DD2A" Association="Pm2Model.Store.FK__Basic_Cod__TypeC__37A6DD2A">
+      <End Role="Basic_CodeType" EntitySet="Basic_CodeType" />
+      <End Role="Basic_CodeList" EntitySet="Basic_CodeList" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Bud_ConsT__ConsR__61DC42C1" Association="Pm2Model.Store.FK__Bud_ConsT__ConsR__61DC42C1">
+      <End Role="Bud_ConsReport" EntitySet="Bud_ConsReport" />
+      <End Role="Bud_ConsTask" EntitySet="Bud_ConsTask" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Bud_ConsT__ConsT__65ACD3A5" Association="Pm2Model.Store.FK__Bud_ConsT__ConsT__65ACD3A5">
+      <End Role="Bud_ConsTask" EntitySet="Bud_ConsTask" />
+      <End Role="Bud_ConsTaskRes" EntitySet="Bud_ConsTaskRes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Bud_ConsT__Resou__66A0F7DE" Association="Pm2Model.Store.FK__Bud_ConsT__Resou__66A0F7DE">
+      <End Role="Res_Resource" EntitySet="Res_Resource" />
+      <End Role="Bud_ConsTaskRes" EntitySet="Bud_ConsTaskRes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Bud_Contr__Resou__6F0133B5" Association="Pm2Model.Store.FK__Bud_Contr__Resou__6F0133B5">
+      <End Role="Res_Resource" EntitySet="Res_Resource" />
+      <End Role="Bud_ContractResource" EntitySet="Bud_ContractResource" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Bud_Contr__TaskI__6E0D0F7C" Association="Pm2Model.Store.FK__Bud_Contr__TaskI__6E0D0F7C">
+      <End Role="Bud_ContractTask" EntitySet="Bud_ContractTask" />
+      <End Role="Bud_ContractResource" EntitySet="Bud_ContractResource" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Bud_Indir__InDia__0D85BAD5" Association="Pm2Model.Store.FK__Bud_Indir__InDia__0D85BAD5">
+      <End Role="Bud_IndirectDiaryCost" EntitySet="Bud_IndirectDiaryCost" />
+      <End Role="Bud_IndirectDiaryDetails" EntitySet="Bud_IndirectDiaryDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Bud_Indir__Indir__0801EBA9" Association="Pm2Model.Store.FK__Bud_Indir__Indir__0801EBA9">
+      <End Role="Bud_IndirectBudget" EntitySet="Bud_IndirectBudget" />
+      <End Role="Bud_IndirectMonthBudget" EntitySet="Bud_IndirectMonthBudget" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Bud_Organ__Organ__69D26A44" Association="Pm2Model.Store.FK__Bud_Organ__Organ__69D26A44">
+      <End Role="Bud_OrganizationBudget" EntitySet="Bud_OrganizationBudget" />
+      <End Role="Bud_OrganizationMonthBudget" EntitySet="Bud_OrganizationMonthBudget" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Bud_OrgDi__OrgDi__48C67C34" Association="Pm2Model.Store.FK__Bud_OrgDi__OrgDi__48C67C34">
+      <End Role="Bud_OrgDiaryCost" EntitySet="Bud_OrgDiaryCost" />
+      <End Role="Bud_OrgDiaryDetails" EntitySet="Bud_OrgDiaryDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Bud_OrgDi__OrgId__31B8F9AA" Association="Pm2Model.Store.FK__Bud_OrgDi__OrgId__31B8F9AA">
+      <End Role="PT_d_bm" EntitySet="PT_d_bm" />
+      <End Role="Bud_OrgDiaryCost" EntitySet="Bud_OrgDiaryCost" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Bud_TaskC__Input__292EA0A1" Association="Pm2Model.Store.FK__Bud_TaskC__Input__292EA0A1">
+      <End Role="PT_yhmc" EntitySet="PT_yhmc" />
+      <End Role="Bud_TaskChange" EntitySet="Bud_TaskChange" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Bud_TaskR__Resou__0E8EEDA7" Association="Pm2Model.Store.FK__Bud_TaskR__Resou__0E8EEDA7">
+      <End Role="Res_Resource" EntitySet="Res_Resource" />
+      <End Role="Bud_TaskResource" EntitySet="Bud_TaskResource" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Bud_TaskR__TaskI__0D9AC96E" Association="Pm2Model.Store.FK__Bud_TaskR__TaskI__0D9AC96E">
+      <End Role="Bud_Task" EntitySet="Bud_Task" />
+      <End Role="Bud_TaskResource" EntitySet="Bud_TaskResource" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Bud_Templ__Resou__6D78DDF6" Association="Pm2Model.Store.FK__Bud_Templ__Resou__6D78DDF6">
+      <End Role="Res_Resource" EntitySet="Res_Resource" />
+      <End Role="Bud_TemplateResource" EntitySet="Bud_TemplateResource" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Bud_Templ__Resou__6EAC2DFA" Association="Pm2Model.Store.FK__Bud_Templ__Resou__6EAC2DFA">
+      <End Role="Res_Resource" EntitySet="Res_Resource" />
+      <End Role="Bud_TemplateResource" EntitySet="Bud_TemplateResource" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Bud_Templ__Templ__2611717D" Association="Pm2Model.Store.FK__Bud_Templ__Templ__2611717D">
+      <End Role="Bud_TemplateType" EntitySet="Bud_TemplateType" />
+      <End Role="Bud_Template" EntitySet="Bud_Template" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Bud_Templ__Templ__30E405AB" Association="Pm2Model.Store.FK__Bud_Templ__Templ__30E405AB">
+      <End Role="Bud_Template" EntitySet="Bud_Template" />
+      <End Role="Bud_TemplateItem" EntitySet="Bud_TemplateItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Bud_Templ__Templ__6DB809C1" Association="Pm2Model.Store.FK__Bud_Templ__Templ__6DB809C1">
+      <End Role="Bud_TemplateItem" EntitySet="Bud_TemplateItem" />
+      <End Role="Bud_TemplateResource" EntitySet="Bud_TemplateResource" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PT_Prj_Co__Detai__32CD1974" Association="Pm2Model.Store.FK__PT_Prj_Co__Detai__32CD1974">
+      <End Role="PT_Prj_Completed_Detail" EntitySet="PT_Prj_Completed_Detail" />
+      <End Role="PT_Prj_Completed_Annex" EntitySet="PT_Prj_Completed_Annex" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PT_Prj_Co__Input__2EFC8890" Association="Pm2Model.Store.FK__PT_Prj_Co__Input__2EFC8890">
+      <End Role="PT_yhmc" EntitySet="PT_yhmc" />
+      <End Role="PT_Prj_Completed_Detail" EntitySet="PT_Prj_Completed_Detail" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PT_Prj_Co__Input__5EE0A5DC" Association="Pm2Model.Store.FK__PT_Prj_Co__Input__5EE0A5DC">
+      <End Role="PT_yhmc" EntitySet="PT_yhmc" />
+      <End Role="PT_Prj_Completed" EntitySet="PT_Prj_Completed" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PT_Prj_Co__PrjCo__2D14401E" Association="Pm2Model.Store.FK__PT_Prj_Co__PrjCo__2D14401E">
+      <End Role="PT_Prj_Completed" EntitySet="PT_Prj_Completed" />
+      <End Role="PT_Prj_Completed_Detail" EntitySet="PT_Prj_Completed_Detail" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PT_PrjInf__PrjGu__20E43EBA" Association="Pm2Model.Store.FK__PT_PrjInf__PrjGu__20E43EBA">
+      <End Role="PT_PrjInfo_ZTB_Detail" EntitySet="PT_PrjInfo_ZTB_Detail" />
+      <End Role="PT_PrjInfo_Kind" EntitySet="PT_PrjInfo_Kind" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PT_PrjMem__Membe__40071901" Association="Pm2Model.Store.FK__PT_PrjMem__Membe__40071901">
+      <End Role="PT_yhmc" EntitySet="PT_yhmc" />
+      <End Role="PT_PrjMember" EntitySet="PT_PrjMember" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Res_Attri__Resou__46B34B39" Association="Pm2Model.Store.FK__Res_Attri__Resou__46B34B39">
+      <End Role="Res_ResourceType" EntitySet="Res_ResourceType" />
+      <End Role="Res_Attribute" EntitySet="Res_Attribute" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Res_Price__Price__70A98505" Association="Pm2Model.Store.FK__Res_Price__Price__70A98505">
+      <End Role="Res_PriceType" EntitySet="Res_PriceType" />
+      <End Role="Res_Price" EntitySet="Res_Price" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Res_Price__Resou__6FB560CC" Association="Pm2Model.Store.FK__Res_Price__Resou__6FB560CC">
+      <End Role="Res_Resource" EntitySet="Res_Resource" />
+      <End Role="Res_Price" EntitySet="Res_Price" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Res_Resou__Attri__6BE4CFE8" Association="Pm2Model.Store.FK__Res_Resou__Attri__6BE4CFE8">
+      <End Role="Res_Attribute" EntitySet="Res_Attribute" />
+      <End Role="Res_Resource" EntitySet="Res_Resource" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Res_Resou__Paren__42E2BA55" Association="Pm2Model.Store.FK__Res_Resou__Paren__42E2BA55">
+      <End Role="Res_ResourceType" EntitySet="Res_ResourceType" />
+      <End Role="Res_ResourceType1" EntitySet="Res_ResourceType" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Res_Resou__Resou__69485A5F" Association="Pm2Model.Store.FK__Res_Resou__Resou__69485A5F">
+      <End Role="Res_Resource" EntitySet="Res_Resource" />
+      <End Role="Res_ResourceTemp" EntitySet="Res_ResourceTemp" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Res_Resou__Resou__69FC8776" Association="Pm2Model.Store.FK__Res_Resou__Resou__69FC8776">
+      <End Role="Res_ResourceType" EntitySet="Res_ResourceType" />
+      <End Role="Res_Resource" EntitySet="Res_Resource" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Res_Resou__TaskI__6A3C7E98" Association="Pm2Model.Store.FK__Res_Resou__TaskI__6A3C7E98">
+      <End Role="Bud_Task" EntitySet="Bud_Task" />
+      <End Role="Res_ResourceTemp" EntitySet="Res_ResourceTemp" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Res_Resour__Unit__6AF0ABAF" Association="Pm2Model.Store.FK__Res_Resour__Unit__6AF0ABAF">
+      <End Role="Res_Unit" EntitySet="Res_Unit" />
+      <End Role="Res_Resource" EntitySet="Res_Resource" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Res_Templ__Templ__662BF692" Association="Pm2Model.Store.FK__Res_Templ__Templ__662BF692">
+      <End Role="Res_Template" EntitySet="Res_Template" />
+      <End Role="Res_TemplateItem" EntitySet="Res_TemplateItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_plus_progress_InputUser" Association="Pm2Model.Store.FK_plus_progress_InputUser">
+      <End Role="PT_yhmc" EntitySet="PT_yhmc" />
+      <End Role="plus_progress" EntitySet="plus_progress" />
+    </AssociationSet>
+    <AssociationSet Name="FK_plus_progress_version" Association="Pm2Model.Store.FK_plus_progress_version">
+      <End Role="plus_progress_version" EntitySet="plus_progress_version" />
+      <End Role="plus_report" EntitySet="plus_report" />
+    </AssociationSet>
+    <AssociationSet Name="FK_plus_report" Association="Pm2Model.Store.FK_plus_report">
+      <End Role="plus_report" EntitySet="plus_report" />
+      <End Role="plus_reportDetail" EntitySet="plus_reportDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_privilege_ProgressId" Association="Pm2Model.Store.FK_privilege_ProgressId">
+      <End Role="plus_progress" EntitySet="plus_progress" />
+      <End Role="plus_progress_privilege" EntitySet="plus_progress_privilege" />
+    </AssociationSet>
+    <AssociationSet Name="FK_privilege_UserCode" Association="Pm2Model.Store.FK_privilege_UserCode">
+      <End Role="PT_yhmc" EntitySet="PT_yhmc" />
+      <End Role="plus_progress_privilege" EntitySet="plus_progress_privilege" />
+    </AssociationSet>
+    <AssociationSet Name="FK_progress_version_InputUser" Association="Pm2Model.Store.FK_progress_version_InputUser">
+      <End Role="PT_yhmc" EntitySet="PT_yhmc" />
+      <End Role="plus_progress_version" EntitySet="plus_progress_version" />
+    </AssociationSet>
+    <AssociationSet Name="FK_progress_version_ProgressId" Association="Pm2Model.Store.FK_progress_version_ProgressId">
+      <End Role="plus_progress" EntitySet="plus_progress" />
+      <End Role="plus_progress_version" EntitySet="plus_progress_version" />
+    </AssociationSet>
+    <AssociationSet Name="用户-部门" Association="Pm2Model.Store.用户-部门">
+      <End Role="PT_d_bm" EntitySet="PT_d_bm" />
+      <End Role="PT_yhmc" EntitySet="PT_yhmc" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Basic_CodeList">
+    <Key>
+      <PropertyRef Name="TypeCode" />
+      <PropertyRef Name="ItemCode" />
+    </Key>
+    <Property Name="TypeCode" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="ItemCode" Type="int" Nullable="false" />
+    <Property Name="ItemName" Type="nvarchar" Nullable="false" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Basic_CodeType">
+    <Key>
+      <PropertyRef Name="TypeCode" />
+    </Key>
+    <Property Name="TypeCode" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="TypeName" Type="nvarchar" Nullable="false" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Basic_ContactInfo">
+    <Key>
+      <PropertyRef Name="ContactInfoId" />
+    </Key>
+    <Property Name="ContactInfoId" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="RelationsKey" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="ContactPerson" Type="nvarchar" MaxLength="200" />
+    <Property Name="Telephone" Type="nvarchar" MaxLength="200" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="200" />
+    <Property Name="Email" Type="nvarchar" MaxLength="200" />
+    <Property Name="ZipCode" Type="nvarchar" MaxLength="200" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="200" />
+    <Property Name="Address" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Type" Type="nvarchar" MaxLength="20" />
+    <Property Name="OrderNumber" Type="int" Nullable="false" />
+    <Property Name="Note" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Basic_Privilege">
+    <Key>
+      <PropertyRef Name="PrivilegeId" />
+    </Key>
+    <Property Name="PrivilegeId" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="RelationsTable" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="RelationsKey" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="UserCode" Type="varchar" Nullable="false" MaxLength="8" />
+  </EntityType>
+  <EntityType Name="Bud_ConsReport">
+    <Key>
+      <PropertyRef Name="ConsReportId" />
+    </Key>
+    <Property Name="ConsReportId" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="PrjId" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="InputUser" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="InputDate" Type="datetime" Nullable="false" />
+    <Property Name="WorkCard" Type="nvarchar(max)" />
+    <Property Name="IsValid" Type="bit" />
+    <Property Name="State" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="CancelAuditReason" Type="nvarchar(max)" />
+    <Property Name="CancelReportReason" Type="nvarchar(max)" />
+    <Property Name="FlowState" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Bud_ConsTask">
+    <Key>
+      <PropertyRef Name="ConsTaskId" />
+    </Key>
+    <Property Name="ConsTaskId" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="ConsReportId" Type="nvarchar" MaxLength="500" />
+    <Property Name="TaskId" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="CompleteQuantity" Type="decimal" Nullable="false" Scale="3" />
+    <Property Name="WorkContent" Type="nvarchar(max)" />
+    <Property Name="Note" Type="nvarchar(max)" />
+    <Property Name="AccountingQuantity" Type="decimal" Scale="3" />
+  </EntityType>
+  <EntityType Name="Bud_ConsTaskRes">
+    <Key>
+      <PropertyRef Name="ConsTaskResId" />
+    </Key>
+    <Property Name="ConsTaskResId" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="ConsTaskId" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="ResourceId" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="Quantity" Type="decimal" Nullable="false" Scale="3" />
+    <Property Name="UnitPrice" Type="decimal" Nullable="false" Scale="3" />
+    <Property Name="AccountingQuantity" Type="decimal" Scale="3" />
+    <Property Name="CBSCode" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Bud_ContractResource">
+    <Key>
+      <PropertyRef Name="TaskResourceId" />
+    </Key>
+    <Property Name="TaskResourceId" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="TaskId" Type="nvarchar" MaxLength="500" />
+    <Property Name="ResourceId" Type="nvarchar" MaxLength="500" />
+    <Property Name="ResourceQuantity" Type="decimal" Scale="3" />
+    <Property Name="ResourcePrice" Type="decimal" Scale="3" />
+    <Property Name="InputUser" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="InputDate" Type="datetime" Nullable="false" />
+    <Property Name="PrjGuid" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Bud_ContractTask">
+    <Key>
+      <PropertyRef Name="TaskId" />
+    </Key>
+    <Property Name="TaskId" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="ParentId" Type="nvarchar" MaxLength="500" />
+    <Property Name="OrderNumber" Type="nvarchar" MaxLength="500" />
+    <Property Name="PrjId" Type="nvarchar" MaxLength="500" />
+    <Property Name="TaskCode" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="TaskName" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="Unit" Type="nvarchar" MaxLength="500" />
+    <Property Name="Quantity" Type="decimal" Nullable="false" Scale="3" />
+    <Property Name="UnitPrice" Type="decimal" Scale="3" />
+    <Property Name="Total" Type="decimal" Scale="3" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="EndDate" Type="datetime" />
+    <Property Name="Note" Type="nvarchar(max)" />
+    <Property Name="IsValid" Type="bit" />
+    <Property Name="InputUser" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="InputDate" Type="datetime" Nullable="false" />
+    <Property Name="ConstructionPeriod" Type="int" />
+    <Property Name="TaskType" Type="char" Nullable="false" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="Bud_ContractTaskAudit">
+    <Key>
+      <PropertyRef Name="ContractTaskAuditId" />
+    </Key>
+    <Property Name="ContractTaskAuditId" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="PrjId" Type="nvarchar" MaxLength="200" />
+    <Property Name="PrjName" Type="nvarchar" MaxLength="100" />
+    <Property Name="FlowState" Type="int" />
+    <Property Name="InputDate" Type="datetime" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6035: 关系“FK__Bud_OrgDi__CBSCo__4AAEC4A6”在关系主端上有一些列不属于表的键的一部分。已排除了此关系。
+      警告 6035: 关系“FK_IndirectBud_CostAccounting”在关系主端上有一些列不属于表的键的一部分。已排除了此关系。
+      警告 6035: 关系“FK_IndirectDetails_CostAccounting”在关系主端上有一些列不属于表的键的一部分。已排除了此关系。
+      警告 6035: 关系“FK_OrgBud_CostAccounting”在关系主端上有一些列不属于表的键的一部分。已排除了此关系。
+      -->
+  <EntityType Name="Bud_CostAccounting">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="CBSCode" Type="nvarchar" MaxLength="200" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="Type" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="ResourceType" Type="nvarchar" MaxLength="200" />
+    <Property Name="Note" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Bud_IndirectBudget">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="ProjectId" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="CBSCode" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="BudgetAmount" Type="decimal" Nullable="false" Scale="3" />
+    <Property Name="AccountAmount" Type="decimal" Nullable="false" Scale="3" />
+    <Property Name="State" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="InputUser" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="InputDate" Type="datetime" Nullable="false" />
+    <Property Name="Note" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Bud_IndirectDiaryCost">
+    <Key>
+      <PropertyRef Name="InDiaryId" />
+    </Key>
+    <Property Name="InDiaryId" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="ProjectId" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="Department" Type="nvarchar" MaxLength="200" />
+    <Property Name="IssuedBy" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="FlowState" Type="int" Nullable="false" />
+    <Property Name="InputUser" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="InputDate" Type="datetime" Nullable="false" />
+    <Property Name="IndireCode" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Bud_IndirectDiaryDetails">
+    <Key>
+      <PropertyRef Name="InDiaryDetailsId" />
+    </Key>
+    <Property Name="InDiaryDetailsId" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="InDiaryId" Type="nvarchar" MaxLength="200" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="Amount" Type="decimal" Nullable="false" Scale="3" />
+    <Property Name="CBSCode" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="Note" Type="nvarchar(max)" />
+    <Property Name="IndetailsCode" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Bud_IndirectMonthBudget">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="IndirectBudget" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="Year" Type="int" Nullable="false" />
+    <Property Name="Month" Type="int" Nullable="false" />
+    <Property Name="Amount" Type="decimal" Scale="3" />
+  </EntityType>
+  <EntityType Name="Bud_OrganizationBudget">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="OrganizationBudgetId" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="CBSCode" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="BudgetAmount" Type="decimal" Scale="3" />
+    <Property Name="AccountingAmount" Type="decimal" Scale="3" />
+    <Property Name="State" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="InputUser" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="InputDate" Type="datetime" Nullable="false" />
+    <Property Name="Note" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Bud_OrganizationMonthBudget">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="OrganizationBudget" Type="nvarchar" MaxLength="200" />
+    <Property Name="Year" Type="int" Nullable="false" />
+    <Property Name="Month" Type="int" Nullable="false" />
+    <Property Name="Amount" Type="decimal" Scale="3" />
+  </EntityType>
+  <EntityType Name="Bud_OrgDiaryCost">
+    <Key>
+      <PropertyRef Name="OrgDiaryId" />
+    </Key>
+    <Property Name="OrgDiaryId" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="OrgId" Type="int" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="Department" Type="nvarchar" MaxLength="200" />
+    <Property Name="IssuedBy" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="FlowState" Type="int" Nullable="false" />
+    <Property Name="InputUser" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="InputDate" Type="datetime" Nullable="false" />
+    <Property Name="OrgdiaryCode" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Bud_OrgDiaryDetails">
+    <Key>
+      <PropertyRef Name="OrgDiaryDetailsId" />
+    </Key>
+    <Property Name="OrgDiaryDetailsId" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="OrgDiaryId" Type="nvarchar" MaxLength="200" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="Amount" Type="decimal" Nullable="false" Scale="3" />
+    <Property Name="CBSCode" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="Note" Type="nvarchar(max)" />
+    <Property Name="OrgdetailsCode" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Bud_PrjTaskInfo">
+    <Key>
+      <PropertyRef Name="PrjTaskInfoId" />
+    </Key>
+    <Property Name="PrjTaskInfoId" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="PrjId" Type="nvarchar" MaxLength="500" />
+    <Property Name="IsLocked" Type="bit" />
+    <Property Name="ConFlowState" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Bud_Task">
+    <Key>
+      <PropertyRef Name="TaskId" />
+    </Key>
+    <Property Name="TaskId" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="ParentId" Type="nvarchar" MaxLength="500" />
+    <Property Name="OrderNumber" Type="nvarchar" MaxLength="500" />
+    <Property Name="Version" Type="int" />
+    <Property Name="PrjId" Type="nvarchar" MaxLength="500" />
+    <Property Name="TaskCode" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="TaskName" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="Unit" Type="nvarchar" MaxLength="500" />
+    <Property Name="Quantity" Type="decimal" Scale="2" />
+    <Property Name="UnitPrice" Type="decimal" Scale="3" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="EndDate" Type="datetime" />
+    <Property Name="Note" Type="nvarchar(max)" />
+    <Property Name="IsValid" Type="bit" />
+    <Property Name="InputUser" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="InputDate" Type="datetime" Nullable="false" />
+    <Property Name="Total" Type="decimal" Scale="3" />
+    <Property Name="Modified" Type="nvarchar" MaxLength="200" />
+    <Property Name="Total2" Type="decimal" Scale="3" />
+  </EntityType>
+  <EntityType Name="Bud_TaskChange">
+    <Key>
+      <PropertyRef Name="TaskChangeId" />
+    </Key>
+    <Property Name="TaskChangeId" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="PrjId" Type="nvarchar" MaxLength="200" />
+    <Property Name="Version" Type="int" />
+    <Property Name="VersionCode" Type="nvarchar" MaxLength="200" />
+    <Property Name="FlowState" Type="int" />
+    <Property Name="Note" Type="nvarchar(max)" />
+    <Property Name="InputUser" Type="varchar" MaxLength="8" />
+    <Property Name="InputDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Bud_TaskResource">
+    <Key>
+      <PropertyRef Name="TaskResourceId" />
+    </Key>
+    <Property Name="TaskResourceId" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="TaskId" Type="nvarchar" MaxLength="500" />
+    <Property Name="ResourceId" Type="nvarchar" MaxLength="500" />
+    <Property Name="ResourceQuantity" Type="decimal" Scale="3" />
+    <Property Name="InputUser" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="InputDate" Type="datetime" Nullable="false" />
+    <Property Name="ResourcePrice" Type="decimal" Scale="3" />
+    <Property Name="PrjGuid" Type="nvarchar" MaxLength="500" />
+    <Property Name="Versions" Type="int" />
+    <Property Name="LossCoefficient" Type="decimal" Nullable="true" Scale="4" />
+  </EntityType>
+  <EntityType Name="Bud_Template">
+    <Key>
+      <PropertyRef Name="TemplateId" />
+    </Key>
+    <Property Name="TemplateId" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="TemplateTypeId" Type="nvarchar" MaxLength="500" />
+    <Property Name="TemplateCode" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="TemplateName" Type="nvarchar" Nullable="false" MaxLength="1000" />
+    <Property Name="InputUser" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="InputDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Bud_TemplateItem">
+    <Key>
+      <PropertyRef Name="TemplateItemId" />
+    </Key>
+    <Property Name="TemplateItemId" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="ParentId" Type="nvarchar" MaxLength="500" />
+    <Property Name="TemplateId" Type="nvarchar" MaxLength="500" />
+    <Property Name="ItemCode" Type="nvarchar" MaxLength="500" />
+    <Property Name="ItemName" Type="nvarchar" MaxLength="500" />
+    <Property Name="OrderNumber" Type="nvarchar" MaxLength="500" />
+    <Property Name="Unit" Type="nvarchar" MaxLength="500" />
+    <Property Name="Quantity" Type="decimal" Nullable="false" Scale="3" />
+    <Property Name="UnitPrice" Type="decimal" Scale="3" />
+    <Property Name="Note" Type="nvarchar(max)" />
+    <Property Name="FeatureDescription" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Bud_TemplateResource">
+    <Key>
+      <PropertyRef Name="TemplateResourceId" />
+    </Key>
+    <Property Name="TemplateResourceId" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="TemplateItemId" Type="nvarchar" MaxLength="500" />
+    <Property Name="ResourceId" Type="nvarchar" MaxLength="500" />
+    <Property Name="ResourceQuantity" Type="decimal" Scale="3" />
+    <Property Name="ResourcePrice" Type="decimal" Scale="3" />
+    <Property Name="InputUser" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="InputDate" Type="datetime" Nullable="false" />
+    <Property Name="LossCoefficient" Type="decimal" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Bud_TemplateType">
+    <Key>
+      <PropertyRef Name="TypeId" />
+    </Key>
+    <Property Name="TypeId" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="TypeCode" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="TypeName" Type="nvarchar" Nullable="false" MaxLength="1000" />
+    <Property Name="InputUser" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="InputDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“pm2_dev.dbo.plus_BackProject”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="plus_BackProject">
+    <Key>
+      <PropertyRef Name="ProjectGuid" />
+      <PropertyRef Name="Start" />
+      <PropertyRef Name="Finish" />
+      <PropertyRef Name="Calendars" />
+    </Key>
+    <Property Name="ProjectGuid" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="Start" Type="datetime" Nullable="false" />
+    <Property Name="Finish" Type="datetime" Nullable="false" />
+    <Property Name="Calendars" Type="varchar(max)" Nullable="false" />
+    <Property Name="Version" Type="int" />
+  </EntityType>
+  <EntityType Name="plus_progress">
+    <Key>
+      <PropertyRef Name="ProgressId" />
+    </Key>
+    <Property Name="ProgressId" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="PrjId" Type="uniqueidentifier" />
+    <Property Name="ProgressName" Type="nvarchar" MaxLength="200" />
+    <Property Name="FlowState" Type="int" />
+    <Property Name="InputUser" Type="varchar" MaxLength="8" />
+    <Property Name="InputDate" Type="datetime" />
+    <Property Name="Note" Type="nvarchar(max)" />
+    <Property Name="IsMain" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="plus_progress_privilege">
+    <Key>
+      <PropertyRef Name="PrivilegeId" />
+    </Key>
+    <Property Name="PrivilegeId" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="ProgressId" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="UserCode" Type="varchar" Nullable="false" MaxLength="8" />
+  </EntityType>
+  <EntityType Name="plus_progress_version">
+    <Key>
+      <PropertyRef Name="ProgressVersionId" />
+    </Key>
+    <Property Name="ProgressVersionId" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="ProgressId" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="ParentVersionId" Type="nvarchar" MaxLength="50" />
+    <Property Name="VersionName" Type="nvarchar" MaxLength="200" />
+    <Property Name="VersionCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="FlowState" Type="int" />
+    <Property Name="IsLatest" Type="bit" />
+    <Property Name="InputUser" Type="varchar" MaxLength="8" />
+    <Property Name="InputDate" Type="datetime" />
+    <Property Name="Note" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="plus_report">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="FlowState" Type="nvarchar" MaxLength="2" />
+    <Property Name="InputDate" Type="datetime" />
+    <Property Name="InputUser" Type="varchar" MaxLength="8" />
+    <Property Name="Note" Type="nvarchar" MaxLength="2000" />
+    <Property Name="ProVersionId" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="plus_reportDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="ReportId" Type="nvarchar" MaxLength="50" />
+    <Property Name="TaskUID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Start" Type="datetime" />
+    <Property Name="Finish" Type="datetime" />
+    <Property Name="Completed" Type="tinyint" />
+    <Property Name="Note" Type="nvarchar" MaxLength="2000" />
+  </EntityType>
+  <EntityType Name="PT_d_bm">
+    <Key>
+      <PropertyRef Name="i_bmdm" />
+    </Key>
+    <Property Name="i_bmdm" Type="int" Nullable="false" />
+    <Property Name="i_sjdm" Type="int" />
+    <Property Name="v_bmbm" Type="varchar" MaxLength="20" />
+    <Property Name="CorpCode" Type="varchar" MaxLength="2" />
+    <Property Name="V_BMMC" Type="varchar" MaxLength="100" />
+    <Property Name="v_bmqc" Type="nvarchar" MaxLength="1500" />
+    <Property Name="i_xh" Type="int" />
+    <Property Name="v_bmjx" Type="varchar" MaxLength="50" />
+    <Property Name="i_xjbm" Type="int" />
+    <Property Name="i_jb" Type="int" />
+    <Property Name="c_sfyx" Type="char" MaxLength="1" />
+    <Property Name="adss" Type="char" MaxLength="100" />
+    <Property Name="yb" Type="char" MaxLength="10" />
+    <Property Name="fx" Type="char" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="PT_Prj_Completed">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="InputUser" Type="varchar" MaxLength="8" />
+    <Property Name="InputDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PT_Prj_Completed_Annex">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="DetailID" Type="nvarchar" MaxLength="200" />
+    <Property Name="AnnexAddress" Type="nvarchar" MaxLength="64" />
+  </EntityType>
+  <EntityType Name="PT_Prj_Completed_Detail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="PrjGuid" Type="uniqueidentifier" />
+    <Property Name="PrjCompletedID" Type="nvarchar" MaxLength="200" />
+    <Property Name="PrepareStatus" Type="nvarchar(max)" />
+    <Property Name="UncompletedTrans" Type="nvarchar(max)" />
+    <Property Name="Rectification" Type="nvarchar(max)" />
+    <Property Name="AnnexAddress" Type="nvarchar" MaxLength="64" />
+    <Property Name="InputUser" Type="varchar" MaxLength="8" />
+    <Property Name="InputDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6035: 关系“FK__PT_Prj_Co__PrjGu__2C201BE5”在关系主端上有一些列不属于表的键的一部分。已排除了此关系。
+      警告 6035: 关系“FK__PT_Prj_Co__PrjGu__4749136D”在关系主端上有一些列不属于表的键的一部分。已排除了此关系。
+      -->
+  <EntityType Name="PT_PrjInfo">
+    <Key>
+      <PropertyRef Name="TypeCode" />
+    </Key>
+    <Property Name="TypeCode" Type="varchar" Nullable="false" MaxLength="24" />
+    <Property Name="i_xh" Type="int" />
+    <Property Name="IsValid" Type="char" MaxLength="1" />
+    <Property Name="UserCode" Type="varchar" MaxLength="8" />
+    <Property Name="RecordDate" Type="datetime" />
+    <Property Name="i_ChildNum" Type="int" />
+    <Property Name="PrjCode" Type="varchar" MaxLength="30" />
+    <Property Name="PrjGuid" Type="uniqueidentifier" />
+    <Property Name="PrjName" Type="nvarchar" MaxLength="100" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="EndDate" Type="datetime" />
+    <Property Name="ComputeClass" Type="varchar" MaxLength="30" />
+    <Property Name="RationClass" Type="varchar" MaxLength="30" />
+    <Property Name="PrjCost" Type="float" />
+    <Property Name="ContractSum" Type="char" MaxLength="10" />
+    <Property Name="Duration" Type="varchar" MaxLength="50" />
+    <Property Name="QualityClass" Type="varchar" MaxLength="30" />
+    <Property Name="Area" Type="varchar" MaxLength="50" />
+    <Property Name="PrjKindClass" Type="varchar" MaxLength="30" />
+    <Property Name="PrjPlace" Type="varchar" MaxLength="100" />
+    <Property Name="Remark1" Type="varchar" MaxLength="4000" />
+    <Property Name="FileName" Type="varchar" MaxLength="200" />
+    <Property Name="FileURL" Type="varchar" MaxLength="100" />
+    <Property Name="Owner" Type="varchar" MaxLength="100" />
+    <Property Name="Counsellor" Type="varchar" MaxLength="100" />
+    <Property Name="Designer" Type="varchar" MaxLength="100" />
+    <Property Name="Inspector" Type="varchar" MaxLength="100" />
+    <Property Name="PrjInfo" Type="varchar" MaxLength="4000" />
+    <Property Name="PrjState" Type="int" />
+    <Property Name="OwnerCode" Type="int" />
+    <Property Name="MarketInfoGuid" Type="uniqueidentifier" />
+    <Property Name="Rank" Type="varchar" MaxLength="50" />
+    <Property Name="BudgetWay" Type="varchar" MaxLength="50" />
+    <Property Name="ContractWay" Type="varchar" MaxLength="50" />
+    <Property Name="PayCondition" Type="varchar" MaxLength="50" />
+    <Property Name="TenderWay" Type="varchar" MaxLength="50" />
+    <Property Name="PayWay" Type="varchar" MaxLength="50" />
+    <Property Name="KeyPart" Type="varchar" MaxLength="50" />
+    <Property Name="WorkUnit" Type="varchar" MaxLength="100" />
+    <Property Name="LinkMan" Type="varchar" MaxLength="50" />
+    <Property Name="PrjManager" Type="varchar" MaxLength="100" />
+    <Property Name="BuildingType" Type="varchar" MaxLength="50" />
+    <Property Name="TotalHouseNum" Type="varchar" MaxLength="50" />
+    <Property Name="BuildingArea" Type="varchar" MaxLength="50" />
+    <Property Name="UsegrounArea" Type="varchar" MaxLength="50" />
+    <Property Name="UndergroundArea" Type="varchar" MaxLength="50" />
+    <Property Name="PrjFundInfo" Type="varchar" MaxLength="500" />
+    <Property Name="OtherStatement" Type="nvarchar(max)" />
+    <Property Name="Podepom" Type="varchar" MaxLength="4000" />
+    <Property Name="IsConfirm" Type="bit" />
+    <Property Name="PrjStateRemark" Type="varchar" MaxLength="500" />
+    <Property Name="xmgroup" Type="varchar" MaxLength="36" />
+    <Property Name="grade" Type="varchar" MaxLength="50" />
+    <Property Name="businessman" Type="varchar" MaxLength="50" />
+    <Property Name="telephone" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PT_PrjInfo_EngineeringType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="PrjGuid" Type="uniqueidentifier" />
+    <Property Name="EngineeringType" Type="nvarchar" MaxLength="20" />
+    <Property Name="EngineeringSubType" Type="int" />
+    <Property Name="Grade" Type="nvarchar" MaxLength="64" />
+  </EntityType>
+  <EntityType Name="PT_PrjInfo_Kind">
+    <Key>
+      <PropertyRef Name="KindId" />
+    </Key>
+    <Property Name="KindId" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="PrjGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PrjKind" Type="nvarchar" MaxLength="200" />
+    <Property Name="ProfessionalCost" Type="decimal" Nullable="false" Scale="3" />
+  </EntityType>
+  <EntityType Name="PT_PrjInfo_Rank">
+    <Key>
+      <PropertyRef Name="RankId" />
+    </Key>
+    <Property Name="RankId" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="PrjGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PrjRank" Type="nvarchar" MaxLength="200" />
+    <Property Name="RankLevel" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="PT_PrjInfo_ZTB">
+    <Key>
+      <PropertyRef Name="PrjGuid" />
+    </Key>
+    <Property Name="PrjCode" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="PrjGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PrjName" Type="nvarchar" MaxLength="100" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="EndDate" Type="datetime" />
+    <Property Name="ComputeClass" Type="varchar" MaxLength="30" />
+    <Property Name="RationClass" Type="varchar" MaxLength="30" />
+    <Property Name="PrjCost" Type="float" />
+    <Property Name="ContractSum" Type="char" MaxLength="10" />
+    <Property Name="Duration" Type="varchar" MaxLength="50" />
+    <Property Name="QualityClass" Type="varchar" MaxLength="30" />
+    <Property Name="Area" Type="varchar" MaxLength="50" />
+    <Property Name="PrjKindClass" Type="varchar" MaxLength="30" />
+    <Property Name="PrjPlace" Type="varchar" MaxLength="100" />
+    <Property Name="Remark" Type="text" />
+    <Property Name="FileName" Type="varchar" MaxLength="200" />
+    <Property Name="FileURL" Type="varchar" MaxLength="100" />
+    <Property Name="Owner" Type="varchar" MaxLength="100" />
+    <Property Name="Counsellor" Type="varchar" MaxLength="100" />
+    <Property Name="Designer" Type="varchar" MaxLength="100" />
+    <Property Name="Inspector" Type="varchar" MaxLength="100" />
+    <Property Name="PrjInfo" Type="text" />
+    <Property Name="PrjState" Type="int" />
+    <Property Name="OwnerCode" Type="int" />
+    <Property Name="MarketInfoGuid" Type="uniqueidentifier" />
+    <Property Name="Rank" Type="varchar" MaxLength="50" />
+    <Property Name="BudgetWay" Type="varchar" MaxLength="50" />
+    <Property Name="ContractWay" Type="varchar" MaxLength="50" />
+    <Property Name="PayCondition" Type="varchar" MaxLength="50" />
+    <Property Name="TenderWay" Type="varchar" MaxLength="50" />
+    <Property Name="PayWay" Type="varchar" MaxLength="50" />
+    <Property Name="KeyPart" Type="varchar" MaxLength="50" />
+    <Property Name="WorkUnit" Type="varchar" MaxLength="200" />
+    <Property Name="LinkMan" Type="varchar" MaxLength="50" />
+    <Property Name="PrjManager" Type="varchar" MaxLength="100" />
+    <Property Name="BuildingType" Type="varchar" MaxLength="50" />
+    <Property Name="TotalHouseNum" Type="varchar" MaxLength="50" />
+    <Property Name="BuildingArea" Type="varchar" MaxLength="50" />
+    <Property Name="UsegrounArea" Type="varchar" MaxLength="50" />
+    <Property Name="UndergroundArea" Type="varchar" MaxLength="50" />
+    <Property Name="PrjFundInfo" Type="varchar" MaxLength="500" />
+    <Property Name="OtherStatement" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="PT_PrjInfo_ZTB_Detail">
+    <Key>
+      <PropertyRef Name="PrjGuid" />
+    </Key>
+    <Property Name="PrjGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ProjPeopleName" Type="nvarchar" MaxLength="200" />
+    <Property Name="ProjPeopleSex" Type="char" MaxLength="1" />
+    <Property Name="ProjPeopleAge" Type="int" />
+    <Property Name="ProjPeopleTel" Type="nvarchar" MaxLength="200" />
+    <Property Name="ProjInfoOrigin" Type="nvarchar(max)" />
+    <Property Name="ProjElseRequest" Type="nvarchar(max)" />
+    <Property Name="ProjApplyDate" Type="datetime" />
+    <Property Name="ProjTenderDate" Type="datetime" />
+    <Property Name="ProjApprovalDate" Type="datetime" />
+    <Property Name="ProjRegistDeadline" Type="int" />
+    <Property Name="ProgAgent" Type="varchar" MaxLength="8" />
+    <Property Name="BuildingTypeNo" Type="int" />
+    <Property Name="ProjStartDate" Type="datetime" />
+    <Property Name="BusinessManager" Type="varchar" MaxLength="8" />
+    <Property Name="ProjStartRemark" Type="nvarchar(max)" />
+    <Property Name="ProjTenderBeginDate" Type="datetime" />
+    <Property Name="TenderCeilingPrice" Type="decimal" Scale="3" />
+    <Property Name="TenderUnit" Type="nvarchar" MaxLength="200" />
+    <Property Name="TenderQuote" Type="decimal" Scale="3" />
+    <Property Name="TenderAppraiseMethod" Type="nvarchar" MaxLength="500" />
+    <Property Name="TenderAverage" Type="decimal" Scale="3" />
+    <Property Name="ProjTenderCostContent" Type="nvarchar" MaxLength="500" />
+    <Property Name="ProjTenderAnswerDate" Type="datetime" />
+    <Property Name="ProjTenderEarnestMoney" Type="decimal" Scale="3" />
+    <Property Name="ProjTenderPayWay" Type="nvarchar" MaxLength="50" />
+    <Property Name="ProjTenderContent" Type="nvarchar" MaxLength="500" />
+    <Property Name="ProjTenderRemark" Type="nvarchar(max)" />
+    <Property Name="SuccessBidDate" Type="datetime" />
+    <Property Name="SuccessBidPrice" Type="decimal" Scale="3" />
+    <Property Name="SuccessBidRemark" Type="nvarchar(max)" />
+    <Property Name="OutBidDate" Type="datetime" />
+    <Property Name="OutBidIsReturn" Type="bit" />
+    <Property Name="OutBidRemark" Type="nvarchar(max)" />
+    <Property Name="ProjFlowSate" Type="int" />
+    <Property Name="EngineeringType" Type="nvarchar" MaxLength="20" />
+    <Property Name="Grade" Type="nvarchar" MaxLength="64" />
+    <Property Name="EngineeringSubType" Type="nvarchar" MaxLength="20" />
+    <Property Name="Telephone" Type="nvarchar" MaxLength="64" />
+    <Property Name="InputDate" Type="datetime" />
+    <Property Name="IsTender" Type="bit" Nullable="false" />
+    <Property Name="InputUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="OwnerLinkMan" Type="nvarchar" MaxLength="30" />
+    <Property Name="OwnerLinkPhone" Type="nvarchar" MaxLength="30" />
+    <Property Name="ActualRunDate" Type="datetime" />
+    <Property Name="PrjDutyPerson" Type="nvarchar" MaxLength="30" />
+    <Property Name="PrjApprovalOf" Type="nvarchar" MaxLength="30" />
+    <Property Name="PrjFundWorkable" Type="nvarchar" MaxLength="200" />
+    <Property Name="ForecastProfitRate" Type="decimal" Scale="3" />
+    <Property Name="ManagementMargin" Type="decimal" Scale="3" />
+    <Property Name="MigrantQualityMarginRate" Type="decimal" Scale="3" />
+    <Property Name="WithholdingTaxRate" Type="decimal" Scale="3" />
+    <Property Name="PerformanceBond" Type="decimal" Scale="3" />
+    <Property Name="ElseMargin" Type="decimal" Scale="3" />
+    <Property Name="EngineeringEstimates" Type="nvarchar" MaxLength="30" />
+    <Property Name="MemberFlowState" Type="int" />
+    <Property Name="CompletedFlowState" Type="int" />
+    <Property Name="CompletedDate" Type="datetime" />
+    <Property Name="ProjPeopleDep" Type="nvarchar" MaxLength="200" />
+    <Property Name="ProjPeopleDuty" Type="nvarchar" MaxLength="200" />
+    <Property Name="OwnerAddress" Type="nvarchar" MaxLength="200" />
+    <Property Name="CompletedNote" Type="nvarchar(max)" />
+    <Property Name="PrjManagerRequire" Type="nvarchar(max)" />
+    <Property Name="TechnicalLeaderRequire" Type="nvarchar(max)" />
+    <Property Name="PrequalificationRequire" Type="nvarchar" MaxLength="200" />
+    <Property Name="QualificationPassDate" Type="datetime" />
+    <Property Name="QualificationPassReason" Type="nvarchar(max)" />
+    <Property Name="QualificationFailData" Type="datetime" />
+    <Property Name="QualificationFailReason" Type="nvarchar(max)" />
+    <Property Name="Province" Type="nvarchar" MaxLength="50" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" />
+    <Property Name="SetUpFlowState" Type="int" />
+    <Property Name="PrjProperty" Type="nvarchar" MaxLength="200" />
+    <Property Name="PrjReadOne" Type="nvarchar" MaxLength="200" />
+    <Property Name="QualificationMargin" Type="decimal" Nullable="false" Scale="3" />
+    <Property Name="QualificationReadOne" Type="nvarchar" MaxLength="200" />
+    <Property Name="TenderProspect" Type="datetime" />
+    <Property Name="TenderReadOne" Type="nvarchar" MaxLength="200" />
+    <Property Name="AfforestArea" Type="nvarchar" MaxLength="200" />
+    <Property Name="ParkArea" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“pm2_dev.dbo.PT_PrjInfo_ZTB_Stock”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="PT_PrjInfo_ZTB_Stock">
+    <Key>
+      <PropertyRef Name="PrjGuid" />
+    </Key>
+    <Property Name="PrjGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="grade" Type="varchar" MaxLength="64" />
+    <Property Name="businessman" Type="varchar" MaxLength="64" />
+    <Property Name="telephone" Type="varchar" MaxLength="64" />
+  </EntityType>
+  <EntityType Name="PT_PrjInfo_ZTB_User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="PrjGuid" Type="uniqueidentifier" />
+    <Property Name="UserCode" Type="varchar" Nullable="false" MaxLength="8" />
+  </EntityType>
+  <EntityType Name="PT_PrjMember">
+    <Key>
+      <PropertyRef Name="PrjMemberId" />
+    </Key>
+    <Property Name="PrjMemberId" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="PrjGuid" Type="uniqueidentifier" />
+    <Property Name="MemberCode" Type="varchar" MaxLength="8" />
+    <Property Name="InputDate" Type="datetime" />
+    <Property Name="Post" Type="nvarchar" MaxLength="200" />
+    <Property Name="EducationalBackground" Type="nvarchar" MaxLength="200" />
+    <Property Name="Technical" Type="nvarchar" MaxLength="200" />
+    <Property Name="PostAndCompetency" Type="nvarchar" MaxLength="200" />
+    <Property Name="TrainingInformation" Type="nvarchar(max)" />
+    <Property Name="PastPerformance" Type="nvarchar(max)" />
+    <Property Name="Note" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="PT_Warning">
+    <Key>
+      <PropertyRef Name="WarningId" />
+    </Key>
+    <Property Name="WarningId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WarningTitle" Type="nvarchar" MaxLength="200" />
+    <Property Name="WarningContent" Type="nvarchar(max)" />
+    <Property Name="UserCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="RelationsTable" Type="nvarchar" MaxLength="100" />
+    <Property Name="RelationsColumn" Type="nvarchar" MaxLength="200" />
+    <Property Name="RelationsKey" Type="nvarchar" MaxLength="200" />
+    <Property Name="URI" Type="nvarchar" MaxLength="400" />
+    <Property Name="IsValid" Type="bit" />
+    <Property Name="InputDate" Type="datetime" />
+    <Property Name="IsOpened" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PT_yhmc">
+    <Key>
+      <PropertyRef Name="v_yhdm" />
+    </Key>
+    <Property Name="v_yhdm" Type="varchar" Nullable="false" MaxLength="8" />
+    <Property Name="v_xm" Type="varchar" MaxLength="50" />
+    <Property Name="i_bmdm" Type="int" />
+    <Property Name="I_DUTYID" Type="int" />
+    <Property Name="OtherDepts" Type="varchar" MaxLength="100" />
+    <Property Name="OtherDutyIDs" Type="varchar" MaxLength="100" />
+    <Property Name="i_xh" Type="int" />
+    <Property Name="c_sfyx" Type="char" MaxLength="1" />
+    <Property Name="MobilePhoneCode" Type="varchar" MaxLength="13" />
+    <Property Name="RelationCorp" Type="varchar" MaxLength="2" />
+    <Property Name="EnterCorpDate" Type="datetime" />
+    <Property Name="Age" Type="int" />
+    <Property Name="State" Type="int" />
+    <Property Name="SuperordinateDuty" Type="int" />
+    <Property Name="Sex" Type="char" MaxLength="1" />
+    <Property Name="Nation" Type="varchar" MaxLength="50" />
+    <Property Name="EducationalBackground" Type="varchar" MaxLength="50" />
+    <Property Name="Stature" Type="varchar" MaxLength="50" />
+    <Property Name="ClassID" Type="int" />
+    <Property Name="PositionLevel" Type="int" />
+    <Property Name="PostAndRank" Type="varchar" MaxLength="50" />
+    <Property Name="RegisteredPlace" Type="varchar" MaxLength="300" />
+    <Property Name="Address" Type="varchar" MaxLength="300" />
+    <Property Name="ComputeLevel" Type="varchar" MaxLength="50" />
+    <Property Name="EnglishLevel" Type="varchar" MaxLength="50" />
+    <Property Name="DriveLevel" Type="varchar" MaxLength="50" />
+    <Property Name="Marriage" Type="varchar" MaxLength="50" />
+    <Property Name="Tel" Type="varchar" MaxLength="20" />
+    <Property Name="ExpectationSalary" Type="decimal" Precision="8" Scale="2" />
+    <Property Name="CommunicateAddress" Type="varchar" MaxLength="200" />
+    <Property Name="Postcode" Type="varchar" MaxLength="6" />
+    <Property Name="UserPhoto" Type="varchar" MaxLength="100" />
+    <Property Name="Birthday" Type="datetime" />
+    <Property Name="IDCard" Type="varchar" MaxLength="20" />
+    <Property Name="FormalDate" Type="datetime" />
+    <Property Name="PoliticsFace" Type="varchar" MaxLength="50" />
+    <Property Name="JoinPartyDate" Type="datetime" />
+    <Property Name="JoinCorpMode" Type="varchar" MaxLength="50" />
+    <Property Name="Introducer" Type="varchar" MaxLength="20" />
+    <Property Name="Specialty" Type="varchar" MaxLength="50" />
+    <Property Name="GraduateSchool" Type="varchar" MaxLength="100" />
+    <Property Name="Level" Type="varchar" MaxLength="50" />
+    <Property Name="BeginWorkDate" Type="datetime" />
+    <Property Name="PostAndCompetency" Type="varchar" MaxLength="50" />
+    <Property Name="EndowmentInsurance" Type="char" MaxLength="1" />
+    <Property Name="MedicareInsurance" Type="char" MaxLength="1" />
+    <Property Name="UnemploymentInsurance" Type="char" MaxLength="1" />
+    <Property Name="InjuryInsurance" Type="char" MaxLength="1" />
+    <Property Name="HousingAccumulationFund" Type="char" MaxLength="1" />
+    <Property Name="PersonSuddennessInsurance" Type="char" MaxLength="1" />
+    <Property Name="leavetime" Type="datetime" />
+    <Property Name="rdeNature" Type="varchar" MaxLength="10" />
+    <Property Name="conEndDate" Type="datetime" />
+    <Property Name="urgentCellMan" Type="varchar" MaxLength="20" />
+    <Property Name="ucmConcern" Type="varchar" MaxLength="50" />
+    <Property Name="ucmTel" Type="varchar" MaxLength="50" />
+    <Property Name="userCode" Type="varchar" MaxLength="50" />
+    <Property Name="PastPerformance" Type="nvarchar" MaxLength="200" />
+    <Property Name="IsChargeMan" Type="bit" Nullable="false" />
+    <Property Name="RTXID" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Res_Attribute">
+    <Key>
+      <PropertyRef Name="AttributeId" />
+    </Key>
+    <Property Name="AttributeId" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="ResourceTypeId" Type="nvarchar" MaxLength="500" />
+    <Property Name="AttributeName" Type="nvarchar" MaxLength="1000" />
+    <Property Name="InputUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="InputDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Res_Price">
+    <Key>
+      <PropertyRef Name="ResourceId" />
+      <PropertyRef Name="PriceTypeId" />
+    </Key>
+    <Property Name="ResourceId" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="PriceTypeId" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="PriceValue" Type="decimal" Scale="3" />
+    <Property Name="InputUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="InputDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Res_PriceType">
+    <Key>
+      <PropertyRef Name="PriceTypeId" />
+    </Key>
+    <Property Name="PriceTypeId" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="PriceTypeCode" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="PriceTypeName" Type="nvarchar" Nullable="false" MaxLength="1000" />
+    <Property Name="Note" Type="nvarchar(max)" />
+    <Property Name="InputUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="InputDate" Type="datetime" />
+    <Property Name="UserCodes" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Res_Resource">
+    <Key>
+      <PropertyRef Name="ResourceId" />
+    </Key>
+    <Property Name="ResourceId" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="ResourceCode" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="ResourceName" Type="nvarchar" Nullable="false" MaxLength="1000" />
+    <Property Name="Brand" Type="nvarchar" MaxLength="1000" />
+    <Property Name="TaxRate" Type="decimal" Scale="3" />
+    <Property Name="Specification" Type="nvarchar" MaxLength="1000" />
+    <Property Name="TechnicalParameter" Type="nvarchar" MaxLength="1000" />
+    <Property Name="ResourceType" Type="nvarchar" MaxLength="500" />
+    <Property Name="Unit" Type="nvarchar" MaxLength="500" />
+    <Property Name="Attribute" Type="nvarchar" MaxLength="500" />
+    <Property Name="InputUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="InputDate" Type="datetime" />
+    <Property Name="Series" Type="nvarchar" MaxLength="500" />
+    <Property Name="SupplierId" Type="int" />
+    <Property Name="ModelNumber" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Note" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Res_ResourceTemp">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="ResourceId" Type="nvarchar" MaxLength="500" />
+    <Property Name="TaskId" Type="nvarchar" MaxLength="500" />
+    <Property Name="ResourceCode" Type="nvarchar" MaxLength="500" />
+    <Property Name="ResourceName" Type="nvarchar" MaxLength="1000" />
+    <Property Name="UnitPrice" Type="decimal" Scale="3" />
+    <Property Name="Quantity" Type="decimal" Scale="3" />
+    <Property Name="Amount" Type="decimal" Scale="3" />
+    <Property Name="PrjId" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Res_ResourceType">
+    <Key>
+      <PropertyRef Name="ResourceTypeId" />
+    </Key>
+    <Property Name="ResourceTypeId" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="ParentId" Type="nvarchar" MaxLength="500" />
+    <Property Name="ResourceTypeCode" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="ResourceTypeName" Type="nvarchar" Nullable="false" MaxLength="1000" />
+    <Property Name="InputUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="InputDate" Type="datetime" />
+    <Property Name="IsValid" Type="bit" />
+    <Property Name="CBSCode" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Res_Template">
+    <Key>
+      <PropertyRef Name="TemplateId" />
+    </Key>
+    <Property Name="TemplateId" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="TemplateName" Type="nvarchar" Nullable="false" MaxLength="1000" />
+    <Property Name="StartRowIndex" Type="int" />
+    <Property Name="IsValid" Type="bit" />
+    <Property Name="InputDate" Type="datetime" />
+    <Property Name="InputUser" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Res_TemplateItem">
+    <Key>
+      <PropertyRef Name="ItemId" />
+    </Key>
+    <Property Name="ItemId" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="TemplateId" Type="nvarchar" MaxLength="500" />
+    <Property Name="ExcelColumn" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="ExcelRealCoumn" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="DbColumn" Type="nvarchar" Nullable="false" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Res_Unit">
+    <Key>
+      <PropertyRef Name="UnitId" />
+    </Key>
+    <Property Name="UnitId" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="1000" />
+    <Property Name="InputUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="InputDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="XPM_Basic_CodeList">
+    <Key>
+      <PropertyRef Name="NoteID" />
+    </Key>
+    <Property Name="NoteID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CodeID" Type="int" Nullable="false" />
+    <Property Name="TypeID" Type="int" Nullable="false" />
+    <Property Name="ParentCodeID" Type="int" Nullable="false" />
+    <Property Name="ParentCodeList" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CodeName" Type="varchar" MaxLength="100" />
+    <Property Name="ChildNumber" Type="int" Nullable="false" />
+    <Property Name="IsFixed" Type="bit" Nullable="false" />
+    <Property Name="IsDefault" Type="bit" Nullable="false" />
+    <Property Name="IsValid" Type="bit" Nullable="false" />
+    <Property Name="IsVisible" Type="bit" />
+    <Property Name="Owner" Type="varchar" MaxLength="8" />
+    <Property Name="VersionTime" Type="datetime" />
+    <Property Name="I_xh" Type="int" />
+  </EntityType>
+  <EntityType Name="XPM_Basic_CodeType">
+    <Key>
+      <PropertyRef Name="TypeID" />
+    </Key>
+    <Property Name="TypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TypeName" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="IsVisible" Type="bit" Nullable="false" />
+    <Property Name="IsValid" Type="bit" Nullable="false" />
+    <Property Name="Remark" Type="varchar" Nullable="false" MaxLength="400" />
+    <Property Name="SignCode" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="Owner" Type="varchar" MaxLength="8" />
+    <Property Name="VersionTime" Type="datetime" Nullable="false" />
+    <Property Name="ContractCropType" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="XPM_Basic_ContactCorp">
+    <Key>
+      <PropertyRef Name="CorpID" />
+    </Key>
+    <Property Name="CorpID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CorpTypeID" Type="int" Nullable="false" />
+    <Property Name="CorpName" Type="nvarchar" Nullable="false" />
+    <Property Name="CorpKind" Type="int" />
+    <Property Name="WorkType" Type="int" />
+    <Property Name="Speciality" Type="nvarchar(max)" />
+    <Property Name="Aptitude" Type="nvarchar(max)" />
+    <Property Name="Capital" Type="nvarchar(max)" />
+    <Property Name="UnderlayAbility" Type="nvarchar(max)" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="CorpBrief" Type="nvarchar(max)" />
+    <Property Name="Corporation" Type="nvarchar(max)" />
+    <Property Name="LinkMan" Type="nvarchar(max)" />
+    <Property Name="Telephone" Type="nvarchar(max)" />
+    <Property Name="IFProvider" Type="bit" />
+    <Property Name="HandPhone" Type="nvarchar(max)" />
+    <Property Name="Fax" Type="nvarchar(max)" />
+    <Property Name="ShopCard" Type="nvarchar(max)" />
+    <Property Name="TaxCard" Type="nvarchar(max)" />
+    <Property Name="AccountBank" Type="nvarchar(max)" />
+    <Property Name="BankAccounts" Type="nvarchar(max)" />
+    <Property Name="Zone" Type="nvarchar(max)" />
+    <Property Name="PostCode" Type="nvarchar(max)" />
+    <Property Name="WebSite" Type="nvarchar(max)" />
+    <Property Name="PeopleNumber" Type="nvarchar(max)" />
+    <Property Name="Client" Type="nvarchar(max)" />
+    <Property Name="IsVisible" Type="bit" />
+    <Property Name="IsDefault" Type="bit" />
+    <Property Name="IsFixed" Type="bit" />
+    <Property Name="IsValid" Type="bit" />
+    <Property Name="Owner" Type="nvarchar(max)" />
+    <Property Name="VersionTime" Type="datetime" />
+    <Property Name="FlowGuid" Type="uniqueidentifier" />
+    <Property Name="AuditState" Type="int" />
+    <Property Name="UserCode" Type="nvarchar(max)" />
+    <Property Name="Brand" Type="nvarchar(max)" />
+    <Property Name="Email" Type="nvarchar(max)" />
+    <Property Name="Contry" Type="nvarchar(max)" />
+    <Property Name="IsHot" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“pm2_dev.dbo.V_PCSupplier”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="V_PCSupplier">
+    <Key>
+      <PropertyRef Name="SupplierId" />
+      <PropertyRef Name="ProjectId" />
+    </Key>
+    <Property Name="SupplierId" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="ProjectId" Type="nvarchar" Nullable="false" MaxLength="200" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“pm2_dev.dbo.v_pt_d_bm”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="v_pt_d_bm">
+    <Key>
+      <PropertyRef Name="i_bmdm" />
+    </Key>
+    <Property Name="i_bmdm" Type="int" Nullable="false" />
+    <Property Name="i_sjdm" Type="int" />
+    <Property Name="v_bmbm" Type="varchar" MaxLength="20" />
+    <Property Name="CorpCode" Type="varchar" MaxLength="2" />
+    <Property Name="V_BMMC" Type="varchar" MaxLength="100" />
+    <Property Name="v_bmqc" Type="nvarchar" MaxLength="1500" />
+    <Property Name="i_xh" Type="int" />
+    <Property Name="v_bmjx" Type="varchar" MaxLength="50" />
+    <Property Name="i_xjbm" Type="int" />
+    <Property Name="i_jb" Type="int" />
+    <Property Name="c_sfyx" Type="char" MaxLength="1" />
+    <Property Name="adss" Type="char" MaxLength="100" />
+    <Property Name="yb" Type="char" MaxLength="10" />
+    <Property Name="fx" Type="char" MaxLength="10" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“pm2_dev.dbo.vGetCurBudVersion”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="vGetCurBudVersion">
+    <Key>
+      <PropertyRef Name="TaskChangeId" />
+    </Key>
+    <Property Name="TaskChangeId" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="PrjId" Type="nvarchar" MaxLength="200" />
+    <Property Name="CurVersion" Type="int" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“pm2_dev.dbo.vSupplierProject”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="vSupplierProject">
+    <Key>
+      <PropertyRef Name="SupplierId" />
+      <PropertyRef Name="ProjectId" />
+    </Key>
+    <Property Name="SupplierId" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="ProjectId" Type="nvarchar" Nullable="false" MaxLength="200" />
+  </EntityType>
+  <Association Name="FK__Basic_Cod__TypeC__37A6DD2A">
+    <End Role="Basic_CodeType" Type="Pm2Model.Store.Basic_CodeType" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Basic_CodeList" Type="Pm2Model.Store.Basic_CodeList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Basic_CodeType">
+        <PropertyRef Name="TypeCode" />
+      </Principal>
+      <Dependent Role="Basic_CodeList">
+        <PropertyRef Name="TypeCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Bud_ConsT__ConsR__61DC42C1">
+    <End Role="Bud_ConsReport" Type="Pm2Model.Store.Bud_ConsReport" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Bud_ConsTask" Type="Pm2Model.Store.Bud_ConsTask" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bud_ConsReport">
+        <PropertyRef Name="ConsReportId" />
+      </Principal>
+      <Dependent Role="Bud_ConsTask">
+        <PropertyRef Name="ConsReportId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Bud_ConsT__ConsT__65ACD3A5">
+    <End Role="Bud_ConsTask" Type="Pm2Model.Store.Bud_ConsTask" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Bud_ConsTaskRes" Type="Pm2Model.Store.Bud_ConsTaskRes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bud_ConsTask">
+        <PropertyRef Name="ConsTaskId" />
+      </Principal>
+      <Dependent Role="Bud_ConsTaskRes">
+        <PropertyRef Name="ConsTaskId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Bud_ConsT__Resou__66A0F7DE">
+    <End Role="Res_Resource" Type="Pm2Model.Store.Res_Resource" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Bud_ConsTaskRes" Type="Pm2Model.Store.Bud_ConsTaskRes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Res_Resource">
+        <PropertyRef Name="ResourceId" />
+      </Principal>
+      <Dependent Role="Bud_ConsTaskRes">
+        <PropertyRef Name="ResourceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Bud_Contr__Resou__6F0133B5">
+    <End Role="Res_Resource" Type="Pm2Model.Store.Res_Resource" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Bud_ContractResource" Type="Pm2Model.Store.Bud_ContractResource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Res_Resource">
+        <PropertyRef Name="ResourceId" />
+      </Principal>
+      <Dependent Role="Bud_ContractResource">
+        <PropertyRef Name="ResourceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Bud_Contr__TaskI__6E0D0F7C">
+    <End Role="Bud_ContractTask" Type="Pm2Model.Store.Bud_ContractTask" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Bud_ContractResource" Type="Pm2Model.Store.Bud_ContractResource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bud_ContractTask">
+        <PropertyRef Name="TaskId" />
+      </Principal>
+      <Dependent Role="Bud_ContractResource">
+        <PropertyRef Name="TaskId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Bud_Indir__InDia__0D85BAD5">
+    <End Role="Bud_IndirectDiaryCost" Type="Pm2Model.Store.Bud_IndirectDiaryCost" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Bud_IndirectDiaryDetails" Type="Pm2Model.Store.Bud_IndirectDiaryDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bud_IndirectDiaryCost">
+        <PropertyRef Name="InDiaryId" />
+      </Principal>
+      <Dependent Role="Bud_IndirectDiaryDetails">
+        <PropertyRef Name="InDiaryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Bud_Indir__Indir__0801EBA9">
+    <End Role="Bud_IndirectBudget" Type="Pm2Model.Store.Bud_IndirectBudget" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Bud_IndirectMonthBudget" Type="Pm2Model.Store.Bud_IndirectMonthBudget" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bud_IndirectBudget">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Bud_IndirectMonthBudget">
+        <PropertyRef Name="IndirectBudget" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Bud_Organ__Organ__69D26A44">
+    <End Role="Bud_OrganizationBudget" Type="Pm2Model.Store.Bud_OrganizationBudget" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Bud_OrganizationMonthBudget" Type="Pm2Model.Store.Bud_OrganizationMonthBudget" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bud_OrganizationBudget">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Bud_OrganizationMonthBudget">
+        <PropertyRef Name="OrganizationBudget" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Bud_OrgDi__OrgDi__48C67C34">
+    <End Role="Bud_OrgDiaryCost" Type="Pm2Model.Store.Bud_OrgDiaryCost" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Bud_OrgDiaryDetails" Type="Pm2Model.Store.Bud_OrgDiaryDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bud_OrgDiaryCost">
+        <PropertyRef Name="OrgDiaryId" />
+      </Principal>
+      <Dependent Role="Bud_OrgDiaryDetails">
+        <PropertyRef Name="OrgDiaryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Bud_OrgDi__OrgId__31B8F9AA">
+    <End Role="PT_d_bm" Type="Pm2Model.Store.PT_d_bm" Multiplicity="0..1" />
+    <End Role="Bud_OrgDiaryCost" Type="Pm2Model.Store.Bud_OrgDiaryCost" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PT_d_bm">
+        <PropertyRef Name="i_bmdm" />
+      </Principal>
+      <Dependent Role="Bud_OrgDiaryCost">
+        <PropertyRef Name="OrgId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Bud_TaskC__Input__292EA0A1">
+    <End Role="PT_yhmc" Type="Pm2Model.Store.PT_yhmc" Multiplicity="0..1" />
+    <End Role="Bud_TaskChange" Type="Pm2Model.Store.Bud_TaskChange" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PT_yhmc">
+        <PropertyRef Name="v_yhdm" />
+      </Principal>
+      <Dependent Role="Bud_TaskChange">
+        <PropertyRef Name="InputUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Bud_TaskR__Resou__0E8EEDA7">
+    <End Role="Res_Resource" Type="Pm2Model.Store.Res_Resource" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Bud_TaskResource" Type="Pm2Model.Store.Bud_TaskResource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Res_Resource">
+        <PropertyRef Name="ResourceId" />
+      </Principal>
+      <Dependent Role="Bud_TaskResource">
+        <PropertyRef Name="ResourceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Bud_TaskR__TaskI__0D9AC96E">
+    <End Role="Bud_Task" Type="Pm2Model.Store.Bud_Task" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Bud_TaskResource" Type="Pm2Model.Store.Bud_TaskResource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bud_Task">
+        <PropertyRef Name="TaskId" />
+      </Principal>
+      <Dependent Role="Bud_TaskResource">
+        <PropertyRef Name="TaskId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Bud_Templ__Resou__6D78DDF6">
+    <End Role="Res_Resource" Type="Pm2Model.Store.Res_Resource" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Bud_TemplateResource" Type="Pm2Model.Store.Bud_TemplateResource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Res_Resource">
+        <PropertyRef Name="ResourceId" />
+      </Principal>
+      <Dependent Role="Bud_TemplateResource">
+        <PropertyRef Name="ResourceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Bud_Templ__Resou__6EAC2DFA">
+    <End Role="Res_Resource" Type="Pm2Model.Store.Res_Resource" Multiplicity="0..1" />
+    <End Role="Bud_TemplateResource" Type="Pm2Model.Store.Bud_TemplateResource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Res_Resource">
+        <PropertyRef Name="ResourceId" />
+      </Principal>
+      <Dependent Role="Bud_TemplateResource">
+        <PropertyRef Name="ResourceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Bud_Templ__Templ__2611717D">
+    <End Role="Bud_TemplateType" Type="Pm2Model.Store.Bud_TemplateType" Multiplicity="0..1" />
+    <End Role="Bud_Template" Type="Pm2Model.Store.Bud_Template" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bud_TemplateType">
+        <PropertyRef Name="TypeId" />
+      </Principal>
+      <Dependent Role="Bud_Template">
+        <PropertyRef Name="TemplateTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Bud_Templ__Templ__30E405AB">
+    <End Role="Bud_Template" Type="Pm2Model.Store.Bud_Template" Multiplicity="0..1" />
+    <End Role="Bud_TemplateItem" Type="Pm2Model.Store.Bud_TemplateItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bud_Template">
+        <PropertyRef Name="TemplateId" />
+      </Principal>
+      <Dependent Role="Bud_TemplateItem">
+        <PropertyRef Name="TemplateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Bud_Templ__Templ__6DB809C1">
+    <End Role="Bud_TemplateItem" Type="Pm2Model.Store.Bud_TemplateItem" Multiplicity="0..1" />
+    <End Role="Bud_TemplateResource" Type="Pm2Model.Store.Bud_TemplateResource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bud_TemplateItem">
+        <PropertyRef Name="TemplateItemId" />
+      </Principal>
+      <Dependent Role="Bud_TemplateResource">
+        <PropertyRef Name="TemplateItemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PT_Prj_Co__Detai__32CD1974">
+    <End Role="PT_Prj_Completed_Detail" Type="Pm2Model.Store.PT_Prj_Completed_Detail" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PT_Prj_Completed_Annex" Type="Pm2Model.Store.PT_Prj_Completed_Annex" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PT_Prj_Completed_Detail">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PT_Prj_Completed_Annex">
+        <PropertyRef Name="DetailID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PT_Prj_Co__Input__2EFC8890">
+    <End Role="PT_yhmc" Type="Pm2Model.Store.PT_yhmc" Multiplicity="0..1" />
+    <End Role="PT_Prj_Completed_Detail" Type="Pm2Model.Store.PT_Prj_Completed_Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PT_yhmc">
+        <PropertyRef Name="v_yhdm" />
+      </Principal>
+      <Dependent Role="PT_Prj_Completed_Detail">
+        <PropertyRef Name="InputUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PT_Prj_Co__Input__5EE0A5DC">
+    <End Role="PT_yhmc" Type="Pm2Model.Store.PT_yhmc" Multiplicity="0..1" />
+    <End Role="PT_Prj_Completed" Type="Pm2Model.Store.PT_Prj_Completed" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PT_yhmc">
+        <PropertyRef Name="v_yhdm" />
+      </Principal>
+      <Dependent Role="PT_Prj_Completed">
+        <PropertyRef Name="InputUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PT_Prj_Co__PrjCo__2D14401E">
+    <End Role="PT_Prj_Completed" Type="Pm2Model.Store.PT_Prj_Completed" Multiplicity="0..1" />
+    <End Role="PT_Prj_Completed_Detail" Type="Pm2Model.Store.PT_Prj_Completed_Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PT_Prj_Completed">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PT_Prj_Completed_Detail">
+        <PropertyRef Name="PrjCompletedID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PT_PrjInf__PrjGu__20E43EBA">
+    <End Role="PT_PrjInfo_ZTB_Detail" Type="Pm2Model.Store.PT_PrjInfo_ZTB_Detail" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PT_PrjInfo_Kind" Type="Pm2Model.Store.PT_PrjInfo_Kind" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PT_PrjInfo_ZTB_Detail">
+        <PropertyRef Name="PrjGuid" />
+      </Principal>
+      <Dependent Role="PT_PrjInfo_Kind">
+        <PropertyRef Name="PrjGuid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PT_PrjMem__Membe__40071901">
+    <End Role="PT_yhmc" Type="Pm2Model.Store.PT_yhmc" Multiplicity="0..1" />
+    <End Role="PT_PrjMember" Type="Pm2Model.Store.PT_PrjMember" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PT_yhmc">
+        <PropertyRef Name="v_yhdm" />
+      </Principal>
+      <Dependent Role="PT_PrjMember">
+        <PropertyRef Name="MemberCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Res_Attri__Resou__46B34B39">
+    <End Role="Res_ResourceType" Type="Pm2Model.Store.Res_ResourceType" Multiplicity="0..1" />
+    <End Role="Res_Attribute" Type="Pm2Model.Store.Res_Attribute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Res_ResourceType">
+        <PropertyRef Name="ResourceTypeId" />
+      </Principal>
+      <Dependent Role="Res_Attribute">
+        <PropertyRef Name="ResourceTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Res_Price__Price__70A98505">
+    <End Role="Res_PriceType" Type="Pm2Model.Store.Res_PriceType" Multiplicity="1" />
+    <End Role="Res_Price" Type="Pm2Model.Store.Res_Price" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Res_PriceType">
+        <PropertyRef Name="PriceTypeId" />
+      </Principal>
+      <Dependent Role="Res_Price">
+        <PropertyRef Name="PriceTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Res_Price__Resou__6FB560CC">
+    <End Role="Res_Resource" Type="Pm2Model.Store.Res_Resource" Multiplicity="1" />
+    <End Role="Res_Price" Type="Pm2Model.Store.Res_Price" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Res_Resource">
+        <PropertyRef Name="ResourceId" />
+      </Principal>
+      <Dependent Role="Res_Price">
+        <PropertyRef Name="ResourceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Res_Resou__Attri__6BE4CFE8">
+    <End Role="Res_Attribute" Type="Pm2Model.Store.Res_Attribute" Multiplicity="0..1" />
+    <End Role="Res_Resource" Type="Pm2Model.Store.Res_Resource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Res_Attribute">
+        <PropertyRef Name="AttributeId" />
+      </Principal>
+      <Dependent Role="Res_Resource">
+        <PropertyRef Name="Attribute" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Res_Resou__Paren__42E2BA55">
+    <End Role="Res_ResourceType" Type="Pm2Model.Store.Res_ResourceType" Multiplicity="0..1" />
+    <End Role="Res_ResourceType1" Type="Pm2Model.Store.Res_ResourceType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Res_ResourceType">
+        <PropertyRef Name="ResourceTypeId" />
+      </Principal>
+      <Dependent Role="Res_ResourceType1">
+        <PropertyRef Name="ParentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Res_Resou__Resou__69485A5F">
+    <End Role="Res_Resource" Type="Pm2Model.Store.Res_Resource" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Res_ResourceTemp" Type="Pm2Model.Store.Res_ResourceTemp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Res_Resource">
+        <PropertyRef Name="ResourceId" />
+      </Principal>
+      <Dependent Role="Res_ResourceTemp">
+        <PropertyRef Name="ResourceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Res_Resou__Resou__69FC8776">
+    <End Role="Res_ResourceType" Type="Pm2Model.Store.Res_ResourceType" Multiplicity="0..1" />
+    <End Role="Res_Resource" Type="Pm2Model.Store.Res_Resource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Res_ResourceType">
+        <PropertyRef Name="ResourceTypeId" />
+      </Principal>
+      <Dependent Role="Res_Resource">
+        <PropertyRef Name="ResourceType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Res_Resou__TaskI__6A3C7E98">
+    <End Role="Bud_Task" Type="Pm2Model.Store.Bud_Task" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Res_ResourceTemp" Type="Pm2Model.Store.Res_ResourceTemp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bud_Task">
+        <PropertyRef Name="TaskId" />
+      </Principal>
+      <Dependent Role="Res_ResourceTemp">
+        <PropertyRef Name="TaskId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Res_Resour__Unit__6AF0ABAF">
+    <End Role="Res_Unit" Type="Pm2Model.Store.Res_Unit" Multiplicity="0..1" />
+    <End Role="Res_Resource" Type="Pm2Model.Store.Res_Resource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Res_Unit">
+        <PropertyRef Name="UnitId" />
+      </Principal>
+      <Dependent Role="Res_Resource">
+        <PropertyRef Name="Unit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Res_Templ__Templ__662BF692">
+    <End Role="Res_Template" Type="Pm2Model.Store.Res_Template" Multiplicity="0..1" />
+    <End Role="Res_TemplateItem" Type="Pm2Model.Store.Res_TemplateItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Res_Template">
+        <PropertyRef Name="TemplateId" />
+      </Principal>
+      <Dependent Role="Res_TemplateItem">
+        <PropertyRef Name="TemplateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_plus_progress_InputUser">
+    <End Role="PT_yhmc" Type="Pm2Model.Store.PT_yhmc" Multiplicity="0..1" />
+    <End Role="plus_progress" Type="Pm2Model.Store.plus_progress" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PT_yhmc">
+        <PropertyRef Name="v_yhdm" />
+      </Principal>
+      <Dependent Role="plus_progress">
+        <PropertyRef Name="InputUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_plus_progress_version">
+    <End Role="plus_progress_version" Type="Pm2Model.Store.plus_progress_version" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="plus_report" Type="Pm2Model.Store.plus_report" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="plus_progress_version">
+        <PropertyRef Name="ProgressVersionId" />
+      </Principal>
+      <Dependent Role="plus_report">
+        <PropertyRef Name="ProVersionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_plus_report">
+    <End Role="plus_report" Type="Pm2Model.Store.plus_report" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="plus_reportDetail" Type="Pm2Model.Store.plus_reportDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="plus_report">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="plus_reportDetail">
+        <PropertyRef Name="ReportId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_privilege_ProgressId">
+    <End Role="plus_progress" Type="Pm2Model.Store.plus_progress" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="plus_progress_privilege" Type="Pm2Model.Store.plus_progress_privilege" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="plus_progress">
+        <PropertyRef Name="ProgressId" />
+      </Principal>
+      <Dependent Role="plus_progress_privilege">
+        <PropertyRef Name="ProgressId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_privilege_UserCode">
+    <End Role="PT_yhmc" Type="Pm2Model.Store.PT_yhmc" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="plus_progress_privilege" Type="Pm2Model.Store.plus_progress_privilege" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PT_yhmc">
+        <PropertyRef Name="v_yhdm" />
+      </Principal>
+      <Dependent Role="plus_progress_privilege">
+        <PropertyRef Name="UserCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_progress_version_InputUser">
+    <End Role="PT_yhmc" Type="Pm2Model.Store.PT_yhmc" Multiplicity="0..1" />
+    <End Role="plus_progress_version" Type="Pm2Model.Store.plus_progress_version" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PT_yhmc">
+        <PropertyRef Name="v_yhdm" />
+      </Principal>
+      <Dependent Role="plus_progress_version">
+        <PropertyRef Name="InputUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_progress_version_ProgressId">
+    <End Role="plus_progress" Type="Pm2Model.Store.plus_progress" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="plus_progress_version" Type="Pm2Model.Store.plus_progress_version" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="plus_progress">
+        <PropertyRef Name="ProgressId" />
+      </Principal>
+      <Dependent Role="plus_progress_version">
+        <PropertyRef Name="ProgressId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="用户-部门">
+    <End Role="PT_d_bm" Type="Pm2Model.Store.PT_d_bm" Multiplicity="0..1" />
+    <End Role="PT_yhmc" Type="Pm2Model.Store.PT_yhmc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PT_d_bm">
+        <PropertyRef Name="i_bmdm" />
+      </Principal>
+      <Dependent Role="PT_yhmc">
+        <PropertyRef Name="i_bmdm" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

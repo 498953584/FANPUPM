@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>选择负责人</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+</head>
+<body>
+    <p>选择负责人：</p>
+    <div id="selectContainer">
+        
+    </div>
+    <br />
+    
+    <input type="button" value="确定" onclick="submitSelect();" />
+ 
+</body>
+</html>
+<script src="../scripts/boot.js" type="text/javascript"></script>
+<script type="text/javascript">
+    //提交选择
+    function submitSelect() {
+        var checkboxs = document.getElementsByName("selgroup");
+        var ps = [];
+        var psNames = [];
+        for (var i = 0, l = checkboxs.length; i < l; i++) {
+            var checkbox = checkboxs[i];
+            if (checkbox.checked) {
+                var o = getPrincipal(checkbox.value);
+
+                if (o) {
+                    ps.push(o.UID);
+                    psNames.push(o.Name);
+                }
+            }
+        }
+        var psValue = ps.join(',');
+        var psName = psNames.join(",");
+
+        opener.setTaskPrincipals(taskUID, psValue, psName); //回写到父页面
+
+        window.close();
+    }
+    //生成选择列表
+    function createSelect(data) {
+        var html = "";
+        for (var i = 0, l = data.length; i < l; i++) {
+            var p = data[i];
+            html += "<label><input type='checkbox' value='" + p.UID + "' name='selgroup'/>" + p.Name + "</label><br/>";
+        }
+
+        var ct = document.getElementById("selectContainer");
+        ct.innerHTML = html;
+    }
+    ///////////////////////////////////////////////////////////////////
+    var params = mini.getParams();
+    var taskUID = params.taskuid, projectUID = params.projectuid;
+
+    //这里模拟已经用ajax获取负责人数组
+    var Principals = [
+        { UID: 1, Name: '张三' },
+        { UID: 2, Name: '李四' },
+        { UID: 3, Name: '张五' }
+    ];
+    function getPrincipal(id) {
+        for (var i = 0, l = Principals.length; i < l; i++) {
+            var o = Principals[i];
+            if (o.UID == id) return o;
+        }
+    }
+    createSelect(Principals);
+    
+</script>

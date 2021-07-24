@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="PTPrjMember" table="PT_PrjMember" lazy="true" >
+		<id name="PrjMemberId">
+			<column name="PrjMemberId" sql-type="uniqueidentifier"  not-null="true" />
+		</id>
+		<property name="PrjGuid">
+			<column name="PrjGuid" sql-type="uniqueidentifier" not-null="false" />
+		</property>
+		<property name="MemberCode">
+			<column name="MemberCode" sql-type="varchar" length="8" not-null="false" />
+		</property>
+		<property name="InputDate">
+			<column name="InputDate" sql-type="datetime" not-null="false" />
+		</property>
+		<property name="Post">
+			<column name="Post" sql-type="nvarchar" length="200" not-null="false" />
+		</property>
+		<property name="EducationalBackground">
+			<column name="EducationalBackground" sql-type="nvarchar" length="200" not-null="false" />
+		</property>
+		<property name="Technical">
+			<column name="Technical" sql-type="nvarchar" length="200" not-null="false" />
+		</property>
+		<property name="PostAndCompetency">
+			<column name="PostAndCompetency" sql-type="nvarchar" length="200" not-null="false" />
+		</property>
+		<property name="TrainingInformation">
+			<column name="TrainingInformation" sql-type="nvarchar(max)" not-null="false" />
+		</property>
+		<property name="PastPerformance">
+			<column name="PastPerformance" sql-type="nvarchar(max)" not-null="false" />
+		</property>
+		<property name="Note">
+			<column name="Note" sql-type="nvarchar(max)" not-null="false" />
+		</property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="PTPrjInfoKind" table="PT_PrjInfo_Kind" lazy="true" >
+    <id name="KindId">
+      <column name="KindId" sql-type="nvarchar" length="200" not-null="true" />
+    </id>
+    <property name="PrjGuid">
+      <column name="PrjGuid" sql-type="uniqueidentifier" not-null="true" />
+    </property>
+    <property name="PrjKind">
+      <column name="PrjKind" sql-type="nvarchar" length="200" not-null="false" />
+    </property>
+    <property name="ProfessionalCost">
+      <column name="ProfessionalCost" sql-type="decimal" not-null="true" />
+    </property>
+		<many-to-one name="Detail" class="cn.justwin.Domain.Entities.PTPrjInfoZTBDetail, Domain"
+                 insert="false" update="false" column="PrjGuid" lazy="false" />
+  </class>
+</hibernate-mapping>

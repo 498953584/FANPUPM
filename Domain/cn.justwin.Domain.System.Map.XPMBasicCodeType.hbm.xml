@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="XPMBasicCodeType" table="XPM_Basic_CodeType" lazy="true" >
+		<id name="TypeID">
+			<column name="TypeID" sql-type="int" not-null="true" />
+			<generator class="identity" />
+		</id>
+		<property name="TypeName">
+			<column name="TypeName" sql-type="varchar" length="30" not-null="true" />
+		</property>
+		<property name="IsVisible">
+			<column name="IsVisible" sql-type="bit" not-null="true" />
+		</property>
+		<property name="IsValid">
+			<column name="IsValid" sql-type="bit" not-null="true" />
+		</property>
+		<property name="Remark">
+			<column name="Remark" sql-type="varchar" length="400" not-null="true" />
+		</property>
+		<property name="SignCode">
+			<column name="SignCode" sql-type="varchar" length="30" not-null="true" unique="true" />
+		</property>
+		<property name="Owner">
+			<column name="Owner" sql-type="varchar" length="8" not-null="true" />
+		</property>
+		<property name="VersionTime">
+			<column name="VersionTime" sql-type="datetime" not-null="true" />
+		</property>
+		<property name="ContractCropType">
+			<column name="ContractCropType" sql-type="uniqueidentifier" not-null="false" />
+		</property>
+	</class>
+</hibernate-mapping>

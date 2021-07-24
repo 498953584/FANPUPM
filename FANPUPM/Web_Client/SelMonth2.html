@@ -1,0 +1,206 @@
+﻿<%@ page language="C#" autoeventwireup="true" %>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="../StyleCss/PM1.css" rel="stylesheet" type="text/css" />
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <script language="javascript" type="text/javascript">
+        var today = new Date()
+        var year = today.getYear()
+        var month = today.getMonth() + 1
+
+        function mouse_over(obj) {
+            if (obj.value.substring(0, 2) == month) {
+                obj.style.backgroundColor = "#F8AA07";
+            } else {
+                obj.style.backgroundColor = "#eef8ff"; // "#FFFDCB";
+            }
+        }
+
+        function mouse_out(obj) {
+            if (obj.value.substring(0, 2) == month) {
+                obj.style.backgroundColor = "#F8AA07";
+            } else {
+                obj.style.backgroundColor = "";
+            }
+        }
+
+        //向前1年
+        function btn_pre_onclick() {
+            if (document.getElementById("Select1").selectedIndex > 0) {
+                document.getElementById("Select1").selectedIndex = document.getElementById("Select1").selectedIndex - 1;
+                document.getElementById("spLBL").innerHTML = document.getElementById("Select1").value + " 年";
+            }
+        }
+        //向后1年
+        function btn_next_onclick() {
+            if (document.getElementById("Select1").selectedIndex < 20) {
+                document.getElementById("Select1").selectedIndex = document.getElementById("Select1").selectedIndex + 1;
+                document.getElementById("spLBL").innerHTML = document.getElementById("Select1").value + " 年";
+            }
+        }
+        //关闭
+        function btn_close_onclick() {
+            window.parent.document.getElementById("ifMonth").style.display = "none";
+        }
+        //初始化
+        function ben_begin() {
+            for (var i = 1; i < 13; i++) {
+                var id = "btn" + i;
+                //当前月份背景
+                if (i == month) {
+                    document.getElementById(id).style.backgroundColor = "#F8AA07";
+                }
+                if (i > 9) {
+                    document.getElementById(id).value = i + "月";
+                } else {
+                    document.getElementById(id).value = "0" + i + "月";
+                }
+            }
+        }
+        function btn_onclick(e) {
+            var month = document.getElementById("Select1").value + "-" + e.value.substring(0, 2);
+            var id = window.location.href.split("=")[1];
+            var oldMonth = window.parent.document.getElementById(id).value;
+            window.parent.document.getElementById(id).value = month;
+            window.parent.document.getElementById("ifMonth").style.display = "none";
+        }
+
+        function hideLable(obj) {
+            obj.style.display = "none";
+            document.getElementById("spDDL").style.display = "";
+        }
+
+        function resetYear() {
+
+            document.getElementById("spLBL").innerHTML = "&nbsp;" + document.getElementById("Select1").value + " 年" + "&nbsp;";
+            document.getElementById("spDDL").style.display = "none";
+            document.getElementById("spLBL").style.display = "";
+        }
+    </script>
+
+    <style>
+        .button-input /*普通样式的按钮width:60px;*/
+        {
+            border: groove 1px #326AB4;
+            border-bottom: solid 1px #326AB4;
+            border-right: solid 1px #326AB4;
+            border-left: solid 1px #326AB4;
+            border-top: #326AB4 1px solid;
+            background-image: url(tool/btn_base.gif);
+            background-repeat: repeat-x;
+            background-color: Transparent;
+            cursor: hand;
+            height: 26px;
+        }
+    </style>
+</head>
+<body onload="ben_begin()" class="body_clear" scroll="no">
+    <form id="form1" runat="server">
+    <div>
+        <table style="width: 100%;" class="table-normal">
+            <tr>
+                <td style="width: 100%" colspan="3">
+                    <table style="width: 100%; height: 100%" class="table-none">
+                        <tr>
+                            <td style="width: 20%">
+                                <input id="btn_pre" type="button" value="<<" style="width: 100%; height: 20" class="button-input"
+                                    onclick="return btn_pre_onclick()" title="向前翻 1 年" />
+                            </td>
+                            <td style="width: 50%; height: 20" onmouseover="style.backgroundColor='#618BC5'"
+                                onmouseout="style.backgroundColor='#FFFFFF'" align="center" valign="middle">
+                                <span id="spDDL" style="display: none; height: 20">
+                                    <select id="Select1" name="D1" class="button-input" onchange="resetYear()">
+
+                                        <script language="javascript" type="text/javascript">
+                                            for (var i = 2000; i <= 2020; i++) {
+                                                document.write('<OPTION value=' + i + ' ' + (i == year ? 'selected' : '') + '>' + i + '年' + '</option>')
+                                            }
+                                        </script>
+
+                                    </select></span><span id="spLBL" onclick="hideLable(this);" style="height: 13px;
+                                        text-align: center">
+
+                                        <script language="javascript" type="text/javascript">
+                                            document.write(year + ' 年');
+                                        </script>
+
+                                    </span>
+                            </td>
+                            <td style="width: 20%; height: 20">
+                                <input id="btn_next" type="button" value=">>" style="width: 100%; height: 20" class="button-input"
+                                    onclick="return btn_next_onclick()" title="向后翻 1 年" />
+                            </td>
+                            <td style="width: 10%; height: 20">
+                                <input id="btn_close" type="button" value="×" style="width: 100%; height: 20" class="button-input"
+                                    onclick="return btn_close_onclick()" title="关闭" />
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 33%">
+                    <input id="btn1" type="button" value="1" style="width: 100%" class="button-input"
+                        onclick="return btn_onclick(this)" onmouseover="mouse_over(this)" onmouseout="mouse_out(this)" />
+                </td>
+                <td style="width: 33%">
+                    <input id="btn2" type="button" value="2" style="width: 100%" class="button-input"
+                        onclick="return btn_onclick(this)" onmouseover="mouse_over(this)" onmouseout="mouse_out(this)" />
+                </td>
+                <td style="width: 33%">
+                    <input id="btn3" type="button" value="3" style="width: 100%" class="button-input"
+                        onclick="return btn_onclick(this)" onmouseover="mouse_over(this)" onmouseout="mouse_out(this)" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input id="btn4" type="button" value="1" style="width: 100%" class="button-input"
+                        onclick="return btn_onclick(this)" onmouseover="mouse_over(this)" onmouseout="mouse_out(this)" />
+                </td>
+                <td>
+                    <input id="btn5" type="button" value="2" style="width: 100%" class="button-input"
+                        onclick="return btn_onclick(this)" onmouseover="mouse_over(this)" onmouseout="mouse_out(this)" />
+                </td>
+                <td>
+                    <input id="btn6" type="button" value="3" style="width: 100%" class="button-input"
+                        onclick="return btn_onclick(this)" onmouseover="mouse_over(this)" onmouseout="mouse_out(this)" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input id="btn7" type="button" value="1" style="width: 100%" class="button-input"
+                        onclick="return btn_onclick(this)" onmouseover="mouse_over(this)" onmouseout="mouse_out(this)" />
+                </td>
+                <td>
+                    <input id="btn8" type="button" value="2" style="width: 100%" class="button-input"
+                        onclick="return btn_onclick(this)" onmouseover="mouse_over(this)" onmouseout="mouse_out(this)" />
+                </td>
+                <td>
+                    <input id="btn9" type="button" value="3" style="width: 100%" class="button-input"
+                        onclick="return btn_onclick(this)" onmouseover="mouse_over(this)" onmouseout="mouse_out(this)" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input id="btn10" type="button" value="1" style="width: 100%" class="button-input"
+                        onclick="return btn_onclick(this)" onmouseover="mouse_over(this)" onmouseout="mouse_out(this)" />
+                </td>
+                <td>
+                    <input id="btn11" type="button" value="2" style="width: 100%" class="button-input"
+                        onclick="return btn_onclick(this)" onmouseover="mouse_over(this)" onmouseout="mouse_out(this)" />
+                </td>
+                <td>
+                    <input id="btn12" type="button" value="3" style="width: 100%" class="button-input"
+                        onclick="return btn_onclick(this)" onmouseover="mouse_over(this)" onmouseout="mouse_out(this)" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</body>
+</html>

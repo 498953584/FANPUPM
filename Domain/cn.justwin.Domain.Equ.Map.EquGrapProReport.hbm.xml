@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="EquGrapProReport" table="Equ_GrapProReport" lazy="true" >
+		<id name="ProductionId">
+			<column name="ProductionId" sql-type="nvarchar" length="64" not-null="true" />
+		</id>
+		<property name="DayId">
+			<column name="DayId" sql-type="nvarchar" length="100" not-null="true" />
+		</property>
+		<property name="EquId">
+			<column name="EquId" sql-type="nvarchar" length="64" not-null="true" />
+		</property>
+		<property name="ShipCapaticy">
+			<column name="ShipCapaticy" sql-type="decimal" not-null="true" />
+		</property>
+		<property name="WorkCount">
+			<column name="WorkCount" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="TotalDeductQty">
+			<column name="TotalDeductQty" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="DayReportQty">
+			<column name="DayReportQty" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="DeductQty">
+			<column name="DeductQty" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="UnitPrice">
+			<column name="UnitPrice" sql-type="decimal" not-null="false" />
+		</property>
+	</class>
+</hibernate-mapping>

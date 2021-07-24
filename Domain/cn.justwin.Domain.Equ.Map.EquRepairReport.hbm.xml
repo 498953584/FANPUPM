@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="EquRepairReport" table="Equ_RepairReport" lazy="true" >
+		<id name="ReportId">
+			<column name="ReportId" sql-type="nvarchar" length="64" not-null="true" />
+		</id>
+		<property name="ApplyId">
+			<column name="ApplyId" sql-type="nvarchar" length="64" not-null="false" />
+		</property>
+		<property name="EquId">
+			<column name="EquId" sql-type="nvarchar" length="64" not-null="true" />
+		</property>
+		<property name="ReportDate">
+			<column name="ReportDate" sql-type="datetime" not-null="true" />
+		</property>
+		<property name="RepairType">
+			<column name="RepairType" sql-type="int" not-null="true" />
+		</property>
+		<property name="FaultDescription">
+			<column name="FaultDescription" sql-type="nvarchar" length="500" not-null="false" />
+		</property>
+		<property name="RepairStartDate">
+			<column name="RepairStartDate" sql-type="datetime" not-null="true" />
+		</property>
+		<property name="RepairEndDate">
+			<column name="RepairEndDate" sql-type="datetime" not-null="true" />
+		</property>
+		<property name="RepairPerson">
+			<column name="RepairPerson" sql-type="nvarchar" length="50" not-null="false" />
+		</property>
+		<property name="Reason">
+			<column name="Reason" sql-type="nvarchar(max)" not-null="false" />
+		</property>
+		<property name="OutCompany">
+			<column name="OutCompany" sql-type="nvarchar" length="500" not-null="false" />
+		</property>
+		<property name="OutDepartment">
+			<column name="OutDepartment" sql-type="nvarchar" length="500" not-null="false" />
+		</property>
+		<property name="ContractId">
+			<column name="ContractId" sql-type="nvarchar" length="64" not-null="false" />
+		</property>
+		<property name="OutSubContractor">
+			<column name="OutSubContractor" sql-type="nvarchar" length="500" not-null="false" />
+		</property>
+		<property name="LaborCost">
+			<column name="LaborCost" sql-type="decimal" not-null="true" />
+		</property>
+		<property name="MaterialCost">
+			<column name="MaterialCost" sql-type="decimal" not-null="true" />
+		</property>
+		<property name="OtherBudCostType">
+			<column name="OtherBudCostType" sql-type="int" not-null="false" />
+		</property>
+		<property name="OtherBudCosts">
+			<column name="OtherBudCosts" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="Acceptor">
+			<column name="Acceptor" sql-type="nvarchar" length="50" not-null="false" />
+		</property>
+		<property name="FlowState">
+			<column name="FlowState" sql-type="int" not-null="true" />
+		</property>
+		<property name="InputUser">
+			<column name="InputUser" sql-type="char" length="8" not-null="true" />
+		</property>
+		<property name="InputDate">
+			<column name="InputDate" sql-type="datetime" not-null="true" />
+		</property>
+		<property name="Note">
+			<column name="Note" sql-type="nvarchar(max)" not-null="false" />
+		</property>
+	</class>
+</hibernate-mapping>

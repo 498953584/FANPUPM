@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="PTPrjInfo" table="PT_PrjInfo" lazy="true" >
+    <id name="TypeCode" column="TypeCode"></id>
+    <property name="i_xh">
+      <column name="i_xh" sql-type="int" not-null="false" />
+    </property>
+    <property name="IsValid">
+      <column name="IsValid" sql-type="char" length="1" not-null="false" />
+    </property>
+    <property name="UserCode">
+      <column name="UserCode" sql-type="varchar" length="8" not-null="false" />
+    </property>
+    <property name="RecordDate">
+      <column name="RecordDate" sql-type="datetime" not-null="false" />
+    </property>
+    <property name="i_ChildNum">
+      <column name="i_ChildNum" sql-type="int" not-null="false" />
+    </property>
+    <property name="PrjCode">
+      <column name="PrjCode" sql-type="varchar" length="30" not-null="false" />
+    </property>
+    <property name="PrjGuid">
+      <column name="PrjGuid" sql-type="uniqueidentifier" not-null="false" />
+    </property>
+    <property name="PrjName">
+      <column name="PrjName" sql-type="varchar" length="100" not-null="false" />
+    </property>
+    <property name="StartDate">
+      <column name="StartDate" sql-type="datetime" not-null="false" />
+    </property>
+    <property name="EndDate">
+      <column name="EndDate" sql-type="datetime" not-null="false" />
+    </property>
+    <property name="ComputeClass">
+      <column name="ComputeClass" sql-type="varchar" length="30" not-null="false" />
+    </property>
+    <property name="RationClass">
+      <column name="RationClass" sql-type="varchar" length="30" not-null="false" />
+    </property>
+    <property name="PrjCost">
+      <column name="PrjCost" sql-type="float" not-null="false" />
+    </property>
+    <property name="ContractSum">
+      <column name="ContractSum" sql-type="char" length="10" not-null="false" />
+    </property>
+    <property name="Duration">
+      <column name="Duration" sql-type="varchar" length="50" not-null="false" />
+    </property>
+    <property name="QualityClass">
+      <column name="QualityClass" sql-type="varchar" length="30" not-null="false" />
+    </property>
+    <property name="Area">
+      <column name="Area" sql-type="varchar" length="50" not-null="false" />
+    </property>
+    <property name="PrjKindClass">
+      <column name="PrjKindClass" sql-type="varchar" length="30" not-null="false" />
+    </property>
+    <property name="PrjPlace">
+      <column name="PrjPlace" sql-type="varchar" length="100" not-null="false" />
+    </property>
+    <property name="Remark1">
+      <column name="Remark1" sql-type="varchar" length="4000" not-null="false" />
+    </property>
+    <property name="FileName">
+      <column name="FileName" sql-type="varchar" length="200" not-null="false" />
+    </property>
+    <property name="FileURL">
+      <column name="FileURL" sql-type="varchar" length="100" not-null="false" />
+    </property>
+    <property name="Owner">
+      <column name="Owner" sql-type="varchar" length="100" not-null="false" />
+    </property>
+    <property name="Counsellor">
+      <column name="Counsellor" sql-type="varchar" length="100" not-null="false" />
+    </property>
+    <property name="Designer">
+      <column name="Designer" sql-type="varchar" length="100" not-null="false" />
+    </property>
+    <property name="Inspector">
+      <column name="Inspector" sql-type="varchar" length="100" not-null="false" />
+    </property>
+    <property name="PrjInfo">
+      <column name="PrjInfo" sql-type="varchar" length="4000" not-null="false" />
+    </property>
+    <property name="PrjState">
+      <column name="PrjState" sql-type="int" not-null="false" />
+    </property>
+    <property name="OwnerCode">
+      <column name="OwnerCode" sql-type="int" not-null="false" />
+    </property>
+    <property name="MarketInfoGuid">
+      <column name="MarketInfoGuid" sql-type="uniqueidentifier" not-null="false" />
+    </property>
+    <property name="Rank">
+      <column name="Rank" sql-type="varchar" length="50" not-null="false" />
+    </property>
+    <property name="BudgetWay">
+      <column name="BudgetWay" sql-type="varchar" length="50" not-null="false" />
+    </property>
+    <property name="ContractWay">
+      <column name="ContractWay" sql-type="varchar" length ="50" not-null="false" />
+    </property>
+    <property name="PayCondition">
+      <column name="PayCondition" sql-type="varchar" length="50" not-null="false" />
+    </property>
+    <property name="TenderWay">
+      <column name="TenderWay" sql-type="varchar" length="50" not-null="false" />
+    </property>
+    <property name="PayWay">
+      <column name="PayWay" sql-type="varchar" length="50" not-null="false" />
+    </property>
+    <property name="KeyPart">
+      <column name="KeyPart" sql-type="varchar" length="50" not-null="false" />
+    </property>
+    <property name="WorkUnit">
+      <column name="WorkUnit" sql-type="varchar" length="100" not-null="false" />
+    </property>
+    <property name="LinkMan">
+      <column name="LinkMan" sql-type="varchar" length="50" not-null="false" />
+    </property>
+    <property name="PrjManager">
+      <column name="PrjManager" sql-type="varchar" length="50" not-null="false" />
+    </property>
+    <property name="BuildingType">
+      <column name="BuildingType" sql-type="varchar" length="50" not-null="false" />
+    </property>
+    <property name="TotalHouseNum">
+      <column name="TotalHouseNum" sql-type="varchar" length="50" not-null="false" />
+    </property>
+    <property name="BuildingArea">
+      <column name="BuildingArea" sql-type="varchar" length="50" not-null="false" />
+    </property>
+    <property name="UsegrounArea">
+      <column name="UsegrounArea" sql-type="varchar" length="50" not-null="false" />
+    </property>
+    <property name="UndergroundArea">
+      <column name="UndergroundArea" sql-type="varchar" length="50" not-null="false" />
+    </property>
+    <property name="PrjFundInfo">
+      <column name="PrjFundInfo" sql-type="varchar" length="500" not-null="false" />
+    </property>
+    <property name="OtherStatement">
+      <column name="OtherStatement" sql-type="nvarchar(max)" not-null="false" />
+    </property>
+    <property name="Podepom">
+      <column name="Podepom" sql-type="varchar" length="4000" not-null="false" />
+    </property>
+    <property name="IsConfirm">
+      <column name="IsConfirm" sql-type="bit" not-null="false" />
+    </property>
+    <property name="PrjStateRemark">
+      <column name="PrjStateRemark" sql-type="varchar" length="500" not-null="false" />
+    </property>
+    <property name="xmgroup">
+      <column name="xmgroup" sql-type="varchar" length="36" not-null="false" />
+    </property>
+    <property name="grade">
+      <column name="grade" sql-type="varchar" length="50" not-null="false" />
+    </property>
+    <property name="businessman">
+      <column name="businessman" sql-type="varchar" length="50" not-null="false" />
+    </property>
+    <property name="telephone">
+      <column name="telephone" sql-type="varchar" length="50" not-null="false" />
+    </property>
+  </class>
+</hibernate-mapping>

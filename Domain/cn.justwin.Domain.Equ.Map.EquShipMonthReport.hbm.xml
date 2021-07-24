@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="EquShipMonthReport" table="Equ_ShipMonthReport" lazy="true" >
+		<id name="MonthId">
+			<column name="MonthId" sql-type="nvarchar" length="64" not-null="true" />
+		</id>
+		<property name="PrjId">
+			<column name="PrjId" sql-type="nvarchar" length="500" not-null="true" />
+		</property>
+		<property name="EquId">
+			<column name="EquId" sql-type="nvarchar" length="64" not-null="true" />
+		</property>
+		<property name="StartMappingNo">
+			<column name="StartMappingNo" sql-type="nvarchar" length="60" not-null="false" />
+		</property>
+		<property name="EndMappingNo">
+			<column name="EndMappingNo" sql-type="nvarchar" length="60" not-null="false" />
+		</property>
+		<property name="MonthMappingQty">
+			<column name="MonthMappingQty" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="UnitPrice">
+			<column name="UnitPrice" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="StartDate">
+			<column name="StartDate" sql-type="datetime" not-null="false" />
+		</property>
+		<property name="EndDate">
+			<column name="EndDate" sql-type="datetime" not-null="false" />
+		</property>
+		<property name="InputUser">
+			<column name="InputUser" sql-type="nvarchar" length="8" not-null="true" />
+		</property>
+		<property name="InputDate">
+			<column name="InputDate" sql-type="datetime" not-null="true" />
+		</property>
+		<property name="Note">
+			<column name="Note" sql-type="nvarchar(max)" not-null="false" />
+		</property>
+	</class>
+</hibernate-mapping>

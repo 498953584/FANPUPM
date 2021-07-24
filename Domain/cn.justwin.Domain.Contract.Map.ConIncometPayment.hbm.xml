@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="ConIncometPayment" table="Con_Incomet_Payment" lazy="true" >
+		<id name="ID">
+			<column name="ID" sql-type="nvarchar" length="64" not-null="true" />
+		</id>
+		<property name="ContractID">
+			<column name="ContractID" sql-type="nvarchar" length="64" not-null="false" />
+		</property>
+		<property name="CllectionCode">
+			<column name="CllectionCode" sql-type="nvarchar" length="64" not-null="false" />
+		</property>
+		<property name="CllectionTime">
+			<column name="CllectionTime" sql-type="datetime" not-null="false" />
+		</property>
+		<property name="CllectionUser">
+			<column name="CllectionUser" sql-type="nvarchar" length="64" not-null="false" />
+		</property>
+		<property name="InputPerson">
+			<column name="InputPerson" sql-type="nvarchar" length="64" not-null="false" />
+		</property>
+		<property name="CllectionPrice">
+			<column name="CllectionPrice" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="Annex">
+			<column name="Annex" sql-type="nvarchar" length="200" not-null="false" />
+		</property>
+		<property name="Remark">
+			<column name="Remark" sql-type="nvarchar(max)" not-null="false" />
+		</property>
+		<property name="InputDate">
+			<column name="InputDate" sql-type="datetime" not-null="false" />
+		</property>
+		<property name="state">
+			<column name="state" sql-type="int" not-null="false" />
+		</property>
+		<property name="MonthPlanUID">
+			<column name="MonthPlanUID" sql-type="uniqueidentifier" not-null="false" />
+		</property>
+	</class>
+</hibernate-mapping>

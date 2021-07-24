@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="WFprivilege" table="WF_privilege" lazy="true" >
+		<id name="wp_id">
+			<column name="wp_id" sql-type="int" not-null="true" />
+			<generator class="identity" />
+		</id>
+		<property name="businessClass">
+			<column name="businessClass" sql-type="nvarchar" length="100" not-null="false" />
+		</property>
+		<property name="userlist">
+			<column name="userlist" sql-type="nvarchar" length="200" not-null="false" />
+		</property>
+	</class>
+</hibernate-mapping>

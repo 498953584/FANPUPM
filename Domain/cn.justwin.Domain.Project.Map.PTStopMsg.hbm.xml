@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="PTStopMsg" table="PT_StopMsg" lazy="true" >
+    <id name="StopMsgId" column="StopMsgId" />
+    <property name="PrjGuid" type="String">
+      <column name="PrjGuid" sql-type="nvarchar" length="200" not-null="true" />
+    </property>
+    <property name="ConstArea" type="StringClob">
+      <column name="ConstArea" sql-type="nvarchar(max)" not-null="false" />
+    </property>
+    <property name="ConstUnit" type="StringClob">
+      <column name="ConstUnit" sql-type="nvarchar(max)" not-null="false" />
+    </property>
+    <property name="ProjectMileage" type="StringClob">
+      <column name="ProjectMileage" sql-type="nvarchar(max)" not-null="false" />
+    </property>
+    <property name="StopDate" type="DateTime">
+      <column name="StopDate" sql-type="datetime" length="8" not-null="false" />
+    </property>
+    <property name="StopReason" type="StringClob">
+      <column name="StopReason" sql-type="nvarchar(max)" not-null="false" />
+    </property>
+    <property name="MainContent" type="StringClob">
+      <column name="MainContent" sql-type="nvarchar(max)" not-null="false" />
+    </property>
+    <property name="ProjectProblem" type="StringClob">
+      <column name="ProjectProblem" sql-type="nvarchar(max)" not-null="false" />
+    </property>
+    <property name="ProblemReason" type="StringClob">
+      <column name="ProblemReason" sql-type="nvarchar(max)" not-null="false" />
+    </property>
+    <property name="ImpactLossDegree" type="StringClob">
+      <column name="ImpactLossDegree" sql-type="nvarchar(max)" not-null="false" />
+    </property>
+    <property name="RemedialMeasure" type="StringClob">
+      <column name="RemedialMeasure" sql-type="nvarchar(max)" not-null="false" />
+    </property>
+    <property name="SupervisorSign" type="String">
+      <column name="SupervisorSign" sql-type="nvarchar" length="50" not-null="false" />
+    </property>
+    <property name="SupervisorSignDate" type="DateTime">
+      <column name="SupervisorSignDate" sql-type="datetime" length="8" not-null="false" />
+    </property>
+    <property name="GeneralSign" type="String">
+      <column name="GeneralSign" sql-type="nvarchar" length="50" not-null="false" />
+    </property>
+    <property name="GeneralSignDate" type="DateTime">
+      <column name="GeneralSignDate" sql-type="datetime" length="8" not-null="false" />
+    </property>
+    <property name="FlowState" type="int">
+      <column name="FlowState" sql-type="int" length="4" not-null="false" />
+    </property>
+    <property name="InputUser" type="String">
+      <column name="InputUser" sql-type="nvarchar" length="50" not-null="true" />
+    </property>
+    <property name="InputDate" type="DateTime">
+      <column name="InputDate" sql-type="datetime" length="8" not-null="true" />
+    </property>
+  </class>
+</hibernate-mapping>

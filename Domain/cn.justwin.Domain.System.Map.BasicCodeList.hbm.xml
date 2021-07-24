@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="BasicCodeList" table="Basic_CodeList" lazy="true" >
+		<id name="Id">
+			<column name="Id" sql-type="nvarchar" length="200" not-null="true" />
+		</id>
+		<property name="TypeCode">
+			<column name="TypeCode" sql-type="nvarchar" length="20" not-null="true" />
+		</property>
+		<property name="ItemCode">
+			<column name="ItemCode" sql-type="int" not-null="true" />
+		</property>
+		<property name="ItemName">
+			<column name="ItemName" sql-type="nvarchar" length="20" not-null="true" />
+		</property>
+	</class>
+</hibernate-mapping>

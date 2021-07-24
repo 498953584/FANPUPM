@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="ResResource" table="Res_Resource" lazy="true" >
+		<id name="ResourceId">
+			<column name="ResourceId" sql-type="nvarchar" length="500" not-null="true" />
+		</id>
+		<property name="ResourceCode">
+			<column name="ResourceCode" sql-type="nvarchar" length="500" not-null="true" unique="true" />
+		</property>
+		<property name="ResourceName">
+			<column name="ResourceName" sql-type="nvarchar" length="1000" not-null="true" />
+		</property>
+		<property name="Brand">
+			<column name="Brand" sql-type="nvarchar" length="1000" not-null="false" />
+		</property>
+		<property name="TaxRate">
+			<column name="TaxRate" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="Specification">
+			<column name="Specification" sql-type="nvarchar" length="1000" not-null="false" />
+		</property>
+		<property name="TechnicalParameter">
+			<column name="TechnicalParameter" sql-type="nvarchar" length="1000" not-null="false" />
+		</property>
+		<property name="ResourceType">
+			<column name="ResourceType" sql-type="nvarchar" length="500" not-null="false" />
+		</property>
+		<property name="Unit">
+			<column name="Unit" sql-type="nvarchar" length="500" not-null="false" />
+		</property>
+		<property name="Attribute">
+			<column name="Attribute" sql-type="nvarchar" length="500" not-null="false" />
+		</property>
+		<property name="InputUser">
+			<column name="InputUser" sql-type="nvarchar" length="20" not-null="false" />
+		</property>
+		<property name="InputDate">
+			<column name="InputDate" sql-type="datetime" not-null="false" />
+		</property>
+		<property name="Series">
+			<column name="Series" sql-type="nvarchar" length="500" not-null="false" />
+		</property>
+		<property name="SupplierId">
+			<column name="SupplierId" sql-type="int" not-null="false" />
+		</property>
+		<property name="ModelNumber">
+			<column name="ModelNumber" sql-type="nvarchar" length="1000" not-null="false" />
+		</property>
+		<property name="Note">
+			<column name="Note" sql-type="nvarchar(max)" not-null="false" />
+		</property>
+	</class>
+</hibernate-mapping>

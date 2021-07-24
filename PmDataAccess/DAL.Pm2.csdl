@@ -1,0 +1,1596 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Pm2Model" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="pm2Entities">
+    <EntitySet Name="Res_Attribute" EntityType="Pm2Model.Res_Attribute" />
+    <EntitySet Name="Res_Price" EntityType="Pm2Model.Res_Price" />
+    <EntitySet Name="Res_PriceType" EntityType="Pm2Model.Res_PriceType" />
+    <EntitySet Name="Res_Resource" EntityType="Pm2Model.Res_Resource" />
+    <EntitySet Name="Res_ResourceType" EntityType="Pm2Model.Res_ResourceType" />
+    <EntitySet Name="Res_Unit" EntityType="Pm2Model.Res_Unit" />
+    <AssociationSet Name="FK__Res_Attri__Resou__1A4AB916" Association="Pm2Model.FK__Res_Attri__Resou__1A4AB916">
+      <End Role="Res_ResourceType" EntitySet="Res_ResourceType" />
+      <End Role="Res_Attribute" EntitySet="Res_Attribute" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Res_Price__Price__176E4C6B" Association="Pm2Model.FK__Res_Price__Price__176E4C6B">
+      <End Role="Res_PriceType" EntitySet="Res_PriceType" />
+      <End Role="Res_Price" EntitySet="Res_Price" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Res_Price__Resou__167A2832" Association="Pm2Model.FK__Res_Price__Resou__167A2832">
+      <End Role="Res_Resource" EntitySet="Res_Resource" />
+      <End Role="Res_Price" EntitySet="Res_Price" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Res_Resou__Resou__10C14EDC" Association="Pm2Model.FK__Res_Resou__Resou__10C14EDC">
+      <End Role="Res_ResourceType" EntitySet="Res_ResourceType" />
+      <End Role="Res_Resource" EntitySet="Res_Resource" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Res_Resour__Unit__11B57315" Association="Pm2Model.FK__Res_Resour__Unit__11B57315">
+      <End Role="Res_Unit" EntitySet="Res_Unit" />
+      <End Role="Res_Resource" EntitySet="Res_Resource" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Res_Resou__Paren__0DE4E231" Association="Pm2Model.FK__Res_Resou__Paren__0DE4E231">
+      <End Role="Res_ResourceType" EntitySet="Res_ResourceType" />
+      <End Role="Res_ResourceType1" EntitySet="Res_ResourceType" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Res_Resou__Attri__7D446614" Association="Pm2Model.FK__Res_Resou__Attri__7D446614">
+      <End Role="Res_Attribute" EntitySet="Res_Attribute" />
+      <End Role="Res_Resource" EntitySet="Res_Resource" />
+    </AssociationSet>
+    <EntitySet Name="Res_Template" EntityType="Pm2Model.Res_Template" />
+    <EntitySet Name="Res_TemplateItem" EntityType="Pm2Model.Res_TemplateItem" />
+    <AssociationSet Name="FK__Res_Templ__Templ__61674175" Association="Pm2Model.FK__Res_Templ__Templ__61674175">
+      <End Role="Res_Template" EntitySet="Res_Template" />
+      <End Role="Res_TemplateItem" EntitySet="Res_TemplateItem" />
+    </AssociationSet>
+    <EntitySet Name="Bud_Template" EntityType="Pm2Model.Bud_Template" />
+    <EntitySet Name="Bud_TemplateType" EntityType="Pm2Model.Bud_TemplateType" />
+    <AssociationSet Name="FK__Bud_Templ__Templ__2611717D" Association="Pm2Model.FK__Bud_Templ__Templ__2611717D">
+      <End Role="Bud_TemplateType" EntitySet="Bud_TemplateType" />
+      <End Role="Bud_Template" EntitySet="Bud_Template" />
+    </AssociationSet>
+    <EntitySet Name="Bud_Task" EntityType="Pm2Model.Bud_Task" />
+    <EntitySet Name="Bud_TaskResource" EntityType="Pm2Model.Bud_TaskResource" />
+    <AssociationSet Name="FK__Bud_TaskR__TaskI__269B8162" Association="Pm2Model.FK__Bud_TaskR__TaskI__269B8162">
+      <End Role="Bud_Task" EntitySet="Bud_Task" />
+      <End Role="Bud_TaskResource" EntitySet="Bud_TaskResource" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Bud_TaskR__Resou__278FA59B" Association="Pm2Model.FK__Bud_TaskR__Resou__278FA59B">
+      <End Role="Res_Resource" EntitySet="Res_Resource" />
+      <End Role="Bud_TaskResource" EntitySet="Bud_TaskResource" />
+    </AssociationSet>
+    <EntitySet Name="PT_PrjInfo" EntityType="Pm2Model.PT_PrjInfo" />
+    <EntitySet Name="Bud_PrjTaskInfo" EntityType="Pm2Model.Bud_PrjTaskInfo" />
+    <EntitySet Name="Bud_TemplateItem" EntityType="Pm2Model.Bud_TemplateItem" />
+    <AssociationSet Name="FK__Bud_Templ__Templ__247E2EC6" Association="Pm2Model.FK__Bud_Templ__Templ__247E2EC6">
+      <End EntitySet="Bud_Template" Role="Bud_Template" />
+      <End EntitySet="Bud_TemplateItem" Role="Bud_TemplateItem" />
+    </AssociationSet>
+    <EntitySet Name="Bud_TemplateResource" EntityType="Pm2Model.Bud_TemplateResource" />
+    <AssociationSet Name="FK__Bud_Templ__Resou__338B682C" Association="Pm2Model.FK__Bud_Templ__Resou__338B682C">
+      <End Role="Res_Resource" EntitySet="Res_Resource" />
+      <End Role="Bud_TemplateResource" EntitySet="Bud_TemplateResource" />
+    </AssociationSet>
+    <EntitySet Name="XPM_Basic_ContactCorp" EntityType="Pm2Model.XPM_Basic_ContactCorp" />
+    <AssociationSet Name="FK__Bud_Templ__Templ__6DB809C1" Association="Pm2Model.FK__Bud_Templ__Templ__6DB809C1">
+      <End Role="Bud_TemplateItem" EntitySet="Bud_TemplateItem" />
+      <End Role="Bud_TemplateResource" EntitySet="Bud_TemplateResource" />
+    </AssociationSet>
+    <EntitySet Name="XPM_Basic_CodeList" EntityType="Pm2Model.XPM_Basic_CodeList" />
+    <EntitySet Name="XPM_Basic_CodeType" EntityType="Pm2Model.XPM_Basic_CodeType" />
+    <EntitySet Name="Bud_ContractResource" EntityType="Pm2Model.Bud_ContractResource" />
+    <EntitySet Name="Bud_ContractTask" EntityType="Pm2Model.Bud_ContractTask" />
+    <EntitySet Name="Res_ResourceTemp" EntityType="Pm2Model.Res_ResourceTemp" />
+    <AssociationSet Name="FK__Bud_Contr__Resou__705F6C42" Association="Pm2Model.FK__Bud_Contr__Resou__705F6C42">
+      <End Role="Res_Resource" EntitySet="Res_Resource" />
+      <End Role="Bud_ContractResource" EntitySet="Bud_ContractResource" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Bud_Contr__TaskI__6F6B4809" Association="Pm2Model.FK__Bud_Contr__TaskI__6F6B4809">
+      <End Role="Bud_ContractTask" EntitySet="Bud_ContractTask" />
+      <End Role="Bud_ContractResource" EntitySet="Bud_ContractResource" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Res_Resou__TaskI__63F9955D" Association="Pm2Model.FK__Res_Resou__TaskI__63F9955D">
+      <End Role="Bud_Task" EntitySet="Bud_Task" />
+      <End Role="Res_ResourceTemp" EntitySet="Res_ResourceTemp" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Res_Resou__Resou__63057124" Association="Pm2Model.FK__Res_Resou__Resou__63057124">
+      <End Role="Res_Resource" EntitySet="Res_Resource" />
+      <End Role="Res_ResourceTemp" EntitySet="Res_ResourceTemp" />
+    </AssociationSet>
+    <EntitySet Name="Bud_ConsReport" EntityType="Pm2Model.Bud_ConsReport" />
+    <EntitySet Name="Bud_CostAccounting" EntityType="Pm2Model.Bud_CostAccounting" />
+    <EntitySet Name="Bud_IndirectBudget" EntityType="Pm2Model.Bud_IndirectBudget" />
+    <EntitySet Name="Bud_IndirectDiaryCost" EntityType="Pm2Model.Bud_IndirectDiaryCost" />
+    <EntitySet Name="Bud_IndirectDiaryDetails" EntityType="Pm2Model.Bud_IndirectDiaryDetails" />
+    <EntitySet Name="Bud_IndirectMonthBudget" EntityType="Pm2Model.Bud_IndirectMonthBudget" />
+    <EntitySet Name="Bud_OrganizationBudget" EntityType="Pm2Model.Bud_OrganizationBudget" />
+    <AssociationSet Name="FK__Bud_Indir__Indir__0801EBA9" Association="Pm2Model.FK__Bud_Indir__Indir__0801EBA9">
+      <End Role="Bud_IndirectBudget" EntitySet="Bud_IndirectBudget" />
+      <End Role="Bud_IndirectMonthBudget" EntitySet="Bud_IndirectMonthBudget" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Bud_Indir__InDia__0D85BAD5" Association="Pm2Model.FK__Bud_Indir__InDia__0D85BAD5">
+      <End Role="Bud_IndirectDiaryCost" EntitySet="Bud_IndirectDiaryCost" />
+      <End Role="Bud_IndirectDiaryDetails" EntitySet="Bud_IndirectDiaryDetails" />
+    </AssociationSet>
+    <EntitySet Name="Bud_OrganizationMonthBudget" EntityType="Pm2Model.Bud_OrganizationMonthBudget" />
+    <AssociationSet Name="FK__Bud_Organ__Organ__69D26A44" Association="Pm2Model.FK__Bud_Organ__Organ__69D26A44">
+      <End Role="Bud_OrganizationBudget" EntitySet="Bud_OrganizationBudget" />
+      <End Role="Bud_OrganizationMonthBudget" EntitySet="Bud_OrganizationMonthBudget" />
+    </AssociationSet>
+    <EntitySet Name="Bud_OrgDiaryCost" EntityType="Pm2Model.Bud_OrgDiaryCost" />
+    <EntitySet Name="Bud_OrgDiaryDetails" EntityType="Pm2Model.Bud_OrgDiaryDetails" />
+    <AssociationSet Name="FK__Bud_OrgDi__OrgDi__48C67C34" Association="Pm2Model.FK__Bud_OrgDi__OrgDi__48C67C34">
+      <End Role="Bud_OrgDiaryCost" EntitySet="Bud_OrgDiaryCost" />
+      <End Role="Bud_OrgDiaryDetails" EntitySet="Bud_OrgDiaryDetails" />
+    </AssociationSet>
+    <EntitySet Name="PT_PrjInfo_ZTB" EntityType="Pm2Model.PT_PrjInfo_ZTB" />
+    <EntitySet Name="PT_PrjInfo_ZTB_Detail" EntityType="Pm2Model.PT_PrjInfo_ZTB_Detail" />
+    <EntitySet Name="PT_PrjInfo_ZTB_Stock" EntityType="Pm2Model.PT_PrjInfo_ZTB_Stock" />
+    <EntitySet Name="PT_PrjInfo_ZTB_User" EntityType="Pm2Model.PT_PrjInfo_ZTB_User" />
+    <EntitySet Name="PT_yhmc" EntityType="Pm2Model.PT_yhmc" />
+    <EntitySet Name="Basic_CodeList" EntityType="Pm2Model.Basic_CodeList" />
+    <EntitySet Name="Basic_CodeType" EntityType="Pm2Model.Basic_CodeType" />
+    <AssociationSet Name="FK__Basic_Cod__TypeC__37A6DD2A" Association="Pm2Model.FK__Basic_Cod__TypeC__37A6DD2A">
+      <End Role="Basic_CodeType" EntitySet="Basic_CodeType" />
+      <End Role="Basic_CodeList" EntitySet="Basic_CodeList" />
+    </AssociationSet>
+    <EntitySet Name="v_pt_d_bm" EntityType="Pm2Model.v_pt_d_bm" />
+    <EntitySet Name="PT_PrjMember" EntityType="Pm2Model.PT_PrjMember" />
+    <AssociationSet Name="FK__PT_PrjMem__Membe__40071901" Association="Pm2Model.FK__PT_PrjMem__Membe__40071901">
+      <End Role="PT_yhmc" EntitySet="PT_yhmc" />
+      <End Role="PT_PrjMember" EntitySet="PT_PrjMember" />
+    </AssociationSet>
+    <EntitySet Name="PT_Prj_Completed" EntityType="Pm2Model.PT_Prj_Completed" />
+    <EntitySet Name="PT_Prj_Completed_Detail" EntityType="Pm2Model.PT_Prj_Completed_Detail" />
+    <AssociationSet Name="FK__PT_Prj_Co__Input__5EE0A5DC" Association="Pm2Model.FK__PT_Prj_Co__Input__5EE0A5DC">
+      <End Role="PT_yhmc" EntitySet="PT_yhmc" />
+      <End Role="PT_Prj_Completed" EntitySet="PT_Prj_Completed" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PT_Prj_Co__PrjCo__6A525888" Association="Pm2Model.FK__PT_Prj_Co__PrjCo__6A525888">
+      <End Role="PT_Prj_Completed" EntitySet="PT_Prj_Completed" />
+      <End Role="PT_Prj_Completed_Detail" EntitySet="PT_Prj_Completed_Detail" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PT_Prj_Co__Input__6B467CC1" Association="Pm2Model.FK__PT_Prj_Co__Input__6B467CC1">
+      <End Role="PT_yhmc" EntitySet="PT_yhmc" />
+      <End Role="PT_Prj_Completed_Detail" EntitySet="PT_Prj_Completed_Detail" />
+    </AssociationSet>
+    <EntitySet Name="PT_Prj_Completed_Annex" EntityType="Pm2Model.PT_Prj_Completed_Annex" />
+    <AssociationSet Name="FK__PT_Prj_Co__Detai__32CD1974" Association="Pm2Model.FK__PT_Prj_Co__Detai__32CD1974">
+      <End Role="PT_Prj_Completed_Detail" EntitySet="PT_Prj_Completed_Detail" />
+      <End Role="PT_Prj_Completed_Annex" EntitySet="PT_Prj_Completed_Annex" />
+    </AssociationSet>
+    <EntitySet Name="PT_PrjInfo_EngineeringType" EntityType="Pm2Model.PT_PrjInfo_EngineeringType" />
+    <EntitySet Name="plus_progress" EntityType="Pm2Model.plus_progress" />
+    <EntitySet Name="plus_progress_privilege" EntityType="Pm2Model.plus_progress_privilege" />
+    <EntitySet Name="plus_progress_version" EntityType="Pm2Model.plus_progress_version" />
+    <AssociationSet Name="FK_plus_progress_InputUser" Association="Pm2Model.FK_plus_progress_InputUser">
+      <End Role="PT_yhmc" EntitySet="PT_yhmc" />
+      <End Role="plus_progress" EntitySet="plus_progress" />
+    </AssociationSet>
+    <AssociationSet Name="FK_privilege_ProgressId" Association="Pm2Model.FK_privilege_ProgressId">
+      <End Role="plus_progress" EntitySet="plus_progress" />
+      <End Role="plus_progress_privilege" EntitySet="plus_progress_privilege" />
+    </AssociationSet>
+    <AssociationSet Name="FK_progress_version_ProgressId" Association="Pm2Model.FK_progress_version_ProgressId">
+      <End Role="plus_progress" EntitySet="plus_progress" />
+      <End Role="plus_progress_version" EntitySet="plus_progress_version" />
+    </AssociationSet>
+    <AssociationSet Name="FK_privilege_UserCode" Association="Pm2Model.FK_privilege_UserCode">
+      <End Role="PT_yhmc" EntitySet="PT_yhmc" />
+      <End Role="plus_progress_privilege" EntitySet="plus_progress_privilege" />
+    </AssociationSet>
+    <AssociationSet Name="FK_progress_version_InputUser" Association="Pm2Model.FK_progress_version_InputUser">
+      <End Role="PT_yhmc" EntitySet="PT_yhmc" />
+      <End Role="plus_progress_version" EntitySet="plus_progress_version" />
+    </AssociationSet>
+    <EntitySet Name="PT_Warning" EntityType="Pm2Model.PT_Warning" />
+    <EntitySet Name="Bud_TaskChange" EntityType="Pm2Model.Bud_TaskChange" />
+    <AssociationSet Name="FK__Bud_TaskC__Input__292EA0A1" Association="Pm2Model.FK__Bud_TaskC__Input__292EA0A1">
+      <End Role="PT_yhmc" EntitySet="PT_yhmc" />
+      <End Role="Bud_TaskChange" EntitySet="Bud_TaskChange" />
+    </AssociationSet>
+    <EntitySet Name="vGetCurBudVersion" EntityType="Pm2Model.vGetCurBudVersion" />
+    <EntitySet Name="plus_report" EntityType="Pm2Model.plus_report" />
+    <EntitySet Name="plus_reportDetail" EntityType="Pm2Model.plus_reportDetail" />
+    <AssociationSet Name="FK_plus_progress_version" Association="Pm2Model.FK_plus_progress_version">
+      <End Role="plus_progress_version" EntitySet="plus_progress_version" />
+      <End Role="plus_report" EntitySet="plus_report" />
+    </AssociationSet>
+    <AssociationSet Name="FK_plus_report" Association="Pm2Model.FK_plus_report">
+      <End Role="plus_report" EntitySet="plus_report" />
+      <End Role="plus_reportDetail" EntitySet="plus_reportDetail" />
+    </AssociationSet>
+    <EntitySet Name="Bud_ContractTaskAudit" EntityType="Pm2Model.Bud_ContractTaskAudit" />
+    <EntitySet Name="Basic_Privilege" EntityType="Pm2Model.Basic_Privilege" />
+    <EntitySet Name="PT_d_bm" EntityType="Pm2Model.PT_d_bm" />
+    <AssociationSet Name="FK__Bud_OrgDi__OrgId__31B8F9AA" Association="Pm2Model.FK__Bud_OrgDi__OrgId__31B8F9AA">
+      <End Role="PT_d_bm" EntitySet="PT_d_bm" />
+      <End Role="Bud_OrgDiaryCost" EntitySet="Bud_OrgDiaryCost" />
+    </AssociationSet>
+    <AssociationSet Name="用户_部门" Association="Pm2Model.用户_部门">
+      <End Role="PT_d_bm" EntitySet="PT_d_bm" />
+      <End Role="PT_yhmc" EntitySet="PT_yhmc" />
+    </AssociationSet>
+    <EntitySet Name="Basic_ContactInfo" EntityType="Pm2Model.Basic_ContactInfo" />
+    <EntitySet Name="vSupplierProject" EntityType="Pm2Model.vSupplierProject" />
+    <EntitySet Name="V_PCSupplier" EntityType="Pm2Model.V_PCSupplier" />
+    <EntitySet Name="PT_PrjInfo_Kind" EntityType="Pm2Model.PT_PrjInfo_Kind" />
+    <EntitySet Name="PT_PrjInfo_Rank" EntityType="Pm2Model.PT_PrjInfo_Rank" />
+    <AssociationSet Name="FK__PT_PrjInf__PrjGu__0313E4B1" Association="Pm2Model.FK__PT_PrjInf__PrjGu__0313E4B1">
+      <End Role="PT_PrjInfo_ZTB_Detail" EntitySet="PT_PrjInfo_ZTB_Detail" />
+      <End Role="PT_PrjInfo_Kind" EntitySet="PT_PrjInfo_Kind" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PT_PrjInf__PrjGu__06E47595" Association="Pm2Model.FK__PT_PrjInf__PrjGu__06E47595">
+      <End Role="PT_PrjInfo_ZTB_Detail" EntitySet="PT_PrjInfo_ZTB_Detail" />
+      <End Role="PT_PrjInfo_Rank" EntitySet="PT_PrjInfo_Rank" />
+    </AssociationSet>
+    <EntitySet Name="Bud_ConsTask" EntityType="Pm2Model.Bud_ConsTask" />
+    <EntitySet Name="Bud_ConsTaskRes" EntityType="Pm2Model.Bud_ConsTaskRes" />
+    <AssociationSet Name="FK__Bud_ConsT__ConsR__61DC42C1" Association="Pm2Model.FK__Bud_ConsT__ConsR__61DC42C1">
+      <End Role="Bud_ConsReport" EntitySet="Bud_ConsReport" />
+      <End Role="Bud_ConsTask" EntitySet="Bud_ConsTask" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Bud_ConsT__ConsT__65ACD3A5" Association="Pm2Model.FK__Bud_ConsT__ConsT__65ACD3A5">
+      <End Role="Bud_ConsTask" EntitySet="Bud_ConsTask" />
+      <End Role="Bud_ConsTaskRes" EntitySet="Bud_ConsTaskRes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Bud_ConsT__Resou__66A0F7DE" Association="Pm2Model.FK__Bud_ConsT__Resou__66A0F7DE">
+      <End Role="Res_Resource" EntitySet="Res_Resource" />
+      <End Role="Bud_ConsTaskRes" EntitySet="Bud_ConsTaskRes" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Res_Attribute">
+    <Key>
+      <PropertyRef Name="AttributeId" />
+    </Key>
+    <Property Name="AttributeId" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="AttributeName" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Res_ResourceType" Relationship="Pm2Model.FK__Res_Attri__Resou__1A4AB916" FromRole="Res_Attribute" ToRole="Res_ResourceType" />
+    <Property Name="InputDate" Type="DateTime" Nullable="true" />
+    <Property Name="InputUser" Type="String" Nullable="true" />
+    <NavigationProperty Name="Res_Resource" Relationship="Pm2Model.FK__Res_Resou__Attri__7D446614" FromRole="Res_Attribute" ToRole="Res_Resource" />
+  </EntityType>
+  <EntityType Name="Res_Price">
+    <Key>
+      <PropertyRef Name="PriceTypeId" />
+      <PropertyRef Name="ResourceId" />
+    </Key>
+    <Property Name="PriceTypeId" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="PriceValue" Type="Decimal" Nullable="false" Precision="18" Scale="3" />
+    <Property Name="ResourceId" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Res_PriceType" Relationship="Pm2Model.FK__Res_Price__Price__176E4C6B" FromRole="Res_Price" ToRole="Res_PriceType" />
+    <NavigationProperty Name="Res_Resource" Relationship="Pm2Model.FK__Res_Price__Resou__167A2832" FromRole="Res_Price" ToRole="Res_Resource" />
+    <Property Name="InputDate" Type="DateTime" Nullable="true" />
+    <Property Name="InputUser" Type="String" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Res_PriceType">
+    <Key>
+      <PropertyRef Name="PriceTypeId" />
+    </Key>
+    <Property Name="Note" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="PriceTypeCode" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="PriceTypeId" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="PriceTypeName" Type="String" Nullable="false" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Res_Price" Relationship="Pm2Model.FK__Res_Price__Price__176E4C6B" FromRole="Res_PriceType" ToRole="Res_Price" />
+    <Property Name="InputDate" Type="DateTime" Nullable="true" />
+    <Property Name="InputUser" Type="String" Nullable="true" />
+    <Property Name="UserCodes" Type="String" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Res_Resource">
+    <Key>
+      <PropertyRef Name="ResourceId" />
+    </Key>
+    <Property Name="Brand" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <Property Name="ResourceCode" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="ResourceId" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="ResourceName" Type="String" Nullable="false" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <Property Name="Specification" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <Property Name="TaxRate" Type="Decimal" Precision="18" Scale="3" />
+    <Property Name="TechnicalParameter" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Res_Price" Relationship="Pm2Model.FK__Res_Price__Resou__167A2832" FromRole="Res_Resource" ToRole="Res_Price" />
+    <NavigationProperty Name="Res_ResourceType" Relationship="Pm2Model.FK__Res_Resou__Resou__10C14EDC" FromRole="Res_Resource" ToRole="Res_ResourceType" />
+    <NavigationProperty Name="Res_Unit" Relationship="Pm2Model.FK__Res_Resour__Unit__11B57315" FromRole="Res_Resource" ToRole="Res_Unit" />
+    <Property Name="InputDate" Type="DateTime" Nullable="true" />
+    <Property Name="InputUser" Type="String" Nullable="true" />
+    <NavigationProperty Name="Res_Attribute" Relationship="Pm2Model.FK__Res_Resou__Attri__7D446614" FromRole="Res_Resource" ToRole="Res_Attribute" />
+    <NavigationProperty Name="Bud_TaskResource" Relationship="Pm2Model.FK__Bud_TaskR__Resou__278FA59B" FromRole="Res_Resource" ToRole="Bud_TaskResource" />
+    <Property Name="Series" Type="String" Nullable="true" />
+    <NavigationProperty Name="Bud_TemplateResource" Relationship="Pm2Model.FK__Bud_Templ__Resou__338B682C" FromRole="Res_Resource" ToRole="Bud_TemplateResource" />
+    <Property Name="SupplierId" Type="Int32" Nullable="true" />
+    <Property Name="ModelNumber" Type="String" Nullable="true" />
+    <Property Name="Note" Type="String" Nullable="true" />
+    <NavigationProperty Name="Bud_ContractResource" Relationship="Pm2Model.FK__Bud_Contr__Resou__705F6C42" FromRole="Res_Resource" ToRole="Bud_ContractResource" />
+    <NavigationProperty Name="Res_ResourceTemp" Relationship="Pm2Model.FK__Res_Resou__Resou__63057124" FromRole="Res_Resource" ToRole="Res_ResourceTemp" />
+    <NavigationProperty Name="Bud_ConsTaskRes" Relationship="Pm2Model.FK__Bud_ConsT__Resou__66A0F7DE" FromRole="Res_Resource" ToRole="Bud_ConsTaskRes" />
+  </EntityType>
+  <EntityType Name="Res_ResourceType">
+    <Key>
+      <PropertyRef Name="ResourceTypeId" />
+    </Key>
+    <Property Name="IsValid" Type="Boolean" />
+    <Property Name="ResourceTypeCode" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="ResourceTypeId" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="ResourceTypeName" Type="String" Nullable="false" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Res_Attribute" Relationship="Pm2Model.FK__Res_Attri__Resou__1A4AB916" FromRole="Res_ResourceType" ToRole="Res_Attribute" />
+    <NavigationProperty Name="Res_Resource" Relationship="Pm2Model.FK__Res_Resou__Resou__10C14EDC" FromRole="Res_ResourceType" ToRole="Res_Resource" />
+    <NavigationProperty Name="Res_ResourceType1" Relationship="Pm2Model.FK__Res_Resou__Paren__0DE4E231" FromRole="Res_ResourceType" ToRole="Res_ResourceType1" />
+    <NavigationProperty Name="Res_ResourceType2" Relationship="Pm2Model.FK__Res_Resou__Paren__0DE4E231" FromRole="Res_ResourceType1" ToRole="Res_ResourceType" />
+    <Property Name="InputDate" Type="DateTime" Nullable="true" />
+    <Property Name="InputUser" Type="String" Nullable="true" />
+    <Property Type="String" Name="CBSCode" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Res_Unit">
+    <Key>
+      <PropertyRef Name="UnitId" />
+    </Key>
+    <Property Name="Code" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <Property Name="UnitId" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Res_Resource" Relationship="Pm2Model.FK__Res_Resour__Unit__11B57315" FromRole="Res_Unit" ToRole="Res_Resource" />
+    <Property Name="InputDate" Type="DateTime" Nullable="true" />
+    <Property Name="InputUser" Type="String" Nullable="true" />
+  </EntityType>
+  <Association Name="FK__Res_Attri__Resou__1A4AB916">
+    <End Role="Res_ResourceType" Type="Pm2Model.Res_ResourceType" Multiplicity="0..1" />
+    <End Role="Res_Attribute" Type="Pm2Model.Res_Attribute" Multiplicity="*" />
+  </Association>
+  <Association Name="FK__Res_Price__Price__176E4C6B">
+    <End Role="Res_PriceType" Type="Pm2Model.Res_PriceType" Multiplicity="1" />
+    <End Role="Res_Price" Type="Pm2Model.Res_Price" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Res_PriceType">
+        <PropertyRef Name="PriceTypeId" />
+      </Principal>
+      <Dependent Role="Res_Price">
+        <PropertyRef Name="PriceTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Res_Price__Resou__167A2832">
+    <End Role="Res_Resource" Type="Pm2Model.Res_Resource" Multiplicity="1" />
+    <End Role="Res_Price" Type="Pm2Model.Res_Price" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Res_Resource">
+        <PropertyRef Name="ResourceId" />
+      </Principal>
+      <Dependent Role="Res_Price">
+        <PropertyRef Name="ResourceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Res_Resou__Resou__10C14EDC">
+    <End Role="Res_ResourceType" Type="Pm2Model.Res_ResourceType" Multiplicity="0..1" />
+    <End Role="Res_Resource" Type="Pm2Model.Res_Resource" Multiplicity="*" />
+  </Association>
+  <Association Name="FK__Res_Resour__Unit__11B57315">
+    <End Role="Res_Unit" Type="Pm2Model.Res_Unit" Multiplicity="0..1" />
+    <End Role="Res_Resource" Type="Pm2Model.Res_Resource" Multiplicity="*" />
+  </Association>
+  <Association Name="FK__Res_Resou__Paren__0DE4E231">
+    <End Role="Res_ResourceType" Type="Pm2Model.Res_ResourceType" Multiplicity="0..1" />
+    <End Role="Res_ResourceType1" Type="Pm2Model.Res_ResourceType" Multiplicity="*" />
+  </Association>
+  <Association Name="FK__Res_Resou__Attri__7D446614">
+    <End Type="Pm2Model.Res_Attribute" Role="Res_Attribute" Multiplicity="0..1" />
+    <End Type="Pm2Model.Res_Resource" Role="Res_Resource" Multiplicity="*" />
+  </Association>
+  <EntityType Name="Res_Template">
+    <Key>
+      <PropertyRef Name="TemplateId" />
+    </Key>
+    <Property Name="TemplateId" Type="String" Nullable="false" />
+    <Property Name="TemplateName" Type="String" Nullable="false" />
+    <NavigationProperty Name="Res_TemplateItem" Relationship="Pm2Model.FK__Res_Templ__Templ__61674175" FromRole="Res_Template" ToRole="Res_TemplateItem" />
+    <Property Name="StartRowIndex" Type="Int32" Nullable="true" />
+    <Property Name="IsValid" Type="Boolean" Nullable="true" />
+    <Property Name="InputDate" Type="DateTime" Nullable="true" />
+    <Property Name="InputUser" Type="String" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Res_TemplateItem">
+    <Key>
+      <PropertyRef Name="ItemId" />
+    </Key>
+    <Property Name="ItemId" Type="String" Nullable="false" />
+    <Property Name="ExcelColumn" Type="String" Nullable="false" />
+    <Property Name="DbColumn" Type="String" Nullable="false" />
+    <NavigationProperty Name="Res_Template" Relationship="Pm2Model.FK__Res_Templ__Templ__61674175" FromRole="Res_TemplateItem" ToRole="Res_Template" />
+    <Property Name="ExcelRealCoumn" Type="String" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Res_Templ__Templ__61674175">
+    <End Type="Pm2Model.Res_Template" Role="Res_Template" Multiplicity="0..1" />
+    <End Type="Pm2Model.Res_TemplateItem" Role="Res_TemplateItem" Multiplicity="*" />
+  </Association>
+  <EntityType Name="Bud_Template">
+    <Key>
+      <PropertyRef Name="TemplateId" />
+    </Key>
+    <Property Name="TemplateId" Type="String" Nullable="false" />
+    <Property Name="TemplateCode" Type="String" Nullable="false" />
+    <Property Name="TemplateName" Type="String" Nullable="false" />
+    <Property Name="InputUser" Type="String" Nullable="false" />
+    <Property Name="InputDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Bud_TemplateType" Relationship="Pm2Model.FK__Bud_Templ__Templ__2611717D" FromRole="Bud_Template" ToRole="Bud_TemplateType" />
+    <NavigationProperty Name="Bud_TemplateItem" Relationship="Pm2Model.FK__Bud_Templ__Templ__247E2EC6" FromRole="Bud_Template" ToRole="Bud_TemplateItem" />
+  </EntityType>
+  <EntityType Name="Bud_TemplateType">
+    <Key>
+      <PropertyRef Name="TypeId" />
+    </Key>
+    <Property Name="TypeId" Type="String" Nullable="false" />
+    <Property Name="TypeCode" Type="String" Nullable="false" />
+    <Property Name="TypeName" Type="String" Nullable="false" />
+    <Property Name="InputUser" Type="String" Nullable="false" />
+    <Property Name="InputDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Bud_Template" Relationship="Pm2Model.FK__Bud_Templ__Templ__2611717D" FromRole="Bud_TemplateType" ToRole="Bud_Template" />
+  </EntityType>
+  <Association Name="FK__Bud_Templ__Templ__2611717D">
+    <End Type="Pm2Model.Bud_TemplateType" Role="Bud_TemplateType" Multiplicity="0..1" />
+    <End Type="Pm2Model.Bud_Template" Role="Bud_Template" Multiplicity="*" />
+  </Association>
+  <EntityType Name="Bud_Task">
+    <Key>
+      <PropertyRef Name="TaskId" />
+    </Key>
+    <Property Name="TaskId" Type="String" Nullable="false" />
+    <Property Name="PrjId" Type="String" Nullable="true" />
+    <Property Name="TaskCode" Type="String" Nullable="false" />
+    <Property Name="TaskName" Type="String" Nullable="false" />
+    <Property Name="Unit" Type="String" Nullable="true" />
+    <Property Name="Quantity" Type="Decimal" Nullable="false" />
+    <Property Name="StartDate" Type="DateTime" Nullable="true" />
+    <Property Name="EndDate" Type="DateTime" Nullable="true" />
+    <Property Name="Note" Type="String" Nullable="true" />
+    <Property Name="InputUser" Type="String" Nullable="false" />
+    <Property Name="InputDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Bud_TaskResource" Relationship="Pm2Model.FK__Bud_TaskR__TaskI__269B8162" FromRole="Bud_Task" ToRole="Bud_TaskResource" />
+    <Property Name="IsValid" Type="Boolean" Nullable="true" />
+    <Property Name="UnitPrice" Type="Decimal" Nullable="true" />
+    <Property Name="Version" Type="Int32" Nullable="true" />
+    <Property Name="OrderNumber" Type="String" Nullable="true" />
+    <Property Name="Total" Type="Decimal" Nullable="true" />
+    <Property Name="ParentId" Type="String" Nullable="true" />
+    <Property Name="Modified" Type="String" Nullable="true" />
+    <Property Name="Total2" Type="Decimal" Nullable="true" />
+    <NavigationProperty Name="Res_ResourceTemp" Relationship="Pm2Model.FK__Res_Resou__TaskI__63F9955D" FromRole="Bud_Task" ToRole="Res_ResourceTemp" />
+  </EntityType>
+  <EntityType Name="Bud_TaskResource">
+    <Key>
+      <PropertyRef Name="TaskResourceId" />
+    </Key>
+    <Property Name="TaskResourceId" Type="String" Nullable="false" />
+    <Property Name="ResourceQuantity" Type="Decimal" Nullable="true" />
+    <Property Name="InputUser" Type="String" Nullable="false" />
+    <Property Name="InputDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Bud_Task" Relationship="Pm2Model.FK__Bud_TaskR__TaskI__269B8162" FromRole="Bud_TaskResource" ToRole="Bud_Task" />
+    <NavigationProperty Name="Res_Resource" Relationship="Pm2Model.FK__Bud_TaskR__Resou__278FA59B" FromRole="Bud_TaskResource" ToRole="Res_Resource" />
+    <Property Name="ResourcePrice" Type="Decimal" Nullable="true" />
+    <Property Type="String" Name="PrjGuid" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Versions" />
+    <Property Type="Decimal" Name="LossCoefficient" />
+  </EntityType>
+  <Association Name="FK__Bud_TaskR__TaskI__269B8162">
+    <End Type="Pm2Model.Bud_Task" Role="Bud_Task" Multiplicity="0..1" />
+    <End Type="Pm2Model.Bud_TaskResource" Role="Bud_TaskResource" Multiplicity="*" />
+  </Association>
+  <Association Name="FK__Bud_TaskR__Resou__278FA59B">
+    <End Type="Pm2Model.Res_Resource" Role="Res_Resource" Multiplicity="0..1" />
+    <End Type="Pm2Model.Bud_TaskResource" Role="Bud_TaskResource" Multiplicity="*" />
+  </Association>
+  <EntityType Name="PT_PrjInfo">
+    <Key>
+      <PropertyRef Name="TypeCode" />
+    </Key>
+    <Property Name="TypeCode" Type="String" Nullable="false" />
+    <Property Name="i_xh" Type="Int32" Nullable="true" />
+    <Property Name="IsValid" Type="String" Nullable="true" />
+    <Property Name="UserCode" Type="String" Nullable="true" />
+    <Property Name="RecordDate" Type="DateTime" Nullable="true" />
+    <Property Name="i_ChildNum" Type="Int32" Nullable="true" />
+    <Property Name="PrjCode" Type="String" Nullable="true" />
+    <Property Name="PrjGuid" Type="Guid" Nullable="true" />
+    <Property Name="PrjName" Type="String" Nullable="true" />
+    <Property Name="StartDate" Type="DateTime" Nullable="true" />
+    <Property Name="EndDate" Type="DateTime" Nullable="true" />
+    <Property Name="ComputeClass" Type="String" Nullable="true" />
+    <Property Name="RationClass" Type="String" Nullable="true" />
+    <Property Name="PrjCost" Type="Double" Nullable="true" />
+    <Property Name="ContractSum" Type="String" Nullable="true" />
+    <Property Name="Duration" Type="String" Nullable="true" />
+    <Property Name="QualityClass" Type="String" Nullable="true" />
+    <Property Name="Area" Type="String" Nullable="true" />
+    <Property Name="PrjKindClass" Type="String" Nullable="true" />
+    <Property Name="PrjPlace" Type="String" Nullable="true" />
+    <Property Name="Remark1" Type="String" Nullable="true" />
+    <Property Name="FileName" Type="String" Nullable="true" />
+    <Property Name="FileURL" Type="String" Nullable="true" />
+    <Property Name="Owner" Type="String" Nullable="true" />
+    <Property Name="Counsellor" Type="String" Nullable="true" />
+    <Property Name="Designer" Type="String" Nullable="true" />
+    <Property Name="Inspector" Type="String" Nullable="true" />
+    <Property Name="PrjInfo" Type="String" Nullable="true" />
+    <Property Name="PrjState" Type="Int32" Nullable="true" />
+    <Property Name="OwnerCode" Type="Int32" Nullable="true" />
+    <Property Name="MarketInfoGuid" Type="Guid" Nullable="true" />
+    <Property Name="Rank" Type="String" Nullable="true" />
+    <Property Name="BudgetWay" Type="String" Nullable="true" />
+    <Property Name="ContractWay" Type="String" Nullable="true" />
+    <Property Name="PayCondition" Type="String" Nullable="true" />
+    <Property Name="TenderWay" Type="String" Nullable="true" />
+    <Property Name="PayWay" Type="String" Nullable="true" />
+    <Property Name="KeyPart" Type="String" Nullable="true" />
+    <Property Name="WorkUnit" Type="String" Nullable="true" />
+    <Property Name="LinkMan" Type="String" Nullable="true" />
+    <Property Name="PrjManager" Type="String" Nullable="true" />
+    <Property Name="BuildingType" Type="String" Nullable="true" />
+    <Property Name="TotalHouseNum" Type="String" Nullable="true" />
+    <Property Name="BuildingArea" Type="String" Nullable="true" />
+    <Property Name="UsegrounArea" Type="String" Nullable="true" />
+    <Property Name="UndergroundArea" Type="String" Nullable="true" />
+    <Property Name="PrjFundInfo" Type="String" Nullable="true" />
+    <Property Name="OtherStatement" Type="String" Nullable="true" />
+    <Property Name="Podepom" Type="String" Nullable="true" />
+    <Property Name="IsConfirm" Type="Boolean" Nullable="true" />
+    <Property Name="PrjStateRemark" Type="String" Nullable="true" />
+    <Property Name="xmgroup" Type="String" Nullable="true" />
+    <Property Name="grade" Type="String" Nullable="true" />
+    <Property Name="businessman" Type="String" Nullable="true" />
+    <Property Name="telephone" Type="String" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Bud_PrjTaskInfo">
+    <Key>
+      <PropertyRef Name="PrjTaskInfoId" />
+    </Key>
+    <Property Name="PrjTaskInfoId" Type="String" Nullable="false" />
+    <Property Name="PrjId" Type="String" Nullable="true" />
+    <Property Name="IsLocked" Type="Boolean" Nullable="true" />
+    <Property Type="Int32" Name="ConFlowState" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Bud_TemplateItem">
+    <Key>
+      <PropertyRef Name="TemplateItemId" />
+    </Key>
+    <Property Name="TemplateItemId" Type="String" Nullable="false" />
+    <Property Name="ItemCode" Type="String" Nullable="true" />
+    <Property Name="ItemName" Type="String" Nullable="true" />
+    <Property Name="Unit" Type="String" Nullable="true" />
+    <Property Name="Quantity" Type="Decimal" Nullable="false" />
+    <Property Name="UnitPrice" Type="Decimal" Nullable="true" />
+    <Property Name="Note" Type="String" Nullable="true" />
+    <NavigationProperty Name="Bud_Template" Relationship="Pm2Model.FK__Bud_Templ__Templ__247E2EC6" FromRole="Bud_TemplateItem" ToRole="Bud_Template" />
+    <Property Name="OrderNumber" Type="String" Nullable="true" />
+    <Property Name="ParentId" Type="String" Nullable="true" />
+    <Property Name="FeatureDescription" Type="String" Nullable="true" />
+    <NavigationProperty Name="Bud_TemplateResource" Relationship="Pm2Model.FK__Bud_Templ__Templ__6DB809C1" FromRole="Bud_TemplateItem" ToRole="Bud_TemplateResource" />
+  </EntityType>
+  <Association Name="FK__Bud_Templ__Templ__247E2EC6">
+    <End Type="Pm2Model.Bud_Template" Multiplicity="0..1" Role="Bud_Template" />
+    <End Type="Pm2Model.Bud_TemplateItem" Multiplicity="*" Role="Bud_TemplateItem" />
+  </Association>
+  <EntityType Name="Bud_TemplateResource">
+    <Key>
+      <PropertyRef Name="TemplateResourceId" />
+    </Key>
+    <Property Name="TemplateResourceId" Type="String" Nullable="false" />
+    <Property Name="ResourceQuantity" Type="Decimal" Nullable="true" />
+    <Property Name="InputUser" Type="String" Nullable="false" />
+    <Property Name="InputDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Res_Resource" Relationship="Pm2Model.FK__Bud_Templ__Resou__338B682C" FromRole="Bud_TemplateResource" ToRole="Res_Resource" />
+    <Property Name="ResourcePrice" Type="Decimal" Nullable="true" />
+    <Property Name="LossCoefficient" Type="Decimal" Nullable="true" />
+    <NavigationProperty Name="Bud_TemplateItem" Relationship="Pm2Model.FK__Bud_Templ__Templ__6DB809C1" FromRole="Bud_TemplateResource" ToRole="Bud_TemplateItem" />
+  </EntityType>
+  <Association Name="FK__Bud_Templ__Resou__338B682C">
+    <End Type="Pm2Model.Res_Resource" Role="Res_Resource" Multiplicity="0..1" />
+    <End Type="Pm2Model.Bud_TemplateResource" Role="Bud_TemplateResource" Multiplicity="*" />
+  </Association>
+  <EntityType Name="XPM_Basic_ContactCorp">
+    <Key>
+      <PropertyRef Name="CorpID" />
+    </Key>
+    <Property Name="CorpID" Type="Int32" Nullable="false" />
+    <Property Name="CorpTypeID" Type="Int32" Nullable="false" />
+    <Property Name="CorpName" Type="String" Nullable="false" />
+    <Property Name="CorpKind" Type="Int32" Nullable="true" />
+    <Property Name="WorkType" Type="Int32" Nullable="true" />
+    <Property Name="Speciality" Type="String" Nullable="true" />
+    <Property Name="Aptitude" Type="String" Nullable="true" />
+    <Property Name="Capital" Type="String" Nullable="true" />
+    <Property Name="UnderlayAbility" Type="String" Nullable="true" />
+    <Property Name="Address" Type="String" Nullable="true" />
+    <Property Name="CorpBrief" Type="String" Nullable="true" />
+    <Property Name="Corporation" Type="String" Nullable="true" />
+    <Property Name="LinkMan" Type="String" Nullable="true" />
+    <Property Name="Telephone" Type="String" Nullable="true" />
+    <Property Name="IFProvider" Type="Boolean" Nullable="true" />
+    <Property Name="HandPhone" Type="String" Nullable="true" />
+    <Property Name="Fax" Type="String" Nullable="true" />
+    <Property Name="ShopCard" Type="String" Nullable="true" />
+    <Property Name="TaxCard" Type="String" Nullable="true" />
+    <Property Name="AccountBank" Type="String" Nullable="true" />
+    <Property Name="BankAccounts" Type="String" Nullable="true" />
+    <Property Name="Zone" Type="String" Nullable="true" />
+    <Property Name="PostCode" Type="String" Nullable="true" />
+    <Property Name="WebSite" Type="String" Nullable="true" />
+    <Property Name="PeopleNumber" Type="String" Nullable="true" />
+    <Property Name="Client" Type="String" Nullable="true" />
+    <Property Name="IsVisible" Type="Boolean" Nullable="true" />
+    <Property Name="IsDefault" Type="Boolean" Nullable="true" />
+    <Property Name="IsFixed" Type="Boolean" Nullable="true" />
+    <Property Name="IsValid" Type="Boolean" Nullable="true" />
+    <Property Name="Owner" Type="String" Nullable="true" />
+    <Property Name="VersionTime" Type="DateTime" Nullable="true" />
+    <Property Name="FlowGuid" Type="Guid" Nullable="true" />
+    <Property Name="AuditState" Type="Int32" Nullable="true" />
+    <Property Name="UserCode" Type="String" Nullable="true" />
+    <Property Name="Brand" Type="String" Nullable="true" />
+    <Property Name="Email" Type="String" Nullable="true" />
+    <Property Name="Contry" Type="String" Nullable="true" />
+    <Property Name="IsHot" Type="String" Nullable="true" />
+  </EntityType>
+  <Association Name="FK__Bud_Templ__Templ__6DB809C1">
+    <End Type="Pm2Model.Bud_TemplateItem" Role="Bud_TemplateItem" Multiplicity="0..1" />
+    <End Type="Pm2Model.Bud_TemplateResource" Role="Bud_TemplateResource" Multiplicity="*" />
+  </Association>
+  <EntityType Name="XPM_Basic_CodeList">
+    <Key>
+      <PropertyRef Name="NoteID" />
+    </Key>
+    <Property Name="NoteID" Type="Int32" Nullable="false" />
+    <Property Name="CodeID" Type="Int32" Nullable="false" />
+    <Property Name="TypeID" Type="Int32" Nullable="false" />
+    <Property Name="ParentCodeID" Type="Int32" Nullable="false" />
+    <Property Name="ParentCodeList" Type="String" Nullable="false" />
+    <Property Name="CodeName" Type="String" Nullable="false" />
+    <Property Name="ChildNumber" Type="Int32" Nullable="false" />
+    <Property Name="IsFixed" Type="Boolean" Nullable="false" />
+    <Property Name="IsDefault" Type="Boolean" Nullable="false" />
+    <Property Name="IsValid" Type="Boolean" Nullable="false" />
+    <Property Name="IsVisible" Type="Boolean" Nullable="true" />
+    <Property Name="Owner" Type="String" Nullable="true" />
+    <Property Name="VersionTime" Type="DateTime" Nullable="true" />
+    <Property Type="Int32" Name="I_xh" />
+  </EntityType>
+  <EntityType Name="XPM_Basic_CodeType">
+    <Key>
+      <PropertyRef Name="TypeID" />
+    </Key>
+    <Property Name="TypeID" Type="Int32" Nullable="false" />
+    <Property Name="TypeName" Type="String" Nullable="false" />
+    <Property Name="IsVisible" Type="Boolean" Nullable="false" />
+    <Property Name="IsValid" Type="Boolean" Nullable="false" />
+    <Property Name="Remark" Type="String" Nullable="false" />
+    <Property Name="SignCode" Type="String" Nullable="false" />
+    <Property Name="Owner" Type="String" Nullable="false" />
+    <Property Name="VersionTime" Type="DateTime" Nullable="false" />
+    <Property Name="ContractCropType" Type="Guid" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Bud_ContractResource">
+    <Key>
+      <PropertyRef Name="TaskResourceId" />
+    </Key>
+    <Property Name="TaskResourceId" Type="String" Nullable="false" />
+    <Property Name="ResourceQuantity" Type="Decimal" Nullable="true" />
+    <Property Name="ResourcePrice" Type="Decimal" Nullable="true" />
+    <Property Name="InputUser" Type="String" Nullable="false" />
+    <Property Name="InputDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Res_Resource" Relationship="Pm2Model.FK__Bud_Contr__Resou__705F6C42" FromRole="Bud_ContractResource" ToRole="Res_Resource" />
+    <NavigationProperty Name="Bud_ContractTask" Relationship="Pm2Model.FK__Bud_Contr__TaskI__6F6B4809" FromRole="Bud_ContractResource" ToRole="Bud_ContractTask" />
+    <Property Type="String" Name="PrjGuid" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Bud_ContractTask">
+    <Key>
+      <PropertyRef Name="TaskId" />
+    </Key>
+    <Property Name="TaskId" Type="String" Nullable="false" />
+    <Property Name="ParentId" Type="String" Nullable="true" />
+    <Property Name="OrderNumber" Type="String" Nullable="true" />
+    <Property Name="PrjId" Type="String" Nullable="true" />
+    <Property Name="TaskCode" Type="String" Nullable="false" />
+    <Property Name="TaskName" Type="String" Nullable="false" />
+    <Property Name="Unit" Type="String" Nullable="true" />
+    <Property Name="Quantity" Type="Decimal" Nullable="false" />
+    <Property Name="UnitPrice" Type="Decimal" Nullable="true" />
+    <Property Name="Total" Type="Decimal" Nullable="true" />
+    <Property Name="StartDate" Type="DateTime" Nullable="true" />
+    <Property Name="EndDate" Type="DateTime" Nullable="true" />
+    <Property Name="Note" Type="String" Nullable="true" />
+    <Property Name="IsValid" Type="Boolean" Nullable="true" />
+    <Property Name="InputUser" Type="String" Nullable="false" />
+    <Property Name="InputDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Bud_ContractResource" Relationship="Pm2Model.FK__Bud_Contr__TaskI__6F6B4809" FromRole="Bud_ContractTask" ToRole="Bud_ContractResource" />
+    <Property Type="Int32" Name="ConstructionPeriod" />
+    <Property Type="String" Name="TaskType" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Res_ResourceTemp">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" />
+    <Property Name="ResourceCode" Type="String" Nullable="true" />
+    <Property Name="ResourceName" Type="String" Nullable="true" />
+    <Property Name="UnitPrice" Type="Decimal" Nullable="true" />
+    <Property Name="Quantity" Type="Decimal" Nullable="true" />
+    <Property Name="Amount" Type="Decimal" Nullable="true" />
+    <Property Name="PrjId" Type="String" Nullable="true" />
+    <NavigationProperty Name="Bud_Task" Relationship="Pm2Model.FK__Res_Resou__TaskI__63F9955D" FromRole="Res_ResourceTemp" ToRole="Bud_Task" />
+    <NavigationProperty Name="Res_Resource" Relationship="Pm2Model.FK__Res_Resou__Resou__63057124" FromRole="Res_ResourceTemp" ToRole="Res_Resource" />
+  </EntityType>
+  <Association Name="FK__Bud_Contr__Resou__705F6C42">
+    <End Type="Pm2Model.Res_Resource" Role="Res_Resource" Multiplicity="0..1" />
+    <End Type="Pm2Model.Bud_ContractResource" Role="Bud_ContractResource" Multiplicity="*" />
+  </Association>
+  <Association Name="FK__Bud_Contr__TaskI__6F6B4809">
+    <End Type="Pm2Model.Bud_ContractTask" Role="Bud_ContractTask" Multiplicity="0..1" />
+    <End Type="Pm2Model.Bud_ContractResource" Role="Bud_ContractResource" Multiplicity="*" />
+  </Association>
+  <Association Name="FK__Res_Resou__TaskI__63F9955D">
+    <End Type="Pm2Model.Bud_Task" Role="Bud_Task" Multiplicity="0..1" />
+    <End Type="Pm2Model.Res_ResourceTemp" Role="Res_ResourceTemp" Multiplicity="*" />
+  </Association>
+  <Association Name="FK__Res_Resou__Resou__63057124">
+    <End Type="Pm2Model.Res_Resource" Role="Res_Resource" Multiplicity="0..1" />
+    <End Type="Pm2Model.Res_ResourceTemp" Role="Res_ResourceTemp" Multiplicity="*" />
+  </Association>
+  <EntityType Name="Bud_ConsReport">
+    <Key>
+      <PropertyRef Name="ConsReportId" />
+    </Key>
+    <Property Name="ConsReportId" Type="String" Nullable="false" />
+    <Property Name="PrjId" Type="String" Nullable="false" />
+    <Property Name="InputUser" Type="String" Nullable="false" />
+    <Property Name="InputDate" Type="DateTime" Nullable="false" />
+    <Property Name="WorkCard" Type="String" Nullable="true" />
+    <Property Name="IsValid" Type="Boolean" Nullable="true" />
+    <Property Name="State" Type="String" Nullable="false" />
+    <Property Name="CancelAuditReason" Type="String" Nullable="true" />
+    <Property Name="CancelReportReason" Type="String" Nullable="true" />
+    <Property Type="Int32" Name="FlowState" Nullable="false" />
+    <NavigationProperty Name="Bud_ConsTask" Relationship="Pm2Model.FK__Bud_ConsT__ConsR__61DC42C1" FromRole="Bud_ConsReport" ToRole="Bud_ConsTask" />
+  </EntityType>
+  <EntityType Name="Bud_CostAccounting">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" />
+    <Property Name="CBSCode" Type="String" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" />
+    <Property Name="Type" Type="String" Nullable="false" />
+    <Property Name="ResourceType" Type="String" Nullable="true" />
+    <Property Name="Note" Type="String" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Bud_IndirectBudget">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" />
+    <Property Name="ProjectId" Type="String" Nullable="false" />
+    <Property Name="CBSCode" Type="String" Nullable="false" />
+    <Property Name="BudgetAmount" Type="Decimal" Nullable="false" />
+    <Property Name="AccountAmount" Type="Decimal" Nullable="false" />
+    <Property Name="State" Type="String" Nullable="false" />
+    <Property Name="InputUser" Type="String" Nullable="false" />
+    <Property Name="InputDate" Type="DateTime" Nullable="false" />
+    <Property Name="Note" Type="String" Nullable="true" />
+    <NavigationProperty Name="Bud_IndirectMonthBudget" Relationship="Pm2Model.FK__Bud_Indir__Indir__0801EBA9" FromRole="Bud_IndirectBudget" ToRole="Bud_IndirectMonthBudget" />
+  </EntityType>
+  <EntityType Name="Bud_IndirectDiaryCost">
+    <Key>
+      <PropertyRef Name="InDiaryId" />
+    </Key>
+    <Property Name="ProjectId" Type="String" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" />
+    <Property Name="Department" Type="String" Nullable="true" />
+    <Property Name="IssuedBy" Type="String" Nullable="false" />
+    <Property Name="InputUser" Type="String" Nullable="false" />
+    <Property Name="InputDate" Type="DateTime" Nullable="false" />
+    <Property Name="FlowState" Type="Int32" Nullable="false" />
+    <Property Name="InDiaryId" Type="String" Nullable="false" />
+    <NavigationProperty Name="Bud_IndirectDiaryDetails" Relationship="Pm2Model.FK__Bud_Indir__InDia__0D85BAD5" FromRole="Bud_IndirectDiaryCost" ToRole="Bud_IndirectDiaryDetails" />
+    <Property Type="String" Name="IndireCode" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Bud_IndirectDiaryDetails">
+    <Key>
+      <PropertyRef Name="InDiaryDetailsId" />
+    </Key>
+    <Property Name="Name" Type="String" Nullable="false" />
+    <Property Name="Amount" Type="Decimal" Nullable="false" />
+    <Property Name="CBSCode" Type="String" Nullable="false" />
+    <Property Name="Note" Type="String" Nullable="true" />
+    <Property Name="InDiaryDetailsId" Type="String" Nullable="false" />
+    <NavigationProperty Name="Bud_IndirectDiaryCost" Relationship="Pm2Model.FK__Bud_Indir__InDia__0D85BAD5" FromRole="Bud_IndirectDiaryDetails" ToRole="Bud_IndirectDiaryCost" />
+    <Property Type="String" Name="IndetailsCode" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Bud_IndirectMonthBudget">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" />
+    <Property Name="Year" Type="Int32" Nullable="false" />
+    <Property Name="Month" Type="Int32" Nullable="false" />
+    <Property Name="Amount" Type="Decimal" Nullable="true" />
+    <NavigationProperty Name="Bud_IndirectBudget" Relationship="Pm2Model.FK__Bud_Indir__Indir__0801EBA9" FromRole="Bud_IndirectMonthBudget" ToRole="Bud_IndirectBudget" />
+  </EntityType>
+  <EntityType Name="Bud_OrganizationBudget">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" />
+    <Property Name="OrganizationBudgetId" Type="String" Nullable="false" />
+    <Property Name="CBSCode" Type="String" Nullable="false" />
+    <Property Name="BudgetAmount" Type="Decimal" Nullable="true" />
+    <Property Name="AccountingAmount" Type="Decimal" Nullable="true" />
+    <Property Name="State" Type="String" Nullable="false" />
+    <Property Name="InputUser" Type="String" Nullable="false" />
+    <Property Name="InputDate" Type="DateTime" Nullable="false" />
+    <Property Name="Note" Type="String" Nullable="true" />
+    <NavigationProperty Name="Bud_OrganizationMonthBudget" Relationship="Pm2Model.FK__Bud_Organ__Organ__69D26A44" FromRole="Bud_OrganizationBudget" ToRole="Bud_OrganizationMonthBudget" />
+  </EntityType>
+  <Association Name="FK__Bud_Indir__Indir__0801EBA9">
+    <End Type="Pm2Model.Bud_IndirectBudget" Role="Bud_IndirectBudget" Multiplicity="1" />
+    <End Type="Pm2Model.Bud_IndirectMonthBudget" Role="Bud_IndirectMonthBudget" Multiplicity="*" />
+  </Association>
+  <Association Name="FK__Bud_Indir__InDia__0D85BAD5">
+    <End Type="Pm2Model.Bud_IndirectDiaryCost" Role="Bud_IndirectDiaryCost" Multiplicity="0..1" />
+    <End Type="Pm2Model.Bud_IndirectDiaryDetails" Role="Bud_IndirectDiaryDetails" Multiplicity="*" />
+  </Association>
+  <EntityType Name="Bud_OrganizationMonthBudget">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" />
+    <Property Name="Year" Type="Int32" Nullable="false" />
+    <Property Name="Month" Type="Int32" Nullable="false" />
+    <Property Name="Amount" Type="Decimal" Nullable="true" />
+    <NavigationProperty Name="Bud_OrganizationBudget" Relationship="Pm2Model.FK__Bud_Organ__Organ__69D26A44" FromRole="Bud_OrganizationMonthBudget" ToRole="Bud_OrganizationBudget" />
+  </EntityType>
+  <Association Name="FK__Bud_Organ__Organ__69D26A44">
+    <End Type="Pm2Model.Bud_OrganizationBudget" Role="Bud_OrganizationBudget" Multiplicity="0..1" />
+    <End Type="Pm2Model.Bud_OrganizationMonthBudget" Role="Bud_OrganizationMonthBudget" Multiplicity="*" />
+  </Association>
+  <EntityType Name="Bud_OrgDiaryCost">
+    <Key>
+      <PropertyRef Name="OrgDiaryId" />
+    </Key>
+    <Property Name="OrgDiaryId" Type="String" Nullable="false" />
+    <Property Name="OrgId" Type="Int32" Nullable="true" />
+    <Property Name="Name" Type="String" Nullable="false" />
+    <Property Name="Department" Type="String" Nullable="true" />
+    <Property Name="IssuedBy" Type="String" Nullable="false" />
+    <Property Name="FlowState" Type="Int32" Nullable="false" />
+    <Property Name="InputUser" Type="String" Nullable="false" />
+    <Property Name="InputDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Bud_OrgDiaryDetails" Relationship="Pm2Model.FK__Bud_OrgDi__OrgDi__48C67C34" FromRole="Bud_OrgDiaryCost" ToRole="Bud_OrgDiaryDetails" />
+    <NavigationProperty Name="PT_d_bm" Relationship="Pm2Model.FK__Bud_OrgDi__OrgId__31B8F9AA" FromRole="Bud_OrgDiaryCost" ToRole="PT_d_bm" />
+    <Property Type="String" Name="OrgdiaryCode" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Bud_OrgDiaryDetails">
+    <Key>
+      <PropertyRef Name="OrgDiaryDetailsId" />
+    </Key>
+    <Property Name="OrgDiaryDetailsId" Type="String" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" />
+    <Property Name="Amount" Type="Decimal" Nullable="false" />
+    <Property Name="CBSCode" Type="String" Nullable="false" />
+    <Property Name="Note" Type="String" Nullable="true" />
+    <NavigationProperty Name="Bud_OrgDiaryCost" Relationship="Pm2Model.FK__Bud_OrgDi__OrgDi__48C67C34" FromRole="Bud_OrgDiaryDetails" ToRole="Bud_OrgDiaryCost" />
+    <Property Type="String" Name="OrgdetailsCode" Nullable="true" />
+  </EntityType>
+  <Association Name="FK__Bud_OrgDi__OrgDi__48C67C34">
+    <End Type="Pm2Model.Bud_OrgDiaryCost" Role="Bud_OrgDiaryCost" Multiplicity="0..1" />
+    <End Type="Pm2Model.Bud_OrgDiaryDetails" Role="Bud_OrgDiaryDetails" Multiplicity="*" />
+  </Association>
+  <EntityType Name="PT_PrjInfo_ZTB">
+    <Key>
+      <PropertyRef Name="PrjGuid" />
+    </Key>
+    <Property Name="PrjCode" Type="String" Nullable="false" />
+    <Property Name="PrjGuid" Type="Guid" Nullable="false" />
+    <Property Name="PrjName" Type="String" Nullable="true" />
+    <Property Name="StartDate" Type="DateTime" Nullable="true" />
+    <Property Name="EndDate" Type="DateTime" Nullable="true" />
+    <Property Name="ComputeClass" Type="String" Nullable="true" />
+    <Property Name="RationClass" Type="String" Nullable="true" />
+    <Property Name="PrjCost" Type="Double" Nullable="true" />
+    <Property Name="ContractSum" Type="String" Nullable="true" />
+    <Property Name="Duration" Type="String" Nullable="true" />
+    <Property Name="QualityClass" Type="String" Nullable="true" />
+    <Property Name="Area" Type="String" Nullable="true" />
+    <Property Name="PrjKindClass" Type="String" Nullable="true" />
+    <Property Name="PrjPlace" Type="String" Nullable="true" />
+    <Property Name="Remark" Type="String" Nullable="true" />
+    <Property Name="FileName" Type="String" Nullable="true" />
+    <Property Name="FileURL" Type="String" Nullable="true" />
+    <Property Name="Owner" Type="String" Nullable="true" />
+    <Property Name="Counsellor" Type="String" Nullable="true" />
+    <Property Name="Designer" Type="String" Nullable="true" />
+    <Property Name="Inspector" Type="String" Nullable="true" />
+    <Property Name="PrjInfo" Type="String" Nullable="true" />
+    <Property Name="PrjState" Type="Int32" Nullable="true" />
+    <Property Name="OwnerCode" Type="Int32" Nullable="true" />
+    <Property Name="MarketInfoGuid" Type="Guid" Nullable="true" />
+    <Property Name="Rank" Type="String" Nullable="true" />
+    <Property Name="BudgetWay" Type="String" Nullable="true" />
+    <Property Name="ContractWay" Type="String" Nullable="true" />
+    <Property Name="PayCondition" Type="String" Nullable="true" />
+    <Property Name="TenderWay" Type="String" Nullable="true" />
+    <Property Name="PayWay" Type="String" Nullable="true" />
+    <Property Name="KeyPart" Type="String" Nullable="true" />
+    <Property Name="WorkUnit" Type="String" Nullable="true" />
+    <Property Name="LinkMan" Type="String" Nullable="true" />
+    <Property Name="PrjManager" Type="String" Nullable="true" />
+    <Property Name="BuildingType" Type="String" Nullable="true" />
+    <Property Name="TotalHouseNum" Type="String" Nullable="true" />
+    <Property Name="BuildingArea" Type="String" Nullable="true" />
+    <Property Name="UsegrounArea" Type="String" Nullable="true" />
+    <Property Name="UndergroundArea" Type="String" Nullable="true" />
+    <Property Name="PrjFundInfo" Type="String" Nullable="true" />
+    <Property Name="OtherStatement" Type="String" Nullable="true" />
+  </EntityType>
+  <EntityType Name="PT_PrjInfo_ZTB_Detail">
+    <Key>
+      <PropertyRef Name="PrjGuid" />
+    </Key>
+    <Property Name="PrjGuid" Type="Guid" Nullable="false" />
+    <Property Name="ProjPeopleName" Type="String" Nullable="true" />
+    <Property Name="ProjPeopleSex" Type="String" Nullable="true" />
+    <Property Name="ProjPeopleAge" Type="Int32" Nullable="true" />
+    <Property Name="ProjPeopleTel" Type="String" Nullable="true" />
+    <Property Name="ProjInfoOrigin" Type="String" Nullable="true" />
+    <Property Name="ProjElseRequest" Type="String" Nullable="true" />
+    <Property Name="ProjApplyDate" Type="DateTime" Nullable="true" />
+    <Property Name="ProjTenderDate" Type="DateTime" Nullable="true" />
+    <Property Name="ProjApprovalDate" Type="DateTime" Nullable="true" />
+    <Property Name="ProjRegistDeadline" Type="Int32" Nullable="true" />
+    <Property Name="ProgAgent" Type="String" Nullable="true" />
+    <Property Name="ProjStartDate" Type="DateTime" Nullable="true" />
+    <Property Name="BusinessManager" Type="String" Nullable="true" />
+    <Property Name="ProjStartRemark" Type="String" Nullable="true" />
+    <Property Name="ProjTenderBeginDate" Type="DateTime" Nullable="true" />
+    <Property Name="TenderCeilingPrice" Type="Decimal" Nullable="true" />
+    <Property Name="TenderUnit" Type="String" Nullable="true" />
+    <Property Name="TenderQuote" Type="Decimal" Nullable="true" />
+    <Property Name="TenderAppraiseMethod" Type="String" Nullable="true" />
+    <Property Name="TenderAverage" Type="Decimal" Nullable="true" />
+    <Property Name="ProjTenderCostContent" Type="String" Nullable="true" />
+    <Property Name="ProjTenderAnswerDate" Type="DateTime" Nullable="true" />
+    <Property Name="ProjTenderEarnestMoney" Type="Decimal" Nullable="true" />
+    <Property Name="ProjTenderPayWay" Type="String" Nullable="true" />
+    <Property Name="ProjTenderContent" Type="String" Nullable="true" />
+    <Property Name="ProjTenderRemark" Type="String" Nullable="true" />
+    <Property Name="SuccessBidDate" Type="DateTime" Nullable="true" />
+    <Property Name="SuccessBidPrice" Type="Decimal" Nullable="true" />
+    <Property Name="SuccessBidRemark" Type="String" Nullable="true" />
+    <Property Name="OutBidDate" Type="DateTime" Nullable="true" />
+    <Property Name="OutBidIsReturn" Type="Boolean" Nullable="true" />
+    <Property Name="OutBidRemark" Type="String" Nullable="true" />
+    <Property Name="ProjFlowSate" Type="Int32" Nullable="true" />
+    <Property Name="BuildingTypeNo" Type="Int32" Nullable="true" />
+    <Property Name="EngineeringType" Type="String" Nullable="true" />
+    <Property Name="Grade" Type="String" Nullable="true" />
+    <Property Name="EngineeringSubType" Type="String" Nullable="true" />
+    <Property Name="Telephone" Type="String" Nullable="true" />
+    <Property Name="InputDate" Type="DateTime" Nullable="true" />
+    <Property Name="IsTender" Type="Boolean" Nullable="false" />
+    <Property Name="InputUser" Type="String" Nullable="true" />
+    <Property Name="OwnerLinkMan" Type="String" Nullable="true" />
+    <Property Name="OwnerLinkPhone" Type="String" Nullable="true" />
+    <Property Name="ActualRunDate" Type="DateTime" Nullable="true" />
+    <Property Name="PrjDutyPerson" Type="String" Nullable="true" />
+    <Property Name="PrjApprovalOf" Type="String" Nullable="true" />
+    <Property Name="PrjFundWorkable" Type="String" Nullable="true" />
+    <Property Name="ForecastProfitRate" Type="Decimal" Nullable="true" />
+    <Property Name="ManagementMargin" Type="Decimal" Nullable="true" />
+    <Property Name="MigrantQualityMarginRate" Type="Decimal" Nullable="true" />
+    <Property Name="WithholdingTaxRate" Type="Decimal" Nullable="true" />
+    <Property Name="PerformanceBond" Type="Decimal" Nullable="true" />
+    <Property Name="ElseMargin" Type="Decimal" Nullable="true" />
+    <Property Name="EngineeringEstimates" Type="String" Nullable="true" />
+    <Property Name="MemberFlowState" Type="Int32" Nullable="true" />
+    <Property Name="CompletedFlowState" Type="Int32" Nullable="true" />
+    <Property Name="CompletedDate" Type="DateTime" Nullable="true" />
+    <Property Name="ProjPeopleDep" Type="String" Nullable="true" />
+    <Property Name="ProjPeopleDuty" Type="String" Nullable="true" />
+    <Property Name="OwnerAddress" Type="String" Nullable="true" />
+    <Property Name="CompletedNote" Type="String" Nullable="true" />
+    <Property Name="PrjManagerRequire" Type="String" Nullable="true" />
+    <Property Name="TechnicalLeaderRequire" Type="String" Nullable="true" />
+    <Property Name="PrequalificationRequire" Type="String" Nullable="true" />
+    <Property Name="QualificationPassDate" Type="DateTime" Nullable="true" />
+    <Property Name="QualificationPassReason" Type="String" Nullable="true" />
+    <Property Name="QualificationFailData" Type="DateTime" Nullable="true" />
+    <Property Name="QualificationFailReason" Type="String" Nullable="true" />
+    <Property Name="Province" Type="String" Nullable="true" />
+    <Property Name="City" Type="String" Nullable="true" />
+    <Property Type="Int32" Name="SetUpFlowState" />
+    <Property Type="String" Name="PrjProperty" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PrjReadOne" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="QualificationMargin" Precision="18" Scale="3" Nullable="false" />
+    <Property Type="String" Name="QualificationReadOne" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="TenderProspect" />
+    <Property Type="String" Name="TenderReadOne" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="AfforestArea" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ParkArea" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="PT_PrjInfo_Kind" Relationship="Pm2Model.FK__PT_PrjInf__PrjGu__0313E4B1" FromRole="PT_PrjInfo_ZTB_Detail" ToRole="PT_PrjInfo_Kind" />
+    <NavigationProperty Name="PT_PrjInfo_Rank" Relationship="Pm2Model.FK__PT_PrjInf__PrjGu__06E47595" FromRole="PT_PrjInfo_ZTB_Detail" ToRole="PT_PrjInfo_Rank" />
+  </EntityType>
+  <EntityType Name="PT_PrjInfo_ZTB_Stock">
+    <Key>
+      <PropertyRef Name="PrjGuid" />
+    </Key>
+    <Property Name="PrjGuid" Type="Guid" Nullable="false" />
+    <Property Name="grade" Type="String" Nullable="true" />
+    <Property Name="businessman" Type="String" Nullable="true" />
+    <Property Name="telephone" Type="String" Nullable="true" />
+  </EntityType>
+  <EntityType Name="PT_PrjInfo_ZTB_User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" />
+    <Property Name="PrjGuid" Type="Guid" Nullable="true" />
+    <Property Name="UserCode" Type="String" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PT_yhmc">
+    <Key>
+      <PropertyRef Name="v_yhdm" />
+    </Key>
+    <Property Name="v_yhdm" Type="String" Nullable="false" />
+    <Property Name="v_xm" Type="String" Nullable="true" />
+    <Property Name="i_bmdm" Type="Int32" Nullable="true" />
+    <Property Name="I_DUTYID" Type="Int32" Nullable="true" />
+    <Property Name="OtherDepts" Type="String" Nullable="true" />
+    <Property Name="OtherDutyIDs" Type="String" Nullable="true" />
+    <Property Name="i_xh" Type="Int32" Nullable="true" />
+    <Property Name="c_sfyx" Type="String" Nullable="true" />
+    <Property Name="MobilePhoneCode" Type="String" Nullable="true" />
+    <Property Name="RelationCorp" Type="String" Nullable="true" />
+    <Property Name="EnterCorpDate" Type="DateTime" Nullable="true" />
+    <Property Name="Age" Type="Int32" Nullable="true" />
+    <Property Name="State" Type="Int32" Nullable="true" />
+    <Property Name="SuperordinateDuty" Type="Int32" Nullable="true" />
+    <Property Name="Sex" Type="String" Nullable="true" />
+    <Property Name="Nation" Type="String" Nullable="true" />
+    <Property Name="EducationalBackground" Type="String" Nullable="true" />
+    <Property Name="Stature" Type="String" Nullable="true" />
+    <Property Name="ClassID" Type="Int32" Nullable="true" />
+    <Property Name="PositionLevel" Type="Int32" Nullable="true" />
+    <Property Name="PostAndRank" Type="String" Nullable="true" />
+    <Property Name="RegisteredPlace" Type="String" Nullable="true" />
+    <Property Name="Address" Type="String" Nullable="true" />
+    <Property Name="ComputeLevel" Type="String" Nullable="true" />
+    <Property Name="EnglishLevel" Type="String" Nullable="true" />
+    <Property Name="DriveLevel" Type="String" Nullable="true" />
+    <Property Name="Marriage" Type="String" Nullable="true" />
+    <Property Name="Tel" Type="String" Nullable="true" />
+    <Property Name="ExpectationSalary" Type="Decimal" Nullable="true" />
+    <Property Name="CommunicateAddress" Type="String" Nullable="true" />
+    <Property Name="Postcode" Type="String" Nullable="true" />
+    <Property Name="UserPhoto" Type="String" Nullable="true" />
+    <Property Name="Birthday" Type="DateTime" Nullable="true" />
+    <Property Name="IDCard" Type="String" Nullable="true" />
+    <Property Name="FormalDate" Type="DateTime" Nullable="true" />
+    <Property Name="PoliticsFace" Type="String" Nullable="true" />
+    <Property Name="JoinPartyDate" Type="DateTime" Nullable="true" />
+    <Property Name="JoinCorpMode" Type="String" Nullable="true" />
+    <Property Name="Introducer" Type="String" Nullable="true" />
+    <Property Name="Specialty" Type="String" Nullable="true" />
+    <Property Name="GraduateSchool" Type="String" Nullable="true" />
+    <Property Name="Level" Type="String" Nullable="true" />
+    <Property Name="BeginWorkDate" Type="DateTime" Nullable="true" />
+    <Property Name="PostAndCompetency" Type="String" Nullable="true" />
+    <Property Name="EndowmentInsurance" Type="String" Nullable="true" />
+    <Property Name="MedicareInsurance" Type="String" Nullable="true" />
+    <Property Name="UnemploymentInsurance" Type="String" Nullable="true" />
+    <Property Name="InjuryInsurance" Type="String" Nullable="true" />
+    <Property Name="HousingAccumulationFund" Type="String" Nullable="true" />
+    <Property Name="PersonSuddennessInsurance" Type="String" Nullable="true" />
+    <Property Name="leavetime" Type="DateTime" Nullable="true" />
+    <Property Name="rdeNature" Type="String" Nullable="true" />
+    <Property Name="conEndDate" Type="DateTime" Nullable="true" />
+    <Property Name="urgentCellMan" Type="String" Nullable="true" />
+    <Property Name="ucmConcern" Type="String" Nullable="true" />
+    <Property Name="ucmTel" Type="String" Nullable="true" />
+    <Property Name="userCode" Type="String" Nullable="true" />
+    <Property Name="PastPerformance" Type="String" Nullable="true" />
+    <NavigationProperty Name="PT_PrjMember" Relationship="Pm2Model.FK__PT_PrjMem__Membe__40071901" FromRole="PT_yhmc" ToRole="PT_PrjMember" />
+    <NavigationProperty Name="PT_Prj_Completed" Relationship="Pm2Model.FK__PT_Prj_Co__Input__5EE0A5DC" FromRole="PT_yhmc" ToRole="PT_Prj_Completed" />
+    <NavigationProperty Name="PT_Prj_Completed_Detail" Relationship="Pm2Model.FK__PT_Prj_Co__Input__6B467CC1" FromRole="PT_yhmc" ToRole="PT_Prj_Completed_Detail" />
+    <NavigationProperty Name="plus_progress" Relationship="Pm2Model.FK_plus_progress_InputUser" FromRole="PT_yhmc" ToRole="plus_progress" />
+    <NavigationProperty Name="plus_progress_privilege" Relationship="Pm2Model.FK_privilege_UserCode" FromRole="PT_yhmc" ToRole="plus_progress_privilege" />
+    <NavigationProperty Name="plus_progress_version" Relationship="Pm2Model.FK_progress_version_InputUser" FromRole="PT_yhmc" ToRole="plus_progress_version" />
+    <NavigationProperty Name="Bud_TaskChange" Relationship="Pm2Model.FK__Bud_TaskC__Input__292EA0A1" FromRole="PT_yhmc" ToRole="Bud_TaskChange" />
+    <Property Type="Boolean" Name="IsChargeMan" Nullable="false" />
+    <NavigationProperty Name="PT_d_bm" Relationship="Pm2Model.用户_部门" FromRole="PT_yhmc" ToRole="PT_d_bm" />
+    <Property Type="String" Name="RTXID" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Basic_CodeList">
+    <Key>
+      <PropertyRef Name="TypeCode" />
+      <PropertyRef Name="ItemCode" />
+    </Key>
+    <Property Name="TypeCode" Type="String" Nullable="false" />
+    <Property Name="ItemCode" Type="Int32" Nullable="false" />
+    <Property Name="ItemName" Type="String" Nullable="false" />
+    <NavigationProperty Name="Basic_CodeType" Relationship="Pm2Model.FK__Basic_Cod__TypeC__37A6DD2A" FromRole="Basic_CodeList" ToRole="Basic_CodeType" />
+  </EntityType>
+  <EntityType Name="Basic_CodeType">
+    <Key>
+      <PropertyRef Name="TypeCode" />
+    </Key>
+    <Property Name="TypeCode" Type="String" Nullable="false" />
+    <Property Name="TypeName" Type="String" Nullable="false" />
+    <NavigationProperty Name="Basic_CodeList" Relationship="Pm2Model.FK__Basic_Cod__TypeC__37A6DD2A" FromRole="Basic_CodeType" ToRole="Basic_CodeList" />
+  </EntityType>
+  <Association Name="FK__Basic_Cod__TypeC__37A6DD2A">
+    <End Type="Pm2Model.Basic_CodeType" Role="Basic_CodeType" Multiplicity="1" />
+    <End Type="Pm2Model.Basic_CodeList" Role="Basic_CodeList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Basic_CodeType">
+        <PropertyRef Name="TypeCode" />
+      </Principal>
+      <Dependent Role="Basic_CodeList">
+        <PropertyRef Name="TypeCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="v_pt_d_bm">
+    <Key>
+      <PropertyRef Name="i_bmdm" />
+    </Key>
+    <Property Name="i_bmdm" Type="Int32" Nullable="false" />
+    <Property Name="i_sjdm" Type="Int32" Nullable="true" />
+    <Property Name="v_bmbm" Type="String" Nullable="true" />
+    <Property Name="CorpCode" Type="String" Nullable="true" />
+    <Property Name="V_BMMC" Type="String" Nullable="true" />
+    <Property Name="v_bmqc" Type="String" Nullable="true" />
+    <Property Name="i_xh" Type="Int32" Nullable="true" />
+    <Property Name="v_bmjx" Type="String" Nullable="true" />
+    <Property Name="i_xjbm" Type="Int32" Nullable="true" />
+    <Property Name="i_jb" Type="Int32" Nullable="true" />
+    <Property Name="c_sfyx" Type="String" Nullable="true" />
+    <Property Name="adss" Type="String" Nullable="true" />
+    <Property Name="yb" Type="String" Nullable="true" />
+    <Property Name="fx" Type="String" Nullable="true" />
+  </EntityType>
+  <EntityType Name="PT_PrjMember">
+    <Key>
+      <PropertyRef Name="PrjMemberId" />
+    </Key>
+    <Property Name="PrjMemberId" Type="String" Nullable="false" />
+    <Property Name="PrjGuid" Type="Guid" Nullable="true" />
+    <NavigationProperty Name="PT_yhmc" Relationship="Pm2Model.FK__PT_PrjMem__Membe__40071901" FromRole="PT_PrjMember" ToRole="PT_yhmc" />
+    <Property Name="InputDate" Type="DateTime" Nullable="true" />
+    <Property Name="Post" Type="String" Nullable="true" />
+    <Property Name="EducationalBackground" Type="String" Nullable="true" />
+    <Property Name="Technical" Type="String" Nullable="true" />
+    <Property Name="PostAndCompetency" Type="String" Nullable="true" />
+    <Property Name="TrainingInformation" Type="String" Nullable="true" />
+    <Property Name="PastPerformance" Type="String" Nullable="true" />
+    <Property Name="Note" Type="String" Nullable="true" />
+  </EntityType>
+  <Association Name="FK__PT_PrjMem__Membe__40071901">
+    <End Type="Pm2Model.PT_yhmc" Role="PT_yhmc" Multiplicity="0..1" />
+    <End Type="Pm2Model.PT_PrjMember" Role="PT_PrjMember" Multiplicity="*" />
+  </Association>
+  <EntityType Name="PT_Prj_Completed">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" />
+    <Property Name="InputDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="PT_yhmc" Relationship="Pm2Model.FK__PT_Prj_Co__Input__5EE0A5DC" FromRole="PT_Prj_Completed" ToRole="PT_yhmc" />
+    <NavigationProperty Name="PT_Prj_Completed_Detail" Relationship="Pm2Model.FK__PT_Prj_Co__PrjCo__6A525888" FromRole="PT_Prj_Completed" ToRole="PT_Prj_Completed_Detail" />
+  </EntityType>
+  <EntityType Name="PT_Prj_Completed_Detail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" />
+    <Property Name="PrjGuid" Type="Guid" Nullable="true" />
+    <Property Name="PrepareStatus" Type="String" Nullable="true" />
+    <Property Name="UncompletedTrans" Type="String" Nullable="true" />
+    <Property Name="Rectification" Type="String" Nullable="true" />
+    <Property Name="AnnexAddress" Type="String" Nullable="true" />
+    <Property Name="InputDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="PT_Prj_Completed" Relationship="Pm2Model.FK__PT_Prj_Co__PrjCo__6A525888" FromRole="PT_Prj_Completed_Detail" ToRole="PT_Prj_Completed" />
+    <NavigationProperty Name="PT_yhmc" Relationship="Pm2Model.FK__PT_Prj_Co__Input__6B467CC1" FromRole="PT_Prj_Completed_Detail" ToRole="PT_yhmc" />
+    <NavigationProperty Name="PT_Prj_Completed_Annex" Relationship="Pm2Model.FK__PT_Prj_Co__Detai__32CD1974" FromRole="PT_Prj_Completed_Detail" ToRole="PT_Prj_Completed_Annex" />
+  </EntityType>
+  <Association Name="FK__PT_Prj_Co__Input__5EE0A5DC">
+    <End Type="Pm2Model.PT_yhmc" Role="PT_yhmc" Multiplicity="0..1" />
+    <End Type="Pm2Model.PT_Prj_Completed" Role="PT_Prj_Completed" Multiplicity="*" />
+  </Association>
+  <Association Name="FK__PT_Prj_Co__PrjCo__6A525888">
+    <End Type="Pm2Model.PT_Prj_Completed" Role="PT_Prj_Completed" Multiplicity="0..1" />
+    <End Type="Pm2Model.PT_Prj_Completed_Detail" Role="PT_Prj_Completed_Detail" Multiplicity="*" />
+  </Association>
+  <Association Name="FK__PT_Prj_Co__Input__6B467CC1">
+    <End Type="Pm2Model.PT_yhmc" Role="PT_yhmc" Multiplicity="0..1" />
+    <End Type="Pm2Model.PT_Prj_Completed_Detail" Role="PT_Prj_Completed_Detail" Multiplicity="*" />
+  </Association>
+  <EntityType Name="PT_Prj_Completed_Annex">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" />
+    <Property Name="AnnexAddress" Type="String" Nullable="true" />
+    <NavigationProperty Name="PT_Prj_Completed_Detail" Relationship="Pm2Model.FK__PT_Prj_Co__Detai__32CD1974" FromRole="PT_Prj_Completed_Annex" ToRole="PT_Prj_Completed_Detail" />
+  </EntityType>
+  <Association Name="FK__PT_Prj_Co__Detai__32CD1974">
+    <End Type="Pm2Model.PT_Prj_Completed_Detail" Role="PT_Prj_Completed_Detail" Multiplicity="0..1" />
+    <End Type="Pm2Model.PT_Prj_Completed_Annex" Role="PT_Prj_Completed_Annex" Multiplicity="*" />
+  </Association>
+  <EntityType Name="PT_PrjInfo_EngineeringType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" />
+    <Property Name="PrjGuid" Type="Guid" Nullable="true" />
+    <Property Name="EngineeringType" Type="String" Nullable="true" />
+    <Property Name="EngineeringSubType" Type="Int32" Nullable="true" />
+    <Property Name="Grade" Type="String" Nullable="true" />
+  </EntityType>
+  <EntityType Name="plus_progress">
+    <Key>
+      <PropertyRef Name="ProgressId" />
+    </Key>
+    <Property Name="ProgressId" Type="String" Nullable="false" />
+    <Property Name="PrjId" Type="Guid" Nullable="true" />
+    <Property Name="ProgressName" Type="String" Nullable="true" />
+    <Property Name="FlowState" Type="Int32" Nullable="true" />
+    <Property Name="InputDate" Type="DateTime" Nullable="true" />
+    <Property Name="Note" Type="String" Nullable="true" />
+    <NavigationProperty Name="PT_yhmc" Relationship="Pm2Model.FK_plus_progress_InputUser" FromRole="plus_progress" ToRole="PT_yhmc" />
+    <NavigationProperty Name="plus_progress_privilege" Relationship="Pm2Model.FK_privilege_ProgressId" FromRole="plus_progress" ToRole="plus_progress_privilege" />
+    <NavigationProperty Name="plus_progress_version" Relationship="Pm2Model.FK_progress_version_ProgressId" FromRole="plus_progress" ToRole="plus_progress_version" />
+    <Property Type="Boolean" Name="IsMain" Nullable="false" />
+  </EntityType>
+  <EntityType Name="plus_progress_privilege">
+    <Key>
+      <PropertyRef Name="PrivilegeId" />
+    </Key>
+    <Property Name="PrivilegeId" Type="String" Nullable="false" />
+    <NavigationProperty Name="plus_progress" Relationship="Pm2Model.FK_privilege_ProgressId" FromRole="plus_progress_privilege" ToRole="plus_progress" />
+    <NavigationProperty Name="PT_yhmc" Relationship="Pm2Model.FK_privilege_UserCode" FromRole="plus_progress_privilege" ToRole="PT_yhmc" />
+  </EntityType>
+  <EntityType Name="plus_progress_version">
+    <Key>
+      <PropertyRef Name="ProgressVersionId" />
+    </Key>
+    <Property Name="ProgressVersionId" Type="String" Nullable="false" />
+    <Property Name="ParentVersionId" Type="String" Nullable="true" />
+    <Property Name="VersionName" Type="String" Nullable="true" />
+    <Property Name="VersionCode" Type="String" Nullable="true" />
+    <Property Name="FlowState" Type="Int32" Nullable="true" />
+    <Property Name="IsLatest" Type="Boolean" Nullable="true" />
+    <Property Name="InputDate" Type="DateTime" Nullable="true" />
+    <Property Name="Note" Type="String" Nullable="true" />
+    <NavigationProperty Name="plus_progress" Relationship="Pm2Model.FK_progress_version_ProgressId" FromRole="plus_progress_version" ToRole="plus_progress" />
+    <NavigationProperty Name="PT_yhmc" Relationship="Pm2Model.FK_progress_version_InputUser" FromRole="plus_progress_version" ToRole="PT_yhmc" />
+    <NavigationProperty Name="plus_report" Relationship="Pm2Model.FK_plus_progress_version" FromRole="plus_progress_version" ToRole="plus_report" />
+  </EntityType>
+  <Association Name="FK_plus_progress_InputUser">
+    <End Type="Pm2Model.PT_yhmc" Role="PT_yhmc" Multiplicity="0..1" />
+    <End Type="Pm2Model.plus_progress" Role="plus_progress" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_privilege_ProgressId">
+    <End Type="Pm2Model.plus_progress" Role="plus_progress" Multiplicity="1" />
+    <End Type="Pm2Model.plus_progress_privilege" Role="plus_progress_privilege" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_progress_version_ProgressId">
+    <End Type="Pm2Model.plus_progress" Role="plus_progress" Multiplicity="1" />
+    <End Type="Pm2Model.plus_progress_version" Role="plus_progress_version" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_privilege_UserCode">
+    <End Type="Pm2Model.PT_yhmc" Role="PT_yhmc" Multiplicity="1" />
+    <End Type="Pm2Model.plus_progress_privilege" Role="plus_progress_privilege" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_progress_version_InputUser">
+    <End Type="Pm2Model.PT_yhmc" Role="PT_yhmc" Multiplicity="0..1" />
+    <End Type="Pm2Model.plus_progress_version" Role="plus_progress_version" Multiplicity="*" />
+  </Association>
+  <EntityType Name="PT_Warning">
+    <Key>
+      <PropertyRef Name="WarningId" />
+    </Key>
+    <Property Name="WarningId" Type="Int32" Nullable="false" />
+    <Property Name="WarningTitle" Type="String" Nullable="true" />
+    <Property Name="WarningContent" Type="String" Nullable="true" />
+    <Property Name="UserCode" Type="String" Nullable="true" />
+    <Property Name="RelationsTable" Type="String" Nullable="true" />
+    <Property Name="RelationsColumn" Type="String" Nullable="true" />
+    <Property Name="RelationsKey" Type="String" Nullable="true" />
+    <Property Name="URI" Type="String" Nullable="true" />
+    <Property Name="IsValid" Type="Boolean" Nullable="true" />
+    <Property Name="InputDate" Type="DateTime" Nullable="true" />
+    <Property Type="Boolean" Name="IsOpened" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Bud_TaskChange">
+    <Key>
+      <PropertyRef Name="TaskChangeId" />
+    </Key>
+    <Property Type="String" Name="TaskChangeId" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PrjId" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Version" />
+    <Property Type="String" Name="VersionCode" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="FlowState" />
+    <Property Type="String" Name="Note" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="InputUser" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="InputDate" />
+    <NavigationProperty Name="PT_yhmc" Relationship="Pm2Model.FK__Bud_TaskC__Input__292EA0A1" FromRole="Bud_TaskChange" ToRole="PT_yhmc" />
+  </EntityType>
+  <Association Name="FK__Bud_TaskC__Input__292EA0A1">
+    <End Type="Pm2Model.PT_yhmc" Role="PT_yhmc" Multiplicity="0..1" />
+    <End Type="Pm2Model.Bud_TaskChange" Role="Bud_TaskChange" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PT_yhmc">
+        <PropertyRef Name="v_yhdm" />
+      </Principal>
+      <Dependent Role="Bud_TaskChange">
+        <PropertyRef Name="InputUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="vGetCurBudVersion">
+    <Key>
+      <PropertyRef Name="TaskChangeId" />
+    </Key>
+    <Property Type="String" Name="TaskChangeId" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PrjId" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="CurVersion" />
+  </EntityType>
+  <EntityType Name="plus_report">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="String" Name="Id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FlowState" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="InputUser" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Note" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ProVersionId" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="plus_progress_version" Relationship="Pm2Model.FK_plus_progress_version" FromRole="plus_report" ToRole="plus_progress_version" />
+    <NavigationProperty Name="plus_reportDetail" Relationship="Pm2Model.FK_plus_report" FromRole="plus_report" ToRole="plus_reportDetail" />
+    <Property Type="DateTime" Name="InputDate" />
+  </EntityType>
+  <EntityType Name="plus_reportDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="String" Name="Id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ReportId" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TaskUID" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="Start" />
+    <Property Type="DateTime" Name="Finish" />
+    <Property Type="Byte" Name="Completed" />
+    <Property Type="String" Name="Note" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="plus_report" Relationship="Pm2Model.FK_plus_report" FromRole="plus_reportDetail" ToRole="plus_report" />
+  </EntityType>
+  <Association Name="FK_plus_progress_version">
+    <End Type="Pm2Model.plus_progress_version" Role="plus_progress_version" Multiplicity="0..1" />
+    <End Type="Pm2Model.plus_report" Role="plus_report" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="plus_progress_version">
+        <PropertyRef Name="ProgressVersionId" />
+      </Principal>
+      <Dependent Role="plus_report">
+        <PropertyRef Name="ProVersionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_plus_report">
+    <End Type="Pm2Model.plus_report" Role="plus_report" Multiplicity="0..1" />
+    <End Type="Pm2Model.plus_reportDetail" Role="plus_reportDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="plus_report">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="plus_reportDetail">
+        <PropertyRef Name="ReportId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Bud_ContractTaskAudit">
+    <Key>
+      <PropertyRef Name="ContractTaskAuditId" />
+    </Key>
+    <Property Type="String" Name="ContractTaskAuditId" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PrjId" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PrjName" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="FlowState" />
+    <Property Type="DateTime" Name="InputDate" />
+  </EntityType>
+  <EntityType Name="Basic_Privilege">
+    <Key>
+      <PropertyRef Name="PrivilegeId" />
+    </Key>
+    <Property Type="String" Name="PrivilegeId" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="RelationsTable" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="RelationsKey" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UserCode" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PT_d_bm">
+    <Key>
+      <PropertyRef Name="i_bmdm" />
+    </Key>
+    <Property Type="Int32" Name="i_bmdm" Nullable="false" />
+    <Property Type="Int32" Name="i_sjdm" />
+    <Property Type="String" Name="v_bmbm" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CorpCode" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="V_BMMC" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="v_bmqc" MaxLength="1500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="i_xh" />
+    <Property Type="String" Name="v_bmjx" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="i_xjbm" />
+    <Property Type="Int32" Name="i_jb" />
+    <Property Type="String" Name="c_sfyx" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="adss" MaxLength="100" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="yb" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="fx" MaxLength="10" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="Bud_OrgDiaryCost" Relationship="Pm2Model.FK__Bud_OrgDi__OrgId__31B8F9AA" FromRole="PT_d_bm" ToRole="Bud_OrgDiaryCost" />
+    <NavigationProperty Name="PT_yhmc" Relationship="Pm2Model.用户_部门" FromRole="PT_d_bm" ToRole="PT_yhmc" />
+  </EntityType>
+  <Association Name="FK__Bud_OrgDi__OrgId__31B8F9AA">
+    <End Type="Pm2Model.PT_d_bm" Role="PT_d_bm" Multiplicity="0..1" />
+    <End Type="Pm2Model.Bud_OrgDiaryCost" Role="Bud_OrgDiaryCost" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PT_d_bm">
+        <PropertyRef Name="i_bmdm" />
+      </Principal>
+      <Dependent Role="Bud_OrgDiaryCost">
+        <PropertyRef Name="OrgId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="用户_部门">
+    <End Type="Pm2Model.PT_d_bm" Role="PT_d_bm" Multiplicity="0..1" />
+    <End Type="Pm2Model.PT_yhmc" Role="PT_yhmc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PT_d_bm">
+        <PropertyRef Name="i_bmdm" />
+      </Principal>
+      <Dependent Role="PT_yhmc">
+        <PropertyRef Name="i_bmdm" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Basic_ContactInfo">
+    <Key>
+      <PropertyRef Name="ContactInfoId" />
+    </Key>
+    <Property Type="String" Name="ContactInfoId" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="RelationsKey" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ContactPerson" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Telephone" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Phone" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Email" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ZipCode" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Fax" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Address" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Type" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Note" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="OrderNumber" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vSupplierProject">
+    <Key>
+      <PropertyRef Name="SupplierId" />
+      <PropertyRef Name="ProjectId" />
+    </Key>
+    <Property Type="String" Name="SupplierId" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ProjectId" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="V_PCSupplier">
+    <Key>
+      <PropertyRef Name="SupplierId" />
+      <PropertyRef Name="ProjectId" />
+    </Key>
+    <Property Type="String" Name="SupplierId" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ProjectId" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PT_PrjInfo_Kind">
+    <Key>
+      <PropertyRef Name="KindId" />
+    </Key>
+    <Property Type="String" Name="KindId" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="Guid" Name="PrjGuid" Nullable="false" />
+    <Property Type="String" Name="PrjKind" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ProfessionalCost" Precision="18" Scale="3" Nullable="false" />
+    <NavigationProperty Name="PT_PrjInfo_ZTB_Detail" Relationship="Pm2Model.FK__PT_PrjInf__PrjGu__0313E4B1" FromRole="PT_PrjInfo_Kind" ToRole="PT_PrjInfo_ZTB_Detail" />
+  </EntityType>
+  <EntityType Name="PT_PrjInfo_Rank">
+    <Key>
+      <PropertyRef Name="RankId" />
+    </Key>
+    <Property Type="String" Name="RankId" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="Guid" Name="PrjGuid" Nullable="false" />
+    <Property Type="String" Name="PrjRank" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="RankLevel" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="PT_PrjInfo_ZTB_Detail" Relationship="Pm2Model.FK__PT_PrjInf__PrjGu__06E47595" FromRole="PT_PrjInfo_Rank" ToRole="PT_PrjInfo_ZTB_Detail" />
+  </EntityType>
+  <Association Name="FK__PT_PrjInf__PrjGu__0313E4B1">
+    <End Type="Pm2Model.PT_PrjInfo_ZTB_Detail" Role="PT_PrjInfo_ZTB_Detail" Multiplicity="1" />
+    <End Type="Pm2Model.PT_PrjInfo_Kind" Role="PT_PrjInfo_Kind" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PT_PrjInfo_ZTB_Detail">
+        <PropertyRef Name="PrjGuid" />
+      </Principal>
+      <Dependent Role="PT_PrjInfo_Kind">
+        <PropertyRef Name="PrjGuid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PT_PrjInf__PrjGu__06E47595">
+    <End Type="Pm2Model.PT_PrjInfo_ZTB_Detail" Role="PT_PrjInfo_ZTB_Detail" Multiplicity="1" />
+    <End Type="Pm2Model.PT_PrjInfo_Rank" Role="PT_PrjInfo_Rank" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PT_PrjInfo_ZTB_Detail">
+        <PropertyRef Name="PrjGuid" />
+      </Principal>
+      <Dependent Role="PT_PrjInfo_Rank">
+        <PropertyRef Name="PrjGuid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Bud_ConsTask">
+    <Key>
+      <PropertyRef Name="ConsTaskId" />
+    </Key>
+    <Property Type="String" Name="ConsTaskId" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ConsReportId" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TaskId" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="CompleteQuantity" Nullable="false" Precision="18" Scale="3" />
+    <Property Type="String" Name="WorkContent" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Note" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="AccountingQuantity" Precision="18" Scale="3" />
+    <NavigationProperty Name="Bud_ConsReport" Relationship="Pm2Model.FK__Bud_ConsT__ConsR__61DC42C1" FromRole="Bud_ConsTask" ToRole="Bud_ConsReport" />
+    <NavigationProperty Name="Bud_ConsTaskRes" Relationship="Pm2Model.FK__Bud_ConsT__ConsT__65ACD3A5" FromRole="Bud_ConsTask" ToRole="Bud_ConsTaskRes" />
+  </EntityType>
+  <EntityType Name="Bud_ConsTaskRes">
+    <Key>
+      <PropertyRef Name="ConsTaskResId" />
+    </Key>
+    <Property Type="String" Name="ConsTaskResId" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ConsTaskId" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ResourceId" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="Quantity" Nullable="false" Precision="18" Scale="3" />
+    <Property Type="Decimal" Name="UnitPrice" Nullable="false" Precision="18" Scale="3" />
+    <Property Type="Decimal" Name="AccountingQuantity" Precision="18" Scale="3" />
+    <Property Type="String" Name="CBSCode" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Bud_ConsTask" Relationship="Pm2Model.FK__Bud_ConsT__ConsT__65ACD3A5" FromRole="Bud_ConsTaskRes" ToRole="Bud_ConsTask" />
+    <NavigationProperty Name="Res_Resource" Relationship="Pm2Model.FK__Bud_ConsT__Resou__66A0F7DE" FromRole="Bud_ConsTaskRes" ToRole="Res_Resource" />
+  </EntityType>
+  <Association Name="FK__Bud_ConsT__ConsR__61DC42C1">
+    <End Type="Pm2Model.Bud_ConsReport" Role="Bud_ConsReport" Multiplicity="0..1" />
+    <End Type="Pm2Model.Bud_ConsTask" Role="Bud_ConsTask" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bud_ConsReport">
+        <PropertyRef Name="ConsReportId" />
+      </Principal>
+      <Dependent Role="Bud_ConsTask">
+        <PropertyRef Name="ConsReportId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Bud_ConsT__ConsT__65ACD3A5">
+    <End Type="Pm2Model.Bud_ConsTask" Role="Bud_ConsTask" Multiplicity="1" />
+    <End Type="Pm2Model.Bud_ConsTaskRes" Role="Bud_ConsTaskRes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bud_ConsTask">
+        <PropertyRef Name="ConsTaskId" />
+      </Principal>
+      <Dependent Role="Bud_ConsTaskRes">
+        <PropertyRef Name="ConsTaskId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Bud_ConsT__Resou__66A0F7DE">
+    <End Type="Pm2Model.Res_Resource" Role="Res_Resource" Multiplicity="1" />
+    <End Type="Pm2Model.Bud_ConsTaskRes" Role="Bud_ConsTaskRes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Res_Resource">
+        <PropertyRef Name="ResourceId" />
+      </Principal>
+      <Dependent Role="Bud_ConsTaskRes">
+        <PropertyRef Name="ResourceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

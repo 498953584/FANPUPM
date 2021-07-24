@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="PTLOGIN" table="PT_LOGIN" lazy="true" >
+    <id name="V_DLID">
+			<column name="V_DLID" sql-type="varchar" length="50" not-null="true" />
+    </id>
+    <property name="V_YHDM">
+      <column name="V_YHDM" sql-type="varchar" length="10" not-null="false" />
+    </property>
+    <property name="V_DLMM">
+      <column name="V_DLMM" sql-type="varchar" length="50" not-null="false" />
+    </property>
+    <property name="C_SFYX">
+      <column name="C_SFYX" sql-type="char" length="1" not-null="false" />
+    </property>
+    <property name="V_BGFW">
+      <column name="V_BGFW" sql-type="varchar" length="500" not-null="false" />
+    </property>
+    <property name="v_cycd">
+      <column name="v_cycd" sql-type="text" not-null="false" />
+    </property>
+    <property name="SkinID">
+      <column name="SkinID" sql-type="int" not-null="false" />
+    </property>
+    <property name="RoleCodes">
+      <column name="RoleCodes" sql-type="varchar" length="100" not-null="false" />
+    </property>
+    <property name="IsManager">
+      <column name="IsManager" sql-type="char" length="1" not-null="false" />
+    </property>
+    <property name="ControlDept">
+      <column name="ControlDept" sql-type="varchar" length="100" not-null="false" />
+    </property>
+    <property name="MailSpace">
+      <column name="MailSpace" sql-type="int" not-null="false" />
+    </property>
+    <property name="MailPageSize">
+      <column name="MailPageSize" sql-type="int" not-null="false" />
+    </property>
+    <property name="AuditPwd">
+      <column name="AuditPwd" sql-type="varchar" length="50" not-null="false" />
+    </property>
+    <property name="AuditNameImagePath">
+      <column name="AuditNameImagePath" sql-type="varchar" length="200" not-null="false" />
+    </property>
+    <property name="PmSet">
+      <column name="PmSet" sql-type="varchar" length="2" not-null="false" />
+    </property>
+  </class>
+</hibernate-mapping>

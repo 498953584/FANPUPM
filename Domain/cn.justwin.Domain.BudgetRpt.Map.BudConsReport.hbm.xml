@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="BudConsReport" table="Bud_ConsReport" lazy="true" >
+		<id name="ConsReportId">
+			<column name="ConsReportId" sql-type="nvarchar" length="500" not-null="true" />
+		</id>
+		<property name="PrjId">
+			<column name="PrjId" sql-type="nvarchar" length="500" not-null="true" />
+		</property>
+		<property name="InputUser">
+			<column name="InputUser" sql-type="nvarchar" length="500" not-null="true" />
+		</property>
+		<property name="InputDate">
+			<column name="InputDate" sql-type="datetime" not-null="true" />
+		</property>
+		<property name="WorkCard">
+			<column name="WorkCard" sql-type="nvarchar(max)" not-null="false" />
+		</property>
+		<property name="IsValid">
+			<column name="IsValid" sql-type="bit" not-null="false" />
+		</property>
+		<property name="State">
+			<column name="State" sql-type="nvarchar" length="1" not-null="true" />
+		</property>
+		<property name="CancelAuditReason">
+			<column name="CancelAuditReason" sql-type="nvarchar(max)" not-null="false" />
+		</property>
+		<property name="CancelReportReason">
+			<column name="CancelReportReason" sql-type="nvarchar(max)" not-null="false" />
+		</property>
+		<property name="FlowState">
+			<column name="FlowState" sql-type="int" not-null="true" />
+		</property>
+		<property name="ConstractId">
+			<column name="ConstractId" sql-type="nvarchar" length="100" not-null="false" />
+		</property>
+		<property name="BalanceId">
+			<column name="BalanceId" sql-type="nvarchar" length="200" not-null="false" />
+		</property>
+		<property name="Type">
+			<column name="Type" sql-type="nvarchar" length="2" not-null="true" />
+		</property>
+	</class>
+</hibernate-mapping>

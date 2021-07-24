@@ -1,0 +1,4 @@
+1、
+服务器 扩展，里面创建一个rds扩展， 
+RDS扩展用这个文件：
+C:\Program Files\Common Files\System\msadc\msadcs.dll

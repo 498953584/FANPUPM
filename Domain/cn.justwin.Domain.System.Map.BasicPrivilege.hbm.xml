@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="BasicPrivilege" table="Basic_Privilege" lazy="true" >
+		<id name="PrivilegeId">
+			<column name="PrivilegeId" sql-type="nvarchar" length="200" not-null="true" />
+		</id>
+		<property name="RelationsTable">
+			<column name="RelationsTable" sql-type="nvarchar" length="200" not-null="true" />
+		</property>
+		<property name="RelationsKey">
+			<column name="RelationsKey" sql-type="nvarchar" length="200" not-null="true" />
+		</property>
+		<property name="UserCode">
+			<column name="UserCode" sql-type="varchar" length="8" not-null="true" />
+		</property>
+	</class>
+</hibernate-mapping>

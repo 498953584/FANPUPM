@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="SAUserSalaryBooks" table="SA_UserSalaryBooks" lazy="true" >
+    <id name="Id" column="Id"></id>
+    <property name="UserCode" type="String">
+      <column name="UserCode" sql-type="varchar" length="8" not-null="true" />
+    </property>
+    <property name="BooksId" type="String">
+      <column name="BooksId" sql-type="nvarchar" length="200" not-null="true" />
+    </property>
+  </class>
+</hibernate-mapping>

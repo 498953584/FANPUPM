@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SmTreasury" table="Sm_Treasury" lazy="true" >
+		<id name="tcode">
+			<column name="tcode" sql-type="nvarchar" length="512" not-null="true" />
+		</id>
+		<property name="tid">
+			<column name="tid" sql-type="nvarchar" length="50" not-null="true" />
+		</property>
+		<property name="tname">
+			<column name="tname" sql-type="nvarchar" length="512" not-null="false" />
+		</property>
+		<property name="ptcode">
+			<column name="ptcode" sql-type="nvarchar" length="512" not-null="false" />
+		</property>
+		<property name="tflag">
+			<column name="tflag" sql-type="nvarchar" length="64" not-null="false" />
+		</property>
+		<property name="taddress">
+			<column name="taddress" sql-type="nvarchar" length="1024" not-null="false" />
+		</property>
+		<property name="texplain">
+			<column name="texplain" sql-type="nvarchar" length="2048" not-null="false" />
+		</property>
+		<property name="prjCode">
+			<column name="prjCode" sql-type="varchar" length="5000" not-null="false" />
+		</property>
+		<property name="IsContrast">
+			<column name="IsContrast" sql-type="bit" not-null="false" />
+		</property>
+	</class>
+</hibernate-mapping>

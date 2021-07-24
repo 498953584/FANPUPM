@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="WFTemplateNode" table="WF_TemplateNode" lazy="true" >
+		<id name="Id">
+			<column name="Id" sql-type="nvarchar" length="200" not-null="true" />
+		</id>
+		<property name="TemplateID">
+			<column name="TemplateID" sql-type="int" not-null="false" />
+		</property>
+		<property name="NodeID" generated="insert">
+			<column name="NodeID" sql-type="int" not-null="true"/>
+		</property>
+		<property name="NodeName">
+			<column name="NodeName" sql-type="varchar" length="50" not-null="false" />
+		</property>
+		<property name="AuditorType">
+			<column name="AuditorType" sql-type="char" not-null="false" />
+		</property>
+		<property name="Operater">
+			<column name="Operater" sql-type="varchar" length="100" not-null="false" />
+		</property>
+		<property name="FrontNode">
+			<column name="FrontNode" sql-type="varchar" length="100" not-null="false" />
+		</property>
+		<property name="ConditionDescription">
+			<column name="ConditionDescription" sql-type="varchar" length="100" not-null="false" />
+		</property>
+		<property name="IsSendMsg">
+			<column name="IsSendMsg" sql-type="char" not-null="false" />
+		</property>
+		<property name="IsAllPass">
+			<column name="IsAllPass" sql-type="char" not-null="false" />
+		</property>
+		<property name="During">
+			<column name="During" sql-type="int" not-null="false" />
+		</property>
+		<property name="IsSecValidate">
+			<column name="IsSecValidate" sql-type="char" not-null="false" />
+		</property>
+		<property name="IsSelReceiver">
+			<column name="IsSelReceiver" sql-type="char" not-null="false" />
+		</property>
+		<property name="AuditMain">
+			<column name="AuditMain" sql-type="varchar" length="500" not-null="false" />
+		</property>
+		<property name="DueMode">
+			<column name="DueMode" sql-type="varchar" length="2" not-null="false" />
+		</property>
+		<property name="DepCode">
+			<column name="DepCode" sql-type="nvarchar" length="200" not-null="false" />
+		</property>
+	</class>
+</hibernate-mapping>

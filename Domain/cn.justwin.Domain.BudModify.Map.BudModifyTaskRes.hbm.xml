@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="BudModifyTaskRes" table="Bud_ModifyTaskRes" lazy="true" >
+		<id name="ModifyTaskResId" column="ModifyTaskResId"></id>
+		<property name="ModifyTaskId" type="String">
+			<column name="ModifyTaskId" sql-type="nvarchar" length="64" not-null="false" />
+		</property>
+		<property name="ModifyId" type="String">
+			<column name="ModifyId" sql-type="nvarchar" length="64" not-null="false" />
+		</property>
+		<property name="ResourceId" type="String">
+			<column name="ResourceId" sql-type="nvarchar" length="500" not-null="false" />
+		</property>
+		<property name="ResourceQuantity" type="Decimal">
+			<column name="ResourceQuantity" sql-type="decimal" not-null="true" />
+		</property>
+		<property name="ResourcePrice" type="Decimal">
+			<column name="ResourcePrice" sql-type="decimal" not-null="true" />
+		</property>
+		<property name="LossCoefficient">
+			<column name="LossCoefficient" sql-type="decimal" not-null="false" />
+		</property>
+	</class>
+</hibernate-mapping>

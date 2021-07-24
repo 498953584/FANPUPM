@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="PrjMilestone" table="Prj_Milestone" lazy="true" >
+    <id name="Id">
+      <column name="Id" sql-type="nvarchar" length="200" not-null="true" />
+    </id>
+    <property name="UserCode">
+      <column name="UserCode" sql-type="varchar" length="8" not-null="true" />
+    </property>
+    <property name="RptDate">
+      <column name="RptDate" sql-type="datetime" not-null="true" />
+    </property>
+    <property name="StoreAmount">
+      <column name="StoreAmount" sql-type="decimal" not-null="true" />
+    </property>
+    <property name="ForeCast">
+      <column name="ForeCast" sql-type="decimal" not-null="true" />
+    </property>
+    <property name="StoreSwitchRate">
+      <column name="StoreSwitchRate" sql-type="decimal" not-null="true" />
+    </property>
+    <property name="NextForeCast">
+      <column name="NextForeCast" sql-type="decimal" not-null="true" />
+    </property>
+    <property name="Stone1">
+      <column name="Stone1" sql-type="int" not-null="true" />
+    </property>
+    <property name="Stone2">
+      <column name="Stone2" sql-type="int" not-null="true" />
+    </property>
+    <property name="Stone3">
+      <column name="Stone3" sql-type="int" not-null="true" />
+    </property>
+    <property name="Stone4">
+      <column name="Stone4" sql-type="int" not-null="true" />
+    </property>
+    <property name="Stone5">
+      <column name="Stone5" sql-type="int" not-null="true" />
+    </property>
+    <property name="Stone6">
+      <column name="Stone6" sql-type="int" not-null="true" />
+    </property>
+    <property name="Stone7">
+      <column name="Stone7" sql-type="int" not-null="true" />
+    </property>
+    <property name="Stone8">
+      <column name="Stone8" sql-type="int" not-null="true" />
+    </property>
+    <property name="Stone9">
+      <column name="Stone9" sql-type="int" not-null="true" />
+    </property>
+    <many-to-one name="YHProjectManager" class="cn.justwin.Domain.Entities.PTyhmc,Domain" not-null="false"
+                not-found="ignore" insert="false" update="false" column="UserCode" lazy="false">
+    </many-to-one>
+  </class>
+</hibernate-mapping>

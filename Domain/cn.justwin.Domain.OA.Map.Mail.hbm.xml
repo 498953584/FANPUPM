@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Domain" namespace="cn.justwin.Domain.Entities">
+	<class name ="cn.justwin.Domain.Entities.Mail, Domain" table="OA_Mail" lazy="true">
+		<id name="MailId" column ="MailId"></id>
+		<property name="ToMailId" type="String">
+			<column name="ToMailId" sql-type="nvarchar" length="200" not-null="false"></column>
+		</property>
+		<property name ="MailName" type="String">
+			<column name="MailName" length="200" sql-type="nvarchar" not-null="false"></column>
+		</property>
+		<property name ="MailContent" type="StringClob">
+			<column name="MailContent" sql-type="nvarchar(max)" not-null="false"></column>
+		</property>
+		<property name ="MailFrom" type="String">
+			<column name="MailFrom" length="20" sql-type="nvarchar" not-null="false"></column>
+		</property>
+		<property name ="MailTo" type="String">
+			<column name="MailTo" length="20" sql-type="nvarchar" not-null="false"></column>
+		</property>
+		<property name="AllMailToCode" type="String">
+			<column name="AllMailToCode" sql-type="nvarchar" not-null="false"></column>
+		</property>
+		<property name ="AllMailTo" type="String">
+			<column name="AllMailTo" sql-type="nvarchar" not-null="false"></column>
+		</property>
+		<property name="AllCopytoCode" type="String">
+			<column name="AllCopytoCode" sql-type="nvarchar" not-null="false"></column>
+		</property>
+		<property name ="AllCopyto" type="String">
+			<column name="AllCopyTo" sql-type="nvarchar" not-null="false"></column>
+		</property>
+		<property name ="MailType" type="String">
+			<column name="MailType" length="2" sql-type="varchar" not-null="true"></column>
+		</property>
+		<property name ="IsReaded" type="bool">
+			<column name="IsReaded" sql-type="bit" not-null="true"></column>
+		</property>
+		<property name="ReadTime" type="DateTime">
+			<column name="ReadTime" sql-type="datetime" not-null="false"></column>
+		</property>
+		<property name ="IsValid" type="bool">
+			<column name="IsValid" sql-type="bit" not-null="true"></column>
+		</property>
+		<property name="AnnexId" type="String">
+			<column name="AnnexId" length="200" sql-type="nvarchar" not-null="false"></column>
+		</property>
+		<property name ="InputDate" type="DateTime">
+			<column name="InputDate" length="8" sql-type="datetime" not-null="true"/>
+		</property>
+		<many-to-one name="MailFromYhmc" class="cn.justwin.Domain.Entities.PTyhmc, Domain"
+                 insert="false" update="false" column="MailFrom" lazy="false" not-found="ignore" />
+		<many-to-one name="MailToYhmc" class="cn.justwin.Domain.Entities.PTyhmc, Domain"
+								 insert="false" update="false" column="MailTo" lazy="false" not-found="ignore" />
+	</class>
+</hibernate-mapping>

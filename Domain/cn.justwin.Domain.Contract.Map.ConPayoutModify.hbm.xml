@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="ConPayoutModify" table="Con_Payout_Modify" lazy="true" >
+		<id name="ModifyID">
+			<column name="ModifyID" sql-type="nvarchar" length="64" not-null="true" />
+		</id>
+		<property name="ModifyCode">
+			<column name="ModifyCode" sql-type="nvarchar" length="64" not-null="false" />
+		</property>
+		<property name="ContractID">
+			<column name="ContractID" sql-type="nvarchar" length="64" not-null="false" />
+		</property>
+		<property name="ModifyDate">
+			<column name="ModifyDate" sql-type="datetime" not-null="false" />
+		</property>
+		<property name="ModifyMoney">
+			<column name="ModifyMoney" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="Reason">
+			<column name="Reason" sql-type="nvarchar(max)" not-null="false" />
+		</property>
+		<property name="ModifyPerson">
+			<column name="ModifyPerson" sql-type="nvarchar" length="64" not-null="false" />
+		</property>
+		<property name="Annex">
+			<column name="Annex" sql-type="nvarchar" length="256" not-null="false" />
+		</property>
+		<property name="FlowState">
+			<column name="FlowState" sql-type="int" not-null="false" />
+		</property>
+		<property name="Notes">
+			<column name="Notes" sql-type="nvarchar(max)" not-null="false" />
+		</property>
+		<property name="InputPerson">
+			<column name="InputPerson" sql-type="nvarchar" length="64" not-null="false" />
+		</property>
+		<property name="InputDate">
+			<column name="InputDate" sql-type="datetime" not-null="false" />
+		</property>
+		<property name="BudModifyId">
+			<column name="BudModifyId" sql-type="nvarchar" length="200" not-null="false" />
+		</property>
+	</class>
+</hibernate-mapping>

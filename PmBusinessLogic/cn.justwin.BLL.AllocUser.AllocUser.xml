@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.net
+        http://www.springframework.net/xsd/spring-objects.xsd">
+	<description></description>
+	<object id="role" type="cn.justwin.BLL.AllocUser.RoleUser, PmBusinessLogic"> </object>
+	<object id="tender" type="cn.justwin.BLL.AllocUser.TenderUser, PmBusinessLogic"> </object>
+	<object id="mk" type="cn.justwin.BLL.AllocUser.MkUser, PmBusinessLogic"> </object>
+	<object id="basicPriv" type="cn.justwin.BLL.AllocUser.BasicPriv, PmBusinessLogic"> </object>
+	<object id="userDefineFlow" type="cn.justwin.BLL.AllocUser.DefineFlowUsercs, PmBusinessLogic"> </object>
+	<!--<object id="equipmentUser" type="cn.justwin.BLL.AllocUser.EquipmentUser, PmBusinessLogic"> </object>-->
+	<object id="progressPlanUser" type="cn.justwin.BLL.AllocUser.ProgressPlanUser, PmBusinessLogic"></object>
+	<object id="projectAccount" type="cn.justwin.BLL.AllocUser.ProjectAccount, PmBusinessLogic"></object>
+</objects>

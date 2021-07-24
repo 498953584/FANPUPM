@@ -1,0 +1,124 @@
+﻿<html>
+<head>
+    <title>关联修改任务</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+</head>
+<body style="font-size:14px;">
+
+<h3>
+    修改部门时，如果负责人不属于此部门，则删除负责人。<br />
+    在单元格编辑完提交值时判断，从而联动修改任务的其他属性。
+</h3>
+<br/>
+
+<div id="viewCt">
+</div>
+
+</body>
+</html>
+<script src="../scripts/boot.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+/* 创建项目甘特图对象，设置列配置，创建右键菜单和任务面板
+-----------------------------------------------------------------------------*/
+
+var DepartMents = [
+    {id: 1, name: "技术部"},
+    {id: 2, name: "财务部"},
+    {id: 3, name: "销售部"}
+];
+var Managers = [
+    { id: 1, name: "张三", depart: 1 },
+    { id: 2, name: "李四", depart: 2 },
+    { id: 3, name: "赵五", depart: 1 },
+    { id: 4, name: "钱六", depart: 3 },
+    { id: 5, name: "jack", depart: 3 },
+    { id: 6, name: "rose", depart: 2 },
+    { id: 7, name: "niko", depart: 3 },
+    { id: 8, name: "mark", depart: 2 },
+    { id: 9, name: "tom", depart: 2 }
+];
+function getDepartMent(did) {
+    for (var i = 0, l = DepartMents.length; i < l; i++) {
+        var d = DepartMents[i];
+        if (d.id == did) return d;
+    }
+}
+function getManager(mid) {    
+    for (var i = 0, l = Managers.length; i < l; i++) {
+        var m = Managers[i];
+        if (m.id == mid) return m;
+    }        
+}
+function getManagers(departID) {
+    var ms = [];
+    for (var i = 0, l = Managers.length; i < l; i++) {
+        var m = Managers[i];
+        if (m.depart == departID) ms.push(m);
+    }
+    return ms;
+}
+
+var project = new PlusProject();
+project.setStyle("width:900px;height:400px");
+project.setColumns([
+    new PlusProject.IDColumn(),
+    new PlusProject.NameColumn(),
+    { header: "部门", field: "DepartMent",
+        editor: {
+            type: "combobox", valueField: "id", displayField: "name"                 
+        },
+        renderer: function (e) {
+            var d = getDepartMent(e.record.DepartMent);
+            return d ? d.name : "";
+        }
+    },
+    { header: "负责人", field: "Manager",
+        editor: {
+            type: "combobox", valueField: "id", displayField: "name"
+        },
+        renderer: function (e) {
+            var m = getManager(e.record.Manager);
+            return m ? m.name : "";
+        }
+     }
+
+]);
+project.render(document.getElementById("viewCt"));
+
+var params = mini.getParams();  //...?id=100        获取URL的项目id信息
+var projectUID = params.id;
+if (projectUID == null) {   //如果没有传递项目id，则加载JSON格式项目数据演示和操作
+    LoadJSONProject("data/project.txt", project);
+} else {
+    LoadProject(projectUID, project);
+}
+
+
+/* 业务代码：加载、保存、调试项目，增、删、改、升级、降级任务
+-----------------------------------------------------------------------------*/
+
+project.on("cellbeginedit", function (e) {
+    if (e.field == "DepartMent") {
+        e.editor.setData(DepartMents);
+    }
+    if (e.field == "Manager") {
+        if (!e.record.DepartMent) {
+            e.cancel = true;
+        } else {
+            var ms = getManagers(e.record.DepartMent);
+            e.editor.setData(ms);
+        }
+    }
+});
+project.on("cellcommitedit", function (e) {
+    var task = e.record, project = e.source;
+    if (e.field == "DepartMent") {
+        var m = getManager(task.Manager);
+        if (m && m.depart != e.value) {
+            project.updateTask(task, "Manager", "");
+        }
+    }
+});
+
+</script>

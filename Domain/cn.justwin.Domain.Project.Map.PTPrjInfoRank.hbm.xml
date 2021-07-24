@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="PTPrjInfoRank" table="PT_PrjInfo_Rank" lazy="true" >
+    <id name="RankId">
+      <column name="RankId" sql-type="nvarchar" length="200" not-null="true" />
+    </id>
+    <property name="PrjGuid">
+      <column name="PrjGuid" sql-type="uniqueidentifier" not-null="true" />
+    </property>
+    <property name="PrjRank">
+      <column name="PrjRank" sql-type="nvarchar" length="200" not-null="false" />
+    </property>
+    <property name="RankLevel">
+      <column name="RankLevel" sql-type="nvarchar" length="200" not-null="false" />
+    </property>
+  </class>
+</hibernate-mapping>

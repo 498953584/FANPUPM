@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="ConPayoutContract" table="Con_Payout_Contract" lazy="true" >
+		<id name="ContractID">
+			<column name="ContractID" sql-type="nvarchar" length="64" not-null="true" />
+		</id>
+		<property name="ContractCode">
+			<column name="ContractCode" sql-type="nvarchar" length="64" not-null="false" />
+		</property>
+		<property name="ContractName">
+			<column name="ContractName" sql-type="nvarchar" length="128" not-null="false" />
+		</property>
+		<property name="TypeID">
+			<column name="TypeID" sql-type="nvarchar" length="64" not-null="false" />
+		</property>
+		<property name="IsMainContract">
+			<column name="IsMainContract" sql-type="bit" not-null="false" />
+		</property>
+		<property name="MainContractID">
+			<column name="MainContractID" sql-type="nvarchar" length="64" not-null="false" />
+		</property>
+		<property name="AName">
+			<column name="AName" sql-type="nvarchar" length="80" not-null="false" />
+		</property>
+		<property name="BName">
+			<column name="BName" sql-type="nvarchar" length="1024" not-null="false" />
+		</property>
+		<property name="ContractMoney">
+			<column name="ContractMoney" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="ModifiedMoney">
+			<column name="ModifiedMoney" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="PrepayMoney">
+			<column name="PrepayMoney" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="MainItem">
+			<column name="MainItem" sql-type="nvarchar" length="1024" not-null="false" />
+		</property>
+		<property name="PaymentCondition">
+			<column name="PaymentCondition" sql-type="nvarchar" length="1024" not-null="false" />
+		</property>
+		<property name="SignDate">
+			<column name="SignDate" sql-type="datetime" not-null="false" />
+		</property>
+		<property name="StartDate">
+			<column name="StartDate" sql-type="datetime" not-null="false" />
+		</property>
+		<property name="EndDate">
+			<column name="EndDate" sql-type="datetime" not-null="false" />
+		</property>
+		<property name="BalanceMode">
+			<column name="BalanceMode" sql-type="nvarchar" length="64" not-null="false" />
+		</property>
+		<property name="PayMode">
+			<column name="PayMode" sql-type="nvarchar" length="64" not-null="false" />
+		</property>
+		<property name="Address">
+			<column name="Address" sql-type="nvarchar" length="256" not-null="false" />
+		</property>
+		<property name="Annex">
+			<column name="Annex" sql-type="nvarchar" length="256" not-null="false" />
+		</property>
+		<property name="FlowState">
+			<column name="FlowState" sql-type="int" not-null="false" />
+		</property>
+		<property name="IsArchived">
+			<column name="IsArchived" sql-type="bit" not-null="false" />
+		</property>
+		<property name="ArchiveDate">
+			<column name="ArchiveDate" sql-type="datetime" not-null="false" />
+		</property>
+		<property name="PrjGuid">
+			<column name="PrjGuid" sql-type="nvarchar" length="64" not-null="false" />
+		</property>
+		<property name="InContractID">
+			<column name="InContractID" sql-type="nvarchar" length="64" not-null="false" />
+		</property>
+		<property name="Notes">
+			<column name="Notes" sql-type="nvarchar(max)" not-null="false" />
+		</property>
+		<property name="InputPerson">
+			<column name="InputPerson" sql-type="nvarchar" length="64" not-null="false" />
+		</property>
+		<property name="InputDate">
+			<column name="InputDate" sql-type="datetime" not-null="false" />
+		</property>
+		<property name="UserCodes">
+			<column name="UserCodes" sql-type="nvarchar(max)" not-null="false" />
+		</property>
+		<property name="fictitious">
+			<column name="fictitious" sql-type="int" not-null="false" />
+		</property>
+		<property name="conState">
+			<column name="conState" sql-type="int" not-null="false" />
+		</property>
+		<property name="CapitalNumber">
+			<column name="CapitalNumber" sql-type="varchar" length="200" not-null="false" />
+		</property>
+		<property name="financeNumber">
+			<column name="financeNumber" sql-type="varchar" length="50" not-null="false" />
+		</property>
+		<property name="financeProject">
+			<column name="financeProject" sql-type="varchar" length="50" not-null="false" />
+		</property>
+		<property name="SignPerson">
+			<column name="SignPerson" sql-type="varchar" length="8" not-null="false" />
+		</property>
+	</class>
+</hibernate-mapping>

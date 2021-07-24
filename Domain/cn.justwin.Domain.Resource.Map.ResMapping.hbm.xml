@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="ResMapping" table="Res_Mapping" lazy="true" >
+    <id name="Id">
+      <column name="Id" sql-type="nvarchar" length="200" not-null="true" />
+    </id>
+    <property name="ResourceId">
+      <column name="ResourceId" sql-type="nvarchar" length="200" not-null="true" />
+    </property>
+    <property name="ParentId">
+      <column name="ParentId" sql-type="nvarchar" length="200" not-null="true" />
+    </property>
+  </class>
+</hibernate-mapping>

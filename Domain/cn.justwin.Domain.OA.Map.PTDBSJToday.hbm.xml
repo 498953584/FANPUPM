@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="PTDBSJToday" table="PT_DBSJ_Today" lazy="true" >
+		<id name="I_DBSJ_ID" generator="">
+			<column name="I_DBSJ_ID" sql-type="int" not-null="true" />
+			<generator class="identity"></generator>
+		</id>
+		<property name="I_XGID" type="String">
+			<column name="I_XGID" sql-type="varchar" length="50" not-null="false" />
+		</property>
+		<property name="V_LXBM" type="String">
+			<column name="V_LXBM" sql-type="varchar" length="10" not-null="false" />
+		</property>
+		<property name="V_YHDM" type="String">
+			<column name="V_YHDM" sql-type="varchar" length="8" not-null="false" />
+		</property>
+		<property name="DTM_DBSJ" type="DateTime">
+			<column name="DTM_DBSJ" sql-type="datetime" not-null="false" />
+		</property>
+		<property name="V_Content" type="String">
+			<column name="V_Content" sql-type="varchar" length="200" not-null="false" />
+		</property>
+		<property name="V_TPLJ" type="String">
+			<column name="V_TPLJ" sql-type="varchar" length="50" not-null="false" />
+		</property>
+		<property name="V_DBLJ" type="String">
+			<column name="V_DBLJ" sql-type="nvarchar" length="200" not-null="false" />
+		</property>
+		<property name="C_OpenFlag" type="String">
+			<column name="C_OpenFlag" sql-type="char" length="1" not-null="false" />
+		</property>
+		<property name="IsOpened" type="bool">
+			<column name="IsOpened" sql-type="bit" length="1" not-null="false" />
+		</property>
+	</class>
+</hibernate-mapping>

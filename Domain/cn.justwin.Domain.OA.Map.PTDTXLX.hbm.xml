@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="PTDTXLX" table="PT_D_TXLX" lazy="true" >
+    <id name="V_LXBM" type="String">
+			<column name="V_LXBM" sql-type="varchar" length="10"></column>
+    </id>
+    <property name="V_LXMC" type="String">
+      <column name="V_LXMC" sql-type="varchar" length="100" not-null="true" />
+    </property>
+    <property name="V_TPLJ" type="String">
+      <column name="V_TPLJ" sql-type="varchar" length="100" not-null="true" />
+    </property>
+    <property name="V_DBLJ" type="String">
+      <column name="V_DBLJ" sql-type="varchar" length="100" not-null="true" />
+    </property>
+    <property name="C_OPENFLAG" type="String">
+      <column name="C_OPENFLAG" sql-type="char" length="1" not-null="false" />
+    </property>
+    <property name="FilterField" type="String">
+      <column name="FilterField" sql-type="varchar"  length="20" not-null="false" />
+    </property>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="WFInstanceMain" table="WF_Instance_Main" lazy="true" >
+		<id name="ID">
+			<column name="ID" sql-type="int" not-null="true" />
+			<generator class="identity" />
+		</id>
+		<property name="BusinessCode">
+			<column name="BusinessCode" sql-type="varchar" length="3" not-null="false" />
+		</property>
+		<property name="BusinessClass">
+			<column name="BusinessClass" sql-type="varchar" length="3" not-null="false" />
+		</property>
+		<property name="TemplateID">
+			<column name="TemplateID" sql-type="int" not-null="false" />
+		</property>
+		<property name="InstanceCode">
+			<column name="InstanceCode" sql-type="uniqueidentifier" not-null="false" />
+		</property>
+		<property name="Organiger">
+			<column name="Organiger" sql-type="varchar" length="8" not-null="false" />
+		</property>
+		<property name="StartTime">
+			<column name="StartTime" sql-type="datetime" not-null="false" />
+		</property>
+	</class>
+</hibernate-mapping>

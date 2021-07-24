@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="XPMBasicContactCorp" table="XPM_Basic_ContactCorp" lazy="true" >
+    <id name="CorpID">
+			<column name="CorpID" sql-type="int" not-null="true" />
+      <generator class="identity" />
+    </id>
+    <property name="CorpTypeID">
+      <column name="CorpTypeID" sql-type="int" not-null="true" />
+    </property>
+    <property name="CorpName">
+      <column name="CorpName" sql-type="nvarchar" length="4000" not-null="true" />
+    </property>
+    <property name="CorpKind">
+      <column name="CorpKind" sql-type="int" not-null="false" />
+    </property>
+    <property name="WorkType">
+      <column name="WorkType" sql-type="int" not-null="false" />
+    </property>
+    <property name="Speciality">
+      <column name="Speciality" sql-type="nvarchar(max)" not-null="false" />
+    </property>
+    <property name="Aptitude">
+      <column name="Aptitude" sql-type="nvarchar(max)" not-null="false" />
+    </property>
+    <property name="Capital">
+      <column name="Capital" sql-type="nvarchar(max)" not-null="false" />
+    </property>
+    <property name="UnderlayAbility">
+      <column name="UnderlayAbility" sql-type="nvarchar(max)" not-null="false" />
+    </property>
+    <property name="Address">
+      <column name="Address" sql-type="nvarchar(max)" not-null="false" />
+    </property>
+    <property name="CorpBrief">
+      <column name="CorpBrief" sql-type="nvarchar(max)" not-null="false" />
+    </property>
+    <property name="Corporation">
+      <column name="Corporation" sql-type="nvarchar(max)" not-null="false" />
+    </property>
+    <property name="LinkMan">
+      <column name="LinkMan" sql-type="nvarchar(max)" not-null="false" />
+    </property>
+    <property name="Telephone">
+      <column name="Telephone" sql-type="nvarchar(max)" not-null="false" />
+    </property>
+    <property name="IFProvider">
+      <column name="IFProvider" sql-type="bit" not-null="false" />
+    </property>
+    <property name="HandPhone">
+      <column name="HandPhone" sql-type="nvarchar(max)" not-null="false" />
+    </property>
+    <property name="Fax">
+      <column name="Fax" sql-type="nvarchar(max)" not-null="false" />
+    </property>
+    <property name="ShopCard">
+      <column name="ShopCard" sql-type="nvarchar(max)" not-null="false" />
+    </property>
+    <property name="TaxCard">
+      <column name="TaxCard" sql-type="nvarchar(max)" not-null="false" />
+    </property>
+    <property name="AccountBank">
+      <column name="AccountBank" sql-type="nvarchar(max)" not-null="false" />
+    </property>
+    <property name="BankAccounts">
+      <column name="BankAccounts" sql-type="nvarchar(max)" not-null="false" />
+    </property>
+    <property name="Zone">
+      <column name="Zone" sql-type="nvarchar(max)" not-null="false" />
+    </property>
+    <property name="PostCode">
+      <column name="PostCode" sql-type="nvarchar(max)" not-null="false" />
+    </property>
+    <property name="WebSite">
+      <column name="WebSite" sql-type="nvarchar(max)" not-null="false" />
+    </property>
+    <property name="PeopleNumber">
+      <column name="PeopleNumber" sql-type="nvarchar(max)" not-null="false" />
+    </property>
+    <property name="Client">
+      <column name="Client" sql-type="nvarchar(max)" not-null="false" />
+    </property>
+    <property name="IsVisible">
+      <column name="IsVisible" sql-type="bit" not-null="false" />
+    </property>
+    <property name="IsDefault">
+      <column name="IsDefault" sql-type="bit" not-null="false" />
+    </property>
+    <property name="IsFixed">
+      <column name="IsFixed" sql-type="bit" not-null="false" />
+    </property>
+    <property name="IsValid">
+      <column name="IsValid" sql-type="bit" not-null="false" />
+    </property>
+    <property name="Owner">
+      <column name="Owner" sql-type="nvarchar(max)" not-null="false" />
+    </property>
+    <property name="VersionTime">
+      <column name="VersionTime" sql-type="datetime" not-null="false" />
+    </property>
+    <property name="FlowGuid">
+      <column name="FlowGuid" sql-type="uniqueidentifier" not-null="false" default="newid()" />
+    </property>
+    <property name="AuditState">
+      <column name="AuditState" sql-type="int" not-null="false" default="-1" />
+    </property>
+    <property name="UserCode">
+      <column name="UserCode" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="Brand">
+      <column name="Brand" sql-type="nvarchar(max)" not-null="false" />
+    </property>
+    <property name="Email">
+      <column name="Email" sql-type="nvarchar(max)" not-null="false" />
+    </property>
+    <property name="Contry">
+      <column name="Contry" sql-type="nvarchar(max)" not-null="false" />
+    </property>
+    <property name="IsHot">
+      <column name="IsHot" sql-type="varchar" length="10" not-null="false" />
+    </property>
+  </class>
+</hibernate-mapping>

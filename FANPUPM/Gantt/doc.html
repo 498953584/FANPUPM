@@ -1,0 +1,1479 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="普加项目管理，是基于Web的项目管理甘特图控件，实现了与微软Project一致的界面和功能。可广泛应用于项目管理系统、 ERP 系统、MES系统或其它的任务资源分配相关领域。"/>
+<meta name="Keywords" content="甘特图,项目管理,gantt,project" />
+<title>PlusProject 二次开发指南 V2.0 </title>
+<style type="text/css">
+	body{font-size:14px;background:white;}
+	p{line-height:20px;}
+	li{margin-top:3px;}
+	h1 /* Title */ {
+	}
+	h2 /* Chapter Header */ {
+		background-color: #DCE7F2;
+		border: solid 1px #CCD7E0;
+		padding: 10px;
+		
+		margin-top: 50px;
+		margin-left: 5px;
+	}
+	h3 /* Section Header */  {
+		background-color: #dDeeEB;
+		padding: 8px;padding-bottom:5px;
+        line-height:25px;
+		margin-left: 15px;
+	}
+	h4 {
+		background-color: #ddd;
+		padding: 7px;
+		
+		margin-left: 20px;
+	}
+	
+	h5 {
+		background-color: #F0F0F0;
+		padding: 4px;
+
+		font-weight: normal;
+
+		margin-left: 25px;
+	}
+	
+	p,div.des {
+		margin-left: 35px;
+	}
+	div.des span{float:left;}
+	div.des ul,div.des ol{ overflow:auto; margin:0; zoom:1;}
+	div.des li{margin-bottom:5px;}
+	span.function  {
+		font-weight: bold;
+	}
+	span.parameter {
+		font-style: italic;
+		font-weight: normal;
+	}
+	
+	hr {
+		margin-right: 25px;
+	}
+	
+	ul, ol {
+		list-style-position: inside;
+		margin: 0;
+		padding: 0;
+		margin-left: 25px;
+	}
+	li {
+		padding-left: 15px;
+	}
+	
+	.code {
+		border: solid 1px #ccc;
+		background-color: #FAFAFA;
+		padding: 5px;
+		padding-left:15px;
+		padding-bottom:10px;
+		margin-left: 25px;		
+	}
+	.code b
+	{
+	    color:#c02102;
+	}
+	.des{color:#666; border:1px dashed #ccc; padding:5px;}
+	.des span{color:#f60;}
+	del{color:red;}
+	.add{
+		color:green;
+	}
+	
+	.apitable
+	{
+		width: 900px;margin-left:40px;BORDER-COLLAPSE: separate !important;BORDER-COLLAPSE: collapse;
+        border-right:solid 1px #555;
+		border-bottom:solid 1px #555;	     
+		table-layout: fixed;   /*使td的宽度不因为内容自动变长*/
+        width: 0px;     
+    }
+	.apitable td
+	{
+		padding:3px;font-size:12px;
+		border-top:solid 1px #555;
+		border-left:solid 1px #555;
+		font-family:"Lucida Sans","Lucida Grande",Arial;
+	}
+	.hd td
+	{
+		background:#ccc;font-size:15px;font-weight:bold;
+	}
+	.col1{width:230px}
+	.col2{width:250px}
+	.col3{width:420px}
+</style>
+</head>
+<body>
+	<h1>PlusProject 二次开发指南 V2.0</h1>
+    
+	<p>更新时间：2011--10-01</p>	
+	<p>
+	上海普加软件有限公司
+	</p>
+	<h2>目录</h2>
+	<ol class="toc">				
+		<li><a href="#install">安装部署</a></li>
+        <li><a href="#fileintro">项目文件目录介绍</a></li>
+		<li><a href="#dev">二次开发工作</a>
+		    <ol>
+		        <li><a href="#load">加载数据</a></li>
+		        <li><a href="#saveall">保存数据(全部)</a></li>
+		        <li><a href="#savepart">保存数据(局部)</a></li>
+		        <li><a href="#exttask">扩展任务属性</a></li>
+				<li><a href="#standardcolumn">自定义标准列</a></li>
+				<li><a href="#columntype">自定义列</a></li>				        
+				<li><a href="#diydisplay">自定义表格：行样式、单元格样式、单元格内容</a></li>
+				<li><a href="#diydisplaygantt">自定义条形图显示</a></li>				
+				<li><a href="#diyeditable">控制单元格可编辑</a></li>
+				<li><a href="#diymenu">自定义右键菜单</a></li>
+                <li><a href="#ext">集成到第三方JS框架(jQuery、Ext等)</a></li>
+		        <li><a href="#global">语言本地化</a></li>		
+		    </ol>
+		</li>	
+        <li><a href="#projectdata">项目数据结构</a>
+		    <ol>
+		        <li><a href="#data">JSON数据结构</a></li>		        				
+		        <li><a href="#table">数据库表结构</a></li>		
+            </ol>	
+        </li>
+		<li><a href="#api">PlusProject API参考</a></li>	
+		<li><a href="#faq">常见问题</a></li>		
+		<li><a href="#update">历史更新</a></li>	
+		<li><a href="#support">获得支持</a></li>
+
+	</ol>
+
+	<h2><a name="install"></a>安装部署</h2>
+	<h3><a name="download"></a>下载开发包</h3>
+	<p>
+		访问 <a href="http://www.plusgantt.com/download/" target="_blank">http://www.plusgantt.com/download/</a> <br />		
+	</p>
+	<p>
+	    获得软件开发包后解压缩，并把解压缩后的项目文件，放入到Web项目。<br />
+        如果是.Net版本，可以直接用Visual Studio以"打开网站"的方式打开运行。<br />
+        如果是Java版本，请使用Eclipse以"导入项目"的方式导入打开。
+	</p>
+	<h3><a></a>数据库安装</h3>
+	<p>
+		在下载解压缩后的文件夹内，有一个"dbsql"目录，里面有mssql.sql、oracle.sql、mysql.sql数据库表文件。<br />
+		请使用这里的表结构创建一个数据库。<br />		
+		比如新建一个数据库，名字为：testproject。然后把拷贝的SQL运行一下，就生成了plus_project、plus_task表。
+	</p>	
+	<p style="color:Red;">
+	    创建数据库表完成后，请在"App_Code\Utils\DBUtil.cs"修改数据库连接配置信息以便正常运行。<br />
+        Java的文件路径是"src\PluSoft\DBUtil.java"。
+	</p>
+	<h3><a name="import"></a>导入项目</h3>
+	<p>
+		运行"demo/ImportProject.aspx"文件。选择本地MS PROJECT XML文件，上传导入到数据库中。<br />
+		</p>
+		<p>
+		如果导入成功，会弹出提示信息，可以选择跳转到"Load.html"查看刚才导入的项目数据。<br />
+		如果导入失败，会弹出异常提示，定位解决错误。<br />
+		（注：通常导入错误都是数据库配置信息有误；或文件选择错误。）<br />
+		<b style="color:Red;">必须导入"Upload\软件开发-100.xml"项目文件，它是作为DEMO示例的示例项目数据。</b>
+	</p>	
+	
+	<h3><a name="new"></a>新建项目</h3>
+	<p>
+		运行"demo/NewProject.aspx"文件。此文件使用服务端Project对象，创建一个空项目，并保存到项目中。<br />
+		</p>	
+	
+    <h3><a name="view"></a>查看项目</h3>
+    <p>运行"demo/Projects.aspx"文件，打开一个当前项目列表，可以选择“打开”项目，跳转到Load.html，查看项目。</p>    
+    
+
+
+
+    <h2><a name="fileintro"></a>2.项目文件目录介绍</h2>
+	<h3><a name="download"></a>.Net开发包目录</h3>
+	<p>
+		<img src="scripts/plusproject/plusproject_net.gif" />
+	</p>
+    <p>.Net开发包目录文件一一如下：</p>
+    <ul>
+        <li>DBProject.cs文件：项目加载、保存的后台文件</li>
+        <li>dbsql目录：数据库SQL文件</li>
+        <li>demo目录：甘特图示例</li>
+        <li>scripts/plusproject/js：甘特图javascript文件，有任务面板TaskWindow.js、
+            日历面板CalendarWindow.js、右键菜单ProjectMenu.js、数据交互ProjectServices.js等。</li>
+        <li>doc.html文件：甘特图开发指南文档，包括API、二次开发要点等。</li>
+        <li>index.html文件：开发包资源索引页面。</li>
+    </ul>
+
+
+
+
+    <h2><a name="dev"></a>二次开发工作</h2>
+    <p>以下详细介绍PlusProject是如何从数据库加载数据，以及如何保存到数据库内的。</p>    
+    
+	<h3><a name="dbproject"></a>DBProject类</h3>
+    <p>DBProject是用来处理从数据库加载和保存项目的。里面有两个重要方法：<b>LoadProject</b>和<b>SaveProject</b>。</p>
+    <p>开发者往往需要改造这个类，修改项目加载和保存的实现方式，以满足开发的需要。</p>    
+    <p>PlusProject并不关心和限制开发者如何加载和保存项目数据，只需要在创建和使用PlusProject时，提供好符合数据格式的JSON数据即可。<br />
+        所以开发者可以使用任意的数据库，以及数据库操作方式，灵活性和可控性非常高。
+    </p>
+	
+	<h3><a name="load"></a>加载数据</h3>
+	<p>在DBProject的LoadProject方法中，根据项目UID，加载项目数据和任务数据，并进行数据格式转换工作，最后得到一个Hashtable对象返回。<br />
+	开发者可以参考LoadProject方法的代码，使用自己熟悉的数据库操作方式，比如IBatis、Hibernate等第三方类库，查询数据后，按项目数据结构进行格式转换工作。</p>
+	<p>
+	需要注意的是，获取任务的方法SelectTasks。<br />
+	从数据库查询出任务列表后，需要进行一个for循环遍历操作，一一将任务属性转换为标准任务字段。	</p>
+<pre class="code">    <span style="color:blue">foreach </span>(<span style="color:#2b91af">Hashtable </span><span style="color:#010001">dbtask </span><span style="color:blue">in </span><span style="color:#010001">dbtasks</span>)
+    {
+        <span style="color:#2b91af">Hashtable </span><span style="color:#010001">task </span>= <span style="color:blue">new </span><span style="color:#2b91af">Hashtable</span>();
+        <span style="color:#010001">task</span>[<span style="color:#a31515">"UID"</span>] = <span style="color:#010001">dbtask</span>[<span style="color:#a31515">"UID_"</span>];   <span style="color:green">//唯一标识符
+         </span><span style="color:#010001">task</span>[<span style="color:#a31515">"ID"</span>] = <span style="color:#010001">dbtask</span>[<span style="color:#a31515">"ID_"</span>];     <span style="color:green">//序号
+      </span>	......
+        <span style="color:#010001">tasks</span>.<span style="color:#010001">Add</span>(<span style="color:#010001">task</span>);
+    }
+</pre>	
+
+	<p>
+	    另外，获得任务列表后，需要生成树形结构数据。这个可以使用TreeUtil的标准方法来实现：	</p>
+<pre class="code"><span style="color:green">//任务列表
+</span><span style="color:#2b91af">ArrayList </span><span style="color:#010001">tasks </span>= <span style="color:#010001">SelectTasks</span>(<span style="color:#010001">projectUID</span>);
+<span style="color:green">//列表转树形
+</span><span style="color:#010001">tasks </span>= <span style="color:#2b91af">TreeUtil</span>.<span style="color:#010001">ToTree</span>(<span style="color:#010001">tasks</span>, <span style="color:#a31515">"children"</span>, <span style="color:#a31515">"UID"</span>, <span style="color:#a31515">"ParentTaskUID"</span>);
+<span style="color:#010001">project</span>[<span style="color:#a31515">"Tasks"</span>] = <span style="color:#010001">tasks</span>;</pre>
+
+    <p>最后，需要获取项目的“部门”和“负责人”信息。这两个方法开发者可以重写实现。（示例是生成静态的数据）</p>
+<pre class="code"><span style="color:green">//部门, 负责人获取
+</span><span style="color:#010001">project</span>[<span style="color:#a31515">"Departments"</span>] = <span style="color:#010001">GetDepartments</span>(<span style="color:#010001">projectUID</span>);
+<span style="color:#010001">project</span>[<span style="color:#a31515">"Principals"</span>] = <span style="color:#010001">GetPrincipals</span>(<span style="color:#010001">projectUID</span>);</pre>    
+	
+	
+	<h3><a name="saveall"></a>保存数据(全部)</h3>
+	<p>
+	    在DBProject有一个SaveAll方法。<br />
+	   其原理是：删除所有旧任务，新增所有新任务，达到更新任务的目的。
+<pre class="code"><span style="color:green">//删除任务
+</span>DeleteTasks(projectUID);
+
+<span style="color:green">//树形转列表        
+</span><span style="color:#2b91af">ArrayList </span>tasks = <span style="color:#2b91af">TreeUtil</span>.ToList((<span style="color:#2b91af">ArrayList</span>)dataProject[<span style="color:#a31515">"Tasks"</span>],<span style="color:#a31515">"-1"</span>, <span style="color:#a31515">"children"</span>, <span style="color:#a31515">"UID"</span>, <span style="color:#a31515">"ParentTaskUID"</span>);
+
+<span style="color:green">//保存任务表
+</span>InsertTasks(projectUID, tasks);
+</pre>	    
+	</p>	    
+	    
+	<h3><a name="savepart"></a>保存数据(局部)</h3>
+	<p>
+	    在DBProject有一个SavePart方法。<br />
+	    其原理是：遍历所有任务（包括被删除的），判断任务的"_state"属性状态，分别做"增/删/改"数据库操作。</p>
+<pre class="code"><span style="color:green">//树形转列表
+</span><span style="color:#2b91af">ArrayList </span>tasks = <span style="color:#2b91af">TreeUtil</span>.ToList((<span style="color:#2b91af">ArrayList</span>)dataProject[<span style="color:#a31515">"Tasks"</span>],<span style="color:#a31515">"-1"</span>, <span style="color:#a31515">"children"</span>, <span style="color:#a31515">"UID"</span>, <span style="color:#a31515">"ParentTaskUID"</span>);
+<span style="color:green">//把被删除的任务，加入遍历的集合中
+</span><span style="color:#2b91af">ArrayList </span>removedTasks = (<span style="color:#2b91af">ArrayList</span>)dataProject[<span style="color:#a31515">"RemovedTasks"</span>];
+<span style="color:blue">if </span>(removedTasks != <span style="color:blue">null</span>)
+{
+    tasks.AddRange(removedTasks);
+}
+
+<span style="color:green">//获取变动的任务, 分别保存
+</span><span style="color:blue">foreach </span>(<span style="color:#2b91af">Hashtable </span>task <span style="color:blue">in </span>tasks)
+{
+    <span style="color:blue">string </span>state = <span style="color:#2b91af">Convert</span>.ToString(task[<span style="color:#a31515">"_state"</span>]);
+    <span style="color:blue">if </span>(state == <span style="color:#a31515">""</span>) <span style="color:blue">continue</span>;  <span style="color:green">//如果任务没有变动，则不更新
+
+    </span>task[<span style="color:#a31515">"ProjectUID"</span>] = projectUID;                
+    <span style="color:blue">switch </span>(state)
+    {
+        <span style="color:blue">case </span><span style="color:#a31515">"added"</span>:       <span style="color:green">//新增
+            ......</span>
+            <span style="color:blue">break</span>;
+        <span style="color:blue">case </span><span style="color:#a31515">"modified"</span>:    <span style="color:green">//修改
+            ......</span>
+            <span style="color:blue">break</span>;
+        <span style="color:blue">case </span><span style="color:#a31515">"removed"</span>:     <span style="color:green">//删除                       
+	    ......</span>
+            <span style="color:blue">break</span>;
+    }
+}
+
+</pre>
+    <p>PlusProject提供了保存全部和保存局部两种方式的完整代码。开发者可以参考，并使用自己的方式实现。</p>
+	
+	<h3><a name="exttask"></a>扩展任务属性</h3>
+	<p>对任务属性的扩展，主要处理如下几个地方：</p>
+	<ol>
+	    <li>增加plus_task表的一个字段</li>
+	    <li>修改DBProject的SelectTasks方法，将新字段增加到任务对象上。</li>
+	    <li>修改DBProject的InsertTask方法，将新字段在"insert"语句中增加，保存到任务表。</li>
+	    <li>在Javascript内扩展一个表格列，根据不同数据类型进行扩展。具体参考：<a href="demo/DiyColumns.html" target="_blank">自定义表格列</a></li>
+	</ol>
+	<p>plus_task表的新字段，是用来存放新字段数据的；<br />
+	在加载数据时，确保任务对象上有新字段的属性值。因为任务对象是一个Hashtable，所以这一点极其简单。<br />
+	在保存数据时，修改任务的"insert"语句，把新字段的值写入到数据库，保存起来。<br />
+	做好这几点，其实任务的属性已经扩展了。<br />
+	下面只是需要一个界面显示和操作的载体，一般用表格列来完成。<br />
+	关于表格列的扩展，请参考：<a href="demo/DiyColumns.html" target="_blank">自定义表格列</a>示例。
+	</p>		
+
+    <h3><a name="standardcolumn"></a>标准列</h3>
+    <p>PlusProject针对任务的各种标准属性，如"ID","Name","Start","Finish","PercentComplete","Department","Principal"等提供了相应的标准列。<br />
+    开发者在创建标准任务属性范围内的列时，直接使用这里例举的标准列用来创建表格列集合。
+    </p>
+    <p>使用标准列示例代码如下：</p>
+<pre class="code">
+<span style="color:blue">var </span>project = <span style="color:blue">new </span>PlusProject();
+
+project.setColumns([
+    new PlusProject.IDColumn(),
+    new PlusProject.StatusColumn(),
+    new PlusProject.NameColumn(),
+    new PlusProject.PredecessorLinkColumn(),
+    new PlusProject.PercentCompleteColumn(),
+    new PlusProject.DurationColumn(),
+    new PlusProject.StartColumn(),
+    new PlusProject.FinishColumn(),
+    new PlusProject.WorkColumn(),
+    new PlusProject.DepartmentColumn(),
+    new PlusProject.PrincipalColumn(),
+    new PlusProject.AssignmentsColumn()
+]);
+
+</pre>
+	<table class="apitable" border=0 cellpadding="0" cellspacing="0">
+	    <tr class="hd"><td class="col1">列名</td><td class="col2">任务属性</td><td class="col3">描述</td></tr>     
+        <tr >
+	        <td>PlusProject.IDColumn</td>
+	        <td >ID</td>
+	        <td >任务序号。</td>
+        </tr>    
+        <tr >
+	        <td>PlusProject.WBSColumn</td>
+	        <td >WBS</td>
+	        <td >WBS编码。</td>
+        </tr> 
+        <tr >
+	        <td>PlusProject.NameColumn</td>
+	        <td >Name</td>
+	        <td >任务名称。</td>
+        </tr> 
+        <tr >
+	        <td>PlusProject.DurationColumn</td>
+	        <td >Duration</td>
+	        <td >工期。</td>
+        </tr> 
+        <tr >
+	        <td>PlusProject.StartColumn</td>
+	        <td >Start</td>
+	        <td >开始日期。</td>
+        </tr> 
+        <tr >
+	        <td>PlusProject.FinishColumn</td>
+	        <td >Finish</td>
+	        <td >完成日期。</td>
+        </tr>                                 
+        <tr >
+	        <td>PlusProject.PercentCompleteColumn</td>
+	        <td >PercentComplete</td>
+	        <td >完成百分比。</td>
+        </tr> 
+        <tr >
+	        <td>PlusProject.WorkColumn</td>
+	        <td >Work</td>
+	        <td >工时。</td>
+        </tr> 
+        <tr >
+	        <td>PlusProject.WeightColumn</td>
+	        <td >Weight</td>
+	        <td >权重。</td>
+        </tr> 
+        <tr >
+	        <td>PlusProject.PriorityColumn</td>
+	        <td >Priority</td>
+	        <td >重要级别。</td>
+        </tr> 
+        <tr >
+	        <td>PlusProject.OutlineNumberColumn</td>
+	        <td >OutlineNumber</td>
+	        <td >大纲字段。</td>
+        </tr> 
+        <tr >
+	        <td>PlusProject.OutlineLevelColumn</td>
+	        <td >OutlineLevel</td>
+	        <td >任务层次。</td>
+        </tr> 
+        <tr >
+	        <td>PlusProject.ConstraintDateColumn</td>
+	        <td >ConstraintDate</td>
+	        <td >限制日期。</td>
+        </tr> 
+        <tr >
+	        <td>PlusProject.ConstraintTypeColumn</td>
+	        <td >ConstraintType</td>
+	        <td >限制类型。</td>
+        </tr>                 
+        <tr >
+	        <td>PlusProject.PredecessorLinkColumn</td>
+	        <td >PredecessorLink</td>
+	        <td >前置任务。</td>
+        </tr>    
+        <tr >
+	        <td>PlusProject.StatusColumn</td>
+	        <td >无</td>
+	        <td >状态列。它使用图标反映任务的一些状态，比如受限制、已完成、有注释等。</td>
+        </tr>    
+        <tr >
+	        <td>PlusProject.DepartmentColumn</td>
+	        <td >Department</td>
+	        <td >部门。</td>
+        </tr>    
+        <tr >
+	        <td>PlusProject.PrincipalColumn</td>
+	        <td >Principal</td>
+	        <td >负责人。</td>
+        </tr>                                    
+        <tr >
+	        <td>PlusProject.AssignmentsColumn</td>
+	        <td >Assignments</td>
+	        <td >资源名称。</td>
+        </tr> 
+        <tr >
+	        <td>PlusProject.ActualStartColumn</td>
+	        <td >ActualStart</td>
+	        <td >实际开始日期。</td>
+        </tr> 
+        <tr >
+	        <td>PlusProject.ActualFinishColumn</td>
+	        <td >ActualFinish</td>
+	        <td >实际完成日期。</td>
+        </tr> 
+        <tr >
+	        <td>PlusProject.Critical2Column</td>
+	        <td >Critical2</td>
+	        <td >手动设置关键任务。</td>
+        </tr>   
+    </table>    
+    
+    <h3><a name="columntype"></a>自定义表格列</h3>
+    <p>开发者可以根据自己扩展的任务属性类型，来创建自己的列。</p>
+    <p>具体请参考"<a href="demo/DiyColumns.html" target="_blank">自定义列示例</a>"。</p>
+    
+    <h3><a name="diydisplay"></a>自定义单元格内容 </h3>
+    <p>通过监听处理"drawcell"事件，可以根据任务信息，设置行、单元格样式，以及自定义单元格Html内容。</p>
+<pre class="code">project.on(<span style="color: maroon">"drawcell"</span>, <span style="color: blue">function </span>(e) {
+    <span style="color: blue">var </span>task = e.record, column = e.column, field = e.field;
+
+    <span style="color: #006400">//单元格样式
+    </span><span style="color: blue">if </span>(column.name == <span style="color: maroon">"Name"</span>) {
+        e.cellCls = <span style="color: maroon">"mycellcls"</span>;
+    }
+
+    <span style="color: #006400">//行样式
+    </span><span style="color: blue">if </span>(task.Summary == 1) {
+        e.rowCls = <span style="color: maroon">"myrowcls"</span>;
+    }
+
+    <span style="color: #006400">////自定义单元格Html。如果是工期列, 并且工期大与5天, 显示红色
+    </span><span style="color: blue">if </span>(field == <span style="color: maroon">"Name" </span>&amp;&amp; task.Duration &gt; 5) {
+        e.cellHtml = <span style="color: maroon">'&lt;b style="color:red;"&gt;' </span>+ task.Name + <span style="color: maroon">'&lt;/b&gt;'</span>;
+    }
+    <span style="color: blue">if </span>(field == <span style="color: maroon">"Name" </span>&amp;&amp; task.Duration &lt;= 2) {
+        e.cellHtml = <span style="color: maroon">'&lt;span style="color:blue;"&gt;' </span>+ task.Name + <span style="color: maroon">'&lt;/span&gt;'</span>;
+    }
+
+    <span style="color: blue">if </span>(task.Duration == 0) {
+        e.rowCls = <span style="color: maroon">"deletetask"</span>;
+    }
+});
+
+</pre>
+    <p>示例请参考"<a href="demo/DiyDisplay.html" target="_blank">自定义显示</a>"</p>
+
+    <h3><a name="diyeditable"></a>自定义单元格可编辑</h3>
+    <p>通过监听表格的"cellbeginedit"事件，可以控制每个行、每个单元格是否可编辑。</p>
+<pre class="code"><span style="color:#006400">//控制单元格是否可编辑
+</span>project.on(<span style="color:maroon">"cellbeginedit"</span>, <span style="color:blue">function </span>(e) {
+    <span style="color:blue">var </span>task = e.record, column = e.column, field = e.field;
+
+    <span style="color:blue">if </span>(task.Summary == 1) {
+        e.cancel = <span style="color:blue">true</span>;
+    }
+
+    <span style="color:blue">if </span>(field == <span style="color:maroon">'Duration'</span>) {
+        e.cancel = <span style="color:blue">true</span>;
+    }
+});
+</pre>    
+    <p>示例请参考"<a href="demo/DiyEditable.html" target="_blank">控制单元格可编辑</a>"</p>
+    
+    <h3><a name="diydisplaygantt"></a>自定义条形图外观 </h3>
+    <p>开发者可以控制右侧条形图的HTML外观，达到任意的条形图效果：</p>
+<pre class="code"><span style="color:#006400">//1)自定义条形图外观显示
+</span>project.on(<span style="color:maroon">"drawitem"</span>, <span style="color:blue">function </span>(e) {
+    <span style="color:blue">var </span>item = e.item;
+    <span style="color:blue">var </span>left = e.itemBox.left,
+        top = e.itemBox.top,
+        width = e.itemBox.width,
+        height = e.itemBox.height;
+
+    <span style="color:blue">if </span>(!item.Summary &amp;&amp; !item.Milestone) {
+        <span style="color:blue">var </span>percentWidth = width * (item.PercentComplete / 100);
+
+        e.itemHtml = <span style="color:maroon">'&lt;div id="' </span>+ item._id + <span style="color:maroon">'" class="myitem" style="left:' </span>+ left + <span style="color:maroon">'px;top:' </span>+ top + <span style="color:maroon">'px;width:' </span>+ width + <span style="color:maroon">'px;height:' </span>+ (height) + <span style="color:maroon">'px;"&gt;'</span>;
+        e.itemHtml += <span style="color:maroon">'&lt;div style="width:' </span>+ (percentWidth) + <span style="color:maroon">'px;" class="percentcomplete"&gt;&lt;/div&gt;'</span>;
+        e.itemHtml += <span style="color:maroon">'&lt;/div&gt;'</span>;
+
+        <span style="color:#006400">//e.ItemHtml = '&lt;a href="http://www.baidu.com" style="left:'+left+'px;top:'+top+'px;width:'+width+'px;height:'+(height-2)+'px;" class="myitem"&gt;111&lt;/a&gt;';
+    </span>}
+});
+<span style="color:#006400">//2)自定义条形图提示信息
+</span>project.on(<span style="color:maroon">'itemtooltipneeded'</span>, <span style="color:blue">function </span>(e) {
+    <span style="color:blue">var </span>task = e.task;
+    e.tooltip = <span style="color:maroon">"&lt;div&gt;任务：" </span>+ task.Name + <span style="color:maroon">"&lt;/div&gt;"
+    </span><span style="color:#006400">//                +   "&lt;div &gt;&lt;div style='float:left;'&gt;进度：&lt;b&gt;"+task.PercentComplete + "%&lt;/b&gt;&lt;/div&gt;"
+    //                +   "&lt;div style='float:right;'&gt;工期："+task.Duration + "日&lt;/div&gt;&lt;/div&gt;"
+                </span>+ <span style="color:maroon">"&lt;div style='clear:both;'&gt;开始日期：" </span>+ mini.formatDate(task.Start, <span style="color:maroon">'yyyy-MM-dd'</span>) + <span style="color:maroon">"&lt;/div&gt;"
+                </span>+ <span style="color:maroon">"&lt;div&gt;完成日期：" </span>+ mini.formatDate(task.Finish, <span style="color:maroon">'yyyy-MM-dd'</span>) + <span style="color:maroon">"&lt;/div&gt;"</span>;
+});
+
+</pre>    
+    <p>示例请参考"<a href="demo/DiyDisplayGantt.html" target="_blank">自定义显示条形图</a>"</p>
+    
+    <h3><a name="diymenu"></a>自定义右键菜单 </h3>
+    <p>弹出右键菜单时，根据当前选择的行，显示隐藏、启用禁用菜单项。</p>    
+    <p>示例请参考"<a href="demo/DiyMenu.html" target="_blank">自定义右键菜单</a>"</p>    
+    
+
+	<h3><a name="ext"></a>集成到第三方JS框架(jQuery、Ext等)</h3>
+	<p>首先，对于jQuery, YUI, Prototype.js等框架来说，它们对页面的操作基于原始Dom元素的。<br />
+	    所以，你可以不用做任何额外的处理，按PlusProject正常的例子，把项目甘特图对象加入到页面元素就可以了。
+	</p>
+	<p>其次，对于ExtJS这样封装度很高的框架，可以从Ext对象找到它的dom，然后render加入即可。使用代码如下：<br />	
+	</p>			
+<pre class="code">
+//获取ext控件对象
+var extControl = Ext.get(id);
+
+//设置尺寸为100%自适应
+project.setStyle("width:100%;height:100%");
+
+//把project加入到ext控件对象的dom属性中
+project.render(extControl.dom);
+
+</pre>
+	<p>只需要这样设置后，PlusProject就能在Ext的布局面板中自动调整尺寸大小，看上去跟Ext原生的控件一样了。</p>
+	
+	<h3><a name="global"></a>语言本地化</h3>
+	<p>如果要显示他语言界面，只需要引用locale文件夹下资源js文件即可，例如英文资源包使用如下：</p>
+<pre class="code"><span style="color:blue">&lt;</span><span style="color:maroon">script </span><span style="color:red">src</span><span style="color:blue">="../scripts/miniui/locale/en_US.js" </span><span style="color:red">type</span><span style="color:blue">="text/javascript"&gt;&lt;/</span><span style="color:maroon">script</span><span style="color:blue">&gt;
+</span></pre>
+    <p>语言本地化（英语）示例，请<a href="demo/en_US.html">查看这里</a>。</p>
+    
+	<h2><a name="projectdata"></a>项目数据结构</h2>
+    <h3><a name="data"></a>1.JSON数据结构 </h3>
+    <p>
+        PlusProject项目数据包含如下信息：项目本身数据、日历、任务列表、部门列表、负责人列表等。<br />
+        其中，任务会跟部门、负责人有分配关系。        
+    </p>
+    <p>本节使用JSON格式描述项目数据结构，对应到服务端数据，转换类型如下：</p>
+    <ul>
+        <li>.Net：Array => ArrayList; Object => Hashtable</li>
+        <li>Java：Array => ArrayList; Object => HashMap</li>
+    </ul>
+<pre class="code">
+//普加项目管理中间件数据结构
+{
+	UID: 100,
+	Name: 'ProjectName',
+	StartDate: '2007-01-01T08:00:00',
+	FinishDate: '2007-05-14T15:00:00',
+	CalendarUID: 1,
+	//日历
+	Calendars: [
+		{
+			UID: 1,
+			Name: 'CalendarName',
+			WeekDays: [             //工作周: DayType(1~7)
+				{
+					DayType: 1,
+					DayWorking: 1   //工作日1, 非工作日0
+				}
+			],
+			Exceptions: [           //例外日期: DayType = 0
+				{
+                    			DayType: 0,     
+                    			DayWorking: 0,
+                    			Name: '',
+                    			TimePeriod: {   //例外的日期范围
+	            			        FromDate: '2007-01-01T00:00:00',
+	           			            ToDate: '2007-01-02T23:59:59'
+                  			  }
+				}
+			]
+		}
+	],
+	<b>//任务集合</b>
+	Tasks: [
+		{
+                        UID: 1,                 //<b>任务UID(唯一性标识符)</b>
+			Name: '',               //任务名称
+			
+			Start: '2010-01-01T00:00:00',//DateTime。开始日期
+			Finish: '2010-01-01T23:59:59',//DateTime。完成日期
+			
+			Duration: 24,           //Number。工期			
+			PercentComplete: 100,   //Number。进度
+
+			ConstraintType: 1,      //限制类型：0越早越好；1越晚越好；2必须开始于；3必须完成于；
+                                    //4不得早于...开始；5不得晚于...开始；6不得早于...完成；7不得晚于...完成
+
+			ConstraintDate: null,   //DateTime。限制日期
+
+
+			FixedDate:1,	        //1或0。是否固定日期(仅限于摘要任务使用)
+		    
+			ID: 1,                  //Number。序号
+			OutlineNumber: '1.2.1', //体现树形层次和顺序
+			OutlineLevel: 1,        //层次
+			
+			Work: 8,                //Number。工时
+			Weight: 100,            //Number。权重		
+						
+			Milestone: 1,           //1或0。里程碑
+			Summary: 1,             //1或0。摘要任务
+			Critical: 1,            //1或0。关键任务
+			Priority: 200,          //Number。重要级别
+			Notes: '',              //任务备注
+			
+			PredecessorLink: [      //前置任务
+				{PredecessorUID: 2,Type: 1,LinkLag: 0},
+				......
+			],
+
+                        Assignments: [      //资源分配关系
+				{ResourceUID: 2, Units: 1},
+				......
+			],
+			
+			Department: '1',        //部门
+			Principal: '1,2'        //负责人,
+
+
+                        <b>children: [             //下一级子任务, 体现树形结构
+                                ......
+                        ]</b>
+			
+		}
+	],
+	<b>//资源集合</b>
+	Resources: [
+		{UID: 1, Name: '市场部', Type: 1, MaxUnits: 1},
+		......
+	],
+	<b>//部门集合</b>
+	Departments: [
+		{UID: 1, Name: '市场部'},
+		......
+	],
+	<b>//负责人集合</b>
+	Principals: [
+		{UID: 1, Name: '张三', Department: 1},
+		......
+	]
+}
+</pre>
+
+	<h2><a name="table"></a>数据库表结构</h2>
+	<h3><a></a>plus_project表</h3>
+	<table class="apitable" border=0 cellpadding="0" cellspacing="0">
+	    <tr class="hd"><td class="col1">字段</td><td class="col2">类型</td><td class="col3">描述</td></tr>     
+        <tr >
+	        <td>UID_</td>
+	        <td >varchar</td>
+	        <td >项目唯一标识符</td>
+        </tr>	
+        <tr >
+	        <td>NAME_</td>
+	        <td >varchar</td>
+	        <td >项目名称</td>
+        </tr>
+        <tr >
+	        <td>STARTDATE_</td>
+	        <td >datetime</td>
+	        <td >项目开始日期</td>
+        </tr>
+        <tr >
+	        <td>FINISHDATE_</td>
+	        <td >datetime</td>
+	        <td >项目完成日期</td>
+        </tr>
+        <tr >
+	        <td>LASTSAVED_</td>
+	        <td >varchar</td>
+	        <td >最后保存日期</td>
+        </tr>
+        <tr >
+	        <td>CALENDARS_</td>
+	        <td >varchar</td>
+	        <td >日历数据(JSON字符串)</td>
+        </tr>
+        <tr >
+	        <td>CALENDARUID_</td>
+	        <td >varchar</td>
+	        <td >项目日历UID</td>
+        </tr>
+	</table>
+    
+	<h3><a></a>plus_task表</h3>
+	<table class="apitable" border=0 cellpadding="0" cellspacing="0">
+	    <tr class="hd"><td class="col1">字段</td><td class="col2">类型</td><td class="col3">描述</td></tr>     
+        <tr >
+	        <td>UID_</td>
+	        <td >varchar</td>
+	        <td >任务唯一标识符</td>
+        </tr>        	
+        <tr >
+	        <td>ID_</td>
+	        <td >int</td>
+	        <td style="color:Red;">序号（是一个数字，体现任务的前后顺序）</td>
+        </tr>
+        <tr >
+	        <td>PARENTTASKUID_</td>
+	        <td >varchar</td>
+	        <td style="color:Red;">父任务UID（体现树形结构）</td>
+        </tr>        	
+        <tr >
+	        <td>NAME_</td>
+	        <td >varchar</td>
+	        <td >任务名称</td>
+        </tr>
+        <tr >
+	        <td>START_</td>
+	        <td >datetime</td>
+	        <td >开始日期</td>
+        </tr>
+        <tr >
+	        <td>FINISH_</td>
+	        <td >datetime</td>
+	        <td >完成日期</td>
+        </tr>
+        <tr >
+	        <td>DURATION_</td>
+	        <td >int</td>
+	        <td >工期</td>
+        </tr>
+        <tr >
+	        <td>WORK_</td>
+	        <td >int</td>
+	        <td >工时</td>
+        </tr>
+        <tr >
+	        <td>PERCENTCOMPLETE_</td>
+	        <td >int</td>
+	        <td >完成百分比</td>
+        </tr>        
+        <tr >
+	        <td>WEIGHT_</td>
+	        <td >int</td>
+	        <td >权重</td>
+        </tr>
+        <tr >
+	        <td>CONSTRAINTTYPE_</td>
+	        <td >int</td>
+	        <td >任务限制类型。</td>
+        </tr>
+        <tr >
+	        <td>CONSTRAINTDATE_</td>
+	        <td >datetime</td>
+	        <td >任务限制日期</td>
+        </tr>
+        <tr >
+	        <td>MILESTONE_</td>
+	        <td >int</td>
+	        <td >里程碑</td>
+        </tr>
+        <tr >
+	        <td>SUMMARY_</td>
+	        <td >int</td>
+	        <td >摘要任务</td>
+        </tr>
+        <tr >
+	        <td>CRITICAL_</td>
+	        <td >int</td>
+	        <td >关键任务</td>
+        </tr>
+        <tr >
+	        <td>PRIORITY_</td>
+	        <td >int</td>
+	        <td >重要级别</td>
+        </tr>
+        <tr >
+	        <td>NOTES_</td>
+	        <td >varchar</td>
+	        <td >备注</td>
+        </tr>
+        <tr >
+	        <td>DEPARTMENT_</td>
+	        <td >varchar</td>
+	        <td >所属部门。如"1"。</td>
+        </tr>
+        <tr >
+	        <td>PRINCIPAL_</td>
+	        <td >varchar</td>
+	        <td >任务负责人。如"101,220,201"。</td>
+        </tr>
+        <tr >
+	        <td>PREDECESSORLINK_</td>
+	        <td >varchar</td>
+	        <td >前置任务（JSON字符串）。如"[{PredecessorUID: 2,Type: 1,LinkLag: 0}, ...]"</td>
+        </tr>
+        <tr >
+	        <td>FIXEDDATE_</td>
+	        <td >int</td>
+	        <td >限制日期（摘要任务专用）</td>
+        </tr>
+        <tr >
+	        <td>PROJECTUID_</td>
+	        <td >varchar</td>
+	        <td >项目UID</td>
+        </tr>
+        <tr >
+	        <td>ACTUALSTART_</td>
+	        <td >datetime</td>
+	        <td >实际开始日期</td>
+        </tr>
+        <tr >
+	        <td>ACTUALSTART_</td>
+	        <td >datetime</td>
+	        <td >实际完成日期</td>
+        </tr>
+        <tr >
+	        <td>ACTUALDURATION_</td>
+	        <td >int</td>
+	        <td >实际工期</td>
+        </tr>                                                                
+	</table>
+    <p>
+        注意：这些表是普加软件默认提供的项目和任务表。<br />
+        使用者可以完全脱离我们的表结构设计，实现自定义的表。<br />
+        只需要在DBProject类的LoadProject方法中，提供符合<a href="#data">普加项目数据结构</a>定义的数据即可。
+    </p>
+	
+		
+	<h2><a name="api"></a>PlusProject API参考</h2>
+	<h4>属性</h4>
+	<p>属性可以从对象直接读取，但是不能进行赋值操作。如果想对属性进行赋值，必须使用提供的方法。</p>
+	<pre class="code">
+	    var project = new PlusProject();
+	    var visible= project.visible;         //正确
+	    <b style="text-decoration: line-through;">project.visible= true;           //错误!!!</b>
+	    project.setVisible(true);            //正确
+	</pre>
+	<table class="apitable" border=0 cellpadding="0" cellspacing="0">
+	    <tr class="hd"><td class="col1">属性</td><td class="col2">类型</td><td class="col3">描述</td></tr>     
+        <tr >
+	        <td>readOnly</td>
+	        <td >Boolean</td>
+	        <td >是否只读。</td>
+        </tr> 
+        <tr >
+	        <td>visible</td>
+	        <td >Boolean</td>
+	        <td >是否显示。</td>
+        </tr> 
+        <tr >
+	        <td>width</td>
+	        <td >Number</td>
+	        <td >宽度。</td>
+        </tr> 
+        <tr >
+	        <td>height</td>
+	        <td >Number</td>
+	        <td >高度。</td>
+        </tr> 
+        <tr >
+	        <td>showTableView</td>
+	        <td >Boolean</td>
+	        <td >是否显示任务表格。</td>
+        </tr>
+        <tr >
+	        <td>showGanttView</td>
+	        <td >Boolean</td>
+	        <td >是否显示条形图。</td>
+        </tr>        
+        <tr >
+	        <td>showLinkLines</td>
+	        <td >Boolean</td>
+	        <td >是否显示箭头连线。</td>
+        </tr>
+        <tr >
+	        <td>showCritical</td>
+	        <td >Boolean</td>
+	        <td >是否显示关键路径</td>
+        </tr>    
+        <tr >
+	        <td>showGridLines</td>
+	        <td >Boolean</td>
+	        <td >是否条形图表格线。</td>
+        </tr>             
+       <!-- <tr >
+	        <td>AutoFillWidth</td>
+	        <td >Boolean</td>
+	        <td >是否自动撑满父元素宽度。</td>
+        </tr> 
+         <tr >
+	        <td>AutoFillHeight</td>
+	        <td >Boolean</td>
+	        <td >是否自动撑满父元素高度。</td>
+        </tr>  -->           
+        <tr >
+	        <td>timeLines</td>
+	        <td >Array</td>
+	        <td >时间线数组。<br />
+<pre>
+[
+    {date: new Date(2007, 0, 3), text: "时间线"},
+    {date: new Date(2007, 0, 5), text: "时间线2", 
+        style: "width:2px;background:red;"}
+]
+</pre>	        
+	        </td>
+        </tr>     	
+        <tr >
+	        <td>rowHeight</td>
+	        <td >Number</td>
+	        <td >行高。</td>
+        </tr>   
+         <tr >
+	        <td>allowDragDrop</td>
+	        <td >Boolean</td>
+	        <td >是否允许任务行拖拽。</td>
+        </tr> 
+        <tr >
+	        <td>multiSelect</td>
+	        <td >Boolean</td>
+	        <td >是否允许多选任务。</td>
+        </tr>                   
+	</table>
+	<h4>方法</h4>		
+	<table class="apitable" border=0 cellpadding="0" cellspacing="0">
+	    <tr class="hd"><td class="col1">方法</td><td class="col2">参数类型</td><td class="col3">描述</td></tr>     
+        <tr >
+	        <td>setStyle(String)</td>
+	        <td ><pre> </pre></td>
+	        <td >设置样式，比如：gantt.setStyle("width:100%;height:400px")。</td>
+        </tr>  
+        <tr >
+	        <td>loadData(Object)</td>
+	        <td >Object：参考<a href="#data">项目JSON数据</a>。</td>
+	        <td >加载项目JSON对象。</td>
+        </tr>    
+        <tr >
+	        <td>getData()</td>
+	        <td ><pre> </pre></td>
+	        <td >返回项目JSON对象。</td>
+        </tr>    
+        <tr >
+	        <td>getRemovedTasks()</td>
+	        <td ></td>
+	        <td >返回被删除的任务集合。</td>
+        </tr>  
+        <tr >
+	        <td>acceptChanges()</td>
+	        <td ></td>
+	        <td >恢复任务状态（撤销任务增加、删除、修改标记）。</td>
+        </tr>  
+        
+        <tr >
+	        <td>newProject()</td>
+	        <td ></td>
+	        <td >创建新项目。</td>
+        </tr>  
+        <tr >
+	        <td>setColumns( Array )</td>
+	        <td ></td>
+	        <td >设置表格列集合。</td>
+        </tr>  
+        <tr >
+	        <td>setTreeColumn( String )</td>
+	        <td ></td>
+	        <td >设置树形节点列。</td>
+        </tr>  
+        <tr >
+	        <td>findTasks(field, value)</td>
+	        <td >field：String。如"Duration"。<br />
+                value：Object。属性值。
+            </td>
+	        <td >返回符合条件的任务集合。</td>
+        </tr>
+        <tr >
+	        <td>getTask(taskUID)</td>
+	        <td >
+            </td>
+	        <td >根据任务UID，获取任务。</td>
+        </tr>
+        <tr >
+	        <td>getTaskByID(taskID)</td>
+	        <td >
+	        </td>
+	        <td >根据任务ID，获取任务。<br />
+<pre>
+project.filter(function(task){
+    if(task.Duration == 2) return true;
+    else return false;
+});
+</pre>	                
+	        </td>
+        </tr>   
+        <tr >
+	        <td>clearFilter()</td>
+	        <td >
+	        </td>
+	        <td >取消过滤任务
+	        </td>
+        </tr>  
+        <tr >
+	        <td>getSelected()</td>
+	        <td ><pre> </pre></td>
+	        <td >获取选中的任务。</td>
+        </tr>
+        <tr >
+	        <td>getSelecteds()</td>
+	        <td ><pre> </pre></td>
+	        <td >获取选中的任务集合。</td>
+        </tr>
+        <tr >
+	        <td>isSelected(task)</td>
+	        <td ><pre> </pre></td>
+	        <td >判断是否选中任务。</td>
+        </tr>   
+        <tr >
+	        <td>select(task)</td>
+	        <td ><pre> </pre></td>
+	        <td >选中任务。</td>
+        </tr>   
+        <tr >
+	        <td>deselect(task)</td>
+	        <td ></td>
+	        <td >取消选中任务。</td>
+        </tr>   
+        <tr >
+	        <td>selects(Array)</td>
+	        <td ><pre> </pre></td>
+	        <td >选中多个任务。</td>
+        </tr>   
+        <tr >
+	        <td>deselects(Array)</td>
+	        <td ></td>
+	        <td >取消选中多个任务。</td>
+        </tr> 
+        <tr >
+	        <td>selectAll()</td>
+	        <td ><pre> </pre></td>
+	        <td >选中所有任务。</td>
+        </tr>   
+        <tr >
+	        <td>deselectAll()</td>
+	        <td ></td>
+	        <td >取消选中所有任务。</td>
+        </tr> 
+        <tr >
+	        <td>getParentTask(task)</td>
+	        <td ></td>
+	        <td >获取父任务对象。</td>
+        </tr>   
+       <tr >
+	        <td>getChildTasks(task) //下一级任务<br />            
+	        <td ></td>
+	        <td >获取子任务数组。</td>
+        </tr>   
+       <tr >
+	        <td>getAllChildTasks(task)
+	        <td ></td>
+	        <td >获取所有子任务数组。</td>
+        </tr> 
+        <tr >
+	        <td>getAncestorTasks(task)</td>
+	        <td ></td>
+	        <td >获取父级任务数组。</td>
+        </tr>   
+        <tr >
+	        <td>isAncestor(parentTask, task)</td>
+	        <td > </td>
+	        <td >判断两任务之间是否有父子关系。</td>
+        </tr>  
+
+        <tr >
+	        <td>eachChild(task, fn, scope)</td>
+	        <td > </td>
+	        <td >遍历下一级子节点。</td>
+        </tr>  
+        <tr >
+	        <td>cascadeChild(task, fn, scope)</td>
+	        <td > </td>
+	        <td >遍历所有子节点。</td>
+        </tr>  
+        <tr >
+	        <td>bubbleParent(task, fn, scope)</td>
+	        <td > </td>
+	        <td >遍历父级子节点。</td>
+        </tr>  
+
+        <tr >
+	        <td>newTask()</td>
+	        <td ></td>
+	        <td >新建任务。此时并没有加入到项目中。</td>
+        </tr>    
+        <tr >
+	        <td>addTask(task)<br />
+	            addTask(task, index)<br />
+	            addTask(task, action, parentTask)<br />
+	        </td>
+	        <td >
+	            task：Object。新任务对象。<br />
+	            index：Number。加入的索引位置。<br />
+                action：String。加入的方式，before/after/add。<br />
+	            parentTask：父任务。
+	        </td>
+	        <td >新增任务。</td>
+        </tr>  
+        <tr >
+	        <td>removeTask(task) </td>
+	        <td ></td>
+	        <td >删除任务。</td>
+        </tr>  
+        <tr >
+	        <td>updateTask(task, property, value)<br />
+	            updateTask(task, keyValues) 
+	        </td>
+	        <td >
+	            property：String。任务属性名，如"Start"。<br />
+	            value：Object。属性值。<br />
+	            keyValues：Object。键值对，如{Name:'测试完成', PercentComplete: 0}
+	        </td>
+	        <td >更新任务属性。</td>
+        </tr>  
+        <tr >
+	        <td>moveTask(task, targetTask, action)</td>
+	        <td >action：String。"before"/"after"/"add"<br />
+	            targetTask：目标任务<br />
+                action：移动方式
+	        </td>
+	        <td >移动任务。</td>
+        </tr>    
+        <tr >
+	        <td>upgradeTask(task)</td>
+	        <td ><pre> </pre></td>
+	        <td >升级任务。</td>
+        </tr>  
+        <tr >
+	        <td>downgradeTask(task)</td>
+	        <td ><pre> </pre></td>
+	        <td >降级任务。</td>
+        </tr>      
+        <tr >
+	        <td>
+                addTasks(tasks, index, parentTasks)
+	            addTasks(tasks, action, parentTasks)<br />
+	        </td>
+	        <td >
+	            tasks：Array。新任务数组。<br />
+	            index：Number/"before"/"after"/"add"。加入方式。<br />
+	            parentTasks：Array。父任务数组。
+	        </td>
+	        <td >批量新增任务。</td>
+        </tr>  
+        <tr >
+	        <td>removeTasks(tasks) </td>
+	        <td ></td>
+	        <td >批量删除任务。</td>
+        </tr>  
+        <tr >
+	        <td>updateTasks(tasks, keyValues)<br />	            
+	        </td>
+	        <td >
+	            tasks：Array。任务数组。<br />	            
+	            keyValues：Object。键值对，如{Name:'测试完成', PercentComplete: 0}
+	        </td>
+	        <td >批量修改任务。</td>
+        </tr>        
+          
+
+
+        <tr >
+	        <td>collapseAll ( ) </td>
+	        <td ><pre> </pre></td>
+	        <td >折叠所有任务。</td>
+        </tr>  
+        <tr >
+	        <td>expandAll ( )</td>
+	        <td ><pre> </pre></td>
+	        <td >展开所有任务。</td>
+        </tr>                          
+        <tr >
+	        <td>collapseLevel( Number )</td>
+	        <td ><pre> </pre></td>
+	        <td >折叠某层级任务。</td>
+        </tr>    
+        <tr >
+	        <td>expandLevel( Number )</td>
+	        <td ><pre> </pre></td>
+	        <td >展开某层级任务。</td>
+        </tr>           
+        <tr >
+	        <td>collapse(task)</td>
+	        <td ><pre> </pre></td>
+	        <td >折叠任务。</td>
+        </tr>    
+        <tr >
+	        <td>expand(task)</td>
+	        <td ><pre> </pre></td>
+	        <td >展开任务。</td>
+        </tr>                  
+                       
+        <tr >
+	        <td>setShowTableView( Boolean )</td>
+	        <td ><pre> </pre></td>
+	        <td >设置表格是否显示。</td>
+        </tr>    
+        <tr >
+	        <td>setShowGanttView( Boolean )</td>
+	        <td ><pre> </pre></td>
+	        <td >设置条形图是否显示。</td>
+        </tr>
+        
+        <tr >
+	        <td>setShowLinkLines( Boolean )</td>
+	        <td ><pre> </pre></td>
+	        <td >设置是否显示箭头连线。</td>
+        </tr>    
+        <tr >
+	        <td>setShowCritical( Boolean )</td>
+	        <td ><pre> </pre></td>
+	        <td >设置是否显示关键路径</td>
+        </tr>  
+        <tr >
+	        <td>setShowGridLines( Boolean )</td>
+	        <td ><pre> </pre></td>
+	        <td >设置是否显示条形图背景表格线。</td>
+        </tr>         
+        <tr >
+	        <td>setTimeLines( Array )</td>
+	        <td ><pre> </pre></td>
+	        <td >设置项目时间线。</td>
+        </tr>   
+        <tr >
+	        <td>setRowHeight( Number )</td>
+	        <td ><pre> </pre></td>
+	        <td >设置行高。</td>
+        </tr>  
+        <tr >
+	        <td>setMultiSelect( Boolean )</td>
+	        <td ><pre> </pre></td>
+	        <td >设置是否多选任务。</td>
+        </tr>  
+        <tr >
+	        <td>setAllowDragDrop( Boolean )</td>
+	        <td ><pre> </pre></td>
+	        <td >设置是否允许任务行拖拽。</td>
+        </tr>
+        <tr >
+	        <td>setTopTimeScale( String )</td>
+	        <td >String：时间刻度。<br />
+            "year/halfyear/quarter/month/week/day/hour" </td>
+	        <td >设置顶层时间刻度。</td>
+        </tr>
+        <tr >
+	        <td>setBottomTimeScale( String )</td>
+	        <td ><pre>同上 </pre></td>
+	        <td >设置底层时间刻度。（底层必须比顶层要小）</td>
+        </tr>
+        <tr >
+	        <td>zoomIn(  )</td>
+	        <td > </td>
+	        <td >放大时间刻度</td>
+        </tr>
+        <tr >
+	        <td>zoomOut(  )</td>
+	        <td > </td>
+	        <td >缩小时间刻度</td>
+        </tr>
+        <tr >
+	        <td>scrollIntoView(task)</td>
+	        <td ><pre> </pre></td>
+	        <td >定位显示任务。</td>
+        </tr>
+        <tr >
+	        <td>getCalendars( )</td>
+	        <td ><pre> </pre></td>
+	        <td >获取项目日历集合。</td>
+        </tr>  
+        <tr >
+	        <td>getCalendars( )</td>
+	        <td ><pre> </pre></td>
+	        <td >获取项目日历集合。</td>
+        </tr>   
+        <tr >
+	        <td>setCalendars( Array )</td>
+	        <td ><pre> </pre></td>
+	        <td >设置项目日历集合。</td>
+        </tr>    
+        <tr >
+	        <td>setCalendarUID( calendarUID )</td>
+	        <td ><pre> </pre></td>
+	        <td >切换项目日历。</td>
+        </tr>
+        
+	</table>	
+	<h4>事件</h4>		
+	<p>通过如下方式监听事件：</p>
+	<pre class="code">
+	    functon onTaskDblClick(e){
+	        var project = e.source;
+            var task = e.task;
+	        //e是事件对象, 具体请看每个事件的"参数类型"
+	    }
+	    project.on('taskdblclick', onTaskDblClick);
+	</pre>
+	<table class="apitable" border=0 cellpadding="0" cellspacing="0">
+	    <tr class="hd"><td class="col1">事件名称</td><td class="col2">事件对象</td><td class="col3">描述</td></tr>     
+
+	    <tr >
+	        <td>drawcell</td>
+	        <td >
+	            <pre>
+{
+    source: Object, //甘特图对象
+    record: Object, //任务对象
+    column: Object, //列对象
+    field: String,  //属性名
+    value: Object,  //单元格值
+    cellHtml: Stirng//单元格内容HTML
+}
+	            </pre>
+	        </td>
+	        <td >绘制单元格时发生。</td>
+        </tr> 
+	    <tr >
+	        <td>drawitem</td>
+	        <td >
+	            <pre>
+{
+    source: Object, //甘特图对象
+    item: Object,   //条形图，任务对象
+    itemBox: Object, //条形图的坐标尺寸
+    itemHtml: Stirng//单元格内容HTML
+}
+	            </pre>
+	        </td>
+	        <td >绘制条形图时发生。</td>
+        </tr> 
+        
+	    <tr >
+	        <td>taskclick</td>
+	        <td >
+	            <pre>
+{
+    source: Object, //甘特图对象
+    task: Object    //任务对象
+}    
+	            </pre>
+	        </td>
+	        <td >单击任务时发生。</td>
+        </tr> 
+	    <tr >
+	        <td>taskdblclick</td>
+	        <td >
+	            <pre>
+{
+    source: Object, //甘特图对象
+    task: Object    //任务对象
+}    
+	            </pre>
+	        </td>
+	        <td >双击任务时发生。</td>
+        </tr>  
+         <tr >
+	        <td>taskdragdrop</td>
+	        <td >
+	            <pre>
+{
+    source: Object,     //甘特图对象
+    tasks: Array,       //被拖拽的任务集合
+    targetTask: Object, //目标任务
+    action: String,     //投放方式：before,after,append
+    cancel: Boolean     //是否取消操作
+}
+	            </pre>
+	        </td>
+	        <td >拖拽行释放时发生。</td>
+        </tr>  
+        <tr >
+	        <td>cellbeginedit</td>
+	        <td >
+	            <pre>
+{
+    source: Object,     //甘特图对象    
+    record: Object,       //任务对象
+    column: Object, //列对象
+    field: String,  //属性名
+    value: Object,  //单元格值
+    cancel: Boolean     //是否取消操作
+}
+	            </pre>
+	        </td>
+	        <td >单元格开始编辑时发生
+	        </td>
+        </tr>  
+        <tr >
+	        <td>CellCommitEdit</td>
+	        <td >
+	            <pre>
+{
+    source: Object,     //甘特图对象    
+    record: Object,       //任务对象
+    column: Object, //列对象
+    field: String,  //属性名
+    value: Object,  //单元格值
+    cancel: Boolean     //是否取消操作
+}
+	            </pre>
+	        </td>
+	        <td >单元格提交编辑值时发生
+	        </td>
+        </tr>
+        <tr >
+	        <td>itemdragstart</td>
+	        <td >
+	            <pre>
+{
+    source: Object,     //甘特图对象    
+    item: Object,       //任务对象
+    action: String,     //拖拽操作：move, start, finish, percentcomplete
+    cancel: Boolean     //是否取消操作
+}
+	            </pre>
+	        </td>
+	        <td >条形图开始拖拽时发生。</td>
+        </tr>           
+    </table>
+    
+<h2><a name="faq"></a>常见问题</h2>
+<ol>
+    <li>安装部署项目时，如果报"PlusProject未定义"，请检查"scripts/boot.js"，将"PATH"变量修改成当前WEB项目名称。</li>
+    <li>任务的唯一标识符，是UID，而不是ID。ID只是一个序号，UID可以是数字，也可以是字符串。</li>    
+    <li>任务的开始日期必须从"00:00:00"开始；完成日期必须以"23:59:59"截止。</li>
+    <li>任务只能分配给一个部门，但是可以分配给多个负责人。</li>
+    <li><b>如果要给项目或任务增加属性，直接在Hashtable/HashMap上增加即可。</b></li>
+    <li>增加的任务属性仅仅反映到数据上，如果要在界面显示，请扩展表格列。</li>
+    <li>任务的FixedDate仅对摘要任务起作用，它可以固定摘要任务，限制其子任务的日期范围不超过它。</li>
+    
+</ol>
+    
+</body>
+</html>

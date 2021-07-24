@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="PTMK" table="PT_MK" lazy="true" >
+		<id name="C_MKDM">
+			<column name="C_MKDM" sql-type="varchar" length="14" not-null="true" />
+		</id>
+		<property name="V_MKMC">
+			<column name="V_MKMC" sql-type="varchar" length="50" not-null="false" />
+		</property>
+		<property name="V_CDLJ">
+			<column name="V_CDLJ" sql-type="varchar" length="2000" not-null="false" />
+		</property>
+		<property name="C_BS">
+			<column name="C_BS" sql-type="char" length="1" not-null="false" />
+		</property>
+		<property name="I_XH">
+			<column name="I_XH" sql-type="int" not-null="false" />
+		</property>
+		<property name="V_IMG">
+			<column name="V_IMG" sql-type="varchar" length="100" not-null="false" />
+		</property>
+		<property name="I_ID">
+			<column name="I_ID" sql-type="int" not-null="true" />
+		</property>
+		<property name="i_ChildNum">
+			<column name="i_ChildNum" sql-type="int" not-null="false" />
+		</property>
+		<property name="IsBasic">
+			<column name="IsBasic" sql-type="char" length="1" not-null="true" />
+		</property>
+		<property name="IsMaintainable">
+			<column name="IsMaintainable" sql-type="char" length="1" not-null="true" />
+		</property>
+		<property name="helppath">
+			<column name="helppath" sql-type="varchar" length="50" not-null="false" />
+		</property>
+		<property name="Isdisplay">
+			<column name="Isdisplay" sql-type="varchar" length="2" not-null="false" />
+		</property>
+	</class>
+</hibernate-mapping>

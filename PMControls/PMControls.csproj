@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4C35E837-2FE0-4883-9CEA-BADF40F1D868}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PMControls</RootNamespace>
+    <AssemblyName>PMControls</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Web.UI.WebControls">
+      <HintPath>..\lib\Microsoft.Web.UI.WebControls.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="com.jwsoft.web.WebControls\Combox.cs" />
+    <Compile Include="com.jwsoft.web.WebControls\DateBox.cs" />
+    <Compile Include="com.jwsoft.web.WebControls\DropDownTree.cs" />
+    <Compile Include="com.jwsoft.web.WebControls\DropDownTreeItem.cs" />
+    <Compile Include="com.jwsoft.web.WebControls\DropDownTreeItemCollection.cs" />
+    <Compile Include="com.jwsoft.web.WebControls\DropDownTreeItemStyle.cs" />
+    <Compile Include="com.jwsoft.web.WebControls\DropDownTreeItemStyleCollection.cs" />
+    <Compile Include="com.jwsoft.web.WebControls\FreeTree.cs" />
+    <Compile Include="com.jwsoft.web.WebControls\JavaScriptControl.cs" />
+    <Compile Include="com.jwsoft.web.WebControls\PaginationControl.cs" />
+    <Compile Include="com.jwsoft.web.WebControls\PersistScrollPosition.cs" />
+    <Compile Include="com.jwsoft.web.WebControls\RenderHelper.cs" />
+    <Compile Include="com.jwsoft.web.WebControls\ViewStatePartBase.cs" />
+    <Compile Include="com.jwsoft.web.WebControls\ViewStatePartCollectionBase.cs" />
+    <Compile Include="com.jwsoft.web.WebControls\WinPop.cs" />
+    <Compile Include="com.jwsoft.web.WebControls\WinPopItem.cs" />
+    <Compile Include="com.jwsoft.web.WebControls\WinPopItemCollection.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

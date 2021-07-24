@@ -1,0 +1,49 @@
+<table id="Table1" class="table-normal" height="100%" cellspacing="0" cellpadding="0" width="100%">
+	<tr id="TRTitle" class="report_grid_head" height="24">
+		<td align="center" colspan="3" class="td-title" bgcolor="Gainsboro"><span id="Lb_Title">物资供应报表</span></td>
+	</tr>
+	<tr id="TrHeader" class="report_grid_head" bgcolor="Gainsboro" height="24">
+		<td align="left" width="33%" style="height: 24px"><span id="Lb_H1">制表人：demo1</span></td>
+		<td align="center" width="33%" style="height: 24px"><span id="Lb_H2"></span></td>
+		<td align="right" width="33%" style="height: 24px"><span id="Lb_H3">日期：2008年9月17日</span></td>
+	</tr>
+	<tr>
+		<td valign="top" colspan="3">
+							        <DIV style="OVERFLOW: auto; WIDTH: 100%; HEIGHT: 100%">
+							            <div>
+			<table class="grid" cellspacing="0" rules="all" border="1" id="DG1" style="width:1000px;border-collapse:collapse;">
+				<tr>
+					<td colspan="9">
+                                                <table class="grid" cellspacing="0" rules="all" border="1" id="DG1" style="width: 800px;
+                                                    border-collapse: collapse;">
+                                                    <tr class="grid_head" nowrap="nowrap" align="center" valign="middle" style="background-color: Gainsboro;">
+                                                        <th scope="col" style="width: 40px;">
+                                                            序号</th>
+                                                        <th scope="col">
+                                                            项目编号</th>
+                                                        <th scope="col">
+                                                            项目名称</th>
+                                                        <th scope="col" width=400>
+                                                            ...</th>
+                                                    </tr>
+                                                    <tr class="grid_row" nowrap="nowrap" align="center" valign="middle" onclick="OnRecord(this);"
+                                                        onmouseover="OnMouseOverRecord(this)">
+                                                        <td>
+                                                            1</td>
+                                                        <td>
+                                                        </td>
+                                                        <td>
+                                                        </td>
+                                                        <td>
+                                                            &nbsp;</td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+				</tr>
+			</table>
+		</div> 
+                                    
+                                    </DIV>
+							    </td>
+	</tr>
+</table>

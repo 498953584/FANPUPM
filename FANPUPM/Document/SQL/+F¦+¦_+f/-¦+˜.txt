@@ -1,0 +1,5 @@
+第一步：DeleteEquTables.sql；
+第二步：EquipmentType.sql
+第三步: Equ_Equipment.sql
+第四步：AddEquTables.sql
+第五步：InsertBasicCodeList.sql

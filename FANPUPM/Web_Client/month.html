@@ -1,0 +1,167 @@
+<html>
+<head>
+    <title>月历</title>
+    <style type="text/css">
+        <!
+        -- p, td
+        {
+            font-size: 10pt;
+            line-height: 14pt;
+        }
+        a
+        {
+            color: #000000;
+            font-size: 10pt;
+            text-decoration: none;
+            line-height: 14pt;
+        }
+        a:hover
+        {
+            color: #FF0000;
+        }
+        -- ></style>
+    <META http-equiv="content-type" content="text/html; charset=utf-8"> 
+</head>
+
+<script language="javascript">
+<!--
+    var today = new Date()
+    var year = today.getYear()
+    var month = today.getMonth() + 1
+//-->
+</script>
+
+<body bgcolor="#ffffff" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+
+    <script language="javascript">
+        function mouse_over(obj) {
+            obj.style.backgroundColor = "#FFFDCB";
+        }
+
+        function mouse_out(obj) {
+            obj.style.backgroundColor = "";
+        }
+        function month_id(id) {
+            var MinMilli = 1000 * 60;
+            var strmonth;
+            var HrMilli = MinMilli * 60;
+            var DyMilli = HrMilli * 24;   //一天多少毫秒
+            var year_value = document.obj.select.options[document.obj.select.options.selectedIndex].value
+            var sdata = window.dialogArguments; //此处生成生成一个具体实例
+            //sdata.fir_day=year_value+"-"+id+"-1";
+            last_day1 = new Date(parseInt(year_value) + Math.floor(id / 12), parseInt(id) % 12, 1)
+            last_day2 = new Date(Date.parse(last_day1) - DyMilli);
+            //sdata.last_day=last_day2.getYear()+"-"+(last_day2.getMonth()+1)+"-"+last_day2.getDate()
+            //sdata.txtNY=year_value+"-"+id;
+            if (parseInt(id) < 10)
+                strmonth = "0" + id
+            else
+                strmonth = id
+
+            window.returnValue = year_value + "-" + strmonth;
+            //alert(year_value+"-"+id);
+            window.close()
+        }
+    </script>
+
+    <table width="175" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td colspan="3">
+                <img name="rl_r1_c1" src="img/yl.gif" width="225" height="32" border="0" alt="">
+            </td>
+        </tr>
+        <tr>
+            <td background="img/rl_r4_c1.gif" valign="top" height="53" width="43">
+                <img name="rl_r2_c1" src="img/rl_r2_c1.gif" width="43" height="33" border="0" alt="">
+            </td>
+            <td height="117" width="121" rowspan="3" valign="bottom">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <form name="obj">
+                    <tr>
+                        <td height="104">
+                            <table width="99%" id="mytable" border="0" cellspacing="1" cellpadding="0" height="156">
+                                <tr>
+                                    <td colspan="4" align="center" height="28" bgcolor="#3399CC">
+                                        <table width="85%" border="0" style="border-collapse: collapse" bordercolor="#111111">
+                                            <tr>
+                                                <td align="center" id="year_month">
+                                                    <select id="select" name="sel" style="background-color: #EAEAEA; font-size: 9pt">
+
+                                                        <script language="javascript">
+<!--
+                                                            for (var i = 2000; i <= 2020; i++) {
+                                                                document.write('<OPTION value=' + i + ' ' + (i == year ? 'selected' : '') + '>' + i + '</option>')
+                                                            }
+//-->
+                                                        </script>
+
+                                                    </select>
+                                                年
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" height="113">
+                                        <table width="100%" border="0" cellspacing="1" cellpadding="0" height="100" bgcolor="#3399CC">
+                                            <tr bgcolor="#F7F7F7">
+
+                                                <script language="javascript">
+<!--
+                                                    var m = 1
+                                                    for (var j = 1; j <= 4; j++) {
+                                                        document.write('<tr bgcolor="#F3F3F3" align="center" style="cursor:hand" >')
+                                                        for (var i = 1; i <= 3; i++) {
+                                                            document.write(' <td width="32"  onMouseOver="mouse_over(this)" onMouseOut="mouse_out(this)"' + (m == month ? 'bgcolor="#F8AA07"' : '') + ' onclick=month_id(id) id=' + m + '>' + m + '月</td>')
+                                                            m++
+                                                        }
+                                                        document.write('</tr>')
+                                                    }
+//-->
+                                                </script>
+                                    </td>
+                                </tr>
+                    </form>
+                </table>
+            </td>
+        </tr>
+    </table>
+    </td> </tr>
+    <tr>
+        <td>
+            <img name="rl_r7_c2" src="img/rl_r7_c2.gif" width="161" height="26" border="0" alt="">
+        </td>
+    </tr>
+    </table> </td>
+    <td height="0" background="img/rl_r3_c3.gif" valign="top" width="21">
+        <img name="rl_r2_c3" src="img/rl_r2_c3.gif" width="21" height="20" border="0" alt="">
+    </td>
+    </tr>
+    <tr>
+        <td background="img/rl_r4_c1.gif" valign="bottom" height="53" width="43">
+            &nbsp;
+        </td>
+        <td height="0" background="img/rl_r3_c3.gif" valign="bottom" width="21">
+            &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td background="img/rl_r4_c1.gif" valign="bottom" height="2" width="43">
+            <img name="rl_r5_c1" src="img/rl_r5_c1.gif" width="43" height="49" border="0" alt="">
+        </td>
+        <td height="2" background="img/rl_r3_c3.gif" valign="bottom" width="21">
+            <img name="rl_r6_c3" src="img/rl_r6_c3.gif" width="21" height="37" border="0" alt="">
+        </td>
+    </tr>
+    </table>
+</body>
+</html>
+
+<script language="javascript">
+<!--
+    //定义窗体大小
+    window.dialogHeight = "165pt";
+    window.dialogWidth = "176pt";
+//-->
+</script>
+

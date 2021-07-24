@@ -1,0 +1,2 @@
+﻿1、关联合同 hxp add
+马百利 2011.11.29.10:01:04 --合同类型添加科目关联ALTER TABLE Con_ContractType ADD CBSCode nvarchar(200) NULL REFERENCES Bud_CostAccounting(CBSCode) ON DELETE SET NULL--支出合同关联资金计划ALTER TABLE Con_Payout_Contract ADD MonthPlanUID uniqueidentifier--收入合同关联资金计划ALTER TABLE Con_Incomet_Contract ADD MonthPlanUID uniqueidentifier

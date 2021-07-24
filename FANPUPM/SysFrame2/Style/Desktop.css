@@ -1,0 +1,175 @@
+﻿body
+{
+}
+
+#top
+{
+	height: 55px;
+	border: 1px solid #9dc5fc;
+	color: #30496c;
+	border-bottom: 1px solid #c2dcff;
+	background-image: url(/images2/desktop/top-bg.jpg);
+	background-repeat: repeat-x;
+}
+
+#logo
+{
+	padding-top: 13px;
+	width: 350px;
+	float: left;
+}
+
+#toolbar
+{
+	padding-right: 10px;
+	text-align: right;
+	height: 50px;
+	width: 500px;
+	float: right;
+}
+
+#toolbar div
+{
+	padding-top: 6px;
+}
+
+#toolbar span
+{
+	cursor: pointer;
+}
+
+#toolbar img
+{
+	width: 12px;
+	height: 12px;
+}
+
+#tabPanels
+{
+	width: 20%;
+	margin: 0 auto;
+}
+
+#tabPanels > tbody > tr > td
+{
+	padding: 5px 15px 15px 15px;
+	position: relative;
+}
+
+#tabPanels td div
+{
+	margin: 0 auto;
+}
+
+.tr-data td
+{
+	border-bottom: 1px dotted #94b5ef;
+}
+
+.tab-panel tr
+{
+	height: 25px;
+}
+
+.tab-panel .td-content
+{
+	/*width: 250px; padding: 5px 4px 4px 10px;*/ /* width: 270px; */
+	cursor: pointer;
+}
+
+.td-date
+{
+	width: 70px;
+	padding-right: 6px;
+}
+
+#div_about p
+{
+	padding-left: 20px;
+}
+
+
+.div-more
+{
+	height: 22px;
+	text-align: right;
+	vertical-align: middle;
+	padding-top: 6px;
+	padding-right: 10px;
+}
+
+.div-more span
+{
+	cursor: pointer;
+}
+
+tr[pid] span
+{
+	color: Red;
+}
+
+.tab-panel
+{
+	font: 12px "宋体";
+	color: #0B406A;
+}
+
+.tab-panel td
+{
+	padding: 0 10px;
+	line-height: 24px;
+	font: 12px "宋体";
+	color: #0B406A;
+	text-decoration: none;
+}
+.tab-panel td:hover
+{
+	font: 12px "宋体";
+	color: #0080FF;
+}
+
+#div_about a:link
+{
+	color: #666;
+}
+/* 未访问的链接 */
+#div_about a:visited
+{
+	color: #666;
+}
+/* 已访问的链接 */
+#div_about a:hover
+{
+	color: #eb5e00;
+}
+/* 当有鼠标悬停在链接上 */
+#div_about a:active
+{
+	color: #eb5e00;
+}
+/* 被选择的链接 */
+
+#div_btnok
+{
+	width: 80px;
+	padding-top: 47px;
+	float: Right;
+}
+
+#div_btnok input
+{
+	font-size: 12px;
+	color: #005bb1;
+	height: 19px;
+	border: 1px solid #9dc5fd;
+	background-image: url('/images/btn_link.jpg');
+}
+
+#div_btnok input:hover
+{
+	font-size: 12px;
+	color: #b13900;
+	border: 1px solid #ffc59b;
+	background-image: url('/images/btn_over.jpg');
+}
+

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="BudTaskResource" table="Bud_TaskResource" lazy="true" >
+		<id name="TaskResourceId" type="String">
+			<column name="TaskResourceId" sql-type="nvarchar" length="500" not-null="true" />
+		</id>
+		<property name="TaskId" type="String">
+			<column name="TaskId" sql-type="nvarchar" length="500" not-null="false" />
+		</property>
+		<property name="ResourceId" type="String">
+			<column name="ResourceId" sql-type="nvarchar" length="500" not-null="false" />
+		</property>
+		<property name="ResourceQuantity" type="Decimal">
+			<column name="ResourceQuantity" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="InputUser" type="String">
+			<column name="InputUser" sql-type="nvarchar" length="50" not-null="true" />
+		</property>
+		<property name="InputDate" type="DateTime">
+			<column name="InputDate" sql-type="datetime" not-null="true" />
+		</property>
+		<property name="ResourcePrice" type="Decimal">
+			<column name="ResourcePrice" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="PrjGuid" type="String">
+			<column name="PrjGuid" sql-type="nvarchar" not-null="false" />
+		</property>
+		<property name="Versions" type="int">
+			<column name="Versions" sql-type="int" not-null="false" />
+		</property>
+		<property name="LossCoefficient" type="decimal">
+			<column name="LossCoefficient" sql-type="decimal" not-null="false" />
+		</property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="GB2312"?>
+<root textheight="18">
+	<pro>   
+                <title>华夏第九园</title> <!--标题-->
+		<picURL><![CDATA[http://www.cfldcn.com/images1/jpg/pic0.jpg]]></picURL> <!--图片地址-->
+		<linkURL><![CDATA[http://www.cfldcn.com]]></linkURL> <!--链接地址-->
+	</pro>
+        <pro>   
+                <title>峰尚中心写字楼</title> <!--标题-->
+		<picURL><![CDATA[http://www.cfldcn.com/images1/jpg/pic1.jpg]]></picURL> <!--图片地址-->
+		<linkURL><![CDATA[http://www.huaxiadc.com/case/fs.htm]]></linkURL> <!--链接地址-->
+	</pro>
+        <pro>   
+                <title>孔雀城</title> <!--标题-->
+		<picURL><![CDATA[http://www.cfldcn.com/images1/jpg/pic2.jpg]]></picURL> <!--图片地址-->
+		<linkURL><![CDATA[http://www.kongquecheng.com]]></linkURL> <!--链接地址-->
+	</pro>
+</root>

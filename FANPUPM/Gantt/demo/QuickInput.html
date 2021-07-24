@@ -1,0 +1,186 @@
+﻿<html>
+<head>
+    <title>快速操作：批量新增/删除/修改任务</title> 
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <style type="text/css">
+    .form
+    {
+    	border:solid 1px #688691;margin-left:5px;
+    }
+    .formtitle
+    {
+    	background:#bfe2ff;border-bottom:solid 1px #688691;text-align:center;line-height:25px;font-size:14px;font-weight:bold;
+    }
+    .formitem
+    {
+    	font-size:11px;padding:3px;padding-bottom:0px;
+    }
+    .formitem span
+    {
+    	display:inline-block;
+    	width:60px;
+    }
+    </style>
+
+</head>
+<body>
+<table>
+        <tr>            
+            <td id="viewCt" valign="top">
+            </td>
+            <td style="width:250px;" valign="top">
+                <form class="form">
+                    <div class="formtitle">
+                        批量添加任务
+                    </div>
+                    <div class="formitem"><span>任务名称：</span><input type="text" id="taskname" /></div>
+                    <div class="formitem"><span>工期：</span><input type="text" id="duration" /></div>
+                    <div style="text-align:center;padding:5px;">
+                        <input type="button" value="增加" onclick="addTasks()"/>
+                        <input type="reset" value="重置"/>
+                    </div>
+                </form>
+                
+                <form class="form">
+                    <div class="formtitle">
+                        批量修改任务
+                    </div>
+                    <div class="formitem"><span>进度：</span><input type="text" id="percentComplete2" /></div>
+                    <div class="formitem"><span>工期：</span><input type="text" id="duration2" /></div>
+                    <div style="text-align:center;padding:5px;">
+                        <input type="button" value="修改" onclick="updateTasks()"/>
+                        <input type="reset" value="重置"/>
+                    </div>
+                </form>
+                
+                <form class="form" >
+                    <div class="formtitle">
+                        批量删除任务
+                    </div>
+                    <div style="padding:8px;text-align:center;">
+                        <input type="button" value="删除选中的任务" onclick="removeTasks()" />
+                    </div>
+                </form>   
+                <form class="form" style="border:0;">                  
+                    <div style="padding:8px;text-align:center;">
+                        <input type="button" style="padding:5px;color:Red;width:100px;font-weight:bold;" value="保存" onclick="save()"/>             
+                    </div>
+                </form> 
+                
+            </td>
+        </tr>
+    </table>
+</body>
+</html><script src="../scripts/boot.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+/* 创建项目甘特图对象
+-----------------------------------------------------------------------------*/
+
+var project = new PlusProject();
+
+project.setMultiSelect(true);                   //允许多选
+
+project.setStyle("width:800px;height:400px");
+project.setColumns([
+    new PlusProject.IDColumn(),
+    new mini.CheckColumn({ header: "" }),         //选择列    
+    new PlusProject.StatusColumn(),
+    new PlusProject.NameColumn(),
+    new PlusProject.PredecessorLinkColumn(),
+    new PlusProject.PercentCompleteColumn(),
+    new PlusProject.DurationColumn(),
+    new PlusProject.StartColumn(),
+    new PlusProject.FinishColumn(),
+    new PlusProject.WorkColumn(),
+    new PlusProject.DepartmentColumn(),
+    new PlusProject.PrincipalColumn(),
+    new PlusProject.AssignmentsColumn()
+]);
+project.render(document.getElementById("viewCt"));
+
+
+var params = mini.getParams();  //...?id=100        获取URL的项目id信息
+var projectUID = params.id;
+if (projectUID == null) {   //如果没有传递项目id，则加载JSON格式项目数据演示和操作
+    LoadJSONProject("data/project.txt", project);
+} else {
+    LoadProject(projectUID, project);
+}
+
+
+/* 业务代码
+-----------------------------------------------------------------------------*/
+
+//保存项目
+function save() {
+    SaveProject(project);
+}
+//增加任务: 将录入的任务, 加入到所选择任务下
+function addTasks() {
+    var newTask = {
+        Name: document.getElementById("taskname").value,
+        Duration: parseInt(document.getElementById("duration").value)
+    };
+    if (!newTask.Name) {
+        alert("任务名称不能为空");
+        return;
+    }
+    if (isNaN(newTask.Duration)) {
+        alert("工期必须是数字, 并且能为空");
+        return;
+    }
+
+    //批量增加任务
+    var taskUIDs = project.getSelecteds();
+    if (taskUIDs.length == 0) {
+        alert("请先选择要加入的任务");
+        return;
+    }
+
+    project.addTasks([newTask], "add", taskUIDs);
+}
+//删除所有选中的任务
+function removeTasks() {
+    var tasks = project.getSelecteds();
+    if (tasks.length > 0) {
+        if (confirm("确定删除 " + tasks.length + " 条任务?")) {
+            project.removeTasks(tasks);
+        }
+    } else {
+        alert("请先选择任务");
+    }
+}
+//修改所有选中任务的属性, 比如这里是工期和进度
+function updateTasks() {
+    
+    var keyValues = {
+        PercentComplete: parseInt(document.getElementById("percentComplete2").value),
+        Duration: parseInt(document.getElementById("duration2").value)
+    };
+    if (isNaN(keyValues.PercentComplete)) {
+        alert("进度必须是数字, 并且不能为空");
+        return;
+    }
+    if (0 > keyValues.PercentComplete || keyValues.PercentComplete > 100) {
+        alert("进度值在0~100之间");
+        return;
+    }
+    if (isNaN(keyValues.Duration)) {
+        alert("工期必须是数字, 并且能为空");
+        return;
+    }
+
+    //批量修改任务
+    var tasks = project.getSelecteds();
+    if (tasks.length == 0) {
+        alert("请先选择要修改的任务");
+        return;
+    }
+    project.updateTasks(tasks, keyValues);
+    
+}
+
+
+
+</script>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="XPMBasicCodeList" table="XPM_Basic_CodeList" lazy="true" >
+		<id name="NoteID">
+			<column name="NoteID" sql-type="int" not-null="true" />
+			<generator class="identity" />
+		</id>
+		<property name="CodeID">
+			<column name="CodeID" sql-type="int" not-null="true" />
+		</property>
+		<property name="TypeID">
+			<column name="TypeID" sql-type="int" not-null="true" />
+		</property>
+		<property name="ParentCodeID">
+			<column name="ParentCodeID" sql-type="int" not-null="true" />
+		</property>
+		<property name="ParentCodeList">
+			<column name="ParentCodeList" sql-type="varchar" length="50" not-null="true" />
+		</property>
+		<property name="CodeName">
+			<column name="CodeName" sql-type="varchar" length="100" not-null="false" />
+		</property>
+		<property name="ChildNumber">
+			<column name="ChildNumber" sql-type="int" not-null="true" />
+		</property>
+		<property name="IsFixed">
+			<column name="IsFixed" sql-type="bit" not-null="true" />
+		</property>
+		<property name="IsDefault">
+			<column name="IsDefault" sql-type="bit" not-null="true" />
+		</property>
+		<property name="IsValid">
+			<column name="IsValid" sql-type="bit" not-null="true" />
+		</property>
+		<property name="IsVisible">
+			<column name="IsVisible" sql-type="bit" not-null="false" />
+		</property>
+		<property name="Owner">
+			<column name="Owner" sql-type="varchar" length="8" not-null="false" />
+		</property>
+		<property name="VersionTime">
+			<column name="VersionTime" sql-type="datetime" not-null="false" />
+		</property>
+		<property name="IXh">
+			<column name="I_xh" sql-type="int" not-null="false" />
+		</property>
+	</class>
+</hibernate-mapping>

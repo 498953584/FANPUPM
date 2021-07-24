@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="SASalaryItem" table="SA_SalaryItem" lazy="true" >
+    <id name="Id" column="Id"></id>
+    <property name="No" type="int">
+      <column name="No" sql-type="int" not-null="true" />
+    </property>
+    <property name="Name" type="String">
+      <column name="Name" sql-type="nvarchar" length="200" not-null="true" />
+    </property>
+    <property name="IsAllowDel" type="Boolean">
+      <column name="IsAllowDel" sql-type="bit" not-null="true" />
+    </property>
+		<property name="Code" type="String">
+			<column name="Code" sql-type="nvarchar" length="30" not-null="false"></column>
+		</property>
+    <property name="Note" type="StringClob">
+      <column name="Note" sql-type="nvarchar(Max)" not-null="false" />
+    </property>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="EPMDatumClass" table="EPM_Datum_Class" lazy="true" >
+		<id name="TypeId">
+			<column name="TypeId" sql-type="int" not-null="true" />
+			<generator class="identity" />
+		</id>
+		<property name="TypeName">
+			<column name="TypeName" sql-type="varchar" length="50" not-null="true" />
+		</property>
+		<property name="Remark">
+			<column name="Remark" sql-type="varchar" length="50" not-null="false" />
+		</property>
+		<property name="ParentId">
+			<column name="ParentId" sql-type="int" not-null="true" />
+		</property>
+		<property name="IsValid">
+			<column name="IsValid" sql-type="bit" not-null="true" />
+		</property>
+		<property name="isDelete">
+			<column name="isDelete" sql-type="bit" not-null="true" />
+		</property>
+		<property name="IsVisible">
+			<column name="IsVisible" sql-type="bit" not-null="true" />
+		</property>
+		<property name="IsFixup">
+			<column name="IsFixup" sql-type="bit" not-null="true" />
+		</property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<popups>
+    <popup>
+        <module>Bulletin</module>
+        <name>系统公告</name>
+        <url>/oa/bulletin/BulletinLock.aspx</url>
+    </popup>
+    <popup>
+        <module>CompanyNews</module>
+        <name>公司新闻</name>
+        <url>/oa/System/Institution/InstitutionView.aspx</url>
+    </popup>
+    <popup>
+        <module>Workflow</module>
+        <name>流程审核</name>
+        <url>/EPC/Workflow/AuditFrame.aspx</url>
+    </popup>
+    <popup>
+        <module>Schedule</module>
+        <name>待办工作</name>
+        <url>/Epc/Workflow/ViewDBInfo.aspx</url>
+    </popup>
+    <popup>
+        <module>Mail</module>
+        <name>邮件提醒</name>
+        <url>/oa/MailAdmin/ViewMail.aspx</url>
+    </popup>
+    <popup>
+        <module>Warning</module>
+        <name>预警</name>
+        <url></url>
+    </popup>
+</popups>

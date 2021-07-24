@@ -1,0 +1,57 @@
+/* CSS Document */
+body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div{margin:0;padding:0;border:0;}
+ .header-a 
+ { float:right;
+   height:20px;
+   padding-top:5px;     
+   padding-right:10px;
+   color:#0B406A;}
+.header-b{ float:left;
+    margin:0; padding-left:5px;
+	width:100%;
+	height:25px;
+	font:12px "宋体"; color:#0B406A;
+   /* background-image: url(image/bg_02-03.gif);
+    background-repeat:repeat-x;*/
+	line-height:25px; }
+.header-c{ float:right;
+     margin:0; padding:0;
+	 width:12px; height:25px;
+	 background-image:url(image/bg_03.gif);
+	 background-repeat:no-repeat;
+    }
+.footer-b{ float:left; display:inline;
+    margin:0; padding:0;
+	width:100%; height:10px;
+	background:url(image/bg_09.gif) repeat-x;
+	}
+.footer-b img{ float:left; display:inline;
+                margin:0; padding:0;}
+.footer-a{ float:left;
+      margin:0; padding:0;
+	  width:12px; height:10px;
+	  background-image:url(image/bg_06-09.gif);
+	  background-repeat:no-repeat; 
+	 }
+.pagebody{ float:left; width:100%; margin-top:5px; padding:0; font:12px "宋体"; color:#0B406A; line-height:25px;}
+.pagebody table{ width:100%; height:auto;}
+.pagebody td{white-space: nowrap; padding-left:6px; padding-right:10px; text-align:left;}
+.pagebody a{font:12px "宋体"; color:#0B406A; text-decoration:none;}
+.pagebody a:hover{ font:12px "宋体"; color:#0080FF; }
+.readmore{ float:left; margin:0; padding:0; width:100%; height:18px; line-height:18px; text-align:right;     
+          }
+.readmore a{font:12px "宋体"; color:#0B406A;  height:18px; line-height:18px;  text-decoration:none;}
+.readmore a:hover{ font:12px "宋体";  height:18px; line-height:18px;  text-decoration:underline;}
+.border-a{border-bottom:dotted 1px #94b5ef;}
+.border-b{border-bottom:dotted 1px #ecf4fc;}
+ .header-cursor 
+ { 	
+   margin:0; padding:0;
+	width:25px; height:20px;
+	background-repeat:no-repeat;
+	background-color:Transparent;
+	cursor:hand;
+	background-image:url(image/bg_set.png);
+	vertical-align:bottom;
+	}
+

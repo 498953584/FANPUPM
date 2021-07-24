@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="BasicCity" table="Basic_City" lazy="true" >
+		<id name="Id">
+			<column name="Id" sql-type="uniqueidentifier" not-null="true" />
+		</id>
+		<property name="ProvinceId">
+			<column name="ProvinceId" sql-type="uniqueidentifier" not-null="false" />
+		</property>
+		<property name="Code">
+			<column name="Code" sql-type="nvarchar" length="200" not-null="false" />
+		</property>
+		<property name="Name">
+			<column name="Name" sql-type="nvarchar" length="200" not-null="false" />
+		</property>
+		<property name="OrderNo">
+			<column name="OrderNo" sql-type="int" not-null="false" />
+		</property>
+	</class>
+</hibernate-mapping>

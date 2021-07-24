@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="WFTemplate" table="WF_Template" lazy="true" >
+    <id name="TemplateID">
+			<column name="TemplateID" sql-type="int" not-null="true" />
+      <generator class="identity" />
+    </id>
+    <property name="BusinessCode">
+      <column name="BusinessCode" sql-type="varchar" length="3" not-null="false" />
+    </property>
+    <property name="TemplateName">
+      <column name="TemplateName" sql-type="varchar" length="100" not-null="false" />
+    </property>
+    <property name="Remark">
+      <column name="Remark" sql-type="varchar" length="5000" not-null="false" />
+    </property>
+    <property name="IsAbnormality">
+      <column name="IsAbnormality" sql-type="char" not-null="false" />
+    </property>
+    <property name="IsGeneral">
+      <column name="IsGeneral" sql-type="char" not-null="false" />
+    </property>
+    <property name="CorpCode">
+      <column name="CorpCode" sql-type="varchar" length="10" not-null="false" />
+    </property>
+    <property name="IsComplete">
+      <column name="IsComplete" sql-type="char" not-null="false" />
+    </property>
+    <property name="RecordID">
+      <column name="RecordID" sql-type="int" not-null="false" />
+    </property>
+    <property name="BusinessClass">
+      <column name="BusinessClass" sql-type="varchar" length="3" not-null="false" />
+    </property>
+    <property name="TemplateCode">
+      <column name="TemplateCode" sql-type="varchar" length="50" not-null="false" />
+    </property>
+    <property name="IsValid">
+      <column name="IsValid" sql-type="bit" not-null="false" />
+    </property>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <title>实际进度上报</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link type="text/css" rel="Stylesheet" href="Css/Gantt.css" />
+</head>
+<body>
+    <div id="divDate">
+        <table>
+            <tr>
+                <td>
+                    顶层时间刻度：
+                </td>
+                <td>
+                    <select style="margin-right: 5px;" onchange="changeTopTimeScale(this.value)">
+                        <option value="year">年</option>
+                        <option value="halfyear">半年</option>
+                        <option value="quarter">季度</option>
+                        <option value="month">月</option>
+                        <option value="week" selected="selected">周</option>
+                        <option value="day">日</option>
+                        <option value="hour">时</option>
+                    </select>
+                </td>
+                <td>
+                    底层时间刻度：
+                </td>
+                <td>
+                    <select onchange="changeBottomTimeScale(this.value)" style="margin-right: 5px;">
+                        <option value="year">年</option>
+                        <option value="halfyear">半年</option>
+                        <option value="quarter">季度</option>
+                        <option value="month">月</option>
+                        <option value="week">周</option>
+                        <option value="day" selected="selected">日</option>
+                        <option value="hour">时</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="buttons" class="divFooter">
+        <input class="inputBtns" type="button" value="放大" onclick="zoomIn()" />
+        <input class="inputBtns" type="button" value="缩小" onclick="zoomOut()" />
+        <input class="inputBtns" type="button" value="保存" onclick="save()" />
+    </div>
+    <div style="text-align: center;">
+        <div id="viewCt" style="margin: 0 auto;">
+        </div>
+    </div>
+</body>
+</html>
+
+<script src="../../Script/jquery.js" type="text/javascript"></script>
+
+<script src="../../Gantt/scripts/boot.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+
+    /* 创建项目甘特图对象，设置列配置，创建右键菜单*/
+
+    var project = new PlusProject();
+    var width = $(this).width() - 2;
+    var height = $(this).height() - $('#buttons').height() - $('#divDate').height() - 5;
+    project.setStyle("width:" + width + "px;height:" + height + "px;");
+    project.setColumns([
+    new PlusProject.IDColumn(), //序号
+    new PlusProject.StatusColumn(), //状态信息[可以显示备注和里程碑]
+    new PlusProject.NameColumn(), //任务名称
+    new PlusProject.PredecessorLinkColumn(), //前置任务
+    new PlusProject.DurationColumn(), //工期
+    new PlusProject.StartColumn(), //开始时间
+    new PlusProject.FinishColumn(), //结束时间
+    new PlusProject.ActualStartColumn(), //实际开始时间
+    new PlusProject.ActualFinishColumn(), //实际结束时间
+    new PlusProject.PercentCompleteColumn(), //完成百分比
+    new PlusProject.WorkColumn(), //工时
+    new PlusProject.OutlineLevelColumn()//任务层次
+]);
+    project.render(document.getElementById("viewCt"));
+
+    //右键菜单弹出
+    var menu = new ProjectMenu();
+    project.setContextMenu(menu);
+
+    //监听菜单的opening事件，此事件在菜单显示前激发。可以控制菜单项的显示和可操作。
+    menu.on("opening", function(e) {
+        var project = this.owner;       //PlusProject对象
+        var task = project.getSelected();
+
+        if (!task) {
+            e.cancel = true;
+            return;
+        }
+
+        this.edit.disable();
+        this.remove.disable();
+        this.add.disable();
+        this.remove.disable();
+        this.upgrade.disable();
+        this.downgrade.disable();
+    });
+
+    var params = mini.getParams();  //...?id=100        获取URL的项目id信息
+    var projectUID = params.id;
+    var version = 0;
+
+    $.ajax({
+        type: "GET",
+        dataType: "text",
+        async: false,
+        url: "/ProgressManage/Handler/GetMaxVersion.ashx?" + new Date().getTime() + "&prjUID=" + projectUID,
+        success: function(data) {
+            version = parseInt(data) + 1;
+        }
+    });
+
+    params = { projectuid: projectUID, version: version };
+    if (projectUID == null) {   //如果没有传递项目id，则加载JSON格式项目数据演示和操作
+        LoadJSONProject("data/project.txt", project);
+        alert("无项目参数");
+    }
+    else {
+        LoadProject(params, project);
+        setReadOnlyColumn();
+    }
+
+    /* 业务代码：升级、降级任务 */
+
+    //保存
+    function save() {
+        SaveProject(project);
+    }
+
+    function changeTopTimeScale(value) {
+        project.setTopTimeScale(value)
+    }
+
+    function changeBottomTimeScale(value) {
+        project.setBottomTimeScale(value)
+    }
+
+    function zoomIn() {
+        project.zoomIn();
+    }
+
+    function zoomOut() {
+        project.zoomOut();
+    }
+
+    //只读列
+    function setReadOnlyColumn() {
+        var columns = new Array('Name', 'PredecessorLink', 'Duration', 'Start', 'Finish', 'Priority', 'Work', 'Weight', 'OutlineLevel')
+        for (i = 0; i < columns.length; i++) {
+            var column = columns[i];
+            project.updateColumn(column, {
+                readOnly: true
+            });
+        }
+    }
+
+</script>
+

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="PTPrjInfoStateChange" table="PT_PrjInfo_StateChange" lazy="true" >
+    <id name="Id">
+      <column name="Id" sql-type="nvarchar" length="100" not-null="true" />
+    </id>
+    <property name="PrjId">
+      <column name="PrjId" sql-type="nvarchar" length="200" not-null="false" />
+    </property>
+    <property name="OldState">
+      <column name="OldState" sql-type="int" not-null="false" />
+    </property>
+    <property name="ChangeState">
+      <column name="ChangeState" sql-type="int" not-null="false" />
+    </property>
+    <property name="ChangeTime">
+      <column name="ChangeTime" sql-type="datetime" not-null="false" />
+    </property>
+    <property name="ChangeReason">
+      <column name="ChangeReason" sql-type="nvarchar(max)" not-null="false" />
+    </property>
+    <property name="ChangeUser">
+      <column name="ChangeUser" sql-type="nvarchar" length="8" not-null="false" />
+    </property>
+    <property name="Note">
+      <column name="Note" sql-type="nvarchar(max)" not-null="false" />
+    </property>
+    <property name="InputDate">
+      <column name="InputDate" sql-type="datetime" not-null="false" />
+    </property>
+    <property name="InputUser">
+      <column name="InputUser" sql-type="varchar" length="8" not-null="false" />
+    </property>
+    <property name="FlowState">
+      <column name="FlowState" sql-type="int" not-null="false" />
+    </property>
+  </class>
+</hibernate-mapping>

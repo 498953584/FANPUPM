@@ -1,0 +1,1149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>7.10.3077</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{190C4559-1F8B-405C-9353-7260920C73D5}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon />
+    <AssemblyKeyContainerName />
+    <AssemblyName>PmBusinessLogic</AssemblyName>
+    <AssemblyOriginatorKeyFile />
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>PmBusinessLogic</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject />
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>0.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>发布\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile />
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile />
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn />
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile />
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile />
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn />
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib">
+      <Name>mscorlib</Name>
+      <HintPath>mscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json.Net20">
+      <HintPath>..\lib\Newtonsoft.Json.Net20.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI">
+      <HintPath>..\lib\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Core">
+      <HintPath>..\lib\Spring.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+      <HintPath>System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Name>System.Configuration</Name>
+      <HintPath>System.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <Name>System.Core</Name>
+      <HintPath>System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+      <HintPath>System.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Name>System.Data.DataSetExtensions</Name>
+      <HintPath>System.Data.DataSetExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Entity">
+      <Name>System.Data.Entity</Name>
+      <HintPath>System.Data.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+      <HintPath>System.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <Name>System.Runtime.Serialization</Name>
+      <HintPath>System.Runtime.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+      <HintPath>System.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq">
+      <Name>System.Xml.Linq</Name>
+      <HintPath>System.Xml.Linq.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountManage.BLL\fund_accountInfoBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AccountManage.BLL\fund_AccountOperateBLL.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AccountManage.BLL\fund_ReqinfoBll.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AccountManageAoper\AccountCommit.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AccountManageBLL\accOperMSClass.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL.AllocUser\BasicPriv.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL.AllocUser\DefineFlowUsercs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL.AllocUser\IAllocUser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL.AllocUser\MkUser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL.AllocUser\ProgressPlanUser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL.AllocUser\ProjectAccount.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL.AllocUser\RoleUser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL.AllocUser\TenderUser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL.Domain.HumanResources.Services\UserServices.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL.Privilege\Privilege.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL.ProgressManagement\Privilege.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL.ProgressManagement\Progress.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL.ProgressManagement\Version.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL.Rename\DateTimeNaming.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL.Rename\INaming.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL.Rename\NamingFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL\AppSettingHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL\BasicProjectCode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL\BusinessData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL\ClearHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL\Common2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL\ConsReportImage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL\ConstructOrganizeBBl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL\DataTableFilter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL\DataTableUtility.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL\Department.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL\EncryptionUtility.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL\ExcelExporter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL\ExcelHeader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL\ExcelHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL\FileExport.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL\GridViewUtility.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL\IExportable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL\IProjectCode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL\JsonHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL\JsonNetWrap.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL\NBasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL\Parameters.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL\PriceType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL\PrivHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL\ProjectStateHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL\ProjectTree2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL\ProvincesProjectCode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL\Resource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL\ResourceImage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL\SalaryCommon.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL\SalaryParameter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL\SelectProject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL\SelectProjectHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL\SelfEventAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL\StringUtility.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL\SubProjectCompare.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL\WordExporter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL\XpmCode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL\XpmCodeServices.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.BLL\XpmCodeTypeParam.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractBLL\Config.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractBLL\ContractParameter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractBLL\ContractPayendBll.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractBLL\ContractType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractBLL\formBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractBLL\IncometBalanceBll.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractBLL\IncometContractBll.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractBLL\IncometInvoiceBll.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractBLL\IncometModifyBll.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractBLL\IncometPaymentBll.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractBLL\InvoiceType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractBLL\PayendFeedbackBll.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractBLL\PaymentApply.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractBLL\PaymentTarget.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractBLL\PayoutBalance.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractBLL\PayoutContract.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractBLL\PayoutInvoice.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractBLL\PayoutModify.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractBLL\PayoutModifyAudit.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractBLL\PayoutPayment.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.contractBLL\PayoutTarget.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Query\CriteriaOperator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Query\Criterion.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Query\IQueryCriterion!1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Query\OrderClause.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Query\Query!1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Query\QueryOperator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\DepartmentServices.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\PrivilegePersonServices.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain\BasicCode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain\BudConModifyAudit.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain\BudContractResource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain\BudContractTask.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain\BudContractTaskAudit.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain\BudgetAudit.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain\BudModifyAudit.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain\BudModifyTaskResBll.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain\BudTask.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain\BudTaskChange.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain\BudTaskResourceServices.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain\BudTaskServices.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain\BudTaskSpecial.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain\BudTaskType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain\BudTaskTypeDotSep.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain\BudTaskTypeGBCode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain\BudTaskTypeHorizSep.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain\BudTaskTypeServices.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain\BudTaskTypeThreeChar.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain\BudTaskTypeTwoChar.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain\BudTemplate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain\BudTemplateItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain\BudTemplateType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain\ConsReportAudit.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain\ConsResInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain\ConsTaskRes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain\ConstructReport.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain\ConstructResource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain\ConstructTask.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain\ContractTaskAudit.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain\Department.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain\IBudTaskTypeSeries.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain\IPrivilege.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain\IRepository!1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain\PrivilegePerson.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain\PrivilegeSimplyFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain\prjStateChangeSelf.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain\Project.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain\ProjectBidSelf.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain\Resource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain\ResourceTemp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain\ResPrice.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain\ResPriceType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain\ResTemplate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain\ResTemplateItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain\ResType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain\ResTypeAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain\ResUnit.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain\TaskResource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain\User.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Ent_Ept_EquipmentsBLL\EquipmentsBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.epm.bll.datum\datumClass.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.epm.prog\progLogic.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.fileInfoBll\FileInfoBll.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.fileInfoBll\FileInfoDeserializeModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.fileInfoBll\FileTypeBll.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.fileInfoBll\PersonalFileBll.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Fund.AccounIncome.BLL\AccounIncome.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Fund.AccounPayout.BLL\AccounPayoutBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Fund.PlanSummary.BLL\PlanSummaryDetailBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Fund.PlanSummary.BLL\PlanSummaryMainBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Fund.RequestPayment.BLL\RequestPayDetail.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Fund.RequestPayment.BLL\RequestPayMain.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.opm.action\Business_DataAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.opm.Business_Data\Business_DataItemAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.opm.Business_Data\Business_DataItemModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.opm.CallBids.Bid\BidCorpAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.opm.CallBids.Bid\BidCorpModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.opm.Complete\BusinessTypeAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.opm.Complete\BusinessTypeModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.opm.epcm.action\BuildBriefAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.opm.epcm.model\BuildBriefModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.opm.Fire\FireAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.opm.Fire\FireModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.opm.Maintain\MaintainModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.opm.model\Business_DataModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.opm.OPS\MaintainDataAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.opm.OPS\MaintainDataModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.opm.PM.prj_plan\MakeThumbnail.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.opm.PM.prj_plan\PrjInfoCorpModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.opm.PM.prj_plan\PrjInfoPhotoAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.opm.PM.prj_plan\PrjInfoPhotoModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.opm.PM.prj_plan\Thumbnai.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.opm.Public\NewCodeAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.opm\ContractPaidAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.opm\MaintainAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.opm\MaintainCommit.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.opm\PrjInfoModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.opm\PrjInfo_Action.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.opm\PrjStageInfoAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.opm\PrjStageInfoModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.opm\PrjStageSetAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.opm\PrjStageSetModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Popup\Bulletin.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Popup\Caution.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Popup\CautionFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Popup\CompanyNews.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Popup\Mail.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Popup\PopupParam.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Popup\PopupSetting.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Popup\Schedule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Popup\Warning.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Popup\Workflow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.PrjManager\CompletedAnnex.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.PrjManager\PrjCompleted.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.PrjManager\PrjCompletedAudit.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.PrjManager\PrjMember.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.PrjManager\PrjMemberCommit.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.PrjManager\PrjMemberWF.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.PrjManager\ProjectInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.PrjManager\SetUpCommit.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.ProgressManagement\Report.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.ProgressManagement\ReportCommit.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.ProgressManagement\ReportDetail.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Project\ProjectParameter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.resourceBLL\TypeAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.salaryBLL\Formula.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.salaryBLL\MonthSalaryBll.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.salaryBLL\SalaryDetailsBll.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.salaryBLL\SalaryTemplate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.salaryBLL\SamTemplateItemBll.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.salaryBLL\SetSalaryBll.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.salaryBLL\TaxStartPointBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.salaryBLL\UserSalaryItemBll.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.StartStopReturnWork\RetMsgAudit.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.StartStopReturnWork\StartReportAudit.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.StartStopReturnWork\StopMsgAudit.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL.AccountManage.accBaise\accBaise.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL.AccountManage.acc_Manage\accountMange.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL.AccountManage\Prjaccount.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL.Contarct\ContractMain.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL.Domain\CostAccounting.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL.Domain\CostApply.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL.Domain\CostDiary.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL.Domain\CostDiaryDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL.Domain\EReport.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL.Domain\IndirectBudget.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL.Domain\IndirectCommit.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL.Domain\IndirectMonthBudget.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL.Domain\OrganizationBudget.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL.Domain\OrganizationDiary.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL.Domain\OrganizationDiaryDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL.Domain\OrganizationMonthBudget.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL.epm.datum\CriterionLogic.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL.epm.datum\DatumLogic.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL.epm\checkAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL.Files\FilesLogic.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL.Files\fileTypeLogic.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL.Fund.Account\AccountLogic.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL.Fund.FundConfig\configBll.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL.Fund.MonthPlan\MonthDetailLogic.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL.Fund.PrjLoad\PrjLoadLogic.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL.Fund.prjReturn\prjReturenBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL.prj\TechnologyTellLogic.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL.PTPrjInfo\PTPrjInfoZTBBll.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL.TableTopBLL\DesktopBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBll\AlarmNumBll.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\AllocationBllAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\AnnexListBll.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\AnnexSettingsBll.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\BackStockBll.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\BalanceStockBll.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\basicSetBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\DepotBindType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\DepotType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\EPMTaskResource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\IEPInfoBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\InExPlanBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\MaterialBack.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\MaterialWantPlan.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\MeterialPlanStock.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\ModifyStockBll.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\OutReserveBll.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\OutStockBll.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\ProjectAlarm.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\ProjectPlan.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\ProjectTransparentSet.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\PTbdmBll.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\PTBulletinMainBll.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\PTDbsjBll.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\PTDRoleBll.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\PtdutyBll.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\PTPrjInfoBll.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\PtYhmcBll.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\Purchase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\PurchaseStock.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\receiveGoodsBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\receiveNoteBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\receiveSelf.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\RefundingBll.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\ResourceAlarm.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\ResourceLogicEdit.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\ResourcePTLogicAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\ResourceSelectBllAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\ResourceTypeManage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\sendGoodsBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\sendNoteBll.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\SmEnum.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\SmPurchaseplanBll.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\SmPurchaseplanStockBll.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\SmWastageBll.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\SmWastageStockBll.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\StockParameter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\StocktakeBll.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\StocktakeDetailBll.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\StocktakeSelf.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\Storage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\StorageStock.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\Treasury.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\TreasuryPermitBll.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\TreasuryStockBll.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\TreasuryStorckParms.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.stockBLL\WorkFlow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.TechnologyManage\Summary.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.TechnologyManage\TechnologyManage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.TechnologyManage\TechnologyTell.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Tender\Area.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Tender\EngineeringType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Tender\PrjType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Tender\ProjectKind.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Tender\ProjectRank.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Tender\TenderInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Tender\TenderUser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Tender\TypeList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Utility\ExcelUtility.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.VehiclesBLL\InsuranceAndReviewBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.VehiclesBLL\MainBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.VehiclesBLL\ReimbursementBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.VehiclesBLL\TypeAndStateBll.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Warn\Warning.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.XPMBasicContactCorp\XPMBasicContactCorpBll.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PmBusinessLogic\ISelfEvent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="cn.justwin.BLL.AllocUser.AllocUser.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Business\Business.csproj">
+      <Project>{e252310c-7562-46e9-98f9-7b726d984a8d}</Project>
+      <Name>Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DomainServices\DomainServices.csproj">
+      <Project>{d438f619-ceb9-48bf-bda1-4a87b523fe79}</Project>
+      <Name>DomainServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{6aa6d6c8-6535-4792-b90b-b8de324b860a}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PmDataAccess\PmDataAccess.csproj">
+      <Project>{c88c8762-f698-44de-b4d5-0c599d2b9278}</Project>
+      <Name>PmDataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebUtil\WebUtil.csproj">
+      <Project>{96d4e6dd-fdbd-4f0c-a1e6-899e47ab2bd0}</Project>
+      <Name>WebUtil</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent />
+    <PostBuildEvent />
+  </PropertyGroup>
+</Project>

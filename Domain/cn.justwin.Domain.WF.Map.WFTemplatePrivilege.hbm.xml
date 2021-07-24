@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="WFTemplatePrivilege" table="WF_Template_Privilege" lazy="true" >
+    <id name="PrivilegeId">
+      <column name="PrivilegeId" sql-type="int" not-null="true" />
+			<generator class="identity"></generator>
+    </id>
+    <property name="TemplateId">
+      <column name="TemplateId" sql-type="int" not-null="false" />
+    </property>
+    <property name="UserCode">
+      <column name="UserCode" sql-type="varchar" length="8" not-null="false" />
+    </property>
+  </class>
+</hibernate-mapping>

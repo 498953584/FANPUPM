@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="EquShipRefuelApply" table="Equ_ShipRefuelApply" lazy="true" >
+		<id name="ApplyId">
+			<column name="ApplyId" sql-type="nvarchar" length="64" not-null="true" />
+		</id>
+		<property name="PrjId">
+			<column name="PrjId" sql-type="nvarchar" length="500" not-null="true" />
+		</property>
+		<property name="EquId">
+			<column name="EquId" sql-type="nvarchar" length="64" not-null="true" />
+		</property>
+		<property name="RefuelPlace">
+			<column name="RefuelPlace" sql-type="nvarchar" length="100" not-null="false" />
+		</property>
+		<property name="Sump">
+			<column name="Sump" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="RefuelStartDate">
+			<column name="RefuelStartDate" sql-type="datetime" not-null="true" />
+		</property>
+		<property name="RefuelEndDate">
+			<column name="RefuelEndDate" sql-type="datetime" not-null="true" />
+		</property>
+		<property name="ApplyQuantity">
+			<column name="ApplyQuantity" sql-type="decimal" not-null="true" />
+		</property>
+		<property name="ResidualOil">
+			<column name="ResidualOil" sql-type="decimal" not-null="true" />
+		</property>
+		<property name="EstimatedQuantity">
+			<column name="EstimatedQuantity" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="NotCompletedQuantity">
+			<column name="NotCompletedQuantity" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="ApplyRefuelDate">
+			<column name="ApplyRefuelDate" sql-type="datetime" not-null="true" />
+		</property>
+		<property name="FlowState">
+			<column name="FlowState" sql-type="int" not-null="true" />
+		</property>
+		<property name="IsEntrustPurchase">
+			<column name="IsEntrustPurchase" sql-type="bit" not-null="true" />
+		</property>
+		<property name="ReportUser">
+			<column name="ReportUser" sql-type="nvarchar" length="50" not-null="false" />
+		</property>
+		<property name="ReportDate">
+			<column name="ReportDate" sql-type="datetime" not-null="false" />
+		</property>
+		<property name="InputUser">
+			<column name="InputUser" sql-type="varchar" length="8" not-null="true" />
+		</property>
+		<property name="InputDate">
+			<column name="InputDate" sql-type="datetime" not-null="true" />
+		</property>
+		<property name="Note">
+			<column name="Note" sql-type="nvarchar(max)" not-null="false" />
+		</property>
+	</class>
+</hibernate-mapping>

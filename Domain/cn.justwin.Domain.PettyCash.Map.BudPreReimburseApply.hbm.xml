@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="BudPreReimburseApply" table="Bud_PreReimburseApply" lazy="true" >
+		<id name="Id">
+			<column name="Id" sql-type="nvarchar" length="200" not-null="true" />
+		</id>
+		<property name="PrjId">
+			<column name="PrjId" sql-type="nvarchar" length="200" not-null="true" />
+		</property>
+		<property name="Name">
+			<column name="Name" sql-type="nvarchar" length="200" not-null="true" />
+		</property>
+		<property name="ApplyDate">
+			<column name="ApplyDate" sql-type="datetime" not-null="true" />
+		</property>
+		<property name="RptUser">
+			<column name="RptUser" sql-type="nvarchar" length="8" not-null="true" />
+		</property>
+		<property name="Code">
+			<column name="Code" sql-type="nvarchar" length="200" not-null="false" />
+		</property>
+		<property name="CostType">
+			<column name="CostType" sql-type="char" length="1" not-null="true" />
+		</property>
+		<property name="FlowState">
+			<column name="FlowState" sql-type="int" not-null="true" />
+		</property>
+		<property name="InputDate">
+			<column name="InputDate" sql-type="datetime" not-null="true" />
+		</property>
+	</class>
+</hibernate-mapping>

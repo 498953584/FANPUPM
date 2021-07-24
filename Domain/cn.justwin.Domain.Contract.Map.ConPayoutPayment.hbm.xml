@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="ConPayoutPayment" table="Con_Payout_Payment" lazy="true" >
+		<id name="ID">
+			<column name="ID" sql-type="nvarchar" length="64" not-null="true" />
+		</id>
+		<property name="PaymentCode">
+			<column name="PaymentCode" sql-type="nvarchar" length="64" not-null="false" />
+		</property>
+		<property name="ContractID">
+			<column name="ContractID" sql-type="nvarchar" length="64" not-null="false" />
+		</property>
+		<property name="PaymentMoney">
+			<column name="PaymentMoney" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="PaymentPerson">
+			<column name="PaymentPerson" sql-type="nvarchar" length="64" not-null="false" />
+		</property>
+		<property name="PaymentDate">
+			<column name="PaymentDate" sql-type="datetime" not-null="false" />
+		</property>
+		<property name="Annex">
+			<column name="Annex" sql-type="nvarchar" length="256" not-null="false" />
+		</property>
+		<property name="FlowState">
+			<column name="FlowState" sql-type="int" not-null="false" />
+		</property>
+		<property name="Notes">
+			<column name="Notes" sql-type="nvarchar(max)" not-null="false" />
+		</property>
+		<property name="InputPerson">
+			<column name="InputPerson" sql-type="nvarchar" length="64" not-null="false" />
+		</property>
+		<property name="InputDate">
+			<column name="InputDate" sql-type="datetime" not-null="false" />
+		</property>
+		<property name="ContainPending">
+			<column name="ContainPending" sql-type="bit" not-null="false" />
+		</property>
+    <property name="PayType">
+      <column name="PayType" sql-type="smallint" not-null="false" />
+    </property>
+    <property name="CapitalNumber">
+      <column name="CapitalNumber" sql-type="nvarchar" length="1000" not-null="false" />
+    </property>
+    <property name="MonthPlanUID">
+      <column name="MonthPlanUID" sql-type="uniqueidentifier" not-null="false" />
+    </property>
+    <property name="Beneficiary">
+      <column name="Beneficiary" sql-type="nvarchar" length="200" not-null="false" />
+    </property>
+    <property name="Bank">
+      <column name="Bank" sql-type="nvarchar" length="200" not-null="false" />
+    </property>
+    <property name="Account">
+      <column name="Account" sql-type="nvarchar" length="200" not-null="false" />
+    </property>
+  </class>
+</hibernate-mapping>

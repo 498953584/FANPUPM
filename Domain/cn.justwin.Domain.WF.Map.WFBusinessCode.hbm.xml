@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="WFBusinessCode" table="WF_BusinessCode" lazy="true" >
+    <id name="BusinessCode">
+      <column name="BusinessCode" sql-type="varchar" length="3" not-null="true" />
+    </id>
+    <property name="BusinessName">
+      <column name="BusinessName" sql-type="varchar" length="100" not-null="false" />
+    </property>
+    <property name="KeyWord">
+      <column name="KeyWord" sql-type="varchar" length="20" not-null="false" />
+    </property>
+    <property name="LinkTable">
+      <column name="LinkTable" sql-type="varchar" length="50" not-null="false" />
+    </property>
+    <property name="PrimaryField">
+      <column name="PrimaryField" sql-type="varchar" length="50" not-null="false" />
+    </property>
+    <property name="StateField">
+      <column name="StateField" sql-type="varchar" length="50" not-null="false" />
+    </property>
+    <property name="DoWithUrl">
+      <column name="DoWithUrl" sql-type="varchar" length="200" not-null="false" />
+    </property>
+    <property name="LookUrl">
+      <column name="LookUrl" sql-type="varchar" length="200" not-null="false" />
+    </property>
+    <property name="C_MKDM">
+      <column name="C_MKDM" sql-type="varchar" length="14" not-null="false" />
+    </property>
+    <property name="ProjectField">
+      <column name="ProjectField" sql-type="varchar" length="50" not-null="false" />
+    </property>
+    <property name="NameField">
+      <column name="NameField" sql-type="varchar" length="50" not-null="false" />
+    </property>
+  </class>
+</hibernate-mapping>

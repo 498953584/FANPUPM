@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="cn.justwin.Domain.Entities.PTdbm, Domain" table="PT_d_bm" lazy="true">
+		<id name="I_bmdm" type="Int32" unsaved-value="null">
+			<column name="i_bmdm" length="4" sql-type="int" not-null="true" unique="true" index="PK_pt_d_bm"/>
+		</id>
+		<property name="I_sjdm" type="Int32">
+			<column name="i_sjdm" length="4" sql-type="int" not-null="false"/>
+		</property>
+		<property name="V_bmbm" type="String">
+			<column name="v_bmbm" length="20" sql-type="varchar" not-null="false"/>
+		</property>
+		<property name="CorpCode" type="String">
+			<column name="CorpCode" length="2" sql-type="varchar" not-null="false"/>
+		</property>
+		<property name="V_BMMC" type="String">
+			<column name="V_BMMC" length="100" sql-type="varchar" not-null="false"/>
+		</property>
+		<property name="V_bmqc" type="String">
+			<column name="v_bmqc" length="1500" sql-type="nvarchar" not-null="false"/>
+		</property>
+		<property name="I_xh" type="Int32">
+			<column name="i_xh" length="4" sql-type="int" not-null="false"/>
+		</property>
+		<property name="V_bmjx" type="String">
+			<column name="v_bmjx" length="50" sql-type="varchar" not-null="false"/>
+		</property>
+		<property name="I_xjbm" type="Int32">
+			<column name="i_xjbm" length="4" sql-type="int" not-null="false"/>
+		</property>
+		<property name="I_jb" type="Int32">
+			<column name="i_jb" length="4" sql-type="int" not-null="false"/>
+		</property>
+		<property name="C_sfyx" type="String">
+			<column name="c_sfyx" length="1" sql-type="char" not-null="false"/>
+		</property>
+		<property name="Adss" type="String">
+			<column name="adss" length="100" sql-type="char" not-null="false"/>
+		</property>
+		<property name="Yb" type="String">
+			<column name="yb" length="10" sql-type="char" not-null="false"/>
+		</property>
+		<property name="Fx" type="String">
+			<column name="fx" length="30" sql-type="char" not-null="false"/>
+		</property>
+	</class>
+</hibernate-mapping>

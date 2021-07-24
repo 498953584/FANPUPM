@@ -1,0 +1,45 @@
+html,body{ font:12px "宋体"; color:#264b67; text-align:center; margin:0 auto; padding:0px; background:url(../images/bg.jpg) repeat; overflow:hidden;}
+div,dl,dd,dt,ul,li,p,span,input{ margin:0px; padding:0px;}
+.login-box{ width:1096px; height:100%; text-align:center; margin:0 auto;}
+
+/*------------------------------------左边区域------------------------------------*/
+.login-left{ width:527px; height:528px; background:url(../images/box-bg_l.jpg) no-repeat; float:left}
+.login-left span{  width:376px; height:90px; float:left; margin-top:6px;}
+.login-left span.login-pic{ width:206px; height:263px; float:right; margin:114px 69px 0 0;}
+
+/*------------------------------------右边区域------------------------------------*/
+.login-right{ width:569px; height:528px; background:url(../images/box-bg_r.jpg) no-repeat; float:left;}
+.login-right span{ width:85px; height:22px; float:left; margin:195px 0 14px 43px;}
+.login-right dl{ width:234px; height:70px; margin-left:44px; clear:both; _float:left; _margin:0 0 0 22px;}
+.login-right dd{ width:50px; height:25px; text-align:right; line-height:25px; float:left; margin-top:6px;}
+.login-right dd.checkbox{ width:13px; height:13px; float:left; padding:6px 5px 6px 51px;}
+.check{ width:13px; height:13px; float:left; margin:0px; padding:0px;}
+.login-right dt{ width:179px; height:25px; line-height:25px; float:left; margin-top:6px}
+
+/*-----------------------------------输入框事件-----------------------------------*/
+.input_off{ font:12px Arial; color:#555; width:169px; height:25px; line-height:25px; border:0px; background:url(../images/input-bg.jpg) no-repeat; float:left; border:0px; padding:0px 5px;}
+.input_out{ font:12px Arial; color:#666; width:169px; height:25px; line-height:25px; border:0px; background:url(../images/input-bg.jpg) no-repeat; float:left; border:0px; padding:0px 5px;}
+.input_on{ font:12px Arial; color:#444; width:169px; height:25px; line-height:25px; border:0px; background:url(../images/input-bg_hover.jpg) no-repeat; float:left; border:0px; padding:0px 5px;}
+.input_move{ font:12px Arial; color:#333; width:169px; height:25px; line-height:25px; border:0px; background:url(../images/input-bg_hover.jpg) no-repeat; float:left; border:0px; padding:0px 5px;}
+
+.btn-box{ width:80%; height:26px; line-height:26px; margin:7px 0 0 88px; _margin:0px 0 0 30px; float:left;}
+.login-btn{ width:65px; height:26px; line-height:26px; color:#fff; border:0px; background:url(../images/login-btn_link.jpg) no-repeat; float:left; margin-left:7px; cursor:pointer;}
+.login-btn_down{ width:65px; height:26px; line-height:26px; color:#875100; border:0px; background:url(../images/login-btn_hover.jpg) no-repeat; float:left; margin-left:7px; cursor:pointer;}
+.login-right ul{ float:left; padding:18px 0 0 42px;}
+.login-right li{ width:300px; height:20px; line-height:20px; text-align:left; text-indent:13px; background:url(../images/img.jpg) no-repeat left center; list-style:none; float:left; }
+.login-right li.xx{ width:300px; height:20px; line-height:20px; text-align:left; text-indent:13px; background:none; list-style:none; float:left; }
+
+/*------------------------------------底部区域------------------------------------*/
+.login-bottom{ font:12px Arial; width:1069px; height:190px; background:url(../images/login-bottom_bg.jpg) no-repeat center; clear:both;}
+
+.copyright {background: url('/images/login/imgs/copyright-logo.png') 0 14px;
+				background-repeat: no-repeat; width: 345px; margin: 100px auto; text-align: center;
+				height: 50px; line-height: 40px; text-indent: 92px;}
+
+a:link, a:visited, a:hover, a:active { text-decoration: none; color:#264b67}
+
+/*------------------------------------注册信息------------------------------------*/
+#div-reigster { width: 211px; height: 253px; background-image: url('/UploadFiles/UserLogo/logo3-demo.jpg')}
+#div-register-bottom {top: 170px; height: 50px; position: relative; text-align: left;}
+.login-left li{ vertical-align:middle; width:300px; height:25px; line-height:25px; text-align:left; text-indent:13px; background:url(../images/img.jpg) no-repeat left; list-style:none; float:left; }
+.login-btn_down2{ width:65px; height:26px; line-height:26px; color:#875100; border:0px; background:url(../images/login-btn_hover.jpg) no-repeat;  cursor:pointer;}

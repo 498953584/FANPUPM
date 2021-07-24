@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="BasicSerialNumber" table="Basic_SerialNumber" lazy="true" >
+		<id name="No">
+			<column name="No" sql-type="nvarchar" length="20" not-null="true" />
+		</id>
+		<property name="TableName">
+			<column name="TableName" sql-type="nvarchar" length="30" not-null="true" />
+		</property>
+		<property name="KeyValue">
+			<column name="KeyValue" sql-type="nvarchar" length="200" not-null="true" />
+		</property>
+		<property name="InTime">
+			<column name="InTime" sql-type="datetime" not-null="true" />
+		</property>
+	</class>
+</hibernate-mapping>

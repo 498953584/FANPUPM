@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="BudIndirectDiaryDetails" table="Bud_IndirectDiaryDetails" lazy="true" >
+		<id name="InDiaryDetailsId">
+			<column name="InDiaryDetailsId" sql-type="nvarchar" length="200" not-null="true" />
+		</id>
+		<property name="InDiaryId">
+			<column name="InDiaryId" sql-type="nvarchar" length="200" not-null="false" />
+		</property>
+		<property name="Name">
+			<column name="Name" sql-type="nvarchar" length="200" not-null="true" />
+		</property>
+		<property name="Amount">
+			<column name="Amount" sql-type="decimal" not-null="true" />
+		</property>
+		<property name="CBSCode">
+			<column name="CBSCode" sql-type="nvarchar" length="200" not-null="true" />
+		</property>
+		<property name="Note">
+			<column name="Note" sql-type="nvarchar(max)" not-null="false" />
+		</property>
+		<property name="IndetailsCode">
+			<column name="IndetailsCode" sql-type="nvarchar" length="200" not-null="false" />
+		</property>
+		<property name="PettyCashId">
+			<column name="PettyCashId" sql-type="nvarchar" length="200" not-null="false" />
+		</property>
+		<property name="AuditAmount">
+			<column name="AuditAmount" sql-type="decimal" not-null="true" />
+		</property>
+		<property name="No">
+			<column name="No" sql-type="int" not-null="true" />
+		</property>
+		<property name="ApplyDetailId">
+			<column name="ApplyDetailId" sql-type="nvarchar" length="200" not-null="false" />
+		</property>
+	</class>
+</hibernate-mapping>

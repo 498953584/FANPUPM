@@ -1,0 +1,1324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Pm2ModelStoreContainer" CdmEntityContainer="pm2Entities">
+    <EntitySetMapping Name="Res_Attribute">
+      <EntityTypeMapping TypeName="IsTypeOf(Pm2Model.Res_Attribute)">
+        <MappingFragment StoreEntitySet="Res_Attribute">
+          <ScalarProperty Name="InputUser" ColumnName="InputUser" />
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="AttributeId" ColumnName="AttributeId" />
+          <ScalarProperty Name="AttributeName" ColumnName="AttributeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Res_Price">
+      <EntityTypeMapping TypeName="IsTypeOf(Pm2Model.Res_Price)">
+        <MappingFragment StoreEntitySet="Res_Price">
+          <ScalarProperty Name="InputUser" ColumnName="InputUser" />
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="PriceTypeId" ColumnName="PriceTypeId" />
+          <ScalarProperty Name="PriceValue" ColumnName="PriceValue" />
+          <ScalarProperty Name="ResourceId" ColumnName="ResourceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Res_PriceType">
+      <EntityTypeMapping TypeName="IsTypeOf(Pm2Model.Res_PriceType)">
+        <MappingFragment StoreEntitySet="Res_PriceType">
+          <ScalarProperty Name="UserCodes" ColumnName="UserCodes" />
+          <ScalarProperty Name="InputUser" ColumnName="InputUser" />
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="PriceTypeCode" ColumnName="PriceTypeCode" />
+          <ScalarProperty Name="PriceTypeId" ColumnName="PriceTypeId" />
+          <ScalarProperty Name="PriceTypeName" ColumnName="PriceTypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Res_Resource">
+      <EntityTypeMapping TypeName="IsTypeOf(Pm2Model.Res_Resource)">
+        <MappingFragment StoreEntitySet="Res_Resource">
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="ModelNumber" ColumnName="ModelNumber" />
+          <ScalarProperty Name="SupplierId" ColumnName="SupplierId" />
+          <ScalarProperty Name="Series" ColumnName="Series" />
+          <ScalarProperty Name="InputUser" ColumnName="InputUser" />
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="Brand" ColumnName="Brand" />
+          <ScalarProperty Name="ResourceCode" ColumnName="ResourceCode" />
+          <ScalarProperty Name="ResourceId" ColumnName="ResourceId" />
+          <ScalarProperty Name="ResourceName" ColumnName="ResourceName" />
+          <ScalarProperty Name="Specification" ColumnName="Specification" />
+          <ScalarProperty Name="TaxRate" ColumnName="TaxRate" />
+          <ScalarProperty Name="TechnicalParameter" ColumnName="TechnicalParameter" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Res_ResourceType">
+      <EntityTypeMapping TypeName="IsTypeOf(Pm2Model.Res_ResourceType)">
+        <MappingFragment StoreEntitySet="Res_ResourceType">
+          <ScalarProperty Name="CBSCode" ColumnName="CBSCode" />
+          <ScalarProperty Name="InputUser" ColumnName="InputUser" />
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="IsValid" ColumnName="IsValid" />
+          <ScalarProperty Name="ResourceTypeCode" ColumnName="ResourceTypeCode" />
+          <ScalarProperty Name="ResourceTypeId" ColumnName="ResourceTypeId" />
+          <ScalarProperty Name="ResourceTypeName" ColumnName="ResourceTypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Res_Unit">
+      <EntityTypeMapping TypeName="IsTypeOf(Pm2Model.Res_Unit)">
+        <MappingFragment StoreEntitySet="Res_Unit">
+          <ScalarProperty Name="InputUser" ColumnName="InputUser" />
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="UnitId" ColumnName="UnitId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FK__Res_Attri__Resou__1A4AB916" TypeName="Pm2Model.FK__Res_Attri__Resou__1A4AB916" StoreEntitySet="Res_Attribute">
+      <EndProperty Name="Res_ResourceType">
+        <ScalarProperty Name="ResourceTypeId" ColumnName="ResourceTypeId" />
+      </EndProperty>
+      <EndProperty Name="Res_Attribute">
+        <ScalarProperty Name="AttributeId" ColumnName="AttributeId" />
+      </EndProperty>
+      <Condition ColumnName="ResourceTypeId" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK__Res_Resou__Resou__10C14EDC" TypeName="Pm2Model.FK__Res_Resou__Resou__10C14EDC" StoreEntitySet="Res_Resource">
+      <EndProperty Name="Res_ResourceType">
+        <ScalarProperty Name="ResourceTypeId" ColumnName="ResourceType" />
+      </EndProperty>
+      <EndProperty Name="Res_Resource">
+        <ScalarProperty Name="ResourceId" ColumnName="ResourceId" />
+      </EndProperty>
+      <Condition ColumnName="ResourceType" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK__Res_Resour__Unit__11B57315" TypeName="Pm2Model.FK__Res_Resour__Unit__11B57315" StoreEntitySet="Res_Resource">
+      <EndProperty Name="Res_Unit">
+        <ScalarProperty Name="UnitId" ColumnName="Unit" />
+      </EndProperty>
+      <EndProperty Name="Res_Resource">
+        <ScalarProperty Name="ResourceId" ColumnName="ResourceId" />
+      </EndProperty>
+      <Condition ColumnName="Unit" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK__Res_Resou__Paren__0DE4E231" TypeName="Pm2Model.FK__Res_Resou__Paren__0DE4E231" StoreEntitySet="Res_ResourceType">
+      <EndProperty Name="Res_ResourceType">
+        <ScalarProperty Name="ResourceTypeId" ColumnName="ParentId" />
+      </EndProperty>
+      <EndProperty Name="Res_ResourceType1">
+        <ScalarProperty Name="ResourceTypeId" ColumnName="ResourceTypeId" />
+      </EndProperty>
+      <Condition ColumnName="ParentId" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK__Res_Resou__Attri__7D446614" TypeName="Pm2Model.FK__Res_Resou__Attri__7D446614" StoreEntitySet="Res_Resource">
+      <EndProperty Name="Res_Resource">
+        <ScalarProperty Name="ResourceId" ColumnName="ResourceId" />
+      </EndProperty>
+      <EndProperty Name="Res_Attribute">
+        <ScalarProperty Name="AttributeId" ColumnName="Attribute" />
+      </EndProperty>
+      <Condition ColumnName="Attribute" IsNull="false" />
+    </AssociationSetMapping>
+    <EntitySetMapping Name="Res_Template">
+      <EntityTypeMapping TypeName="IsTypeOf(Pm2Model.Res_Template)">
+        <MappingFragment StoreEntitySet="Res_Template">
+          <ScalarProperty Name="InputUser" ColumnName="InputUser" />
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="IsValid" ColumnName="IsValid" />
+          <ScalarProperty Name="StartRowIndex" ColumnName="StartRowIndex" />
+          <ScalarProperty Name="TemplateName" ColumnName="TemplateName" />
+          <ScalarProperty Name="TemplateId" ColumnName="TemplateId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Res_TemplateItem">
+      <EntityTypeMapping TypeName="IsTypeOf(Pm2Model.Res_TemplateItem)">
+        <MappingFragment StoreEntitySet="Res_TemplateItem">
+          <ScalarProperty Name="ExcelRealCoumn" ColumnName="ExcelRealCoumn" />
+          <ScalarProperty Name="DbColumn" ColumnName="DbColumn" />
+          <ScalarProperty Name="ExcelColumn" ColumnName="ExcelColumn" />
+          <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FK__Res_Templ__Templ__61674175" TypeName="Pm2Model.FK__Res_Templ__Templ__61674175" StoreEntitySet="Res_TemplateItem">
+      <EndProperty Name="Res_TemplateItem">
+        <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+      </EndProperty>
+      <EndProperty Name="Res_Template">
+        <ScalarProperty Name="TemplateId" ColumnName="TemplateId" />
+      </EndProperty>
+      <Condition ColumnName="TemplateId" IsNull="false" />
+    </AssociationSetMapping>
+    <EntitySetMapping Name="Bud_Template">
+      <EntityTypeMapping TypeName="IsTypeOf(Pm2Model.Bud_Template)">
+        <MappingFragment StoreEntitySet="Bud_Template">
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="InputUser" ColumnName="InputUser" />
+          <ScalarProperty Name="TemplateName" ColumnName="TemplateName" />
+          <ScalarProperty Name="TemplateCode" ColumnName="TemplateCode" />
+          <ScalarProperty Name="TemplateId" ColumnName="TemplateId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bud_TemplateType">
+      <EntityTypeMapping TypeName="IsTypeOf(Pm2Model.Bud_TemplateType)">
+        <MappingFragment StoreEntitySet="Bud_TemplateType">
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="InputUser" ColumnName="InputUser" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+          <ScalarProperty Name="TypeCode" ColumnName="TypeCode" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FK__Bud_Templ__Templ__2611717D" TypeName="Pm2Model.FK__Bud_Templ__Templ__2611717D" StoreEntitySet="Bud_Template">
+      <EndProperty Name="Bud_Template">
+        <ScalarProperty Name="TemplateId" ColumnName="TemplateId" />
+      </EndProperty>
+      <EndProperty Name="Bud_TemplateType">
+        <ScalarProperty Name="TypeId" ColumnName="TemplateTypeId" />
+      </EndProperty>
+      <Condition ColumnName="TemplateTypeId" IsNull="false" />
+    </AssociationSetMapping>
+    <EntitySetMapping Name="Bud_Task">
+      <EntityTypeMapping TypeName="IsTypeOf(Pm2Model.Bud_Task)">
+        <MappingFragment StoreEntitySet="Bud_Task">
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="IsValid" ColumnName="IsValid" />
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="InputUser" ColumnName="InputUser" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="TaskName" ColumnName="TaskName" />
+          <ScalarProperty Name="TaskCode" ColumnName="TaskCode" />
+          <ScalarProperty Name="PrjId" ColumnName="PrjId" />
+          <ScalarProperty Name="TaskId" ColumnName="TaskId" />
+          <ScalarProperty Name="Total2" ColumnName="Total2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bud_TaskResource">
+      <EntityTypeMapping TypeName="IsTypeOf(Pm2Model.Bud_TaskResource)">
+        <MappingFragment StoreEntitySet="Bud_TaskResource">
+          <ScalarProperty Name="Versions" ColumnName="Versions" />
+          <ScalarProperty Name="PrjGuid" ColumnName="PrjGuid" />
+          <ScalarProperty Name="ResourcePrice" ColumnName="ResourcePrice" />
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="InputUser" ColumnName="InputUser" />
+          <ScalarProperty Name="ResourceQuantity" ColumnName="ResourceQuantity" />
+          <ScalarProperty Name="TaskResourceId" ColumnName="TaskResourceId" />
+          <ScalarProperty Name="LossCoefficient" ColumnName="LossCoefficient" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FK__Bud_TaskR__TaskI__269B8162" TypeName="Pm2Model.FK__Bud_TaskR__TaskI__269B8162" StoreEntitySet="Bud_TaskResource">
+      <EndProperty Name="Bud_TaskResource">
+        <ScalarProperty Name="TaskResourceId" ColumnName="TaskResourceId" />
+      </EndProperty>
+      <EndProperty Name="Bud_Task">
+        <ScalarProperty Name="TaskId" ColumnName="TaskId" />
+      </EndProperty>
+      <Condition ColumnName="TaskId" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK__Bud_TaskR__Resou__278FA59B" TypeName="Pm2Model.FK__Bud_TaskR__Resou__278FA59B" StoreEntitySet="Bud_TaskResource">
+      <EndProperty Name="Bud_TaskResource">
+        <ScalarProperty Name="TaskResourceId" ColumnName="TaskResourceId" />
+      </EndProperty>
+      <EndProperty Name="Res_Resource">
+        <ScalarProperty Name="ResourceId" ColumnName="ResourceId" />
+      </EndProperty>
+      <Condition ColumnName="ResourceId" IsNull="false" />
+    </AssociationSetMapping>
+    <EntitySetMapping Name="PT_PrjInfo">
+      <EntityTypeMapping TypeName="IsTypeOf(Pm2Model.PT_PrjInfo)">
+        <MappingFragment StoreEntitySet="PT_PrjInfo">
+          <ScalarProperty Name="telephone" ColumnName="telephone" />
+          <ScalarProperty Name="businessman" ColumnName="businessman" />
+          <ScalarProperty Name="grade" ColumnName="grade" />
+          <ScalarProperty Name="xmgroup" ColumnName="xmgroup" />
+          <ScalarProperty Name="PrjStateRemark" ColumnName="PrjStateRemark" />
+          <ScalarProperty Name="IsConfirm" ColumnName="IsConfirm" />
+          <ScalarProperty Name="Podepom" ColumnName="Podepom" />
+          <ScalarProperty Name="OtherStatement" ColumnName="OtherStatement" />
+          <ScalarProperty Name="PrjFundInfo" ColumnName="PrjFundInfo" />
+          <ScalarProperty Name="UndergroundArea" ColumnName="UndergroundArea" />
+          <ScalarProperty Name="UsegrounArea" ColumnName="UsegrounArea" />
+          <ScalarProperty Name="BuildingArea" ColumnName="BuildingArea" />
+          <ScalarProperty Name="TotalHouseNum" ColumnName="TotalHouseNum" />
+          <ScalarProperty Name="BuildingType" ColumnName="BuildingType" />
+          <ScalarProperty Name="PrjManager" ColumnName="PrjManager" />
+          <ScalarProperty Name="LinkMan" ColumnName="LinkMan" />
+          <ScalarProperty Name="WorkUnit" ColumnName="WorkUnit" />
+          <ScalarProperty Name="KeyPart" ColumnName="KeyPart" />
+          <ScalarProperty Name="PayWay" ColumnName="PayWay" />
+          <ScalarProperty Name="TenderWay" ColumnName="TenderWay" />
+          <ScalarProperty Name="PayCondition" ColumnName="PayCondition" />
+          <ScalarProperty Name="ContractWay" ColumnName="ContractWay" />
+          <ScalarProperty Name="BudgetWay" ColumnName="BudgetWay" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+          <ScalarProperty Name="MarketInfoGuid" ColumnName="MarketInfoGuid" />
+          <ScalarProperty Name="OwnerCode" ColumnName="OwnerCode" />
+          <ScalarProperty Name="PrjState" ColumnName="PrjState" />
+          <ScalarProperty Name="PrjInfo" ColumnName="PrjInfo" />
+          <ScalarProperty Name="Inspector" ColumnName="Inspector" />
+          <ScalarProperty Name="Designer" ColumnName="Designer" />
+          <ScalarProperty Name="Counsellor" ColumnName="Counsellor" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="FileURL" ColumnName="FileURL" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="Remark1" ColumnName="Remark1" />
+          <ScalarProperty Name="PrjPlace" ColumnName="PrjPlace" />
+          <ScalarProperty Name="PrjKindClass" ColumnName="PrjKindClass" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="QualityClass" ColumnName="QualityClass" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ScalarProperty Name="ContractSum" ColumnName="ContractSum" />
+          <ScalarProperty Name="PrjCost" ColumnName="PrjCost" />
+          <ScalarProperty Name="RationClass" ColumnName="RationClass" />
+          <ScalarProperty Name="ComputeClass" ColumnName="ComputeClass" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="PrjName" ColumnName="PrjName" />
+          <ScalarProperty Name="PrjGuid" ColumnName="PrjGuid" />
+          <ScalarProperty Name="PrjCode" ColumnName="PrjCode" />
+          <ScalarProperty Name="i_ChildNum" ColumnName="i_ChildNum" />
+          <ScalarProperty Name="RecordDate" ColumnName="RecordDate" />
+          <ScalarProperty Name="UserCode" ColumnName="UserCode" />
+          <ScalarProperty Name="IsValid" ColumnName="IsValid" />
+          <ScalarProperty Name="i_xh" ColumnName="i_xh" />
+          <ScalarProperty Name="TypeCode" ColumnName="TypeCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bud_PrjTaskInfo">
+      <EntityTypeMapping TypeName="IsTypeOf(Pm2Model.Bud_PrjTaskInfo)">
+        <MappingFragment StoreEntitySet="Bud_PrjTaskInfo">
+          <ScalarProperty Name="ConFlowState" ColumnName="ConFlowState" />
+          <ScalarProperty Name="IsLocked" ColumnName="IsLocked" />
+          <ScalarProperty Name="PrjId" ColumnName="PrjId" />
+          <ScalarProperty Name="PrjTaskInfoId" ColumnName="PrjTaskInfoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bud_TemplateItem">
+      <EntityTypeMapping TypeName="IsTypeOf(Pm2Model.Bud_TemplateItem)">
+        <MappingFragment StoreEntitySet="Bud_TemplateItem">
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+          <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+          <ScalarProperty Name="TemplateItemId" ColumnName="TemplateItemId" />
+          <ScalarProperty Name="FeatureDescription" ColumnName="FeatureDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FK__Bud_Templ__Templ__247E2EC6" TypeName="Pm2Model.FK__Bud_Templ__Templ__247E2EC6" StoreEntitySet="Bud_TemplateItem">
+      <EndProperty Name="Bud_TemplateItem">
+        <ScalarProperty Name="TemplateItemId" ColumnName="TemplateItemId" />
+      </EndProperty>
+      <EndProperty Name="Bud_Template">
+        <ScalarProperty Name="TemplateId" ColumnName="TemplateId" />
+      </EndProperty>
+      <Condition ColumnName="TemplateId" IsNull="false" />
+    </AssociationSetMapping>
+    <EntitySetMapping Name="Bud_TemplateResource">
+      <EntityTypeMapping TypeName="IsTypeOf(Pm2Model.Bud_TemplateResource)">
+        <MappingFragment StoreEntitySet="Bud_TemplateResource">
+          <ScalarProperty Name="ResourcePrice" ColumnName="ResourcePrice" />
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="InputUser" ColumnName="InputUser" />
+          <ScalarProperty Name="ResourceQuantity" ColumnName="ResourceQuantity" />
+          <ScalarProperty Name="TemplateResourceId" ColumnName="TemplateResourceId" />
+          <ScalarProperty Name="LossCoefficient" ColumnName="LossCoefficient" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FK__Bud_Templ__Resou__338B682C" TypeName="Pm2Model.FK__Bud_Templ__Resou__338B682C" StoreEntitySet="Bud_TemplateResource">
+      <EndProperty Name="Bud_TemplateResource">
+        <ScalarProperty Name="TemplateResourceId" ColumnName="TemplateResourceId" />
+      </EndProperty>
+      <EndProperty Name="Res_Resource">
+        <ScalarProperty Name="ResourceId" ColumnName="ResourceId" />
+      </EndProperty>
+      <Condition ColumnName="ResourceId" IsNull="false" />
+    </AssociationSetMapping>
+    <EntitySetMapping Name="XPM_Basic_ContactCorp">
+      <EntityTypeMapping TypeName="IsTypeOf(Pm2Model.XPM_Basic_ContactCorp)">
+        <MappingFragment StoreEntitySet="XPM_Basic_ContactCorp">
+          <ScalarProperty Name="IsHot" ColumnName="IsHot" />
+          <ScalarProperty Name="Contry" ColumnName="Contry" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Brand" ColumnName="Brand" />
+          <ScalarProperty Name="UserCode" ColumnName="UserCode" />
+          <ScalarProperty Name="AuditState" ColumnName="AuditState" />
+          <ScalarProperty Name="FlowGuid" ColumnName="FlowGuid" />
+          <ScalarProperty Name="VersionTime" ColumnName="VersionTime" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="IsValid" ColumnName="IsValid" />
+          <ScalarProperty Name="IsFixed" ColumnName="IsFixed" />
+          <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+          <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+          <ScalarProperty Name="Client" ColumnName="Client" />
+          <ScalarProperty Name="PeopleNumber" ColumnName="PeopleNumber" />
+          <ScalarProperty Name="WebSite" ColumnName="WebSite" />
+          <ScalarProperty Name="PostCode" ColumnName="PostCode" />
+          <ScalarProperty Name="Zone" ColumnName="Zone" />
+          <ScalarProperty Name="BankAccounts" ColumnName="BankAccounts" />
+          <ScalarProperty Name="AccountBank" ColumnName="AccountBank" />
+          <ScalarProperty Name="TaxCard" ColumnName="TaxCard" />
+          <ScalarProperty Name="ShopCard" ColumnName="ShopCard" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="HandPhone" ColumnName="HandPhone" />
+          <ScalarProperty Name="IFProvider" ColumnName="IFProvider" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="LinkMan" ColumnName="LinkMan" />
+          <ScalarProperty Name="Corporation" ColumnName="Corporation" />
+          <ScalarProperty Name="CorpBrief" ColumnName="CorpBrief" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="UnderlayAbility" ColumnName="UnderlayAbility" />
+          <ScalarProperty Name="Capital" ColumnName="Capital" />
+          <ScalarProperty Name="Aptitude" ColumnName="Aptitude" />
+          <ScalarProperty Name="Speciality" ColumnName="Speciality" />
+          <ScalarProperty Name="WorkType" ColumnName="WorkType" />
+          <ScalarProperty Name="CorpKind" ColumnName="CorpKind" />
+          <ScalarProperty Name="CorpName" ColumnName="CorpName" />
+          <ScalarProperty Name="CorpTypeID" ColumnName="CorpTypeID" />
+          <ScalarProperty Name="CorpID" ColumnName="CorpID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FK__Bud_Templ__Templ__6DB809C1" TypeName="Pm2Model.FK__Bud_Templ__Templ__6DB809C1" StoreEntitySet="Bud_TemplateResource">
+      <EndProperty Name="Bud_TemplateResource">
+        <ScalarProperty Name="TemplateResourceId" ColumnName="TemplateResourceId" />
+      </EndProperty>
+      <EndProperty Name="Bud_TemplateItem">
+        <ScalarProperty Name="TemplateItemId" ColumnName="TemplateItemId" />
+      </EndProperty>
+      <Condition ColumnName="TemplateItemId" IsNull="false" />
+    </AssociationSetMapping>
+    <EntitySetMapping Name="XPM_Basic_CodeList">
+      <EntityTypeMapping TypeName="IsTypeOf(Pm2Model.XPM_Basic_CodeList)">
+        <MappingFragment StoreEntitySet="XPM_Basic_CodeList">
+          <ScalarProperty Name="I_xh" ColumnName="I_xh" />
+          <ScalarProperty Name="VersionTime" ColumnName="VersionTime" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+          <ScalarProperty Name="IsValid" ColumnName="IsValid" />
+          <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+          <ScalarProperty Name="IsFixed" ColumnName="IsFixed" />
+          <ScalarProperty Name="ChildNumber" ColumnName="ChildNumber" />
+          <ScalarProperty Name="CodeName" ColumnName="CodeName" />
+          <ScalarProperty Name="ParentCodeList" ColumnName="ParentCodeList" />
+          <ScalarProperty Name="ParentCodeID" ColumnName="ParentCodeID" />
+          <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+          <ScalarProperty Name="CodeID" ColumnName="CodeID" />
+          <ScalarProperty Name="NoteID" ColumnName="NoteID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="XPM_Basic_CodeType">
+      <EntityTypeMapping TypeName="IsTypeOf(Pm2Model.XPM_Basic_CodeType)">
+        <MappingFragment StoreEntitySet="XPM_Basic_CodeType">
+          <ScalarProperty Name="ContractCropType" ColumnName="ContractCropType" />
+          <ScalarProperty Name="VersionTime" ColumnName="VersionTime" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="SignCode" ColumnName="SignCode" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="IsValid" ColumnName="IsValid" />
+          <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+          <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bud_ContractResource">
+      <EntityTypeMapping TypeName="IsTypeOf(Pm2Model.Bud_ContractResource)">
+        <MappingFragment StoreEntitySet="Bud_ContractResource">
+          <ScalarProperty Name="PrjGuid" ColumnName="PrjGuid" />
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="InputUser" ColumnName="InputUser" />
+          <ScalarProperty Name="ResourcePrice" ColumnName="ResourcePrice" />
+          <ScalarProperty Name="ResourceQuantity" ColumnName="ResourceQuantity" />
+          <ScalarProperty Name="TaskResourceId" ColumnName="TaskResourceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bud_ContractTask">
+      <EntityTypeMapping TypeName="IsTypeOf(Pm2Model.Bud_ContractTask)">
+        <MappingFragment StoreEntitySet="Bud_ContractTask">
+          <ScalarProperty Name="TaskType" ColumnName="TaskType" />
+          <ScalarProperty Name="ConstructionPeriod" ColumnName="ConstructionPeriod" />
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="InputUser" ColumnName="InputUser" />
+          <ScalarProperty Name="IsValid" ColumnName="IsValid" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="TaskName" ColumnName="TaskName" />
+          <ScalarProperty Name="TaskCode" ColumnName="TaskCode" />
+          <ScalarProperty Name="PrjId" ColumnName="PrjId" />
+          <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="TaskId" ColumnName="TaskId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Res_ResourceTemp">
+      <EntityTypeMapping TypeName="IsTypeOf(Pm2Model.Res_ResourceTemp)">
+        <MappingFragment StoreEntitySet="Res_ResourceTemp">
+          <ScalarProperty Name="PrjId" ColumnName="PrjId" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="ResourceName" ColumnName="ResourceName" />
+          <ScalarProperty Name="ResourceCode" ColumnName="ResourceCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FK__Bud_Contr__Resou__705F6C42" TypeName="Pm2Model.FK__Bud_Contr__Resou__705F6C42" StoreEntitySet="Bud_ContractResource">
+      <EndProperty Name="Bud_ContractResource">
+        <ScalarProperty Name="TaskResourceId" ColumnName="TaskResourceId" />
+      </EndProperty>
+      <EndProperty Name="Res_Resource">
+        <ScalarProperty Name="ResourceId" ColumnName="ResourceId" />
+      </EndProperty>
+      <Condition ColumnName="ResourceId" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK__Bud_Contr__TaskI__6F6B4809" TypeName="Pm2Model.FK__Bud_Contr__TaskI__6F6B4809" StoreEntitySet="Bud_ContractResource">
+      <EndProperty Name="Bud_ContractResource">
+        <ScalarProperty Name="TaskResourceId" ColumnName="TaskResourceId" />
+      </EndProperty>
+      <EndProperty Name="Bud_ContractTask">
+        <ScalarProperty Name="TaskId" ColumnName="TaskId" />
+      </EndProperty>
+      <Condition ColumnName="TaskId" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK__Res_Resou__TaskI__63F9955D" TypeName="Pm2Model.FK__Res_Resou__TaskI__63F9955D" StoreEntitySet="Res_ResourceTemp">
+      <EndProperty Name="Res_ResourceTemp">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="Bud_Task">
+        <ScalarProperty Name="TaskId" ColumnName="TaskId" />
+      </EndProperty>
+      <Condition ColumnName="TaskId" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK__Res_Resou__Resou__63057124" TypeName="Pm2Model.FK__Res_Resou__Resou__63057124" StoreEntitySet="Res_ResourceTemp">
+      <EndProperty Name="Res_ResourceTemp">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="Res_Resource">
+        <ScalarProperty Name="ResourceId" ColumnName="ResourceId" />
+      </EndProperty>
+      <Condition ColumnName="ResourceId" IsNull="false" />
+    </AssociationSetMapping>
+    <EntitySetMapping Name="Bud_ConsReport">
+      <EntityTypeMapping TypeName="IsTypeOf(Pm2Model.Bud_ConsReport)">
+        <MappingFragment StoreEntitySet="Bud_ConsReport">
+          <ScalarProperty Name="FlowState" ColumnName="FlowState" />
+          <ScalarProperty Name="CancelAuditReason" ColumnName="CancelAuditReason" />
+          <ScalarProperty Name="CancelReportReason" ColumnName="CancelReportReason" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="IsValid" ColumnName="IsValid" />
+          <ScalarProperty Name="WorkCard" ColumnName="WorkCard" />
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="InputUser" ColumnName="InputUser" />
+          <ScalarProperty Name="PrjId" ColumnName="PrjId" />
+          <ScalarProperty Name="ConsReportId" ColumnName="ConsReportId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bud_CostAccounting">
+      <EntityTypeMapping TypeName="IsTypeOf(Pm2Model.Bud_CostAccounting)">
+        <MappingFragment StoreEntitySet="Bud_CostAccounting">
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="ResourceType" ColumnName="ResourceType" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CBSCode" ColumnName="CBSCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bud_IndirectBudget">
+      <EntityTypeMapping TypeName="IsTypeOf(Pm2Model.Bud_IndirectBudget)">
+        <MappingFragment StoreEntitySet="Bud_IndirectBudget">
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="InputUser" ColumnName="InputUser" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="AccountAmount" ColumnName="AccountAmount" />
+          <ScalarProperty Name="BudgetAmount" ColumnName="BudgetAmount" />
+          <ScalarProperty Name="CBSCode" ColumnName="CBSCode" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bud_IndirectDiaryCost">
+      <EntityTypeMapping TypeName="IsTypeOf(Pm2Model.Bud_IndirectDiaryCost)">
+        <MappingFragment StoreEntitySet="Bud_IndirectDiaryCost">
+          <ScalarProperty Name="IndireCode" ColumnName="IndireCode" />
+          <ScalarProperty Name="FlowState" ColumnName="FlowState" />
+          <ScalarProperty Name="InDiaryId" ColumnName="InDiaryId" />
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="InputUser" ColumnName="InputUser" />
+          <ScalarProperty Name="IssuedBy" ColumnName="IssuedBy" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bud_IndirectDiaryDetails">
+      <EntityTypeMapping TypeName="IsTypeOf(Pm2Model.Bud_IndirectDiaryDetails)">
+        <MappingFragment StoreEntitySet="Bud_IndirectDiaryDetails">
+          <ScalarProperty Name="IndetailsCode" ColumnName="IndetailsCode" />
+          <ScalarProperty Name="InDiaryDetailsId" ColumnName="InDiaryDetailsId" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="CBSCode" ColumnName="CBSCode" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bud_IndirectMonthBudget">
+      <EntityTypeMapping TypeName="IsTypeOf(Pm2Model.Bud_IndirectMonthBudget)">
+        <MappingFragment StoreEntitySet="Bud_IndirectMonthBudget">
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Month" ColumnName="Month" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bud_OrganizationBudget">
+      <EntityTypeMapping TypeName="IsTypeOf(Pm2Model.Bud_OrganizationBudget)">
+        <MappingFragment StoreEntitySet="Bud_OrganizationBudget">
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="InputUser" ColumnName="InputUser" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="AccountingAmount" ColumnName="AccountingAmount" />
+          <ScalarProperty Name="BudgetAmount" ColumnName="BudgetAmount" />
+          <ScalarProperty Name="CBSCode" ColumnName="CBSCode" />
+          <ScalarProperty Name="OrganizationBudgetId" ColumnName="OrganizationBudgetId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FK__Bud_Indir__Indir__0801EBA9" TypeName="Pm2Model.FK__Bud_Indir__Indir__0801EBA9" StoreEntitySet="Bud_IndirectMonthBudget">
+      <EndProperty Name="Bud_IndirectMonthBudget">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="Bud_IndirectBudget">
+        <ScalarProperty Name="Id" ColumnName="IndirectBudget" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK__Bud_Indir__InDia__0D85BAD5" TypeName="Pm2Model.FK__Bud_Indir__InDia__0D85BAD5" StoreEntitySet="Bud_IndirectDiaryDetails">
+      <EndProperty Name="Bud_IndirectDiaryDetails">
+        <ScalarProperty Name="InDiaryDetailsId" ColumnName="InDiaryDetailsId" />
+      </EndProperty>
+      <EndProperty Name="Bud_IndirectDiaryCost">
+        <ScalarProperty Name="InDiaryId" ColumnName="InDiaryId" />
+      </EndProperty>
+      <Condition ColumnName="InDiaryId" IsNull="false" />
+    </AssociationSetMapping>
+    <EntitySetMapping Name="Bud_OrganizationMonthBudget">
+      <EntityTypeMapping TypeName="IsTypeOf(Pm2Model.Bud_OrganizationMonthBudget)">
+        <MappingFragment StoreEntitySet="Bud_OrganizationMonthBudget">
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Month" ColumnName="Month" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FK__Bud_Organ__Organ__69D26A44" TypeName="Pm2Model.FK__Bud_Organ__Organ__69D26A44" StoreEntitySet="Bud_OrganizationMonthBudget">
+      <EndProperty Name="Bud_OrganizationMonthBudget">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="Bud_OrganizationBudget">
+        <ScalarProperty Name="Id" ColumnName="OrganizationBudget" />
+      </EndProperty>
+      <Condition ColumnName="OrganizationBudget" IsNull="false" />
+    </AssociationSetMapping>
+    <EntitySetMapping Name="Bud_OrgDiaryCost">
+      <EntityTypeMapping TypeName="IsTypeOf(Pm2Model.Bud_OrgDiaryCost)">
+        <MappingFragment StoreEntitySet="Bud_OrgDiaryCost">
+          <ScalarProperty Name="OrgdiaryCode" ColumnName="OrgdiaryCode" />
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="InputUser" ColumnName="InputUser" />
+          <ScalarProperty Name="FlowState" ColumnName="FlowState" />
+          <ScalarProperty Name="IssuedBy" ColumnName="IssuedBy" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="OrgId" ColumnName="OrgId" />
+          <ScalarProperty Name="OrgDiaryId" ColumnName="OrgDiaryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bud_OrgDiaryDetails">
+      <EntityTypeMapping TypeName="IsTypeOf(Pm2Model.Bud_OrgDiaryDetails)">
+        <MappingFragment StoreEntitySet="Bud_OrgDiaryDetails">
+          <ScalarProperty Name="OrgdetailsCode" ColumnName="OrgdetailsCode" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="CBSCode" ColumnName="CBSCode" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="OrgDiaryDetailsId" ColumnName="OrgDiaryDetailsId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FK__Bud_OrgDi__OrgDi__48C67C34" TypeName="Pm2Model.FK__Bud_OrgDi__OrgDi__48C67C34" StoreEntitySet="Bud_OrgDiaryDetails">
+      <EndProperty Name="Bud_OrgDiaryDetails">
+        <ScalarProperty Name="OrgDiaryDetailsId" ColumnName="OrgDiaryDetailsId" />
+      </EndProperty>
+      <EndProperty Name="Bud_OrgDiaryCost">
+        <ScalarProperty Name="OrgDiaryId" ColumnName="OrgDiaryId" />
+      </EndProperty>
+      <Condition ColumnName="OrgDiaryId" IsNull="false" />
+    </AssociationSetMapping>
+    <EntitySetMapping Name="PT_PrjInfo_ZTB">
+      <EntityTypeMapping TypeName="IsTypeOf(Pm2Model.PT_PrjInfo_ZTB)">
+        <MappingFragment StoreEntitySet="PT_PrjInfo_ZTB">
+          <ScalarProperty Name="OtherStatement" ColumnName="OtherStatement" />
+          <ScalarProperty Name="PrjFundInfo" ColumnName="PrjFundInfo" />
+          <ScalarProperty Name="UndergroundArea" ColumnName="UndergroundArea" />
+          <ScalarProperty Name="UsegrounArea" ColumnName="UsegrounArea" />
+          <ScalarProperty Name="BuildingArea" ColumnName="BuildingArea" />
+          <ScalarProperty Name="TotalHouseNum" ColumnName="TotalHouseNum" />
+          <ScalarProperty Name="BuildingType" ColumnName="BuildingType" />
+          <ScalarProperty Name="PrjManager" ColumnName="PrjManager" />
+          <ScalarProperty Name="LinkMan" ColumnName="LinkMan" />
+          <ScalarProperty Name="WorkUnit" ColumnName="WorkUnit" />
+          <ScalarProperty Name="KeyPart" ColumnName="KeyPart" />
+          <ScalarProperty Name="PayWay" ColumnName="PayWay" />
+          <ScalarProperty Name="TenderWay" ColumnName="TenderWay" />
+          <ScalarProperty Name="PayCondition" ColumnName="PayCondition" />
+          <ScalarProperty Name="ContractWay" ColumnName="ContractWay" />
+          <ScalarProperty Name="BudgetWay" ColumnName="BudgetWay" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+          <ScalarProperty Name="MarketInfoGuid" ColumnName="MarketInfoGuid" />
+          <ScalarProperty Name="OwnerCode" ColumnName="OwnerCode" />
+          <ScalarProperty Name="PrjState" ColumnName="PrjState" />
+          <ScalarProperty Name="PrjInfo" ColumnName="PrjInfo" />
+          <ScalarProperty Name="Inspector" ColumnName="Inspector" />
+          <ScalarProperty Name="Designer" ColumnName="Designer" />
+          <ScalarProperty Name="Counsellor" ColumnName="Counsellor" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="FileURL" ColumnName="FileURL" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="PrjPlace" ColumnName="PrjPlace" />
+          <ScalarProperty Name="PrjKindClass" ColumnName="PrjKindClass" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="QualityClass" ColumnName="QualityClass" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ScalarProperty Name="ContractSum" ColumnName="ContractSum" />
+          <ScalarProperty Name="PrjCost" ColumnName="PrjCost" />
+          <ScalarProperty Name="RationClass" ColumnName="RationClass" />
+          <ScalarProperty Name="ComputeClass" ColumnName="ComputeClass" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="PrjName" ColumnName="PrjName" />
+          <ScalarProperty Name="PrjGuid" ColumnName="PrjGuid" />
+          <ScalarProperty Name="PrjCode" ColumnName="PrjCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PT_PrjInfo_ZTB_Detail">
+      <EntityTypeMapping TypeName="IsTypeOf(Pm2Model.PT_PrjInfo_ZTB_Detail)">
+        <MappingFragment StoreEntitySet="PT_PrjInfo_ZTB_Detail">
+          <ScalarProperty Name="ParkArea" ColumnName="ParkArea" />
+          <ScalarProperty Name="AfforestArea" ColumnName="AfforestArea" />
+          <ScalarProperty Name="TenderReadOne" ColumnName="TenderReadOne" />
+          <ScalarProperty Name="TenderProspect" ColumnName="TenderProspect" />
+          <ScalarProperty Name="QualificationReadOne" ColumnName="QualificationReadOne" />
+          <ScalarProperty Name="QualificationMargin" ColumnName="QualificationMargin" />
+          <ScalarProperty Name="PrjReadOne" ColumnName="PrjReadOne" />
+          <ScalarProperty Name="PrjProperty" ColumnName="PrjProperty" />
+          <ScalarProperty Name="SetUpFlowState" ColumnName="SetUpFlowState" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Province" ColumnName="Province" />
+          <ScalarProperty Name="QualificationFailReason" ColumnName="QualificationFailReason" />
+          <ScalarProperty Name="QualificationFailData" ColumnName="QualificationFailData" />
+          <ScalarProperty Name="QualificationPassReason" ColumnName="QualificationPassReason" />
+          <ScalarProperty Name="QualificationPassDate" ColumnName="QualificationPassDate" />
+          <ScalarProperty Name="PrequalificationRequire" ColumnName="PrequalificationRequire" />
+          <ScalarProperty Name="TechnicalLeaderRequire" ColumnName="TechnicalLeaderRequire" />
+          <ScalarProperty Name="PrjManagerRequire" ColumnName="PrjManagerRequire" />
+          <ScalarProperty Name="CompletedNote" ColumnName="CompletedNote" />
+          <ScalarProperty Name="OwnerAddress" ColumnName="OwnerAddress" />
+          <ScalarProperty Name="ProjPeopleDuty" ColumnName="ProjPeopleDuty" />
+          <ScalarProperty Name="ProjPeopleDep" ColumnName="ProjPeopleDep" />
+          <ScalarProperty Name="CompletedDate" ColumnName="CompletedDate" />
+          <ScalarProperty Name="CompletedFlowState" ColumnName="CompletedFlowState" />
+          <ScalarProperty Name="MemberFlowState" ColumnName="MemberFlowState" />
+          <ScalarProperty Name="EngineeringEstimates" ColumnName="EngineeringEstimates" />
+          <ScalarProperty Name="ElseMargin" ColumnName="ElseMargin" />
+          <ScalarProperty Name="PerformanceBond" ColumnName="PerformanceBond" />
+          <ScalarProperty Name="WithholdingTaxRate" ColumnName="WithholdingTaxRate" />
+          <ScalarProperty Name="MigrantQualityMarginRate" ColumnName="MigrantQualityMarginRate" />
+          <ScalarProperty Name="ManagementMargin" ColumnName="ManagementMargin" />
+          <ScalarProperty Name="ForecastProfitRate" ColumnName="ForecastProfitRate" />
+          <ScalarProperty Name="PrjFundWorkable" ColumnName="PrjFundWorkable" />
+          <ScalarProperty Name="PrjApprovalOf" ColumnName="PrjApprovalOf" />
+          <ScalarProperty Name="PrjDutyPerson" ColumnName="PrjDutyPerson" />
+          <ScalarProperty Name="ActualRunDate" ColumnName="ActualRunDate" />
+          <ScalarProperty Name="OwnerLinkPhone" ColumnName="OwnerLinkPhone" />
+          <ScalarProperty Name="OwnerLinkMan" ColumnName="OwnerLinkMan" />
+          <ScalarProperty Name="InputUser" ColumnName="InputUser" />
+          <ScalarProperty Name="IsTender" ColumnName="IsTender" />
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="EngineeringSubType" ColumnName="EngineeringSubType" />
+          <ScalarProperty Name="Grade" ColumnName="Grade" />
+          <ScalarProperty Name="EngineeringType" ColumnName="EngineeringType" />
+          <ScalarProperty Name="BuildingTypeNo" ColumnName="BuildingTypeNo" />
+          <ScalarProperty Name="ProjFlowSate" ColumnName="ProjFlowSate" />
+          <ScalarProperty Name="OutBidRemark" ColumnName="OutBidRemark" />
+          <ScalarProperty Name="OutBidIsReturn" ColumnName="OutBidIsReturn" />
+          <ScalarProperty Name="OutBidDate" ColumnName="OutBidDate" />
+          <ScalarProperty Name="SuccessBidRemark" ColumnName="SuccessBidRemark" />
+          <ScalarProperty Name="SuccessBidPrice" ColumnName="SuccessBidPrice" />
+          <ScalarProperty Name="SuccessBidDate" ColumnName="SuccessBidDate" />
+          <ScalarProperty Name="ProjTenderRemark" ColumnName="ProjTenderRemark" />
+          <ScalarProperty Name="ProjTenderContent" ColumnName="ProjTenderContent" />
+          <ScalarProperty Name="ProjTenderPayWay" ColumnName="ProjTenderPayWay" />
+          <ScalarProperty Name="ProjTenderEarnestMoney" ColumnName="ProjTenderEarnestMoney" />
+          <ScalarProperty Name="ProjTenderAnswerDate" ColumnName="ProjTenderAnswerDate" />
+          <ScalarProperty Name="ProjTenderCostContent" ColumnName="ProjTenderCostContent" />
+          <ScalarProperty Name="TenderAverage" ColumnName="TenderAverage" />
+          <ScalarProperty Name="TenderAppraiseMethod" ColumnName="TenderAppraiseMethod" />
+          <ScalarProperty Name="TenderQuote" ColumnName="TenderQuote" />
+          <ScalarProperty Name="TenderUnit" ColumnName="TenderUnit" />
+          <ScalarProperty Name="TenderCeilingPrice" ColumnName="TenderCeilingPrice" />
+          <ScalarProperty Name="ProjTenderBeginDate" ColumnName="ProjTenderBeginDate" />
+          <ScalarProperty Name="ProjStartRemark" ColumnName="ProjStartRemark" />
+          <ScalarProperty Name="BusinessManager" ColumnName="BusinessManager" />
+          <ScalarProperty Name="ProjStartDate" ColumnName="ProjStartDate" />
+          <ScalarProperty Name="ProgAgent" ColumnName="ProgAgent" />
+          <ScalarProperty Name="ProjRegistDeadline" ColumnName="ProjRegistDeadline" />
+          <ScalarProperty Name="ProjApprovalDate" ColumnName="ProjApprovalDate" />
+          <ScalarProperty Name="ProjTenderDate" ColumnName="ProjTenderDate" />
+          <ScalarProperty Name="ProjApplyDate" ColumnName="ProjApplyDate" />
+          <ScalarProperty Name="ProjElseRequest" ColumnName="ProjElseRequest" />
+          <ScalarProperty Name="ProjInfoOrigin" ColumnName="ProjInfoOrigin" />
+          <ScalarProperty Name="ProjPeopleTel" ColumnName="ProjPeopleTel" />
+          <ScalarProperty Name="ProjPeopleAge" ColumnName="ProjPeopleAge" />
+          <ScalarProperty Name="ProjPeopleSex" ColumnName="ProjPeopleSex" />
+          <ScalarProperty Name="ProjPeopleName" ColumnName="ProjPeopleName" />
+          <ScalarProperty Name="PrjGuid" ColumnName="PrjGuid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PT_PrjInfo_ZTB_Stock">
+      <EntityTypeMapping TypeName="IsTypeOf(Pm2Model.PT_PrjInfo_ZTB_Stock)">
+        <MappingFragment StoreEntitySet="PT_PrjInfo_ZTB_Stock">
+          <ScalarProperty Name="telephone" ColumnName="telephone" />
+          <ScalarProperty Name="businessman" ColumnName="businessman" />
+          <ScalarProperty Name="grade" ColumnName="grade" />
+          <ScalarProperty Name="PrjGuid" ColumnName="PrjGuid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PT_PrjInfo_ZTB_User">
+      <EntityTypeMapping TypeName="IsTypeOf(Pm2Model.PT_PrjInfo_ZTB_User)">
+        <MappingFragment StoreEntitySet="PT_PrjInfo_ZTB_User">
+          <ScalarProperty Name="UserCode" ColumnName="UserCode" />
+          <ScalarProperty Name="PrjGuid" ColumnName="PrjGuid" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PT_yhmc">
+      <EntityTypeMapping TypeName="IsTypeOf(Pm2Model.PT_yhmc)">
+        <MappingFragment StoreEntitySet="PT_yhmc">
+          <ScalarProperty Name="RTXID" ColumnName="RTXID" />
+          <ScalarProperty Name="IsChargeMan" ColumnName="IsChargeMan" />
+          <ScalarProperty Name="PastPerformance" ColumnName="PastPerformance" />
+          <ScalarProperty Name="userCode" ColumnName="userCode" />
+          <ScalarProperty Name="ucmTel" ColumnName="ucmTel" />
+          <ScalarProperty Name="ucmConcern" ColumnName="ucmConcern" />
+          <ScalarProperty Name="urgentCellMan" ColumnName="urgentCellMan" />
+          <ScalarProperty Name="conEndDate" ColumnName="conEndDate" />
+          <ScalarProperty Name="rdeNature" ColumnName="rdeNature" />
+          <ScalarProperty Name="leavetime" ColumnName="leavetime" />
+          <ScalarProperty Name="PersonSuddennessInsurance" ColumnName="PersonSuddennessInsurance" />
+          <ScalarProperty Name="HousingAccumulationFund" ColumnName="HousingAccumulationFund" />
+          <ScalarProperty Name="InjuryInsurance" ColumnName="InjuryInsurance" />
+          <ScalarProperty Name="UnemploymentInsurance" ColumnName="UnemploymentInsurance" />
+          <ScalarProperty Name="MedicareInsurance" ColumnName="MedicareInsurance" />
+          <ScalarProperty Name="EndowmentInsurance" ColumnName="EndowmentInsurance" />
+          <ScalarProperty Name="PostAndCompetency" ColumnName="PostAndCompetency" />
+          <ScalarProperty Name="BeginWorkDate" ColumnName="BeginWorkDate" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="GraduateSchool" ColumnName="GraduateSchool" />
+          <ScalarProperty Name="Specialty" ColumnName="Specialty" />
+          <ScalarProperty Name="Introducer" ColumnName="Introducer" />
+          <ScalarProperty Name="JoinCorpMode" ColumnName="JoinCorpMode" />
+          <ScalarProperty Name="JoinPartyDate" ColumnName="JoinPartyDate" />
+          <ScalarProperty Name="PoliticsFace" ColumnName="PoliticsFace" />
+          <ScalarProperty Name="FormalDate" ColumnName="FormalDate" />
+          <ScalarProperty Name="IDCard" ColumnName="IDCard" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="UserPhoto" ColumnName="UserPhoto" />
+          <ScalarProperty Name="Postcode" ColumnName="Postcode" />
+          <ScalarProperty Name="CommunicateAddress" ColumnName="CommunicateAddress" />
+          <ScalarProperty Name="ExpectationSalary" ColumnName="ExpectationSalary" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="Marriage" ColumnName="Marriage" />
+          <ScalarProperty Name="DriveLevel" ColumnName="DriveLevel" />
+          <ScalarProperty Name="EnglishLevel" ColumnName="EnglishLevel" />
+          <ScalarProperty Name="ComputeLevel" ColumnName="ComputeLevel" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="RegisteredPlace" ColumnName="RegisteredPlace" />
+          <ScalarProperty Name="PostAndRank" ColumnName="PostAndRank" />
+          <ScalarProperty Name="PositionLevel" ColumnName="PositionLevel" />
+          <ScalarProperty Name="ClassID" ColumnName="ClassID" />
+          <ScalarProperty Name="Stature" ColumnName="Stature" />
+          <ScalarProperty Name="EducationalBackground" ColumnName="EducationalBackground" />
+          <ScalarProperty Name="Nation" ColumnName="Nation" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="SuperordinateDuty" ColumnName="SuperordinateDuty" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="EnterCorpDate" ColumnName="EnterCorpDate" />
+          <ScalarProperty Name="RelationCorp" ColumnName="RelationCorp" />
+          <ScalarProperty Name="MobilePhoneCode" ColumnName="MobilePhoneCode" />
+          <ScalarProperty Name="c_sfyx" ColumnName="c_sfyx" />
+          <ScalarProperty Name="i_xh" ColumnName="i_xh" />
+          <ScalarProperty Name="OtherDutyIDs" ColumnName="OtherDutyIDs" />
+          <ScalarProperty Name="OtherDepts" ColumnName="OtherDepts" />
+          <ScalarProperty Name="I_DUTYID" ColumnName="I_DUTYID" />
+          <ScalarProperty Name="i_bmdm" ColumnName="i_bmdm" />
+          <ScalarProperty Name="v_xm" ColumnName="v_xm" />
+          <ScalarProperty Name="v_yhdm" ColumnName="v_yhdm" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Basic_CodeList">
+      <EntityTypeMapping TypeName="IsTypeOf(Pm2Model.Basic_CodeList)">
+        <MappingFragment StoreEntitySet="Basic_CodeList">
+          <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+          <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+          <ScalarProperty Name="TypeCode" ColumnName="TypeCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Basic_CodeType">
+      <EntityTypeMapping TypeName="IsTypeOf(Pm2Model.Basic_CodeType)">
+        <MappingFragment StoreEntitySet="Basic_CodeType">
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+          <ScalarProperty Name="TypeCode" ColumnName="TypeCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="v_pt_d_bm">
+      <EntityTypeMapping TypeName="IsTypeOf(Pm2Model.v_pt_d_bm)">
+        <MappingFragment StoreEntitySet="v_pt_d_bm">
+          <ScalarProperty Name="fx" ColumnName="fx" />
+          <ScalarProperty Name="yb" ColumnName="yb" />
+          <ScalarProperty Name="adss" ColumnName="adss" />
+          <ScalarProperty Name="c_sfyx" ColumnName="c_sfyx" />
+          <ScalarProperty Name="i_jb" ColumnName="i_jb" />
+          <ScalarProperty Name="i_xjbm" ColumnName="i_xjbm" />
+          <ScalarProperty Name="v_bmjx" ColumnName="v_bmjx" />
+          <ScalarProperty Name="i_xh" ColumnName="i_xh" />
+          <ScalarProperty Name="v_bmqc" ColumnName="v_bmqc" />
+          <ScalarProperty Name="V_BMMC" ColumnName="V_BMMC" />
+          <ScalarProperty Name="CorpCode" ColumnName="CorpCode" />
+          <ScalarProperty Name="v_bmbm" ColumnName="v_bmbm" />
+          <ScalarProperty Name="i_sjdm" ColumnName="i_sjdm" />
+          <ScalarProperty Name="i_bmdm" ColumnName="i_bmdm" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PT_PrjMember">
+      <EntityTypeMapping TypeName="IsTypeOf(Pm2Model.PT_PrjMember)">
+        <MappingFragment StoreEntitySet="PT_PrjMember">
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="PastPerformance" ColumnName="PastPerformance" />
+          <ScalarProperty Name="TrainingInformation" ColumnName="TrainingInformation" />
+          <ScalarProperty Name="PostAndCompetency" ColumnName="PostAndCompetency" />
+          <ScalarProperty Name="Technical" ColumnName="Technical" />
+          <ScalarProperty Name="EducationalBackground" ColumnName="EducationalBackground" />
+          <ScalarProperty Name="Post" ColumnName="Post" />
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="PrjGuid" ColumnName="PrjGuid" />
+          <ScalarProperty Name="PrjMemberId" ColumnName="PrjMemberId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FK__PT_PrjMem__Membe__40071901" TypeName="Pm2Model.FK__PT_PrjMem__Membe__40071901" StoreEntitySet="PT_PrjMember">
+      <EndProperty Name="PT_PrjMember">
+        <ScalarProperty Name="PrjMemberId" ColumnName="PrjMemberId" />
+      </EndProperty>
+      <EndProperty Name="PT_yhmc">
+        <ScalarProperty Name="v_yhdm" ColumnName="MemberCode" />
+      </EndProperty>
+      <Condition ColumnName="MemberCode" IsNull="false" />
+    </AssociationSetMapping>
+    <EntitySetMapping Name="PT_Prj_Completed">
+      <EntityTypeMapping TypeName="IsTypeOf(Pm2Model.PT_Prj_Completed)">
+        <MappingFragment StoreEntitySet="PT_Prj_Completed">
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PT_Prj_Completed_Detail">
+      <EntityTypeMapping TypeName="IsTypeOf(Pm2Model.PT_Prj_Completed_Detail)">
+        <MappingFragment StoreEntitySet="PT_Prj_Completed_Detail">
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="AnnexAddress" ColumnName="AnnexAddress" />
+          <ScalarProperty Name="Rectification" ColumnName="Rectification" />
+          <ScalarProperty Name="UncompletedTrans" ColumnName="UncompletedTrans" />
+          <ScalarProperty Name="PrepareStatus" ColumnName="PrepareStatus" />
+          <ScalarProperty Name="PrjGuid" ColumnName="PrjGuid" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FK__PT_Prj_Co__Input__5EE0A5DC" TypeName="Pm2Model.FK__PT_Prj_Co__Input__5EE0A5DC" StoreEntitySet="PT_Prj_Completed">
+      <EndProperty Name="PT_Prj_Completed">
+        <ScalarProperty Name="ID" ColumnName="ID" />
+      </EndProperty>
+      <EndProperty Name="PT_yhmc">
+        <ScalarProperty Name="v_yhdm" ColumnName="InputUser" />
+      </EndProperty>
+      <Condition ColumnName="InputUser" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK__PT_Prj_Co__PrjCo__6A525888" TypeName="Pm2Model.FK__PT_Prj_Co__PrjCo__6A525888" StoreEntitySet="PT_Prj_Completed_Detail">
+      <EndProperty Name="PT_Prj_Completed_Detail">
+        <ScalarProperty Name="ID" ColumnName="ID" />
+      </EndProperty>
+      <EndProperty Name="PT_Prj_Completed">
+        <ScalarProperty Name="ID" ColumnName="PrjCompletedID" />
+      </EndProperty>
+      <Condition ColumnName="PrjCompletedID" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK__PT_Prj_Co__Input__6B467CC1" TypeName="Pm2Model.FK__PT_Prj_Co__Input__6B467CC1" StoreEntitySet="PT_Prj_Completed_Detail">
+      <EndProperty Name="PT_Prj_Completed_Detail">
+        <ScalarProperty Name="ID" ColumnName="ID" />
+      </EndProperty>
+      <EndProperty Name="PT_yhmc">
+        <ScalarProperty Name="v_yhdm" ColumnName="InputUser" />
+      </EndProperty>
+      <Condition ColumnName="InputUser" IsNull="false" />
+    </AssociationSetMapping>
+    <EntitySetMapping Name="PT_Prj_Completed_Annex">
+      <EntityTypeMapping TypeName="IsTypeOf(Pm2Model.PT_Prj_Completed_Annex)">
+        <MappingFragment StoreEntitySet="PT_Prj_Completed_Annex">
+          <ScalarProperty Name="AnnexAddress" ColumnName="AnnexAddress" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FK__PT_Prj_Co__Detai__32CD1974" TypeName="Pm2Model.FK__PT_Prj_Co__Detai__32CD1974" StoreEntitySet="PT_Prj_Completed_Annex">
+      <EndProperty Name="PT_Prj_Completed_Annex">
+        <ScalarProperty Name="ID" ColumnName="ID" />
+      </EndProperty>
+      <EndProperty Name="PT_Prj_Completed_Detail">
+        <ScalarProperty Name="ID" ColumnName="DetailID" />
+      </EndProperty>
+      <Condition ColumnName="DetailID" IsNull="false" />
+    </AssociationSetMapping>
+    <EntitySetMapping Name="PT_PrjInfo_EngineeringType">
+      <EntityTypeMapping TypeName="IsTypeOf(Pm2Model.PT_PrjInfo_EngineeringType)">
+        <MappingFragment StoreEntitySet="PT_PrjInfo_EngineeringType">
+          <ScalarProperty Name="Grade" ColumnName="Grade" />
+          <ScalarProperty Name="EngineeringSubType" ColumnName="EngineeringSubType" />
+          <ScalarProperty Name="EngineeringType" ColumnName="EngineeringType" />
+          <ScalarProperty Name="PrjGuid" ColumnName="PrjGuid" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="plus_progress">
+      <EntityTypeMapping TypeName="IsTypeOf(Pm2Model.plus_progress)">
+        <MappingFragment StoreEntitySet="plus_progress">
+          <ScalarProperty Name="IsMain" ColumnName="IsMain" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="FlowState" ColumnName="FlowState" />
+          <ScalarProperty Name="ProgressName" ColumnName="ProgressName" />
+          <ScalarProperty Name="PrjId" ColumnName="PrjId" />
+          <ScalarProperty Name="ProgressId" ColumnName="ProgressId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="plus_progress_privilege">
+      <EntityTypeMapping TypeName="IsTypeOf(Pm2Model.plus_progress_privilege)">
+        <MappingFragment StoreEntitySet="plus_progress_privilege">
+          <ScalarProperty Name="PrivilegeId" ColumnName="PrivilegeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="plus_progress_version">
+      <EntityTypeMapping TypeName="IsTypeOf(Pm2Model.plus_progress_version)">
+        <MappingFragment StoreEntitySet="plus_progress_version">
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="IsLatest" ColumnName="IsLatest" />
+          <ScalarProperty Name="FlowState" ColumnName="FlowState" />
+          <ScalarProperty Name="VersionCode" ColumnName="VersionCode" />
+          <ScalarProperty Name="VersionName" ColumnName="VersionName" />
+          <ScalarProperty Name="ParentVersionId" ColumnName="ParentVersionId" />
+          <ScalarProperty Name="ProgressVersionId" ColumnName="ProgressVersionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FK_plus_progress_InputUser" TypeName="Pm2Model.FK_plus_progress_InputUser" StoreEntitySet="plus_progress">
+      <EndProperty Name="plus_progress">
+        <ScalarProperty Name="ProgressId" ColumnName="ProgressId" />
+      </EndProperty>
+      <EndProperty Name="PT_yhmc">
+        <ScalarProperty Name="v_yhdm" ColumnName="InputUser" />
+      </EndProperty>
+      <Condition ColumnName="InputUser" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_privilege_ProgressId" TypeName="Pm2Model.FK_privilege_ProgressId" StoreEntitySet="plus_progress_privilege">
+      <EndProperty Name="plus_progress_privilege">
+        <ScalarProperty Name="PrivilegeId" ColumnName="PrivilegeId" />
+      </EndProperty>
+      <EndProperty Name="plus_progress">
+        <ScalarProperty Name="ProgressId" ColumnName="ProgressId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_progress_version_ProgressId" TypeName="Pm2Model.FK_progress_version_ProgressId" StoreEntitySet="plus_progress_version">
+      <EndProperty Name="plus_progress_version">
+        <ScalarProperty Name="ProgressVersionId" ColumnName="ProgressVersionId" />
+      </EndProperty>
+      <EndProperty Name="plus_progress">
+        <ScalarProperty Name="ProgressId" ColumnName="ProgressId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_privilege_UserCode" TypeName="Pm2Model.FK_privilege_UserCode" StoreEntitySet="plus_progress_privilege">
+      <EndProperty Name="plus_progress_privilege">
+        <ScalarProperty Name="PrivilegeId" ColumnName="PrivilegeId" />
+      </EndProperty>
+      <EndProperty Name="PT_yhmc">
+        <ScalarProperty Name="v_yhdm" ColumnName="UserCode" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_progress_version_InputUser" TypeName="Pm2Model.FK_progress_version_InputUser" StoreEntitySet="plus_progress_version">
+      <EndProperty Name="plus_progress_version">
+        <ScalarProperty Name="ProgressVersionId" ColumnName="ProgressVersionId" />
+      </EndProperty>
+      <EndProperty Name="PT_yhmc">
+        <ScalarProperty Name="v_yhdm" ColumnName="InputUser" />
+      </EndProperty>
+      <Condition ColumnName="InputUser" IsNull="false" />
+    </AssociationSetMapping>
+    <EntitySetMapping Name="PT_Warning">
+      <EntityTypeMapping TypeName="IsTypeOf(Pm2Model.PT_Warning)">
+        <MappingFragment StoreEntitySet="PT_Warning">
+          <ScalarProperty Name="IsOpened" ColumnName="IsOpened" />
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="IsValid" ColumnName="IsValid" />
+          <ScalarProperty Name="URI" ColumnName="URI" />
+          <ScalarProperty Name="RelationsKey" ColumnName="RelationsKey" />
+          <ScalarProperty Name="RelationsColumn" ColumnName="RelationsColumn" />
+          <ScalarProperty Name="RelationsTable" ColumnName="RelationsTable" />
+          <ScalarProperty Name="UserCode" ColumnName="UserCode" />
+          <ScalarProperty Name="WarningContent" ColumnName="WarningContent" />
+          <ScalarProperty Name="WarningTitle" ColumnName="WarningTitle" />
+          <ScalarProperty Name="WarningId" ColumnName="WarningId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bud_TaskChange">
+      <EntityTypeMapping TypeName="Pm2Model.Bud_TaskChange">
+        <MappingFragment StoreEntitySet="Bud_TaskChange">
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="InputUser" ColumnName="InputUser" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="FlowState" ColumnName="FlowState" />
+          <ScalarProperty Name="VersionCode" ColumnName="VersionCode" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="PrjId" ColumnName="PrjId" />
+          <ScalarProperty Name="TaskChangeId" ColumnName="TaskChangeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vGetCurBudVersion">
+      <EntityTypeMapping TypeName="Pm2Model.vGetCurBudVersion">
+        <MappingFragment StoreEntitySet="vGetCurBudVersion">
+          <ScalarProperty Name="CurVersion" ColumnName="CurVersion" />
+          <ScalarProperty Name="PrjId" ColumnName="PrjId" />
+          <ScalarProperty Name="TaskChangeId" ColumnName="TaskChangeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="plus_report">
+      <EntityTypeMapping TypeName="Pm2Model.plus_report">
+        <MappingFragment StoreEntitySet="plus_report">
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="ProVersionId" ColumnName="ProVersionId" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="InputUser" ColumnName="InputUser" />
+          <ScalarProperty Name="FlowState" ColumnName="FlowState" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="plus_reportDetail">
+      <EntityTypeMapping TypeName="Pm2Model.plus_reportDetail">
+        <MappingFragment StoreEntitySet="plus_reportDetail">
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Completed" ColumnName="Completed" />
+          <ScalarProperty Name="Finish" ColumnName="Finish" />
+          <ScalarProperty Name="Start" ColumnName="Start" />
+          <ScalarProperty Name="TaskUID" ColumnName="TaskUID" />
+          <ScalarProperty Name="ReportId" ColumnName="ReportId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bud_ContractTaskAudit">
+      <EntityTypeMapping TypeName="Pm2Model.Bud_ContractTaskAudit">
+        <MappingFragment StoreEntitySet="Bud_ContractTaskAudit">
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="FlowState" ColumnName="FlowState" />
+          <ScalarProperty Name="PrjName" ColumnName="PrjName" />
+          <ScalarProperty Name="PrjId" ColumnName="PrjId" />
+          <ScalarProperty Name="ContractTaskAuditId" ColumnName="ContractTaskAuditId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Basic_Privilege">
+      <EntityTypeMapping TypeName="Pm2Model.Basic_Privilege">
+        <MappingFragment StoreEntitySet="Basic_Privilege">
+          <ScalarProperty Name="UserCode" ColumnName="UserCode" />
+          <ScalarProperty Name="RelationsKey" ColumnName="RelationsKey" />
+          <ScalarProperty Name="RelationsTable" ColumnName="RelationsTable" />
+          <ScalarProperty Name="PrivilegeId" ColumnName="PrivilegeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PT_d_bm">
+      <EntityTypeMapping TypeName="Pm2Model.PT_d_bm">
+        <MappingFragment StoreEntitySet="PT_d_bm">
+          <ScalarProperty Name="fx" ColumnName="fx" />
+          <ScalarProperty Name="yb" ColumnName="yb" />
+          <ScalarProperty Name="adss" ColumnName="adss" />
+          <ScalarProperty Name="c_sfyx" ColumnName="c_sfyx" />
+          <ScalarProperty Name="i_jb" ColumnName="i_jb" />
+          <ScalarProperty Name="i_xjbm" ColumnName="i_xjbm" />
+          <ScalarProperty Name="v_bmjx" ColumnName="v_bmjx" />
+          <ScalarProperty Name="i_xh" ColumnName="i_xh" />
+          <ScalarProperty Name="v_bmqc" ColumnName="v_bmqc" />
+          <ScalarProperty Name="V_BMMC" ColumnName="V_BMMC" />
+          <ScalarProperty Name="CorpCode" ColumnName="CorpCode" />
+          <ScalarProperty Name="v_bmbm" ColumnName="v_bmbm" />
+          <ScalarProperty Name="i_sjdm" ColumnName="i_sjdm" />
+          <ScalarProperty Name="i_bmdm" ColumnName="i_bmdm" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Basic_ContactInfo">
+      <EntityTypeMapping TypeName="Pm2Model.Basic_ContactInfo">
+        <MappingFragment StoreEntitySet="Basic_ContactInfo">
+          <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+          <ScalarProperty Name="RelationsKey" ColumnName="RelationsKey" />
+          <ScalarProperty Name="ContactInfoId" ColumnName="ContactInfoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vSupplierProject">
+      <EntityTypeMapping TypeName="Pm2Model.vSupplierProject">
+        <MappingFragment StoreEntitySet="vSupplierProject">
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="SupplierId" ColumnName="SupplierId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_PCSupplier">
+      <EntityTypeMapping TypeName="Pm2Model.V_PCSupplier">
+        <MappingFragment StoreEntitySet="V_PCSupplier">
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="SupplierId" ColumnName="SupplierId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PT_PrjInfo_Kind">
+      <EntityTypeMapping TypeName="Pm2Model.PT_PrjInfo_Kind">
+        <MappingFragment StoreEntitySet="PT_PrjInfo_Kind">
+          <ScalarProperty Name="ProfessionalCost" ColumnName="ProfessionalCost" />
+          <ScalarProperty Name="PrjKind" ColumnName="PrjKind" />
+          <ScalarProperty Name="PrjGuid" ColumnName="PrjGuid" />
+          <ScalarProperty Name="KindId" ColumnName="KindId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PT_PrjInfo_Rank">
+      <EntityTypeMapping TypeName="Pm2Model.PT_PrjInfo_Rank">
+        <MappingFragment StoreEntitySet="PT_PrjInfo_Rank">
+          <ScalarProperty Name="RankLevel" ColumnName="RankLevel" />
+          <ScalarProperty Name="PrjRank" ColumnName="PrjRank" />
+          <ScalarProperty Name="PrjGuid" ColumnName="PrjGuid" />
+          <ScalarProperty Name="RankId" ColumnName="RankId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bud_ConsTask">
+      <EntityTypeMapping TypeName="Pm2Model.Bud_ConsTask">
+        <MappingFragment StoreEntitySet="Bud_ConsTask">
+          <ScalarProperty Name="AccountingQuantity" ColumnName="AccountingQuantity" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="WorkContent" ColumnName="WorkContent" />
+          <ScalarProperty Name="CompleteQuantity" ColumnName="CompleteQuantity" />
+          <ScalarProperty Name="TaskId" ColumnName="TaskId" />
+          <ScalarProperty Name="ConsReportId" ColumnName="ConsReportId" />
+          <ScalarProperty Name="ConsTaskId" ColumnName="ConsTaskId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bud_ConsTaskRes">
+      <EntityTypeMapping TypeName="Pm2Model.Bud_ConsTaskRes">
+        <MappingFragment StoreEntitySet="Bud_ConsTaskRes">
+          <ScalarProperty Name="CBSCode" ColumnName="CBSCode" />
+          <ScalarProperty Name="AccountingQuantity" ColumnName="AccountingQuantity" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="ResourceId" ColumnName="ResourceId" />
+          <ScalarProperty Name="ConsTaskId" ColumnName="ConsTaskId" />
+          <ScalarProperty Name="ConsTaskResId" ColumnName="ConsTaskResId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

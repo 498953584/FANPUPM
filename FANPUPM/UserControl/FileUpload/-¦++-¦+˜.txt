@@ -1,0 +1,11 @@
+﻿本控件对uploadify 2.1.4 进行的封装，而且还使用了jquery.ui,jquery.cookie
+参数说明
+	Type: 控件类型，可为空，则显示三部分（文本框，上传按钮，管理按钮）
+		若为“1”，则显示文本框和上传按钮  若为“2” 则显示上传按钮和管理按钮
+		若为“3”， 则只显示上传按钮
+	Name：显示的文本，如 Name="图片"，则控件显示为“上传图片”、“管理图片”
+	FileType：限制上传的文件类型，可以为多种，如 FileType="*.jpg;*.gif;*.png"
+	Class: 业务类型，此参数为appSettings中的Key，用于获取文件的存放路径
+	Folder：文件保存路径，和Class属性必需配置一个
+	RecordCode：具体的单据编号，如 Folder="Folder",RecordCode="001",则文件的存放路径为 “Folder/001/”
+	MergerFolder：需要合并目录的附件统一管理显示

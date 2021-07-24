@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="WFBusinessClass" table="WF_Business_Class" lazy="true" >
+		<id name="Id">
+			<column name="Id" sql-type="nvarchar" length="200" not-null="true" />
+		</id>
+    <property name="BusinessCode">
+      <column name="BusinessCode" sql-type="varchar" length="3" not-null="true" />
+    </property>
+		<property name="BusinessClass">
+			<column name="BusinessClass" sql-type="varchar" length="3" not-null="true" />
+		</property>
+    <property name="BusinessClassName">
+      <column name="BusinessClassName" sql-type="varchar" length="50" not-null="false" />
+    </property>
+  </class>
+</hibernate-mapping>

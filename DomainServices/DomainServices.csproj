@@ -1,0 +1,552 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>7.10.3077</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D438F619-CEB9-48BF-BDA1-4A87B523FE79}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon />
+    <AssemblyKeyContainerName />
+    <AssemblyName>DomainServices</AssemblyName>
+    <AssemblyOriginatorKeyFile />
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>DomainServices</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject />
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>0.0</OldToolsVersion>
+    <PublishUrl>发布\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile />
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile />
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn />
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile />
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile />
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn />
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib">
+      <Name>mscorlib</Name>
+      <HintPath>mscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\lib\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+      <HintPath>System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Name>System.Configuration</Name>
+      <HintPath>System.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <Name>System.Core</Name>
+      <HintPath>System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+      <HintPath>System.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <Name>System.Runtime.Serialization</Name>
+      <HintPath>System.Runtime.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <Name>System.ServiceModel</Name>
+      <HintPath>System.ServiceModel.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel.Web">
+      <Name>System.ServiceModel.Web</Name>
+      <HintPath>System.ServiceModel.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="cn.justwin.Domain.Config\PopupConfig.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Config\PopupModule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.EasyUI\DatumClass.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.EasyUI\Department.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.EasyUI\DepEmployee.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.EasyUI\Project.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.EasyUI\Treasury.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Repositories\IRepository!1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Repositories\Repository!1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\BasicAreaService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\BasicCityService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\BasicCodeListService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\BasicCodeTypeService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\BasicConfigService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\BasicPrivilegeService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\BasicProvinceService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\BasicSerialNumberService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\BudConModifyService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\BudConModifyTaskService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\BudConsReportService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\BudConsTaskResService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\BudConsTaskService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\BudContractConsReportService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\BudContractConsTaskService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\BudContractResourceService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\BudContractTaskAuditService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\BudContractTaskService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\BudIndirectDiaryCostService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\BudIndirectDiaryDetailsService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\BudModifyService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\BudModifyTaskResService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\BudModifyTaskService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\BudPreReimburseApplyDetailService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\BudPreReimburseApplyService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\BudPreReimburseModifyDetailService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\BudPreReimburseModifyService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\BudTaskChangeService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\BudTaskResourceService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\BudTaskService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\C1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\CalService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\ConBalanceItemService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\ConConfigContractService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\ConContractTypeService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\ConIncometContractService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\ConIncometPaymentService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\ConPayoutContractService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\ConPayoutModifyService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\ConPayoutPaymentService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\EPMDatumClassService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\EquBudCostAccountingService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\EquConnectionItemService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\EquCutterProReportService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\EquEquipmentService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\EquEquipmentTypeService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\EquGrapProReportService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\EquRepairApplyService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\EquRepairCompanyInfoService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\EquRepairPlanService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\EquRepairReportService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\EquRepairStockService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\EquShipDayReportService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\EquShipMonthReportService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\EquShipOilRecordService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\EquShipRefuelApplyService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\EquShipTechnicalParasService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\EquTeamReportService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\EquTrailingProReportService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\IQuery!1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\MailService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\PCPettyCashService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\PopupRecordService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\PopupSettingService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\PrivBusiDataRoleService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\PrivRoleService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\PrivUserRoleService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\PrjMilestoneDetailService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\PrjMilestoneService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\PTBULLETINMAINService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\PTdbmService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\PTDBSJService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\PTDBSJTodayService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\PTDTXLXService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\PTLOGINService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\PTMKService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\PTPrjInfoEngineeringTypeService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\PTPrjInfoKindService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\PTPrjInfoRankService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\PTPrjInfoService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\PTPrjInfoStateChangeService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\PTPrjInfoZTBDetailService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\PTPrjInfoZTBService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\PTPrjInfoZTBUserService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\PTPrjMemberService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\PTRetMsgService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\PTRoleService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\PTStartReportService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\PTStopMsgService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\PTWarningService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\PTYHMCPrivilegeService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\PTYhmcService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\ResAttributeService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\ResMappingService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\ResResourceService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\ResResourceTypeService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\ResUnitService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\SAMonthSalaryService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\SAPayoffService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\SAPersonalTaxService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\SASalaryBooksItemService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\SASalaryBooksService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\SASalaryItemService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\SAUserSalaryBooksService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\SessionHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\SmTreasuryService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\SmWantplanService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\WFBusinessClassService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\WFBusinessCodeService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\WFInstanceMainService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\WFInstanceService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\WFprivilegeService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\WFTemplateNodeService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\WFTemplatePrivilegeService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\WFTemplateService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\XPMBasicCodeListService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\XPMBasicCodeTypeService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cn.justwin.Domain.Services\XPMBasicContactCorpService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WcfNHibernate\INHibernateContextExtension.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WcfNHibernate\NHibernateContext.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WcfNHibernate\NHibernateContextAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WcfNHibernate\NHibernateContextExtension.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WcfNHibernate\NHibernateContextInitializer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WcfNHibernate\NHibernateFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{6aa6d6c8-6535-4792-b90b-b8de324b860a}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebUtil\WebUtil.csproj">
+      <Project>{96d4e6dd-fdbd-4f0c-a1e6-899e47ab2bd0}</Project>
+      <Name>WebUtil</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent />
+    <PostBuildEvent />
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,909 @@
+/*/////////////页面样式表/////////////*/
+.body_normal /*普通页面body样式*/
+{
+	font-family: 宋体;
+	font-size: 9pt;
+}
+.body_popup /*弹出窗口样式,适用于弹出要求有边距的窗口*/
+{
+	margin-left: 4px;
+	margin-top: 4px;
+	margin-right: 4px;
+	margin-bottom: 4px;
+	font-size: 9pt;
+	font-family: 宋体;
+}
+.body_clear /*四边的页边距为0*/
+{
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	font-size: 9pt;
+	font-family: 宋体;
+}
+.body_frame /*从左侧菜单树上点出来的业务窗口样式*/
+{
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 4px;
+}
+.body_subframe
+{
+	margin-left: 5px;
+	margin-top: 5px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+}
+/*//////////////////Tab页格式/////////////////*/
+.mp-normal /*标签页样式*/
+{
+	border-left: #999ab5 0px solid;
+	border-top: #999ab5 0px solid;
+	border-right: #999ab5 0px solid;
+	border-bottom: #999ab5 0px solid;
+}
+/*选项卡对应的多页框架，选项卡在下边*/
+.mp_frame_bottom
+{
+	border-right: #999ab5 1px solid;
+	border-top: #999ab5 1px solid;
+	border-left: #999ab5 1px solid;
+	border-bottom: #999ab5 0px solid;
+}
+/*multipage页保留页面两边框的样式*/
+.mp_frame_column
+{
+	border-right: #999ab5 1px solid;
+	border-top: #999ab5 0px solid;
+	border-left: #999ab5 1px solid;
+	border-bottom: #999ab5 0px solid;
+}
+/*选项卡对应的多页框架，选项卡在上边*/
+.mp_frame_top
+{
+	border-right: #999ab5 1px solid;
+	border-top: #999ab5 0px solid;
+	border-left: #999ab5 1px solid;
+	border-bottom: #999ab5 1px solid;
+}
+
+/*///////////////////普通用控件样式//////////////////*/
+.button-normal /*普通样式的按钮*/
+{
+	border: groove 1px #ffffff;
+	border-bottom: groove 1px #666666;
+	border-right: groove 1px #666666;
+	background-image: url(btn_normal.gif);
+	background-repeat: repeat-x;
+	background-color: Transparent;
+	cursor: hand;
+	width: 60px;
+	height: 20px;
+}
+
+.text-normal /*普通样式的文本框和多行文本框*/
+{
+	border: groove 2px #eaeaea;
+	background-repeat: repeat-x;
+	background-color: Transparent;
+}
+.list-normal /*普通样式的下拉列表框和列表框*/
+{
+	font-family: 宋体;
+	font-size: 9pt;
+}
+.linkbtn-normal /*按钮样式的超链接*/
+{
+}
+.hr-normal /*横线样式*/
+{
+}
+
+/*/////////////////提交表单中用控件样式////////////////*/
+
+
+/*/////////////////////查询表单中用控件样式/////////////*/
+.search_list /*搜索条中的下拉列表框和列表框*/
+{
+}
+#btnSearch
+{
+	border: solid 0px #ffffff;
+	background-image: url(quary.gif);
+	background-repeat: repeat-x;
+	background-color: Transparent;
+	cursor: hand;
+	width: 67px;
+	height: 22px;
+}
+#btn_Search
+{
+	border: solid 0px #ffffff;
+	background-image: url(quary.gif);
+	background-repeat: repeat-x;
+	background-color: Transparent;
+	cursor: hand;
+	width: 67px;
+	height: 22px;
+}
+.search_button /*搜索条中的按钮样式*/
+{
+	border: groove 1px #ffffff;
+	border-bottom: groove 1px #666666;
+	border-right: groove 1px #666666;
+	background-image: url(btn_normal.gif);
+	background-repeat: repeat-x;
+	background-color: Transparent;
+	cursor: hand;
+	width: 60px;
+	height: 20px;
+}
+.search_label /*搜索条中提示用的标签*/
+{
+}
+
+
+/*//////////////////报表内用控件样式/////////////////////*/
+.text-noborder-number /*报表内无边框的文本框，用来输入数字*/
+{
+}
+.text-noborder-string /*报表内无边框的文本框，用来输入字符串*/
+{
+}
+
+/*///////////////////表格样式/////////////////////////*/
+.table-normal /*普通有边框表格*/
+{
+	border: solid 1px #AAAAAA;
+	border-collapse: collapse;
+	empty-cells: show;
+}
+.table-form /*form提交表单用表格*/
+{
+	border: solid 1px #AAAAAA;
+	border-collapse: collapse;
+}
+.table-form td
+{
+	border: solid 1px #AAAAAA;
+	border-collapse: collapse;
+}
+.table-form input
+{
+	font-size: 9pt;
+	background-color: #ffffff;
+	border-left: 1px solid #736866;
+	border-right: 1px solid #ececec;
+	border-top: 1px solid #736866;
+	border-bottom: 1px solid #ececec;
+}
+.table-form textarea
+{
+	font-size: 9pt;
+	background-color: #ffffff;
+	border-left: 1px solid #736866;
+	border-right: 1px solid #ececec;
+	border-top: 1px solid #736866;
+	border-bottom: 1px solid #ececec;
+}
+.table-none /*普通无边框表格*/
+{
+	border: solid 0px #ffffff;
+	border-collapse: collapse;
+}
+/*////////////////////DataGrid控件用样式/////////////////*/
+div.gridBox
+{
+	clear: both;
+	border: 1px solid #7b9ebd;
+	height: 100%;
+	width: 100%;
+	overflow: auto;
+	background-color: #ffffff;
+	scrollbar-face-color: #ece9d8;
+	scrollbar-highlight-color: #FFFFFF;
+	scrollbar-shadow-color: #DCDDE0;
+	scrollbar-3dlight-color: #D8D4DF;
+	scrollbar-arrow-color: #00169C;
+	scrollbar-track-color: #EFEFEF;
+	scrollbar-darkshadow-color: #9698BA;
+}
+
+.grid
+{
+	float: left;
+	margin: 0px;
+	table-layout: auto;
+	border-width: 0px;
+	width: 100%;
+	border-bottom: 1px solid #AAA;
+	border-collapse: separate;
+}
+.grid_head /*网格表头样式*/
+{
+	height: 20px;
+	position: relative;
+	top: expression(this.offsetParent.scrollTop);
+	font-weight: bold;
+}
+
+.grid_head td
+{
+	border-left: #ffffff 1px solid;
+	border-top: #ffffff 1px solid;
+	border-right: #aca899 1px solid;
+	border-bottom: #aca899 1px solid;
+	text-align: center;
+	color: #000000;
+	background-color: #ece9d8;
+	font-family: 宋体;
+	font-size: 9pt;
+}
+
+.grid_head th
+{
+	border-left: #ffffff 1px solid;
+	border-top: #ffffff 1px solid;
+	border-right: #aca899 1px solid;
+	border-bottom: #aca899 1px solid;
+	text-align: center;
+	color: #000000;
+	background-color: #ece9d8;
+	font-family: 宋体;
+	font-size: 9pt;
+}
+
+
+.grid_row td /*DataGrid普通行的样式	*/
+{
+	height: 20px;
+	border-bottom: 1px solid #AAA;
+	border-left: 1px solid #FFF;
+	border-right: 1px solid #AAA;
+	border-top: 1px solid #FFF;
+}
+
+
+/*////////////////////DataGrid的普通行上的划过、选中等样式//////////*/
+/*表格行鼠标划过*/
+.trm_over
+{
+	background-color: #F4F4F4;
+	height: 20px; /*cursor:hand;*/
+}
+.trm_over td
+{
+	height: 20px;
+	border-bottom: 1px solid #AAA;
+	border-left: 1px solid #FFF;
+	border-right: 1px solid #AAA;
+	border-top: 1px solid #FFF;
+}
+/*表格行鼠标离开*/
+.trm_out
+{
+	background-color: #ffffff;
+	height: 20px;
+}
+.trm_out td
+{
+	height: 20px;
+	border-bottom: 1px solid #AAA;
+	border-left: 1px solid #FFF;
+	border-right: 1px solid #AAA;
+	border-top: 1px solid #FFF;
+}
+/*表格行被选中*/
+.trm_focus
+{
+	background-color: #DBDBDB; /*#95CFFF #EEEEEE;*/
+	height: 20px;
+}
+.trm_focus td
+{
+	height: 20px;
+	border-bottom: 1px solid #AAA;
+	border-left: 1px solid #FFF;
+	border-right: 1px solid #AAA;
+	border-top: 1px solid #FFF;
+}
+
+/*////////////////////单元格样式////////////////*/
+.td-navigation /*页面导航标题，定额专用建议放在<DIV>标签内font-size:18px;height:40px;*/
+{
+	background-color: #95CFFF;
+	font-weight: bold;
+	text-align: left;
+}
+
+/*////////////////////单元格样式////////////////*/
+.td-title /*页面标题，建议放在<DIV>标签内*/
+{
+	background-color: #FFFBEF;
+	height: 30px;
+	font-size: 18px;
+	font-weight: bold;
+	text-align: center;
+	vertical-align: middle;
+	font-family: 宋体;
+}
+.td-search /*承载搜索条的单元格*/
+{
+	border: solid 1px #AAAAAA;
+	background-color: #EFEBDE;
+	border-collapse: collapse;
+	height: 28px;
+	vertical-align: middle;
+	text-align: right;
+}
+.td-search input
+{
+	border-left: ridge 1px #ECE9D8;
+	border-top: ridge 1px #ECE9D8;
+	border-right: ridge 1px #ECE9D8;
+	border-bottom: ridge 1px #ECE9D8;
+	height: 20px;
+}
+.td-toolsbar5 /*表格上方承载按钮及提示信息的单元格*/
+{
+	font-weight: bold;
+	padding-left: 8px;
+	height: 24px;
+	text-align: right;
+	vertical-align: middle;
+	border: solid 1px #cccccc;
+	vertical-align: middle;
+	color: #FF7D00;
+	background-color: #F7F7EF;
+}
+.td-toolsbar5 input
+{
+	border: groove 1px #ffffff;
+	border-bottom: groove 1px #666666;
+	border-right: groove 1px #666666;
+	background-image: url(btn_normal.gif);
+	background-repeat: repeat-x;
+	background-color: Transparent;
+	cursor: hand;
+	width: 60px;
+	height: 20px;
+}
+.td-toolsbar2 /*表格上方承载按钮及提示信息的单元格*/
+{
+	font-weight: bold;
+	padding-left: 8px;
+	color: #FF7D00;
+	height: 24px;
+	text-align: right;
+	vertical-align: middle;
+	border: solid 1px #cccccc;
+	vertical-align: middle;
+	background-color: #F7F7EF;
+}
+.td-toolsbar2 input
+{
+	border: groove 1px #ffffff;
+	border-bottom: groove 1px #666666;
+	border-right: groove 1px #666666;
+	background-image: url(btn_normal.gif);
+	background-repeat: repeat-x;
+	background-color: Transparent;
+	cursor: hand;
+	width: 60px;
+	height: 20px;
+}
+.td-toolsbar1 /*表格上方承载按钮及提示信息的单元格text-align:right;*/
+{
+	height: 28px;
+	vertical-align: middle;
+	border: solid 1px #cccccc;
+	vertical-align: middle;
+}
+.td-toolsbar1 input
+{
+	border: groove 1px #ffffff;
+	border-bottom: groove 1px #666666;
+	border-right: groove 1px #666666;
+	background-image: url(btn_normal.gif);
+	background-repeat: repeat-x;
+	background-color: Transparent;
+	cursor: hand;
+	width: 60px;
+	height: 20px;
+}
+.td-toolsbar /*表格上方承载按钮及提示信息的单元格*/
+{
+	font-weight: bold;
+	padding-left: 8px;
+	height: 24px;
+	text-align: right;
+	vertical-align: middle;
+	border: solid 1px #cccccc;
+	vertical-align: middle;
+	color: #FF7D00;
+	background-color: #F7F7EF;
+}
+.td-toolsbar input
+{
+	border: groove 1px #ffffff;
+	border-bottom: groove 1px #666666;
+	border-right: groove 1px #666666;
+	background-image: url(btn_normal.gif);
+	background-repeat: repeat-x;
+	background-color: Transparent;
+	cursor: hand;
+	width: 60px;
+	height: 20px;
+}
+.td-page /*表格下方放置分页页面元素的单元格*/
+{
+	text-align: right;
+	vertical-align: middle;
+	height: 22px;
+	border: solid 1px #cccccc;
+}
+.td_state /*表格下方放置分页页面元素的单元格*/
+{
+	text-align: left;
+	vertical-align: middle;
+	height: 22px;
+	border: solid 1px #cccccc;
+}
+.td-page table
+{
+	width: 480px;
+	height: 100%;
+}
+.td-head /*数据提交页面的标题样式*/
+{
+	font-weight: bold;
+	color: Black;
+	text-align: center;
+	background-color: #F7F7EF; /*background-image:url(1_1.gif);*/
+	height: 24px;
+}
+
+.td-label /*数据提交页面输入项提示单元格样式#F7FBFF*/
+{
+	text-align: right;
+	vertical-align: middle;
+	background-color: #EFEBDE;
+	height: 20px;
+}
+.td_caption
+{
+	color: #FF7D00;
+	font-weight: bold;
+	padding-left: 8px;
+	text-align: left;
+	vertical-align: middle;
+	background-color: #F7F7EF;
+	height: 24px;
+}
+
+.td-submit /*数据提交页面下方用来承载提交等按钮的单元格，应放在<TD>标签内*/
+{
+	text-align: center;
+	height: 28px;
+}
+.td-submit td
+{
+	border: 0px;
+	border-collapse: collapse;
+}
+.td-submit input
+{
+	border: groove 1px #ffffff;
+	border-bottom: groove 1px #666666;
+	border-right: groove 1px #666666;
+	background-repeat: repeat-x;
+	background-image: url(1_3.jpg);
+	cursor: hand;
+	width: 60px;
+	height: 20px;
+}
+/*/////////提交表单中控件的样式///////////*/
+.text-input
+{
+	font-size: 9pt;
+	background-color: #ffffff;
+	border-left: 1px solid #736866;
+	border-right: 1px solid #ececec;
+	border-top: 1px solid #736866;
+	border-bottom: 1px solid #ececec;
+}
+.textarea-input
+{
+	font-size: 9pt;
+	background-color: #ffffff;
+	border-left: 1px solid #736866;
+	border-right: 1px solid #ececec;
+	border-top: 1px solid #736866;
+	border-bottom: 1px solid #ececec;
+}
+.text-num
+{
+	font-size: 9pt;
+	background-color: #ffffff;
+	border-left: 1px solid #736866;
+	border-right: 1px solid #ececec;
+	border-top: 1px solid #736866;
+	border-bottom: 1px solid #ececec;
+	ime-mode: disabled;
+}
+.div-scroll /*滚动容器*/
+{
+	scrollbar-face-color: #DCDDE0;
+	scrollbar-highlight-color: #FFFFFF;
+	scrollbar-shadow-color: #DCDDE0;
+	scrollbar-3dlight-color: #D8D4DF;
+	scrollbar-arrow-color: #00169C;
+	scrollbar-track-color: #EFEFEF;
+	scrollbar-darkshadow-color: #9698BA;
+	overflow: auto;
+}
+
+/*///////////////特殊页面样式////////////////*/
+.link-title /*标题样式（做连接弹出页面用）*/
+{
+	color: #333333;
+	background-color: Transparent;
+	border: none;
+	text-decoration: none;
+}
+.link-title:hover
+{
+	color: #ff0000;
+	background-color: Transparent;
+	border: none;
+	text-decoration: underline;
+}
+.link-title:active
+{
+	color: #ff0000;
+	background-color: Transparent;
+	border: none;
+	text-decoration: underline;
+}
+
+/*////////////////////通用的对象///////////////*/
+BODY
+{
+	font-family: 宋体;
+	font-size: 9pt;
+	background-color: FFFFFF;
+	scrollbar-face-color: #ece9d8;
+	scrollbar-highlight-color: #FFFFFF;
+	scrollbar-shadow-color: #DCDDE0;
+	scrollbar-3dlight-color: #D8D4DF;
+	scrollbar-arrow-color: #00169C;
+	scrollbar-track-color: #EFEFEF;
+	scrollbar-darkshadow-color: #9698BA;
+}
+
+
+TD
+{
+	font-family: 宋体;
+	font-size: 9pt;
+}
+
+
+INPUT
+{
+	font-family: 宋体;
+	font-size: 9pt;
+}
+
+SELECT
+{
+	font-family: 宋体;
+	font-size: 9pt;
+}
+
+TEXTAREA
+{
+	font-family: 宋体;
+	font-size: 9pt;
+	overflow: auto;
+}
+image
+{
+	border: 0px;
+}
+div /*滚动容器9698BA*/
+{
+	scrollbar-face-color: #ece9d8;
+	scrollbar-highlight-color: #FFFFFF;
+	scrollbar-shadow-color: #DCDDE0;
+	scrollbar-3dlight-color: #D8D4DF;
+	scrollbar-arrow-color: #00169C;
+	scrollbar-track-color: #EFEFEF;
+	scrollbar-darkshadow-color: #9698BA;
+}
+form
+{
+	margin-bottom: 0px;
+}
+.button_del
+{
+	width: 16px;
+	height: 16px;
+	border-width: 0px;
+	background-image: url(del.gif);
+	cursor: hand;
+}
+.button_delu
+{
+	width: 16px;
+	height: 16px;
+	border-width: 0px;
+	background-image: url(delu.gif);
+	cursor: hand;
+}
+.button_add
+{
+	width: 16px;
+	height: 16px;
+	border-width: 0px;
+	background-image: url(add.gif);
+	cursor: hand;
+}
+.button_addu
+{
+	width: 16px;
+	height: 16px;
+	border-width: 0px;
+	background-image: url(addu.gif);
+	cursor: hand;
+}
+
+
+/*右键菜单用*/
+.div1
+{
+	border-top: buttonface 1px solid;
+	border-left: buttonface 1px solid;
+	border-bottom: windowframe 1px solid;
+	border-right: windowframe 1px solid;
+}
+.div2
+{
+	border-top: window 1px solid;
+	border-left: window 1px solid;
+	border-bottom: buttonshadow 1px solid;
+	border-right: buttonshadow 1px solid;
+}
+.Mover
+{
+	background-color: highlight;
+	color: highlighttext;
+	font-size: 12px;
+	cursor: default;
+	font-size: 12px;
+}
+.Mout
+{
+	background-color: buttonface;
+	color: buttontext;
+	font-size: 12px;
+	cursor: default;
+	font-size: 12px;
+}
+
+/*平台框架页面用*/
+a.top_menu:link
+{
+	font-size: 9pt;
+	color: #ffffff;
+	font-style: normal;
+	font-family: "宋体";
+	text-decoration: none;
+}
+a.top_menu:visited
+{
+	font-size: 9pt;
+	color: #ffffff;
+	font-style: normal;
+	font-family: "宋体";
+	text-decoration: none;
+}
+a.top_menu:hover
+{
+	font-size: 9pt;
+	color: #ffffff;
+	font-style: normal;
+	font-family: "宋体";
+	text-decoration: none;
+}
+a.top_menu:active
+{
+	font-size: 9pt;
+	color: #ffffff;
+	font-style: normal;
+	font-family: "宋体";
+	text-decoration: none;
+	background-color: #92cfa6;
+}
+
+/**/
+a.webSite:link
+{
+	font-family: "宋体" , Arial;
+	font-size: 9pt;
+	color: #555555;
+	text-decoration: none;
+}
+a.webSite:visited
+{
+	font-family: "宋体" , Arial;
+	font-size: 9pt;
+	color: #555555;
+	text-decoration: none;
+}
+a.webSite:hover
+{
+	font-family: "宋体" , Arial;
+	font-size: 9pt;
+	color: #FF6600;
+	text-decoration: none;
+}
+
+/**/
+a.firstpage:link
+{
+	font-family: "" , Arial;
+	font-size: 10pt;
+	color: #555555;
+	text-decoration: none;
+}
+a.firstpage:visited
+{
+	font-family: "" , Arial;
+	font-size: 10pt;
+	color: #555555;
+	text-decoration: none;
+}
+a.firstpage:hover
+{
+	font-family: "" , Arial;
+	font-size: 10pt;
+	color: #a80615;
+	text-decoration: none;
+}
+
+
+.pt9
+{
+	font-size: 9pt;
+	color: #000000;
+	font-style: normal;
+	font-family: "宋体";
+	text-decoration: none;
+}
+
+.menuBgColorLevelOne
+{
+	background-color: #e8e8e8;
+}
+.menuBgColor
+{
+	background-color: #e8e8e8;
+}
+.menuFont
+{
+	font-size: 12px;
+	color: #000000;
+}
+.menuTr1
+{
+	background-color: #da0a0a;
+}
+/*间隔线1*/
+.menuTr2
+{
+	background-color: #da0a0a;
+}
+/*间隔线2*/
+
+/*树样式*/
+.tree a:link
+{
+	font-family: "宋体" , Arial;
+	font-size: 10pt;
+	color: #000000;
+	text-decoration: none;
+}
+.tree a:visited
+{
+	font-family: "宋体" , Arial;
+	font-size: 10pt;
+	color: #000000;
+	text-decoration: none;
+}
+.tree a:hover
+{
+	font-family: "宋体" , Arial;
+	font-size: 10pt;
+	color: #a80615;
+	text-decoration: none;
+}
+/*文本框只读*/
+.txtreadonly
+{
+	background-color: expression(this.type=="text"?"#ffffc0":"style");
+	border: expression(this.type=="text"?"1px solid red ":"style");
+}
+
+A.index_right:link
+{
+	font-size: 9pt;
+	color: #445080;
+	font-style: normal;
+	font-family: "宋体";
+	text-decoration: none;
+}
+A.index_right:visited
+{
+	font-size: 9pt;
+	color: #445080;
+	font-style: normal;
+	font-family: "宋体";
+	text-decoration: none;
+}
+A.index_right:hover
+{
+	font-size: 9pt;
+	color: #445080;
+	font-style: normal;
+	font-family: "宋体";
+	text-decoration: none;
+}
+
+
+/*文本必填*/
+.txtneed
+{
+	border: expression("1px solid red ");
+	border-color: Red;
+}
+/*只看文本*/
+.txtsee
+{
+	border: expression("1px solid Transparent ");
+}
+
+/*报表页头text-align:center;height:24px;*/
+.report_grid_head
+{
+	background-color: #FFFBEF;
+	font-size: 18px;
+	font-weight: bold;
+	vertical-align: middle;
+}
+.char
+{
+	font-family: 黑体;
+	font-size: 13;
+	color: Black;
+}
+.num
+{
+	font-family: Arial;
+	font-size: 13;
+	color: Black;
+}
+
+
+/*-------------------- TrvwView选中央视 --------------------*/
+.trvw_select a
+{
+	background-color: #3399FF;
+	color: White;
+}
+trvw_select
+{
+	background-color: White;
+}

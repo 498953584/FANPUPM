@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="EquTrailingProReport" table="Equ_TrailingProReport" lazy="true" >
+		<id name="ProductionId">
+			<column name="ProductionId" sql-type="nvarchar" length="64" not-null="true" />
+		</id>
+		<property name="DayId">
+			<column name="DayId" sql-type="nvarchar" length="100" not-null="true" />
+		</property>
+		<property name="SailNo">
+			<column name="SailNo" sql-type="nvarchar" length="60" not-null="false" />
+		</property>
+		<property name="ShipCapaticy">
+			<column name="ShipCapaticy" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="UnitPrice">
+			<column name="UnitPrice" sql-type="decimal" not-null="false" />
+		</property>
+	</class>
+</hibernate-mapping>

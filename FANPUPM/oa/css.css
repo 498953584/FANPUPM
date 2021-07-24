@@ -1,0 +1,39 @@
+P
+{
+    FONT-SIZE: 9pt;
+    LINE-HEIGHT: 14pt
+}
+TD
+{
+    FONT-SIZE: 9pt;
+    LINE-HEIGHT: 14pt
+}
+A
+{
+    FONT-SIZE: 9pt;
+    COLOR: #000000;
+    LINE-HEIGHT: 14pt;
+    TEXT-DECORATION: none
+}
+A:hover
+{
+    COLOR: #ff0000
+}
+INPUT
+{
+    FONT-FAMILY: ËÎÌו;
+    BORDER-TOP-WIDTH: 1px;
+    BORDER-LEFT-WIDTH: 1px; 
+    BORDER-BOTTOM-WIDTH: 2px; 
+    HEIGHT: 23px;
+    BORDER-RIGHT-WIDTH: 2px
+}
+.button
+{
+	border: #666666; 
+	border-style: solid; 
+	border-top-width: 1px; 
+	border-right-width: 1px; 
+	border-bottom-width: 1px; 
+	border-left-width: 1px
+}

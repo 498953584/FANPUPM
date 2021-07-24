@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="cn.justwin.Domain.Entities.PTyhmc, Domain" table="PT_yhmc">
+    <id name="v_yhdm" type="String" unsaved-value="null">
+      <column name="v_yhdm" length="8" sql-type="varchar" not-null="true" unique="true" index="IX_pt_yhmc"/>
+    </id>
+    <property name="v_xm" type="String">
+      <column name="v_xm" length="50" sql-type="varchar" not-null="false"/>
+    </property>
+		<property name="i_bmdm" type="Int32">
+			<column name="i_bmdm" sql-type="int" length="4" not-null="false"></column>
+		</property>
+    <property name="I_DUTYID" type="Int32">
+      <column name="I_DUTYID" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="OtherDepts" type="String">
+      <column name="OtherDepts" length="100" sql-type="varchar" not-null="false"/>
+    </property>
+    <property name="OtherDutyIDs" type="String">
+      <column name="OtherDutyIDs" length="100" sql-type="varchar" not-null="false"/>
+    </property>
+    <property name="i_xh" type="Int32">
+      <column name="i_xh" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="c_sfyx" type="String">
+      <column name="c_sfyx" length="1" sql-type="char" not-null="false"/>
+    </property>
+    <property name="MobilePhoneCode" type="String">
+      <column name="MobilePhoneCode" length="13" sql-type="varchar" not-null="false"/>
+    </property>
+    <property name="RelationCorp" type="String">
+      <column name="RelationCorp" length="2" sql-type="varchar" not-null="false"/>
+    </property>
+    <property name="EnterCorpDate" type="DateTime">
+      <column name="EnterCorpDate" length="8" sql-type="datetime" not-null="false"/>
+    </property>
+    <property name="Age" type="Int32">
+      <column name="Age" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="State" type="Int32">
+      <column name="State" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="SuperordinateDuty" type="Int32">
+      <column name="SuperordinateDuty" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="Sex" type="String">
+      <column name="Sex" length="1" sql-type="char" not-null="false"/>
+    </property>
+    <property name="Nation" type="String">
+      <column name="Nation" length="50" sql-type="varchar" not-null="false"/>
+    </property>
+    <property name="EducationalBackground" type="String">
+      <column name="EducationalBackground" length="50" sql-type="varchar" not-null="false"/>
+    </property>
+    <property name="Stature" type="String">
+      <column name="Stature" length="50" sql-type="varchar" not-null="false"/>
+    </property>
+    <property name="ClassID" type="Int32">
+      <column name="ClassID" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="PositionLevel" type="Int32">
+      <column name="PositionLevel" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="PostAndRank" type="String">
+      <column name="PostAndRank" length="50" sql-type="varchar" not-null="false"/>
+    </property>
+    <property name="RegisteredPlace" type="String">
+      <column name="RegisteredPlace" length="300" sql-type="varchar" not-null="false"/>
+    </property>
+    <property name="Address" type="String">
+      <column name="Address" length="300" sql-type="varchar" not-null="false"/>
+    </property>
+    <property name="ComputeLevel" type="String">
+      <column name="ComputeLevel" length="50" sql-type="varchar" not-null="false"/>
+    </property>
+    <property name="EnglishLevel" type="String">
+      <column name="EnglishLevel" length="50" sql-type="varchar" not-null="false"/>
+    </property>
+    <property name="DriveLevel" type="String">
+      <column name="DriveLevel" length="50" sql-type="varchar" not-null="false"/>
+    </property>
+    <property name="Marriage" type="String">
+      <column name="Marriage" length="50" sql-type="varchar" not-null="false"/>
+    </property>
+    <property name="Tel" type="String">
+      <column name="Tel" length="20" sql-type="varchar" not-null="false"/>
+    </property>
+    <property name="ExpectationSalary" type="Decimal">
+      <column name="ExpectationSalary" length="5" sql-type="decimal" not-null="false"/>
+    </property>
+    <property name="CommunicateAddress" type="String">
+      <column name="CommunicateAddress" length="200" sql-type="varchar" not-null="false"/>
+    </property>
+    <property name="Postcode" type="String">
+      <column name="Postcode" length="6" sql-type="varchar" not-null="false"/>
+    </property>
+    <property name="UserPhoto" type="String">
+      <column name="UserPhoto" length="100" sql-type="varchar" not-null="false"/>
+    </property>
+    <property name="Birthday" type="DateTime">
+      <column name="Birthday" length="8" sql-type="datetime" not-null="false"/>
+    </property>
+    <property name="IDCard" type="String">
+      <column name="IDCard" length="20" sql-type="varchar" not-null="false"/>
+    </property>
+    <property name="FormalDate" type="DateTime">
+      <column name="FormalDate" length="8" sql-type="datetime" not-null="false"/>
+    </property>
+    <property name="PoliticsFace" type="String">
+      <column name="PoliticsFace" length="50" sql-type="varchar" not-null="false"/>
+    </property>
+    <property name="JoinPartyDate" type="DateTime">
+      <column name="JoinPartyDate" length="8" sql-type="datetime" not-null="false"/>
+    </property>
+    <property name="JoinCorpMode" type="String">
+      <column name="JoinCorpMode" length="50" sql-type="varchar" not-null="false"/>
+    </property>
+    <property name="Introducer" type="String">
+      <column name="Introducer" length="20" sql-type="varchar" not-null="false"/>
+    </property>
+    <property name="Specialty" type="String">
+      <column name="Specialty" length="50" sql-type="varchar" not-null="false"/>
+    </property>
+    <property name="GraduateSchool" type="String">
+      <column name="GraduateSchool" length="100" sql-type="varchar" not-null="false"/>
+    </property>
+    <property name="Level" type="String">
+      <column name="Level" length="50" sql-type="varchar" not-null="false"/>
+    </property>
+    <property name="BeginWorkDate" type="DateTime">
+      <column name="BeginWorkDate" length="8" sql-type="datetime" not-null="false"/>
+    </property>
+    <property name="PostAndCompetency" type="String">
+      <column name="PostAndCompetency" length="50" sql-type="varchar" not-null="false"/>
+    </property>
+    <property name="EndowmentInsurance" type="String">
+      <column name="EndowmentInsurance" length="1" sql-type="char" not-null="false"/>
+    </property>
+    <property name="MedicareInsurance" type="String">
+      <column name="MedicareInsurance" length="1" sql-type="char" not-null="false"/>
+    </property>
+    <property name="UnemploymentInsurance" type="String">
+      <column name="UnemploymentInsurance" length="1" sql-type="char" not-null="false"/>
+    </property>
+    <property name="InjuryInsurance" type="String">
+      <column name="InjuryInsurance" length="1" sql-type="char" not-null="false"/>
+    </property>
+    <property name="HousingAccumulationFund" type="String">
+      <column name="HousingAccumulationFund" length="1" sql-type="char" not-null="false"/>
+    </property>
+    <property name="PersonSuddennessInsurance" type="String">
+      <column name="PersonSuddennessInsurance" length="1" sql-type="char" not-null="false"/>
+    </property>
+    <property name="leavetime" type="DateTime">
+      <column name="leavetime" length="8" sql-type="datetime" not-null="false"/>
+    </property>
+    <property name="rdeNature" type="String">
+      <column name="rdeNature" length="10" sql-type="varchar" not-null="false"/>
+    </property>
+    <property name="conEndDate" type="DateTime">
+      <column name="conEndDate" length="8" sql-type="datetime" not-null="false"/>
+    </property>
+    <property name="urgentCellMan" type="String">
+      <column name="urgentCellMan" length="20" sql-type="varchar" not-null="false"/>
+    </property>
+    <property name="ucmConcern" type="String">
+      <column name="ucmConcern" length="50" sql-type="varchar" not-null="false"/>
+    </property>
+    <property name="ucmTel" type="String">
+      <column name="ucmTel" length="50" sql-type="varchar" not-null="false"/>
+    </property>
+    <property name="userCode" type="String">
+      <column name="userCode" length="50" sql-type="varchar" not-null="false"/>
+    </property>
+    <property name="PastPerformance" type="String">
+      <column name="PastPerformance" length="200" sql-type="nvarchar" not-null="false"/>
+    </property>
+    <property name="IsChargeMan" type="Boolean">
+      <column name="IsChargeMan" length="1" sql-type="bit" not-null="true"/>
+    </property>
+    <property name="RTXID" type="String">
+      <column name="RTXID" length="200" sql-type="nvarchar" not-null="false"/>
+    </property>
+		<property name="LeaveDate" type="DateTime">
+			<column name="LeaveDate" length="8" sql-type="datetime" not-null="false"/>
+		</property>
+		<many-to-one name="Bm" class="cn.justwin.Domain.Entities.PTdbm, Domain"
+						 insert="false" update="false" column="i_bmdm" lazy="false" />
+	</class>
+</hibernate-mapping>

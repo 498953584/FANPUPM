@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="ResResourceType" table="Res_ResourceType" lazy="true" >
+		<id name="ResourceTypeId">
+			<column name="ResourceTypeId" sql-type="nvarchar" not-null="true" />
+		</id>
+		<property name="ParentId">
+			<column name="ParentId" sql-type="nvarchar" length="500" not-null="false" />
+		</property>
+		<property name="ResourceTypeCode">
+			<column name="ResourceTypeCode" sql-type="nvarchar"  length="500" not-null="true" />
+		</property>
+		<property name="ResourceTypeName">
+			<column name="ResourceTypeName" sql-type="nvarchar" length="1000" not-null="true" />
+		</property>
+		<property name="InputUser">
+			<column name="InputUser" sql-type="nvarchar" length="20" not-null="false" />
+		</property>
+		<property name="InputDate">
+			<column name="InputDate" sql-type="datetime" not-null="false" />
+		</property>
+		<property name="IsValid">
+			<column name="IsValid" sql-type="bit" length="1" not-null="false" />
+		</property>
+		<property name="CBSCode">
+			<column name="CBSCode" sql-type="nvarchar" length="200" not-null="false" />
+		</property>
+	</class>
+</hibernate-mapping>

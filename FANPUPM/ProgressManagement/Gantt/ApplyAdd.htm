@@ -1,0 +1,280 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ 
+<html>
+<head>
+    <title>进度计划调整审核</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link type="text/css" rel="Stylesheet" href="../../ProgressManage/Gantt/Css/Gantt.css" />
+</head>
+<body>
+    <div id="divDate">
+        <table>
+            <tr>
+                <td>
+                    顶层时间刻度：
+                </td>
+                <td>
+                    <select style="margin-right: 5px;" onchange="changeTopTimeScale(this.value)">
+                        <option value="year">年</option>
+                        <option value="halfyear">半年</option>
+                        <option value="quarter">季度</option>
+                        <option value="month">月</option>
+                        <option value="week" selected="selected">周</option>
+                        <option value="day">日</option>
+                        <option value="hour">时</option>
+                    </select>
+                </td>
+                <td>
+                    底层时间刻度：
+                </td>
+                <td>
+                    <select onchange="changeBottomTimeScale(this.value)" style="margin-right: 5px;">
+                        <option value="year">年</option>
+                        <option value="halfyear">半年</option>
+                        <option value="quarter">季度</option>
+                        <option value="month">月</option>
+                        <option value="week">周</option>
+                        <option value="day" selected="selected">日</option>
+                        <option value="hour">时</option>
+                    </select>
+                </td>
+                <td>
+                    <input class="inputBtns" type="button" value="放大" onclick="zoomIn()" />
+                    <input class="inputBtns" type="button" value="缩小" onclick="zoomOut()" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="buttons" class="divFooter" style="white-space: nowrap;">
+        <!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+        <input class="inputBtns" type="button" value="新增" onclick="addTask()" />
+        <input class="inputBtns" type="button" value="编辑" onclick="updateTask()" />
+        <input class="inputBtns" type="button" value="删除" onclick="removeTask()" />
+        <input class="inputBtns" type="button" value="升级" onclick="upgradeTask()" />
+        <input class="inputBtns" type="button" value="降级" onclick="downgradeTask()" />
+        <input class="inputBtns" type="button" value="日历" onclick="showCalendars()" />
+        <!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+        <input class="inputBtns" type="button" value="导入" onclick="importProject()" />
+        <input class="inputBtns" type="button" value="导出" onclick="exportProject()" />
+        <input class="inputBtns" type="button" value="另存为" onclick="saveAs()" />
+        <input class="inputBtns" type="button" value="保存" onclick="save()" />
+    </div>
+    <div style="text-align: center;">
+        <div id="viewCt" style="margin: 0 auto;">
+        </div>
+    </div>
+</body>
+</html>
+
+<script src="../../Script/jquery.js" type="text/javascript"></script>
+
+<script src="../../Gantt/scripts/boot.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+
+    /* 创建项目甘特图对象，设置列配置，创建右键菜单和任务面板 */
+
+    var project = new PlusProject();
+    project.setMultiSelect(true);                   //允许多选
+    var height = $(this).height() - $('#buttons').height() - $('#divDate').height() - 4 ;
+    project.setStyle("width:100%;height:" + height + "px;");
+    project.setColumns([
+    new PlusProject.IDColumn({ header: "标示", width: "50px" }), //序号
+    //new mini.CheckColumn({ header: "" }),
+    new PlusProject.StatusColumn(), //状态信息[可以显示备注和里程碑]
+    new PlusProject.NameColumn(), //任务名称
+    new PlusProject.PredecessorLinkColumn(), //前置任务
+    new PlusProject.DurationColumn(), //工期
+    new PlusProject.StartColumn(), //开始时间
+    new PlusProject.FinishColumn(), //结束时间
+    new PlusProject.PercentCompleteColumn(), //完成百分比
+    new PlusProject.WorkColumn(), //工时
+    new PlusProject.OutlineLevelColumn()//任务层次
+]);
+    project.render(document.getElementById("viewCt"));
+    
+
+   
+    var params = mini.getParams();  //...?id=100        获取URL的项目id信息
+    var projectUID = params.id;
+    //流程状态
+    var state = params.state;
+    params = { projectuid: projectUID };
+
+    if (projectUID == null) {   //如果没有传递项目id，则加载JSON格式项目数据演示和操作
+        LoadJSONProject("data/project.txt", project);
+        alert("无项目参数");
+    }
+    else {
+        LoadProject(params, project);
+    }
+
+    //审核中和已审核禁止编辑
+    
+        //双击编辑
+        project.on('taskdblclick', function(e) {
+            ShowTaskWindow(project);
+        });
+
+        //创建右键菜单
+        var menu = new ProjectMenu();
+        project.setContextMenu(menu);
+        menu.edit.on("click", function(e) {
+            ShowTaskWindow(project);
+        });
+        
+    /* 业务代码：加载、保存、调试项目，增、删、改、升级、降级任务 */
+
+    //日历
+    function showCalendars() {
+        ShowCalendarWindow(project,params);
+    }
+
+    //保存    
+    function save() {
+        SaveProject(project);
+    }
+
+    //新增
+    function addTask() {
+        var newTask = project.newTask();
+        newTask.Name = '<新增任务>';    //初始化任务属性
+
+        var selectedTask = project.getSelected();
+        if (selectedTask) {
+            project.addTask(newTask, "after", selectedTask);   //插入到到选中任务之前
+            //project.addTask(newTask, "add", selectedTask);       //加入到选中任务之内
+        }
+        else {
+            project.addTask(newTask);
+        }
+    }
+
+    //删除
+    function removeTask() {
+        //单项删除
+        //    var task = project.getSelected();
+        //    if (task) {
+        //        if (confirm("确定删除任务 \""+task.Name+"\" ？")) {
+        //            project.removeTask(task);
+        //        }
+        //    } else {
+        //        alert("请选中任务");
+        //    }
+        //多项删除
+        var tasks = project.getSelecteds();
+        if (tasks.length > 0) {
+            if (confirm("确定删除 " + tasks.length + " 条任务?")) {
+                project.removeTasks(tasks);
+            }
+        }
+        else {
+            alert("请先选择任务");
+        }
+
+    }
+
+    function updateTask() {
+        ShowTaskWindow(project);
+    }
+
+    function upgradeTask() {
+        var task = project.getSelected();
+        if (task) {
+            project.upgradeTask(task);
+        } else {
+            alert("请选中任务");
+        }
+    }
+
+    function downgradeTask() {
+        var task = project.getSelected();
+        if (task) {
+            project.downgradeTask(task);
+        } else {
+            alert("请选中任务");
+        }
+    }
+
+    function changeTopTimeScale(value) {
+        project.setTopTimeScale(value)
+    }
+
+    function changeBottomTimeScale(value) {
+        project.setBottomTimeScale(value)
+    }
+
+    function zoomIn() {
+        project.zoomIn();
+    }
+
+    function zoomOut() {
+        project.zoomOut();
+    }
+
+    //隐藏列
+    //function hideColumn() {
+    //    var columns = new Array('Weight', 'Department', 'Principal', 'Assignments')
+    //    for (i = 0; i < columns.length; i++) {
+    //        var column = columns[i];
+    //        project.updateColumn(column, {
+    //            visible: false
+    //        });
+    //    }
+    //}
+
+    //导入
+    function importProject() {
+        var url = "/ProgressManagement/Plan/ImportProject.aspx?id=" + projectUID;
+        //        window.open(url);
+        parent.parent.desktop.ImportProject = window;
+        var tabTitle = '';
+        $.ajax({
+            type: "GET",
+            url: "/ProgressManagement/Handler/GetProgressName.ashx?" + new Date().getTime() + "&id=" + projectUID,
+            async: true,
+            dataType: "text",
+            success: function(data) {
+                var title = '';
+                if (data != null && data.toString().length > 10) {
+                    title = data.toString().substring(0, 10) + '...';
+                }
+                else {
+                    title = data.toString();
+                }
+                toolbox_oncommand(url, title + '-导入');
+            }
+        });
+
+    }
+
+    //导出
+    function exportProject() {
+        var url = "/ProgressManagement/Plan/ExportProject.aspx?id=" + projectUID ;
+        window.open(url);
+    }
+
+    //另存为
+    function saveAs() {
+        //无Task不能另存为版本ToDo
+        var tasksLength = project.data.Tasks.length;
+        if (tasksLength == 0) {
+            alert("系统提示：\n\n无数据，不能另存为！");
+        }
+        else {
+            //先保存当前版本
+            SaveProject(project,true);
+            //将当前版本另存为新版本
+            $.ajax({
+                type: "GET",
+                async: false,
+                url: "/ProgressManagement/Handler/SaveAs.ashx?" + new Date().getTime() + "&id=" + projectUID,
+                dataType: "text",
+                success: function() {
+                      alert("系统提示：\n\n版本"+version+".0\n另存为成功！");
+                }
+            });
+        }
+    }
+</script>
+

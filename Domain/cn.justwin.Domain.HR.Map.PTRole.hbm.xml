@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="PTRole" table="PT_Role" lazy="true" >
+    <id name="RoleCode">
+      <column name="RoleCode" sql-type="int" not-null="true" />
+      <generator class="identity" />
+    </id>
+    <property name="RoleTypeCode">
+      <column name="RoleTypeCode" sql-type="varchar" length="9" not-null="false" />
+    </property>
+    <property name="RoleName">
+      <column name="RoleName" sql-type="varchar" length="20" not-null="false" />
+    </property>
+    <property name="IsValid">
+      <column name="IsValid" sql-type="char" length="1" not-null="false" />
+    </property>
+  </class>
+</hibernate-mapping>

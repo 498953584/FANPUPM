@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="BudConModifyTask" table="Bud_ConModifyTask" lazy="true" >
+		<id name="ModifyTaskId" column="ModifyTaskId"></id>
+		<property name="ModifyId" type="String">
+			<column name="ModifyId" sql-type="nvarchar" length="64" not-null="false" />
+		</property>
+		<property name="TaskId" type="String">
+			<column name="TaskId" sql-type="nvarchar" length="500" not-null="false" />
+		</property>
+		<property name="ModifyTaskCode" type="String">
+			<column name="ModifyTaskCode" sql-type="nvarchar" length="100" not-null="true" />
+		</property>
+		<property name="ModifyTaskContent" type="String">
+			<column name="ModifyTaskContent" sql-type="nvarchar" length="200" not-null="true" />
+		</property>
+		<property name="Unit" type="String">
+			<column name="Unit" sql-type="nvarchar" length="500" not-null="false" />
+		</property>
+		<property name="Quantity" type="Decimal">
+			<column name="Quantity" sql-type="decimal" not-null="true" />
+		</property>
+		<property name="UnitPrice" type="Decimal">
+			<column name="UnitPrice" sql-type="decimal" not-null="true" />
+		</property>
+		<property name="Total" type="Decimal">
+			<column name="Total" sql-type="decimal" not-null="true" />
+		</property>
+		<property name="StartDate" type="DateTime">
+			<column name="StartDate" sql-type="datetime" not-null="false" />
+		</property>
+		<property name="EndDate" type="DateTime">
+			<column name="EndDate" sql-type="datetime" not-null="false" />
+		</property>
+		<property name="OrderNumber" type="String">
+			<column name="OrderNumber" sql-type="nvarchar" length="500" not-null="false" />
+		</property>
+		<property name="Note" type="StringClob">
+			<column name="Note" sql-type="nvarchar(Max)" not-null="false" />
+		</property>
+		<property name="ModifyType" type="int">
+			<column name="ModifyType" sql-type="int" not-null="false" />
+		</property>
+		<property name="ConstructionPeriod" type="int">
+			<column name="ConstructionPeriod" sql-type="int" not-null="false" />
+		</property>
+		<property name="FeatureDescription">
+			<column name="FeatureDescription" sql-type="nvarchar(max)" not-null="false" />
+		</property>
+		<property name="MainMaterial">
+			<column name="MainMaterial" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="SubMaterial">
+			<column name="SubMaterial" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="Labor">
+			<column name="Labor" sql-type="decimal" not-null="false" />
+		</property>
+		<property name="ContractId" type="String">
+			<column name="ContractId" sql-type="nvarchar" length="200"></column>
+		</property>
+		<property name="PrjId2" type="String">
+			<column name="PrjId2" sql-type="nvarchar" length="200"></column>
+		</property>
+		<property name="ParentId" type="String">
+			<column name="ParentId" sql-type="nvarchar" length="200"></column>
+		</property>
+	</class>
+</hibernate-mapping>

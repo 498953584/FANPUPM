@@ -1,0 +1,51 @@
+﻿<html>
+<head>
+    <title>语言本地化(英文)</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+</head>
+<body>    
+    
+    <div id="viewCt" >
+        
+    </div>
+</body>
+</html>
+
+<script src="../scripts/boot.js" type="text/javascript"></script>
+<!--只需要引用locale文件夹下资源js文件即可-->
+<script src="../scripts/miniui/locale/en_US.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+
+/* 创建项目甘特图对象
+-----------------------------------------------------------------------------*/
+
+var project = new PlusProject();
+project.setStyle("width:800px;height:400px");
+project.setColumns([
+    new PlusProject.IDColumn(),
+    new PlusProject.StatusColumn(),
+    new PlusProject.NameColumn(),
+    new PlusProject.PredecessorLinkColumn(),
+    new PlusProject.PercentCompleteColumn(),
+    new PlusProject.DurationColumn(),
+    new PlusProject.StartColumn(),
+    new PlusProject.FinishColumn(),
+    new PlusProject.WorkColumn(),
+    new PlusProject.DepartmentColumn(),
+    new PlusProject.PrincipalColumn(),
+    new PlusProject.AssignmentsColumn()
+]);
+project.render(document.getElementById("viewCt"));
+
+
+//创建右键菜单
+var menu = new ProjectMenu();
+project.setContextMenu(menu);
+menu.edit.on("click", function (e) {
+    ShowTaskWindow(project);
+});
+
+LoadJSONProject("data/en_US.txt", project);
+
+</script>

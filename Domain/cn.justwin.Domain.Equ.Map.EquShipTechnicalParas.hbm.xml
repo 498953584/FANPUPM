@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="EquShipTechnicalParas" table="Equ_ShipTechnicalParas" lazy="true" >
+		<id name="TechId">
+			<column name="TechId" sql-type="nvarchar" length="64" not-null="true" />
+		</id>
+		<property name="EquId">
+			<column name="EquId" sql-type="nvarchar" length="64" not-null="true" />
+		</property>
+		<property name="OtherShipInfo">
+			<column name="OtherShipInfo" sql-type="nvarchar" length="500" not-null="false" />
+		</property>
+	</class>
+</hibernate-mapping>

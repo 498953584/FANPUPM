@@ -1,0 +1,17 @@
+﻿body {
+}
+.td{}
+.scroll-y
+{
+	overflow-y:auto;
+	overflow-x:hidden;
+	scrollbar-face-color:#F00;/*滚动条凸出部门的颜色(远景色),包含两真个方形按钮、程度或者竖直涩动的滑块的颜色*/ 
+    scrollbar-track-color:#FFF;/*转动条的负景颜色,假如省详的话将呈现虚面，颜色将采取face-color的色彩*/ 
+    scrollbar-arrow-color:#FFF;/*按钮(上下或许右右能够面打使涩块滚动的方形按钮)上三角箭头的颜色*/ 
+    scrollbar-3dlight-color:#0F0;/*滚动条明边的色彩,构成3D后果，有层次感，肉眼察看正在滚动条右边及上边呈现一条有色线（竖直方背滚动）*/ 
+	scrollbar-darkshadow-color:#00F;/*滚动条强暗影的颜色,肉眼察看涌现滚动条下边及右边*/ 
+	scrollbar-highlight-color:#F0F;/*滚动条空缺部门的颜色,肉眼察看转变没有显明，详细颜色转变涌现正在右边和上边空缺处，介于face-color成效取3dlingt-color后果之间有个空缺颜色（默以为红色）。彼外,400电话，滚动条远景色有类凹陷的感觉，周边线条颜色突出*/ 
+	scrollbar-shadow-color:#006600;/*平面转动条暗影的色彩，详细呈现正在涩块及方形按钮的右边及下边，构成暗影效因，颜色介于face-color后果和darkshadow-color成效之间，没有是很显明*/ 
+	scrollbar-base-color:#0f0;/*滚动条的基础颜色,以后里7个成效出隐时，滚动条根本颜色设放肉眼很难视察到，假如不设置前里7个效果,体系将依据base-color主动设置，其中远景色，负风光(虚面表现)颜色分歧,芭蕾舞鞋，其他效因(阴影以玄色挖充),出有什么请求时，倡议没有设放彼效因*/ 
+
+}

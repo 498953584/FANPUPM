@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Domain" namespace="cn.justwin.Domain.Entities" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="BudPreReimburseApplyDetail" table="Bud_PreReimburseApplyDetail" lazy="true" >
+		<id name="Id">
+			<column name="Id" sql-type="nvarchar" length="200" not-null="true" />
+		</id>
+		<property name="ApplyId">
+			<column name="ApplyId" sql-type="nvarchar" length="200" not-null="true" />
+		</property>
+		<property name="Name">
+			<column name="Name" sql-type="nvarchar" length="200" not-null="true" />
+		</property>
+		<property name="CBSCode">
+			<column name="CBSCode" sql-type="nvarchar" length="200" not-null="true" />
+		</property>
+		<property name="Cost">
+			<column name="Cost" sql-type="decimal" not-null="true" />
+		</property>
+		<property name="Note">
+			<column name="Note" sql-type="nvarchar" length="2000" not-null="false" />
+		</property>
+	</class>
+</hibernate-mapping>

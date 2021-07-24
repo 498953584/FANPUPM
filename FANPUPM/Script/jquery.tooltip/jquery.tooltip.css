@@ -1,0 +1,28 @@
+/* 用于显示出完整的信息 */
+#tooltip {
+	position:absolute;
+	z-index: 3000;
+	border: 1px solid #B0E0E6;
+    background-color:white;
+    color:#4F9D9D; 
+	line-height:20px;
+	font-weight:lighter;
+	padding: 3px;
+	opacity: 0.85;
+}
+#tooltip h3, #tooltip div { margin: 0; }
+
+/* 用于显示警告或解释 */
+#tooltip2 {
+	position:absolute;
+	z-index: 3000;
+	border: 1px solid #ff9900;
+    background-color:#fdf5cd;
+    color:#ff9900; 
+	line-height:20px;
+	font-weight:lighter;
+	padding: 3px;
+	opacity: 0.85;
+}
+#tooltip2 h3, #tooltip div { margin: 0; }
+

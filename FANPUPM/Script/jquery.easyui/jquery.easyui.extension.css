@@ -1,0 +1,57 @@
+﻿.accordion .accordion-header-selected
+{
+	background: #E0ECFF;
+}
+
+.accordion-body
+{
+	overflow: hidden;
+}
+
+.accordion-body .tree-node
+{
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+/* 一级菜单 */
+.accordion-header .panel-title
+{
+	margin-left: 5px;
+}
+
+.panel-title
+{
+	font-weight: normal;
+}
+
+.icon-member
+{
+	background: url('icons/member.png') no-repeat;
+}
+
+/* tab标签页的刷新样式 */
+.icon-reload
+{
+	cursor: pointer;
+}
+
+/* 树选中的样式 
+.tree-node-selected
+{
+	color: #ff6000;
+	background-color: #ffeadd;
+}
+*/
+.tree-node-selected
+{
+	color: White;
+	background-color: #3399FF;
+}
+
+/* 去掉树节点的状态图片 */
+.tree-icon
+{
+	display: none;
+}
+
