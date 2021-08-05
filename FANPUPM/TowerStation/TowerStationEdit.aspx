@@ -14,6 +14,7 @@
     <script type="text/javascript" src="../Script/jquery.easyui/locale/easyui-lang-zh_CN.js"></script>
     <script type="text/javascript" src="/Script/My97DatePicker/WdatePicker.js"></script>
     <script type="text/javascript" src="../Script/DecimalInput.js"></script>
+    <script type="text/javascript" src="/Script/jquery.js"></script>
     <style type="text/css">
         h1 {
             font-size: 18px; /* 18px / 12px = 1.5 */
@@ -77,6 +78,40 @@
             }
         }
 
+
+
+        // 绑定城市
+        function bindCity() {
+            if (document.getElementById('dropprovince').value != '') {
+                $.ajax({
+                    type: 'POST',
+                    async: false,
+                    url: '/TenderManage/Handler/GetCity.ashx?province=' + $('#dropprovince').val(), //document.getElementById('dropprovince').value,
+                    success: function (str) {
+                        var strTemp = str.split('|');
+                        for (var i = 0; i < strTemp.length; i++) {
+                            if (strTemp[i] == "请选择") {
+                                document.getElementById('dropcity').options[i] = new Option("请选择", "");
+                            }
+                            else {
+                                document.getElementById('dropcity').options[i] = new Option(strTemp[i], i);
+                            }
+                        }
+                        document.getElementById('dropcity').length = strTemp.length;
+                        var city = document.getElementById('dropcity');
+                        document.getElementById('hfldCity').value = city[city.selectedIndex].text;
+                    }
+                });
+            }
+            else {
+                document.getElementById('dropcity').options[0] = new Option("请选择", "");
+                document.getElementById('dropcity').length = 1;
+            }
+        }
+
+        function Province_onchange() {
+            bindCity();
+        }
         function showTab(index) {
             showTabIndex = index;
             $(".tableContent2").hide();
@@ -117,20 +152,21 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="word">省：
-                    </td>
+                    <td class="word">名称：</td>
                     <td class="txt">
-                        <asp:TextBox ID="TxtProvince" Width="250px" Columns="21" MaxLength="50" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="TxtName" Width="250px" Columns="21" MaxLength="50" runat="server"></asp:TextBox>
                     </td>
-                    <td class="txt" colspan="2" rowspan="8">
+                    <td class="txt" colspan="2" rowspan="9">
                         <table>
                             <tr>
                                 <td rowspan="6" style="width: 200px;">
                                     <img alt="" src="" height="210px;" width="200px;" />
+                                    
                                 </td>
                                 <td>
                                     <asp:RadioButton ID="PhotoType360度全景拍摄" runat="server" GroupName="PhotoType" Text="360度全景拍摄" /></td>
                             </tr>
+                            
                             <tr>
                                 <td>
                                     <asp:RadioButton ID="PhotoType其他" runat="server" GroupName="PhotoType" Text="其他" /></td>
@@ -151,13 +187,26 @@
                                 <td>
                                     <asp:RadioButton ID="PhotoType展示天线负荷" runat="server" GroupName="PhotoType" Text="展示天线负荷" /></td>
                             </tr>
+                            <tr>
+                                <td colspan="2"> <asp:FileUpload ID="fplLoginLogo" BackColor="White" Width="60%" runat="server" /></td>
+                            </tr>
                         </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="word">省：
+                    </td>
+                    <td class="txt">
+                        <asp:DropDownList ID="dropprovince" Width="40%" onchange="Province_onchange()" runat="server"></asp:DropDownList>
+                                               
+                        <asp:TextBox ID="TxtProvince" Width="250px" Columns="21" MaxLength="50" runat="server"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td class="word">地区（市）：
                     </td>
                     <td class="txt">
+                         <asp:DropDownList ID="dropcity" Width="40%" onchange="City_onchange()" runat="server"></asp:DropDownList>
                         <asp:TextBox ID="TxtCity" Width="250px" Columns="21" MaxLength="50" runat="server"></asp:TextBox>
                     </td>
                 </tr>

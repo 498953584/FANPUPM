@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -11,6 +12,7 @@ using System.Web.SessionState;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using cn.justwin.BLL;
+using cn.justwin.Domain.Services;
 using com.jwsoft.pm.data;
 
 public partial class TowerStation_TowerStationEdit : NBasePage, IRequiresSessionState
@@ -23,6 +25,7 @@ public partial class TowerStation_TowerStationEdit : NBasePage, IRequiresSession
         }
         var mode = Request.QueryString["mode"];
         var oid = Request.QueryString["oid"];
+        BindProvice();
         switch (mode)
         {
             case "1":
@@ -34,6 +37,8 @@ public partial class TowerStation_TowerStationEdit : NBasePage, IRequiresSession
                 if (dt != null && dt.Rows.Count > 0)
                 {
                     var dr = dt.Rows[0];
+                    TxtName.Text = dr["TowerName"].ToString();
+
                     TxtProvince.Text = dr["Province"].ToString();
                     TxtCity.Text = dr["City"].ToString();
                     TxtArea.Text = dr["Area"].ToString();
@@ -143,13 +148,41 @@ public partial class TowerStation_TowerStationEdit : NBasePage, IRequiresSession
         }
         
     }
-
+    private void BindProvice()
+    {
+        DataTable aLLProvince = new BasicProvinceService().GetALLProvince();
+        this.dropprovince.DataSource = aLLProvince;
+        this.dropprovince.DataValueField = "Id";
+        this.dropprovince.DataTextField = "Name";
+        this.dropprovince.DataBind();
+        this.dropprovince.Items.Insert(0, new ListItem("请选择", ""));
+        this.dropcity.Items.Add(new ListItem("请选择", ""));
+    }
     protected void BtnSave_Click(object sender, EventArgs e)
     {
         string strSql;
         var mode = Request.QueryString["mode"];
+        string filepath = string.Empty;
+        if (!string.IsNullOrEmpty(this.fplLoginLogo.PostedFile.FileName))
+        {
+            string contentType = this.fplLoginLogo.PostedFile.ContentType;
+            if (contentType == "image/bmp" || contentType == "image/gif" || contentType == "image/x-png" || contentType == "image/jpeg")
+            {
+                string arg_72_0 = this.fplLoginLogo.PostedFile.FileName;
+                filepath = base.Server.MapPath("/UploadFiles/UserLogo/"+System.Guid.NewGuid().ToString()+arg_72_0);
+                //FileInfo fileInfo = new FileInfo(filepath);
+                
+                this.fplLoginLogo.SaveAs(filepath);
+                //base.RegisterScript("top.ui.show('上传成功')");
+            }
+            else
+            {
+                //base.RegisterScript("top.ui.alert('上传的登录页面的logo格式不正确')");
+            }
+        }
         var hashtable = new Hashtable
         {
+            {"Towername",TxtName.Text },{ "PhotoPath",filepath},
             {"Province", TxtProvince.Text}, {"City", TxtCity.Text}, {"Area", TxtArea.Text}, {"Address", TxtAddress.Text},
             {"Liaison", TxtLiaison.Text}, {"Phone", TxtPhone.Text}, {"Email", TxtEmail.Text}, {"PlaceMode", GetRadioText("PlaceMode")},
             {"BuildState", GetRadioText("BuildState")}, {"BuildTime", TxtBuildTime.Text},
