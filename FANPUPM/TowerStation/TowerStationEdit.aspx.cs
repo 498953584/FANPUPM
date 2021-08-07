@@ -32,6 +32,7 @@ public partial class TowerStation_TowerStationEdit : NBasePage, IRequiresSession
                 if (dt != null && dt.Rows.Count > 0)
                 {
                     var dr = dt.Rows[0];
+                    TxtName.Text = dr["Name"].ToString();
                     DdlProvince.Text = dr["Province"].ToString();
                     DdlProvince_SelectedIndexChanged(null, null);
                     DdlCity.Text = dr["City"].ToString();
@@ -140,7 +141,6 @@ public partial class TowerStation_TowerStationEdit : NBasePage, IRequiresSession
                     SetIsRadio("AirconditionState", dr["AirconditionState"].ToString());
                     if (!string.IsNullOrEmpty(dr["Photo"].ToString()))
                     {
-                        //var s = Convert.FromBase64String(dr["Photo"].ToString());
                         imghead.Src =  dr["Photo"].ToString();
                     }
                 }
@@ -152,6 +152,11 @@ public partial class TowerStation_TowerStationEdit : NBasePage, IRequiresSession
     {
         string strSql;
         var mode = Request.QueryString["mode"];
+        var photo = string.Empty;
+        if (FupImage.HasFile)
+        {
+            photo = "data:image/" + Path.GetExtension(FupImage.FileName) + ";base64," + Convert.ToBase64String(FupImage.FileBytes);
+        }
         var hashtable = new Hashtable
         {
             {"Province", DdlProvince.Text}, {"City", DdlCity.Text}, {"Area", DdlArea.Text}, {"Address", TxtAddress.Text},
@@ -202,13 +207,8 @@ public partial class TowerStation_TowerStationEdit : NBasePage, IRequiresSession
             {"VehicleFlowrate", TxtVehicleFlowrate.Text}, {"LaunchCycle", TxtLaunchCycle.Text}, {"ReleaseBrand", TxtReleaseBrand.Text},
             {"OutdoorAdManufacturer", TxtOutdoorAdManufacturer.Text}, {"PowerSupplySubsystem", GetRadioText("PowerSupplySubsystem")},
             {"PowerSupplyManufacturer", TxtPowerSupplyManufacturer.Text}, {"RSUSubsystem", GetRadioText("RSUSubsystem")},
-            {"RSUManufacturer", TxtRSUManufacturer.Text},
+            {"RSUManufacturer", TxtRSUManufacturer.Text},{"Name", TxtName.Text},{"Photo", photo},
         };
-        var photo = string.Empty;
-        if (FupImage.HasFile)
-        {
-            photo = "data:image/" + Path.GetExtension(FupImage.FileName) + ";base64," + Convert.ToBase64String(FupImage.FileBytes);
-        }
         switch (mode)
         {
             case "1":
@@ -222,11 +222,6 @@ public partial class TowerStation_TowerStationEdit : NBasePage, IRequiresSession
 
                     return _.Value is string ? SqlStringConstructor.GetQuotedString(_.Value.ToString()) : _.Value.ToString();
                 }));
-                if (!string.IsNullOrEmpty(photo))
-                {
-                    str += ",Photo";
-                    strSql += ",'" + photo + "'";
-                }
                 publicDbOpClass.ExecuteSQL("Insert Into TowerStationInfo(" + str + ")Values(" + strSql + ")");
                 break;
             case "2":
@@ -235,15 +230,11 @@ public partial class TowerStation_TowerStationEdit : NBasePage, IRequiresSession
                 {
                     if (_.Value == null || string.IsNullOrEmpty(_.Value.ToString()))
                     {
-                        return _.Key + "=NULL";
+                        return _.Key + "=" + (new[] {"Photo"}.Contains(_.Key) ? _.Key.ToString() : "NULL");
                     }
 
                     return _.Key + "=" + (_.Value is string ? SqlStringConstructor.GetQuotedString(_.Value.ToString()) : _.Value.ToString());
                 }));
-                if (!string.IsNullOrEmpty(photo))
-                {
-                    strSql += ",Photo='" + photo + "'";
-                }
                 publicDbOpClass.ExecuteNonQuery(CommandType.Text, "Update TowerStationInfo set " + strSql + " WHERE TowerStationGUID=@oid",
                     new[] {new SqlParameter("@oid", oid)});
                 break;

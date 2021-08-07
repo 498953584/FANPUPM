@@ -40,7 +40,7 @@ public partial class TowerStation_TowerStationManage : NBasePage, IRequiresSessi
         {
             {"Province", DdlProvince.Text}, {"City", DdlCity.Text}, {"Area", DdlArea.Text}, {"Address", TxtAddress.Text},
             {"Liaison", TxtLiaison.Text}, {"Phone", TxtPhone.Text}, {"Email", TxtEmail.Text}, {"PlaceMode", DdlPlaceMode.SelectedValue},
-            {"BuildState", DdlBuildState.SelectedValue},// {"BuildTime", TxtBuildTime.Text},
+            {"BuildState", DdlBuildState.SelectedValue}, {"Name",TxtName.Text},
             //{"IsStateOwned", GetIsRadioValue("IsStateOwned")}, {"IsIntelligence", GetIsRadioValue("IsIntelligence")},
             //{"NominalLongitude", TxtNominalLongitude.Text}, {"NominalDimension", TxtNominalDimension.Text},
             //{"GPSLongitude", TxtGPSLongitude.Text}, {"GPSDimension", TxtGPSDimension.Text},
@@ -98,9 +98,17 @@ public partial class TowerStation_TowerStationManage : NBasePage, IRequiresSessi
                 }
                 return _.Key + "=" + _.Value;
             }));
+        if (!string.IsNullOrEmpty(TxtBuildTimeStart.Text))
+        {
+            strWhere += " AND BuildTime>='" + TxtBuildTimeStart.Text + "'";
+        }
+        if (!string.IsNullOrEmpty(TxtBuildTimeEnd.Text))
+        {
+            strWhere += " AND BuildTime<='" + TxtBuildTimeEnd.Text + "'";
+        }
 
         var strSql = @"
-SELECT tsi.TowerStationGUID, p.name + c.name + cou.name AS Province,
+SELECT tsi.TowerStationGUID, p.name + c.name + cou.name AS Province,tsi.Name,
     ISNULL(tsi.MapLongitude, '')
     + CASE WHEN ISNULL(tsi.MapLongitude, '') <> '' AND ISNULL(tsi.MapDimension, '') <> '' THEN '、' ELSE '' END
     + ISNULL(tsi.MapDimension, '') AS MapCoordinates
@@ -110,11 +118,9 @@ FROM dbo.TowerStationInfo tsi
      LEFT JOIN dbo.country cou ON tsi.Area = cou.country_id";
         if (!string.IsNullOrEmpty(strWhere))
         {
-            strSql += " WHERE " + strWhere;
+            strSql += " WHERE " + (strWhere.StartsWith(" AND ") ? "1=1" : string.Empty) + strWhere;
         }
         var dataSource = publicDbOpClass.DataTableQuary(strSql);
-        //AspNetPager1.RecordCount = 10;
-        //AspNetPager1.PageSize = NBasePage.pagesize;
         GvTowerStation.DataSource = dataSource;
         GvTowerStation.DataBind();
     }
@@ -151,7 +157,7 @@ FROM dbo.TowerStationInfo tsi
         DdlCity.DataTextField = "name";
         DdlCity.DataValueField = "city_id";
         DdlCity.DataBind();
-        DdlCity.Items.Insert(0, new ListItem("请选择", ""));
+        DdlCity.Items.Insert(0, new ListItem("", ""));
         DdlCity_SelectedIndexChanged(null, null);
     }
     /// <summary>
@@ -171,7 +177,7 @@ FROM dbo.TowerStationInfo tsi
         DdlArea.DataTextField = "name";
         DdlArea.DataValueField = "country_id";
         DdlArea.DataBind();
-        DdlArea.Items.Insert(0, new ListItem("请选择", ""));
+        DdlArea.Items.Insert(0, new ListItem("", ""));
     }
     /// <summary>
     /// 省数据绑定
@@ -184,7 +190,7 @@ FROM dbo.TowerStationInfo tsi
         DdlProvince.DataTextField = "name";
         DdlProvince.DataValueField = "province_id";
         DdlProvince.DataBind();
-        DdlProvince.Items.Insert(0, new ListItem("请选择", ""));
+        DdlProvince.Items.Insert(0, new ListItem("", ""));
     }
 
 

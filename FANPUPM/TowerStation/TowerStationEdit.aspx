@@ -46,7 +46,7 @@
             text-align: left;
             white-space: nowrap;
         }
-        #preview{width:200px;height:210px;border:1px solid #B5CCDE;overflow:hidden;} 
+        #preview{width:200px;height:230px;border:1px solid #B5CCDE;overflow:hidden;} 
         #imghead {filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=image);} 
         /*上传头像*/
         #a-upon input {
@@ -59,7 +59,7 @@
 
         #a-upon {
             position: relative;
-            width: 100%;
+            width: 200px;
             height: 100%;
             color: #888;
             cursor: pointer;
@@ -81,7 +81,7 @@
     <script type="text/javascript">
         var showTabIndex = 1;
         var maxWidth = 200;
-        var maxHeight = 210;
+        var maxHeight = 230;
         $(document).ready(function() {
             showTab(showTabIndex);
             var action = getRequestParam('mode');
@@ -215,19 +215,18 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="word">省：
+                    <td class="word">名称：
                     </td>
                     <td class="txt">
-                        <asp:DropDownList ID="DdlProvince" runat="server" AutoPostBack="True" Width="250px" OnSelectedIndexChanged="DdlProvince_SelectedIndexChanged"></asp:DropDownList>
+                        <asp:TextBox ID="TxtName" Width="250px" Columns="21" MaxLength="200" runat="server"></asp:TextBox>
                     </td>
-                    <td class="txt" colspan="2" rowspan="8">
+                    <td class="txt" colspan="2" rowspan="9">
                         <table>
                             <tr>
-                                <td rowspan="6" style="width: 200px;">
+                                <td rowspan="6" style="width: 200px; padding-right: 8px;">
                                     <div id="preview"> 
                                         <img alt="" id="imghead" src="" runat="server" /> 
-                                    </div> 
-                                    <br/>
+                                    </div>
                                     <a id="a-upon" title="双击这里上传">
                                         <asp:FileUpload ID="FupImage" runat="server" onchange="previewImage(this)" accept="image/gif, image/jpeg, image/png, image/jpg" />双击这里上传
                                     </a>
@@ -256,6 +255,13 @@
                                     <asp:RadioButton ID="PhotoType展示天线负荷" runat="server" GroupName="PhotoType" Text="展示天线负荷" /></td>
                             </tr>
                         </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="word">省：
+                    </td>
+                    <td class="txt">
+                        <asp:DropDownList ID="DdlProvince" runat="server" AutoPostBack="True" Width="250px" OnSelectedIndexChanged="DdlProvince_SelectedIndexChanged"></asp:DropDownList>
                     </td>
                 </tr>
                 <tr>

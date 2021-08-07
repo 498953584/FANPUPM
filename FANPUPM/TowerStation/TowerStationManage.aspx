@@ -55,6 +55,11 @@
                 <td>
                     <table class="queryTable" id="queryTable" cellpadding="3px" cellspacing="0px">
                         <tr>
+                            <td class="descTd">名称
+                            </td>
+                            <td>
+                                <asp:TextBox ID="TxtName" runat="server"></asp:TextBox>
+                            </td>
                             <td class="descTd">省
                             </td>
                             <td>
@@ -118,6 +123,14 @@
                                     <asp:ListItem Value="规划中" Text="规划中"></asp:ListItem>
                                 </asp:DropDownList>
                             </td>
+                            <td class="descTd">建设时间
+                            </td>
+                            <td>
+                                <asp:TextBox ID="TxtBuildTimeStart" onclick="WdatePicker()" runat="server"></asp:TextBox></td>
+                            <td class="descTd">至
+                            </td>
+                            <td>
+                                <asp:TextBox ID="TxtBuildTimeEnd" onclick="WdatePicker()" runat="server"></asp:TextBox></td>
                             <td colspan="2">
                                 <asp:Button ID="brnQuery" Text="查询" OnClick="btnSearch_Click" runat="server" />
                             </td>
@@ -156,7 +169,7 @@
                             </asp:TemplateField>
                             <asp:TemplateField HeaderText="塔站名称">
                                 <ItemTemplate>
-                                    <%# Convert.ToString(Eval("Province")) %>
+                                    <%# Convert.ToString(Eval("Name")) %>
                                 </ItemTemplate>
                             </asp:TemplateField>
                             <asp:TemplateField HeaderText="地图坐标">
@@ -180,8 +193,6 @@
                         <HeaderStyle CssClass="header"></HeaderStyle>
                         <FooterStyle CssClass="footer"></FooterStyle>
                     </asp:GridView>
-                    <%--<webdiyer:AspNetPager ID="AspNetPager1" Width="100%" UrlPaging="false" ShowPageIndexBox="Always" PageIndexBoxType="DropDownList" TextBeforePageIndexBox="转到: " FirstPageText="首页" LastPageText="末页" PrevPageText="上一页" NextPageText="下一页" HorizontalAlign="Left" EnableTheming="true" OnPageChanged="AspNetPager1_PageChanged" runat="server">
-                    </webdiyer:AspNetPager>--%>
                 </td>
             </tr>
         </table>
