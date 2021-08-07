@@ -1,15 +1,13 @@
-﻿using System;
+﻿using cn.justwin.BLL;
+using com.jwsoft.pm.data;
+using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Data;
-using System.Drawing;
+using System.Data.SqlClient;
 using System.Linq;
-using System.Web;
 using System.Web.SessionState;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using cn.justwin.BLL;
-using com.jwsoft.pm.data;
 
 public partial class TowerStation_TowerStationManage : NBasePage, IRequiresSessionState
 {
@@ -17,6 +15,7 @@ public partial class TowerStation_TowerStationManage : NBasePage, IRequiresSessi
     {
         if (!IsPostBack)
         {
+            BindProvince();
             AllData_bind();
         }
     }
@@ -39,7 +38,7 @@ public partial class TowerStation_TowerStationManage : NBasePage, IRequiresSessi
     {
         var hashtable = new Hashtable
         {
-            {"Province", TxtProvince.Text}, {"City", TxtCity.Text}, {"Area", TxtArea.Text}, {"Address", TxtAddress.Text},
+            {"Province", DdlProvince.Text}, {"City", DdlCity.Text}, {"Area", DdlArea.Text}, {"Address", TxtAddress.Text},
             {"Liaison", TxtLiaison.Text}, {"Phone", TxtPhone.Text}, {"Email", TxtEmail.Text}, {"PlaceMode", DdlPlaceMode.SelectedValue},
             {"BuildState", DdlBuildState.SelectedValue},// {"BuildTime", TxtBuildTime.Text},
             //{"IsStateOwned", GetIsRadioValue("IsStateOwned")}, {"IsIntelligence", GetIsRadioValue("IsIntelligence")},
@@ -101,8 +100,14 @@ public partial class TowerStation_TowerStationManage : NBasePage, IRequiresSessi
             }));
 
         var strSql = @"
-SELECT TowerStationGUID,Province,ISNULL(MapLongitude,'') + CASE WHEN ISNULL(MapLongitude,'')<>'' AND ISNULL(MapDimension,'')<>'' THEN '、' ELSE '' END + ISNULL(MapDimension,'') AS MapCoordinates
-FROM dbo.TowerStationInfo";
+SELECT tsi.TowerStationGUID, p.name + c.name + cou.name AS Province,
+    ISNULL(tsi.MapLongitude, '')
+    + CASE WHEN ISNULL(tsi.MapLongitude, '') <> '' AND ISNULL(tsi.MapDimension, '') <> '' THEN '、' ELSE '' END
+    + ISNULL(tsi.MapDimension, '') AS MapCoordinates
+FROM dbo.TowerStationInfo tsi
+     LEFT JOIN dbo.province p ON tsi.Province = p.province_id
+     LEFT JOIN dbo.city c ON tsi.City = c.city_id
+     LEFT JOIN dbo.country cou ON tsi.Area = cou.country_id";
         if (!string.IsNullOrEmpty(strWhere))
         {
             strSql += " WHERE " + strWhere;
@@ -128,6 +133,60 @@ FROM dbo.TowerStationInfo";
     {
         AllData_bind();
     }
+
+    /// <summary>
+    /// 省选择事件
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    protected void DdlProvince_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        var sql = @"SELECT  name, city_id, province_id FROM dbo.city WHERE province_id=@province_id";
+        SqlParameter[] paras =
+        {
+            new SqlParameter("@province_id", DdlProvince.SelectedValue)
+        };
+        var dt = publicDbOpClass.ExecuteDataTable(CommandType.Text, sql, paras);
+        DdlCity.DataSource = dt;
+        DdlCity.DataTextField = "name";
+        DdlCity.DataValueField = "city_id";
+        DdlCity.DataBind();
+        DdlCity.Items.Insert(0, new ListItem("请选择", ""));
+        DdlCity_SelectedIndexChanged(null, null);
+    }
+    /// <summary>
+    /// 市选择事件
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    protected void DdlCity_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        var sql = @"SELECT  name, country_id, city_id FROM dbo.country WHERE city_id=@city_id";
+        SqlParameter[] paras =
+        {
+            new SqlParameter("@city_id", DdlCity.SelectedValue)
+        };
+        var dt = publicDbOpClass.ExecuteDataTable(CommandType.Text, sql, paras);
+        DdlArea.DataSource = dt;
+        DdlArea.DataTextField = "name";
+        DdlArea.DataValueField = "country_id";
+        DdlArea.DataBind();
+        DdlArea.Items.Insert(0, new ListItem("请选择", ""));
+    }
+    /// <summary>
+    /// 省数据绑定
+    /// </summary>
+    private void BindProvince()
+    {
+        var strSql = "SELECT	 name, province_id FROM dbo.province";
+        var dt = publicDbOpClass.DataTableQuary(strSql);
+        DdlProvince.DataSource = dt;
+        DdlProvince.DataTextField = "name";
+        DdlProvince.DataValueField = "province_id";
+        DdlProvince.DataBind();
+        DdlProvince.Items.Insert(0, new ListItem("请选择", ""));
+    }
+
 
     /// <summary>
     /// 获取多个选项的单选控件值

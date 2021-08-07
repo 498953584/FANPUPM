@@ -26,6 +26,7 @@ CREATE TABLE [dbo].[TowerStationInfo](
 	[MapLongitude] nvarchar(50)   ,
 	[MapDimension] nvarchar(50)   ,
 	[MapDatum] nvarchar(50)   ,
+	[Photo] nvarchar(max),
 	[PhotoType] nvarchar(50)   ,
 	[HorizontalPosition] nvarchar(200)   ,
 	[ShootingPosition] nvarchar(200)   ,

@@ -1,17 +1,13 @@
-﻿using System;
+﻿using cn.justwin.BLL;
+using com.jwsoft.pm.data;
+using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Web;
 using System.Web.SessionState;
-using System.Web.UI;
 using System.Web.UI.WebControls;
-using cn.justwin.BLL;
-using com.jwsoft.pm.data;
 
 public partial class TowerStation_TowerStationEdit : NBasePage, IRequiresSessionState
 {
@@ -23,6 +19,8 @@ public partial class TowerStation_TowerStationEdit : NBasePage, IRequiresSession
         }
         var mode = Request.QueryString["mode"];
         var oid = Request.QueryString["oid"];
+        BindProvince();
+
         switch (mode)
         {
             case "1":
@@ -34,9 +32,11 @@ public partial class TowerStation_TowerStationEdit : NBasePage, IRequiresSession
                 if (dt != null && dt.Rows.Count > 0)
                 {
                     var dr = dt.Rows[0];
-                    TxtProvince.Text = dr["Province"].ToString();
-                    TxtCity.Text = dr["City"].ToString();
-                    TxtArea.Text = dr["Area"].ToString();
+                    DdlProvince.Text = dr["Province"].ToString();
+                    DdlProvince_SelectedIndexChanged(null, null);
+                    DdlCity.Text = dr["City"].ToString();
+                    DdlCity_SelectedIndexChanged(null, null);
+                    DdlArea.Text = dr["Area"].ToString();
                     TxtAddress.Text = dr["Address"].ToString();
                     TxtLiaison.Text = dr["Liaison"].ToString();
                     TxtPhone.Text = dr["Phone"].ToString();
@@ -138,10 +138,14 @@ public partial class TowerStation_TowerStationEdit : NBasePage, IRequiresSession
                     SetIsRadio("ScIsContact", dr["ScIsContact"].ToString());
                     SetIsRadio("PowerState", dr["PowerState"].ToString());
                     SetIsRadio("AirconditionState", dr["AirconditionState"].ToString());
+                    if (!string.IsNullOrEmpty(dr["Photo"].ToString()))
+                    {
+                        //var s = Convert.FromBase64String(dr["Photo"].ToString());
+                        imghead.Src =  dr["Photo"].ToString();
+                    }
                 }
                 break;
         }
-        
     }
 
     protected void BtnSave_Click(object sender, EventArgs e)
@@ -150,7 +154,7 @@ public partial class TowerStation_TowerStationEdit : NBasePage, IRequiresSession
         var mode = Request.QueryString["mode"];
         var hashtable = new Hashtable
         {
-            {"Province", TxtProvince.Text}, {"City", TxtCity.Text}, {"Area", TxtArea.Text}, {"Address", TxtAddress.Text},
+            {"Province", DdlProvince.Text}, {"City", DdlCity.Text}, {"Area", DdlArea.Text}, {"Address", TxtAddress.Text},
             {"Liaison", TxtLiaison.Text}, {"Phone", TxtPhone.Text}, {"Email", TxtEmail.Text}, {"PlaceMode", GetRadioText("PlaceMode")},
             {"BuildState", GetRadioText("BuildState")}, {"BuildTime", TxtBuildTime.Text},
             {"IsStateOwned", GetIsRadioValue("IsStateOwned")}, {"IsIntelligence", GetIsRadioValue("IsIntelligence")},
@@ -200,6 +204,11 @@ public partial class TowerStation_TowerStationEdit : NBasePage, IRequiresSession
             {"PowerSupplyManufacturer", TxtPowerSupplyManufacturer.Text}, {"RSUSubsystem", GetRadioText("RSUSubsystem")},
             {"RSUManufacturer", TxtRSUManufacturer.Text},
         };
+        var photo = string.Empty;
+        if (FupImage.HasFile)
+        {
+            photo = "data:image/" + Path.GetExtension(FupImage.FileName) + ";base64," + Convert.ToBase64String(FupImage.FileBytes);
+        }
         switch (mode)
         {
             case "1":
@@ -213,7 +222,11 @@ public partial class TowerStation_TowerStationEdit : NBasePage, IRequiresSession
 
                     return _.Value is string ? SqlStringConstructor.GetQuotedString(_.Value.ToString()) : _.Value.ToString();
                 }));
-                
+                if (!string.IsNullOrEmpty(photo))
+                {
+                    str += ",Photo";
+                    strSql += ",'" + photo + "'";
+                }
                 publicDbOpClass.ExecuteSQL("Insert Into TowerStationInfo(" + str + ")Values(" + strSql + ")");
                 break;
             case "2":
@@ -227,11 +240,67 @@ public partial class TowerStation_TowerStationEdit : NBasePage, IRequiresSession
 
                     return _.Key + "=" + (_.Value is string ? SqlStringConstructor.GetQuotedString(_.Value.ToString()) : _.Value.ToString());
                 }));
+                if (!string.IsNullOrEmpty(photo))
+                {
+                    strSql += ",Photo='" + photo + "'";
+                }
                 publicDbOpClass.ExecuteNonQuery(CommandType.Text, "Update TowerStationInfo set " + strSql + " WHERE TowerStationGUID=@oid",
                     new[] {new SqlParameter("@oid", oid)});
                 break;
         }
         RegisterScript("top.ui.tabSuccess({ parentName: '_TowerStationManage'})");
+    }
+    /// <summary>
+    /// 省选择事件
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    protected void DdlProvince_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        var sql = @"SELECT  name, city_id, province_id FROM dbo.city WHERE province_id=@province_id";
+        SqlParameter[] paras =
+        {
+            new SqlParameter("@province_id", DdlProvince.SelectedValue)
+        };
+        var dt = publicDbOpClass.ExecuteDataTable(CommandType.Text, sql, paras);
+        DdlCity.DataSource = dt;
+        DdlCity.DataTextField = "name";
+        DdlCity.DataValueField = "city_id";
+        DdlCity.DataBind();
+        DdlCity.Items.Insert(0, new ListItem("请选择", ""));
+        DdlCity_SelectedIndexChanged(null, null);
+    }
+    /// <summary>
+    /// 市选择事件
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    protected void DdlCity_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        var sql = @"SELECT  name, country_id, city_id FROM dbo.country WHERE city_id=@city_id";
+        SqlParameter[] paras =
+        {
+            new SqlParameter("@city_id", DdlCity.SelectedValue)
+        };
+        var dt = publicDbOpClass.ExecuteDataTable(CommandType.Text, sql, paras);
+        DdlArea.DataSource = dt;
+        DdlArea.DataTextField = "name";
+        DdlArea.DataValueField = "country_id";
+        DdlArea.DataBind();
+        DdlArea.Items.Insert(0, new ListItem("请选择", ""));
+    }
+    /// <summary>
+    /// 省数据绑定
+    /// </summary>
+    private void BindProvince()
+    {
+        var strSql = "SELECT	 name, province_id FROM dbo.province";
+        var dt = publicDbOpClass.DataTableQuary(strSql);
+        DdlProvince.DataSource = dt;
+        DdlProvince.DataTextField = "name";
+        DdlProvince.DataValueField = "province_id";
+        DdlProvince.DataBind();
+        DdlProvince.Items.Insert(0, new ListItem("请选择", ""));
     }
 
     /// <summary>

@@ -46,10 +46,43 @@
             text-align: left;
             white-space: nowrap;
         }
+        #preview{width:200px;height:210px;border:1px solid #B5CCDE;overflow:hidden;} 
+        #imghead {filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=image);} 
+        /*上传头像*/
+        #a-upon input {
+            filter: alpha(opacity=0);
+            opacity: 0;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        #a-upon {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            color: #888;
+            cursor: pointer;
+            overflow: hidden;
+            border-radius: 0.2em;
+            background: #fafafa;
+            display: block;
+            border: 1px solid #B5CCDE;
+            text-decoration: none;
+        }
+
+        #a-upon:active {
+            color: #444;
+            background: #eee;
+            border-color: #ccc;
+            text-decoration: none
+        }
     </style>
     <script type="text/javascript">
         var showTabIndex = 1;
-        $(document).ready(function () {
+        var maxWidth = 200;
+        var maxHeight = 210;
+        $(document).ready(function() {
             showTab(showTabIndex);
             var action = getRequestParam('mode');
             if (action === '3') {
@@ -60,6 +93,14 @@
 
             $("input[type=radio][name=OutdoorAdSubsystem]").on('change', outdoorAdSubsystemChange);
             outdoorAdSubsystemChange();
+
+            var img = document.getElementById('imghead');
+            var rect = clacImgZoomParam(maxWidth, maxHeight, img.offsetWidth, img.offsetHeight);
+            img.width = rect.width;
+            img.height = rect.height;
+            img.style.marginLeft = rect.left + 'px';
+            img.style.marginTop = rect.top + 'px';
+            
         });
 
         function outdoorAdSubsystemChange() {
@@ -101,10 +142,67 @@
                 top.ui.closeTab();
             }
         }
+
+        function previewImage(file) {
+            var div = document.getElementById('preview');
+            var inputImage = document.getElementById("FupImage");
+            var ext = inputImage.value.substring(inputImage.value.lastIndexOf(".") + 1).toLowerCase();
+            var img;
+            if (ext != 'png' && ext != 'jpg' && ext != 'jpeg') {
+                alert("文件必须为图片！");
+                inputImage.value = "";
+                return;
+            }
+            if (file.files && file.files[0]) {
+                div.innerHTML = '<img id=imghead>';
+                img = document.getElementById('imghead');
+                img.onload = function () {
+                    var rect = clacImgZoomParam(maxWidth, maxHeight, img.offsetWidth, img.offsetHeight);
+                    img.width = rect.width;
+                    img.height = rect.height;
+                    img.style.marginLeft = rect.left + 'px';
+                    img.style.marginTop = rect.top + 'px';
+                }
+                var reader = new FileReader();
+                reader.onload = function (evt) { img.src = evt.target.result; }
+                reader.readAsDataURL(file.files[0]);
+            }
+            else {
+                var sFilter = 'filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src="';
+                file.select();
+                var src = document.selection.createRange().text;
+                div.innerHTML = '<img id=imghead>';
+                img = document.getElementById('imghead');
+                img.filters.item('DXImageTransform.Microsoft.AlphaImageLoader').src = src;
+                var rect = clacImgZoomParam(maxWidth, maxHeight, img.offsetWidth, img.offsetHeight);
+                //status = ('rect:' + rect.top + ',' + rect.left + ',' + rect.width + ',' + rect.height);
+                div.innerHTML = "<div id=divhead style='width:" + rect.width + "px;height:" + rect.height + "px;margin-top:" + rect.top + "px;margin-left:" + rect.left + "px;" + sFilter + src + "\"'></div>";
+            }
+        }
+        function clacImgZoomParam(maxWidth, maxHeight, width, height) {
+            var param = { top: 0, left: 0, width: width, height: height };
+            if (width > maxWidth || height > maxHeight) {
+                var rateWidth = width / maxWidth;
+                var rateHeight = height / maxHeight;
+
+                if (rateWidth > rateHeight) {
+                    param.width = maxWidth;
+                    param.height = Math.round(height / rateWidth);
+                } else {
+                    param.width = Math.round(width / rateHeight);
+                    param.height = maxHeight;
+                }
+            }
+
+            param.left = Math.round((maxWidth - param.width) / 2);
+            param.top = Math.round((maxHeight - param.height) / 2);
+            return param;
+        }
     </script>
 </head>
 <body>
     <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" EnablePartialRendering="true" runat="server"></asp:ScriptManager>
         <div class="divContent2">
             <table class="tableContent2" id="tb1" cellspacing="0" cellpadding="5px" width="100%"
                 border="0">
@@ -120,13 +218,19 @@
                     <td class="word">省：
                     </td>
                     <td class="txt">
-                        <asp:TextBox ID="TxtProvince" Width="250px" Columns="21" MaxLength="50" runat="server"></asp:TextBox>
+                        <asp:DropDownList ID="DdlProvince" runat="server" AutoPostBack="True" Width="250px" OnSelectedIndexChanged="DdlProvince_SelectedIndexChanged"></asp:DropDownList>
                     </td>
                     <td class="txt" colspan="2" rowspan="8">
                         <table>
                             <tr>
                                 <td rowspan="6" style="width: 200px;">
-                                    <img alt="" src="" height="210px;" width="200px;" />
+                                    <div id="preview"> 
+                                        <img alt="" id="imghead" src="" runat="server" /> 
+                                    </div> 
+                                    <br/>
+                                    <a id="a-upon" title="双击这里上传">
+                                        <asp:FileUpload ID="FupImage" runat="server" onchange="previewImage(this)" accept="image/gif, image/jpeg, image/png, image/jpg" />双击这里上传
+                                    </a>
                                 </td>
                                 <td>
                                     <asp:RadioButton ID="PhotoType360度全景拍摄" runat="server" GroupName="PhotoType" Text="360度全景拍摄" /></td>
@@ -158,14 +262,22 @@
                     <td class="word">地区（市）：
                     </td>
                     <td class="txt">
-                        <asp:TextBox ID="TxtCity" Width="250px" Columns="21" MaxLength="50" runat="server"></asp:TextBox>
+                    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                    <ContentTemplate>
+                        <asp:DropDownList ID="DdlCity" runat="server" AutoPostBack="True" Width="250px" OnSelectedIndexChanged="DdlCity_SelectedIndexChanged"></asp:DropDownList>
+                        </ContentTemplate>
+                        <Triggers><asp:AsyncPostBackTrigger ControlID="DdlProvince" EventName="SelectedIndexChanged" runat="server" /><asp:AsyncPostBackTrigger ControlID="DdlProvince" EventName="SelectedIndexChanged" runat="server" /></Triggers></asp:UpdatePanel>
                     </td>
                 </tr>
                 <tr>
                     <td class="word">区域：
                     </td>
                     <td class="txt">
-                        <asp:TextBox ID="TxtArea" Width="250px" Columns="21" MaxLength="50" runat="server"></asp:TextBox>
+                    <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                    <ContentTemplate>
+                        <asp:DropDownList ID="DdlArea" runat="server" Width="250px"></asp:DropDownList>
+                        </ContentTemplate>
+                        <Triggers><asp:AsyncPostBackTrigger ControlID="DdlCity" EventName="SelectedIndexChanged" runat="server" /><asp:AsyncPostBackTrigger ControlID="DdlCity" EventName="SelectedIndexChanged" runat="server" /></Triggers></asp:UpdatePanel>
                     </td>
                 </tr>
                 <tr>
