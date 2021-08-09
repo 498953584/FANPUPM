@@ -41,13 +41,23 @@
             text-align: left;
             white-space: nowrap;
         }
+
         .word3 {
             width: 200px;
             text-align: left;
             white-space: nowrap;
         }
-        #preview{width:200px;height:230px;border:1px solid #B5CCDE;overflow:hidden;} 
-        #imghead {filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=image);} 
+
+        .preview {
+            width: 200px;
+            height: 230px;
+            border: 1px solid #B5CCDE;
+            overflow: hidden;
+        }
+
+        .imgPhoto {
+            filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=image);
+        }
         /*上传头像*/
         #a-upon input {
             filter: alpha(opacity=0);
@@ -71,37 +81,62 @@
             text-decoration: none;
         }
 
-        #a-upon:active {
-            color: #444;
-            background: #eee;
-            border-color: #ccc;
-            text-decoration: none
-        }
+            #a-upon:active {
+                color: #444;
+                background: #eee;
+                border-color: #ccc;
+                text-decoration: none
+            }
     </style>
     <script type="text/javascript">
         var showTabIndex = 1;
         var maxWidth = 200;
         var maxHeight = 230;
-        $(document).ready(function() {
+        $(document).ready(function () {
             showTab(showTabIndex);
             var action = getRequestParam('mode');
             if (action === '3') {
                 setAllInputDisabled();
                 enabledInput("BtnBack");
                 enabledInput("BtnNext");
+                enabledInput("BtnNext");
+                $("input[type=radio][name=PhotoType]").removeAttr("disabled");
             }
 
             $("input[type=radio][name=OutdoorAdSubsystem]").on('change', outdoorAdSubsystemChange);
             outdoorAdSubsystemChange();
-
-            var img = document.getElementById('imghead');
-            var rect = clacImgZoomParam(maxWidth, maxHeight, img.offsetWidth, img.offsetHeight);
-            img.width = rect.width;
-            img.height = rect.height;
-            img.style.marginLeft = rect.left + 'px';
-            img.style.marginTop = rect.top + 'px';
-            
+            $("input[type=radio][name=PhotoType]").on('change', photoTypeChange);
+            photoTypeChange();
         });
+
+        //照片类型切换
+        function photoTypeChange() {
+            var value = $('input:radio[name="PhotoType"]:checked').val();
+            $("#Fup360度全景拍摄").hide();
+            $("#Fup其他").hide();
+            $("#Fup地点入口").hide();
+            $("#Fup查看铁塔").hide();
+            $("#Fup电源").hide();
+            $("#Fup展示天线负荷").hide();
+            $(value.replace("PhotoType", "#Fup")).show();
+
+            $("#preview360度全景拍摄").hide();
+            $("#preview其他").hide();
+            $("#preview地点入口").hide();
+            $("#preview查看铁塔").hide();
+            $("#preview电源").hide();
+            $("#preview展示天线负荷").hide();
+            $(value.replace("PhotoType", "#preview")).show();
+
+            var img = document.getElementById(value.replace("PhotoType", "img"));
+            if (img) {
+                var rect = clacImgZoomParam(maxWidth, maxHeight, img.offsetWidth, img.offsetHeight);
+                img.width = rect.width;
+                img.height = rect.height;
+                img.style.marginLeft = rect.left + 'px';
+                img.style.marginTop = rect.top + 'px';
+            }
+        }
 
         function outdoorAdSubsystemChange() {
             var value = $('input:radio[name="OutdoorAdSubsystem"]:checked').val();
@@ -144,18 +179,19 @@
         }
 
         function previewImage(file) {
-            var div = document.getElementById('preview');
-            var inputImage = document.getElementById("FupImage");
-            var ext = inputImage.value.substring(inputImage.value.lastIndexOf(".") + 1).toLowerCase();
+            var div = document.getElementById(file.id.replace("Fup", "preview"));
+            //var inputImage = document.getElementById("FupImage");
+            var ext = file.value.substring(file.value.lastIndexOf(".") + 1).toLowerCase();
             var img;
             if (ext != 'png' && ext != 'jpg' && ext != 'jpeg') {
                 alert("文件必须为图片！");
-                inputImage.value = "";
+                file.value = "";
                 return;
             }
+            var name = file.id.replace("Fup", "img");
             if (file.files && file.files[0]) {
-                div.innerHTML = '<img id=imghead>';
-                img = document.getElementById('imghead');
+                div.innerHTML = '<img id=' + name + '>';
+                img = document.getElementById(name);
                 img.onload = function () {
                     var rect = clacImgZoomParam(maxWidth, maxHeight, img.offsetWidth, img.offsetHeight);
                     img.width = rect.width;
@@ -171,12 +207,12 @@
                 var sFilter = 'filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src="';
                 file.select();
                 var src = document.selection.createRange().text;
-                div.innerHTML = '<img id=imghead>';
-                img = document.getElementById('imghead');
+                div.innerHTML = '<img id=' + name + ' class="imgPhoto">';
+                img = document.getElementById(name);
                 img.filters.item('DXImageTransform.Microsoft.AlphaImageLoader').src = src;
                 var rect = clacImgZoomParam(maxWidth, maxHeight, img.offsetWidth, img.offsetHeight);
                 //status = ('rect:' + rect.top + ',' + rect.left + ',' + rect.width + ',' + rect.height);
-                div.innerHTML = "<div id=divhead style='width:" + rect.width + "px;height:" + rect.height + "px;margin-top:" + rect.top + "px;margin-left:" + rect.left + "px;" + sFilter + src + "\"'></div>";
+                div.innerHTML = "<div id=divPreview style='width:" + rect.width + "px;height:" + rect.height + "px;margin-top:" + rect.top + "px;margin-left:" + rect.left + "px;" + sFilter + src + "\"'></div>";
             }
         }
         function clacImgZoomParam(maxWidth, maxHeight, width, height) {
@@ -202,10 +238,9 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <asp:ScriptManager ID="ScriptManager1" EnablePartialRendering="true" runat="server"></asp:ScriptManager>
+        <asp:ScriptManager ID="ScriptManager1" EnablePartialRendering="true" runat="server"></asp:ScriptManager>
         <div class="divContent2">
-            <table class="tableContent2" id="tb1" cellspacing="0" cellpadding="5px" width="100%"
-                border="0">
+            <table class="tableContent2" id="tb1" cellspacing="0" cellpadding="5px" width="100%" border="0">
                 <tr>
                     <td colspan="2" class="txt">
                         <h2>基本信息</h2>
@@ -224,15 +259,35 @@
                         <table>
                             <tr>
                                 <td rowspan="6" style="width: 200px; padding-right: 8px;">
-                                    <div id="preview"> 
-                                        <img alt="" id="imghead" src="" runat="server" /> 
+                                    <div id="preview360度全景拍摄" class="preview">
+                                        <img alt="" id="img360度全景拍摄" class="imgPhoto" src="" runat="server" />
+                                    </div>
+                                    <div id="preview其他" class="preview">
+                                        <img alt="" id="img其他" class="imgPhoto" src="" runat="server" />
+                                    </div>
+                                    <div id="preview地点入口" class="preview">
+                                        <img alt="" id="img地点入口" class="imgPhoto" src="" runat="server" />
+                                    </div>
+                                    <div id="preview查看铁塔" class="preview">
+                                        <img alt="" id="img查看铁塔" class="imgPhoto" src="" runat="server" />
+                                    </div>
+                                    <div id="preview电源" class="preview">
+                                        <img alt="" id="img电源" class="imgPhoto" src="" runat="server" />
+                                    </div>
+                                    <div id="preview展示天线负荷" class="preview">
+                                        <img alt="" id="img展示天线负荷" class="imgPhoto" src="" runat="server" />
                                     </div>
                                     <a id="a-upon" title="双击这里上传">
-                                        <asp:FileUpload ID="FupImage" runat="server" onchange="previewImage(this)" accept="image/gif, image/jpeg, image/png, image/jpg" />双击这里上传
+                                        <asp:FileUpload ID="Fup360度全景拍摄" runat="server" onchange="previewImage(this)" accept="image/gif, image/jpeg, image/png, image/jpg" />
+                                        <asp:FileUpload ID="Fup其他" runat="server" onchange="previewImage(this)" accept="image/gif, image/jpeg, image/png, image/jpg" Style="display: none;" />
+                                        <asp:FileUpload ID="Fup地点入口" runat="server" onchange="previewImage(this)" accept="image/gif, image/jpeg, image/png, image/jpg" Style="display: none;" />
+                                        <asp:FileUpload ID="Fup查看铁塔" runat="server" onchange="previewImage(this)" accept="image/gif, image/jpeg, image/png, image/jpg" Style="display: none;" />
+                                        <asp:FileUpload ID="Fup电源" runat="server" onchange="previewImage(this)" accept="image/gif, image/jpeg, image/png, image/jpg" Style="display: none;" />
+                                        <asp:FileUpload ID="Fup展示天线负荷" runat="server" onchange="previewImage(this)" accept="image/gif, image/jpeg, image/png, image/jpg" Style="display: none;" />双击这里上传
                                     </a>
                                 </td>
                                 <td>
-                                    <asp:RadioButton ID="PhotoType360度全景拍摄" runat="server" GroupName="PhotoType" Text="360度全景拍摄" /></td>
+                                    <asp:RadioButton ID="PhotoType360度全景拍摄" runat="server" Checked="True" GroupName="PhotoType" Text="360度全景拍摄" /></td>
                             </tr>
                             <tr>
                                 <td>
@@ -268,22 +323,29 @@
                     <td class="word">地区（市）：
                     </td>
                     <td class="txt">
-                    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                    <ContentTemplate>
-                        <asp:DropDownList ID="DdlCity" runat="server" AutoPostBack="True" Width="250px" OnSelectedIndexChanged="DdlCity_SelectedIndexChanged"></asp:DropDownList>
-                        </ContentTemplate>
-                        <Triggers><asp:AsyncPostBackTrigger ControlID="DdlProvince" EventName="SelectedIndexChanged" runat="server" /><asp:AsyncPostBackTrigger ControlID="DdlProvince" EventName="SelectedIndexChanged" runat="server" /></Triggers></asp:UpdatePanel>
+                        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                            <ContentTemplate>
+                                <asp:DropDownList ID="DdlCity" runat="server" AutoPostBack="True" Width="250px" OnSelectedIndexChanged="DdlCity_SelectedIndexChanged"></asp:DropDownList>
+                            </ContentTemplate>
+                            <Triggers>
+                                <asp:AsyncPostBackTrigger ControlID="DdlProvince" EventName="SelectedIndexChanged" runat="server" />
+                            </Triggers>
+                        </asp:UpdatePanel>
                     </td>
                 </tr>
                 <tr>
                     <td class="word">区域：
                     </td>
                     <td class="txt">
-                    <asp:UpdatePanel ID="UpdatePanel2" runat="server">
-                    <ContentTemplate>
-                        <asp:DropDownList ID="DdlArea" runat="server" Width="250px"></asp:DropDownList>
-                        </ContentTemplate>
-                        <Triggers><asp:AsyncPostBackTrigger ControlID="DdlCity" EventName="SelectedIndexChanged" runat="server" /><asp:AsyncPostBackTrigger ControlID="DdlCity" EventName="SelectedIndexChanged" runat="server" /></Triggers></asp:UpdatePanel>
+                        <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                            <ContentTemplate>
+                                <asp:DropDownList ID="DdlArea" runat="server" Width="250px"></asp:DropDownList>
+                            </ContentTemplate>
+                            <Triggers>
+                                <asp:AsyncPostBackTrigger ControlID="DdlProvince" EventName="SelectedIndexChanged" runat="server" />
+                                <asp:AsyncPostBackTrigger ControlID="DdlCity" EventName="SelectedIndexChanged" runat="server" />
+                            </Triggers>
+                        </asp:UpdatePanel>
                     </td>
                 </tr>
                 <tr>
@@ -460,7 +522,7 @@
                     <td class="word">距离公路距离：
                     </td>
                     <td class="txt">
-                        <asp:TextBox ID="TxtRoadDistance" Width="250px" Columns="21" MaxLength="50" runat="server"></asp:TextBox>米
+                        <asp:TextBox ID="TxtRoadDistance" CssClass="easyui-numberbox" data-options="min:0,max:99999999999" Width="250px" Columns="21" MaxLength="50" runat="server"></asp:TextBox>米
                     </td>
                     <td class="word">建筑用途：
                     </td>
@@ -487,7 +549,7 @@
                     <td class="word">私人道路长度：
                     </td>
                     <td class="txt">
-                        <asp:TextBox ID="TxtPrivateRoadLength" Width="250px" Columns="21" MaxLength="50" runat="server"></asp:TextBox>米
+                        <asp:TextBox ID="TxtPrivateRoadLength" CssClass="easyui-numberbox" data-options="min:0,max:99999999999" Width="250px" Columns="21" MaxLength="50" runat="server"></asp:TextBox>米
                     </td>
                     <td class="word">需使用吊车：
                     </td>
@@ -527,10 +589,10 @@
                             <tr>
                                 <td>宽度</td>
                                 <td>
-                                    <asp:TextBox ID="TxtSpecificationWidth" Width="100px" Columns="21" MaxLength="50" runat="server"></asp:TextBox>米</td>
+                                    <asp:TextBox ID="TxtSpecificationWidth" CssClass="easyui-numberbox" data-options="min:0,max:99999999999" Width="100px" Columns="21" MaxLength="50" runat="server"></asp:TextBox>米</td>
                                 <td>高度</td>
                                 <td>
-                                    <asp:TextBox ID="TxtSpecificationHeight" Width="100px" Columns="21" MaxLength="50" runat="server"></asp:TextBox>米</td>
+                                    <asp:TextBox ID="TxtSpecificationHeight" CssClass="easyui-numberbox" data-options="min:0,max:99999999999" Width="100px" Columns="21" MaxLength="50" runat="server"></asp:TextBox>米</td>
                             </tr>
                         </table>
                     </td>
@@ -556,7 +618,7 @@
                     <td class="word">装载量：
                     </td>
                     <td class="txt">
-                        <asp:TextBox ID="TxtPeLoadingCapacity" Width="250px" Columns="21" MaxLength="50" runat="server"></asp:TextBox>人
+                        <asp:TextBox ID="TxtPeLoadingCapacity" CssClass="easyui-numberbox" data-options="min:0,max:99999999999" Width="250px" Columns="21" MaxLength="50" runat="server"></asp:TextBox>人
                     </td>
                 </tr>
                 <tr>
@@ -586,7 +648,7 @@
                     <td class="word">装载量：
                     </td>
                     <td class="txt">
-                        <asp:TextBox ID="TxtCeLoadingCapacity" Width="250px" Columns="21" MaxLength="50" runat="server"></asp:TextBox>Kg
+                        <asp:TextBox ID="TxtCeLoadingCapacity" CssClass="easyui-numberbox" data-options="min:0,max:99999999999" Width="250px" Columns="21" MaxLength="50" runat="server"></asp:TextBox>Kg
                     </td>
                 </tr>
                 <tr>
@@ -605,10 +667,10 @@
                             <tr>
                                 <td>宽度</td>
                                 <td>
-                                    <asp:TextBox ID="TxtCeSpecificationWidth" Width="100px" Columns="21" MaxLength="50" runat="server"></asp:TextBox>米</td>
+                                    <asp:TextBox ID="TxtCeSpecificationWidth" CssClass="easyui-numberbox" data-options="min:0,max:99999999999" Width="100px" Columns="21" MaxLength="50" runat="server"></asp:TextBox>米</td>
                                 <td>高度</td>
                                 <td>
-                                    <asp:TextBox ID="TxtCeSpecificationHeight" Width="100px" Columns="21" MaxLength="50" runat="server"></asp:TextBox>米</td>
+                                    <asp:TextBox ID="TxtCeSpecificationHeight" CssClass="easyui-numberbox" data-options="min:0,max:99999999999" Width="100px" Columns="21" MaxLength="50" runat="server"></asp:TextBox>米</td>
                             </tr>
                         </table>
                     </td>
@@ -628,12 +690,12 @@
                                 <td>高度：
                                 </td>
                                 <td class="txt">
-                                    <asp:TextBox ID="TxtBSHeight" Width="100px" Columns="21" MaxLength="50" runat="server"></asp:TextBox>米
+                                    <asp:TextBox ID="TxtBSHeight" CssClass="easyui-numberbox" data-options="min:0,max:99999999999" Width="100px" Columns="21" MaxLength="50" runat="server"></asp:TextBox>米
                                 </td>
                                 <td>层数：
                                 </td>
                                 <td class="txt">
-                                    <asp:TextBox ID="TxtBSLayersNum" Width="100px" Columns="21" MaxLength="50" runat="server"></asp:TextBox>层
+                                    <asp:TextBox ID="TxtBSLayersNum" CssClass="easyui-numberbox" data-options="min:0,max:99999999999" Width="100px" Columns="21" MaxLength="50" runat="server"></asp:TextBox>层
                                 </td>
                             </tr>
                         </table>
@@ -646,7 +708,7 @@
                             <tr>
                                 <td>高度</td>
                                 <td>
-                                    <asp:TextBox ID="TxtMeasureHeight" Width="100px" Columns="21" MaxLength="50" runat="server"></asp:TextBox>米</td>
+                                    <asp:TextBox ID="TxtMeasureHeight" CssClass="easyui-numberbox" data-options="min:0,max:99999999999" Width="100px" Columns="21" MaxLength="50" runat="server"></asp:TextBox>米</td>
                             </tr>
                         </table>
                     </td>
@@ -660,7 +722,7 @@
                                     <asp:TextBox ID="TxtBSType" Width="100px" Columns="21" MaxLength="50" runat="server"></asp:TextBox></td>
                                 <td>年限：</td>
                                 <td class="txt">
-                                    <asp:TextBox ID="TxtBSYears" Width="100px" Columns="21" MaxLength="50" runat="server"></asp:TextBox>年</td>
+                                    <asp:TextBox ID="TxtBSYears" CssClass="easyui-numberbox" data-options="min:0,max:99999999999" Width="100px" Columns="21" MaxLength="50" runat="server"></asp:TextBox>年</td>
                             </tr>
                         </table>
                     </td>
@@ -671,10 +733,10 @@
                             <tr>
                                 <td>宽度</td>
                                 <td>
-                                    <asp:TextBox ID="TxtUniversalLadderWidth" Width="100px" Columns="21" MaxLength="50" runat="server"></asp:TextBox>米</td>
+                                    <asp:TextBox ID="TxtUniversalLadderWidth" CssClass="easyui-numberbox" data-options="min:0,max:99999999999" Width="100px" Columns="21" MaxLength="50" runat="server"></asp:TextBox>米</td>
                                 <td>高度</td>
                                 <td>
-                                    <asp:TextBox ID="TxtUniversalLadderHeight" Width="100px" Columns="21" MaxLength="50" runat="server"></asp:TextBox>米</td>
+                                    <asp:TextBox ID="TxtUniversalLadderHeight" CssClass="easyui-numberbox" data-options="min:0,max:99999999999" Width="100px" Columns="21" MaxLength="50" runat="server"></asp:TextBox>米</td>
                             </tr>
                         </table>
                     </td>
@@ -782,7 +844,7 @@
                     <td class="word">塔高：
                     </td>
                     <td class="txt">
-                        <asp:TextBox ID="TxtIronTowerHeight" Width="250px" Columns="21" MaxLength="50" runat="server"></asp:TextBox>米
+                        <asp:TextBox ID="TxtIronTowerHeight" CssClass="easyui-numberbox" data-options="min:0,max:99999999999" Width="250px" Columns="21" MaxLength="50" runat="server"></asp:TextBox>米
                     </td>
                 </tr>
                 <tr>
@@ -809,10 +871,10 @@
                             <tr>
                                 <td>这次检查</td>
                                 <td>
-                                    <asp:TextBox ID="TxtCurrentAvailablePalletNum" Width="100px" Columns="21" MaxLength="50" runat="server" CssClass="decimal_input"></asp:TextBox>个</td>
+                                    <asp:TextBox ID="TxtCurrentAvailablePalletNum" CssClass="easyui-numberbox" data-options="min:0,max:99999999999" Width="100px" Columns="21" MaxLength="50" runat="server"></asp:TextBox>个</td>
                                 <td>上次检查</td>
                                 <td>
-                                    <asp:TextBox ID="TxtLastAvailablePalletNum" Width="100px" Columns="21" MaxLength="50" runat="server" CssClass="decimal_input"></asp:TextBox>个</td>
+                                    <asp:TextBox ID="TxtLastAvailablePalletNum" CssClass="easyui-numberbox" data-options="min:0,max:99999999999" Width="100px" Columns="21" MaxLength="50" runat="server"></asp:TextBox>个</td>
                             </tr>
                         </table>
                     </td>
@@ -835,10 +897,10 @@
                             <tr>
                                 <td>这次检查</td>
                                 <td>
-                                    <asp:TextBox ID="TxtCurrentCableFeederNum" Width="100px" Columns="21" MaxLength="50" runat="server"></asp:TextBox>个</td>
+                                    <asp:TextBox ID="TxtCurrentCableFeederNum" CssClass="easyui-numberbox" data-options="min:0,max:99999999999" Width="100px" Columns="21" MaxLength="50" runat="server"></asp:TextBox>个</td>
                                 <td>上次检查</td>
                                 <td>
-                                    <asp:TextBox ID="TxtLastCableFeederNum" Width="100px" Columns="21" MaxLength="50" runat="server"></asp:TextBox>个</td>
+                                    <asp:TextBox ID="TxtLastCableFeederNum" CssClass="easyui-numberbox" data-options="min:0,max:99999999999" Width="100px" Columns="21" MaxLength="50" runat="server"></asp:TextBox>个</td>
                             </tr>
                         </table>
                     </td>
@@ -849,7 +911,7 @@
                             <tr>
                                 <td>海拔</td>
                                 <td>
-                                    <asp:TextBox ID="TxtIronTowerLocation" Width="100px" Columns="21" MaxLength="50" runat="server"></asp:TextBox>米</td>
+                                    <asp:TextBox ID="TxtIronTowerLocation" CssClass="easyui-numberbox" data-options="min:0,max:99999999999" Width="100px" Columns="21" MaxLength="50" runat="server"></asp:TextBox>米</td>
                             </tr>
                         </table>
                     </td>
@@ -1000,7 +1062,7 @@
                     <td class="txt3">
                         <asp:RadioButton ID="OutdoorAdSubsystem有灯" GroupName="OutdoorAdSubsystem" runat="server" Text="有灯" />
                         <asp:RadioButton ID="OutdoorAdSubsystem无灯" GroupName="OutdoorAdSubsystem" runat="server" Text="无灯" />
-                        <asp:RadioButton ID="OutdoorAdSubsystem自有媒体" GroupName="OutdoorAdSubsystem" runat="server" Text="自有媒体"/>
+                        <asp:RadioButton ID="OutdoorAdSubsystem自有媒体" GroupName="OutdoorAdSubsystem" runat="server" Text="自有媒体" />
                         <asp:RadioButton ID="OutdoorAdSubsystem居住区" GroupName="OutdoorAdSubsystem" runat="server" Text="居住区" />
                         <table id="tbZiYouMeiTi">
                             <tr>
@@ -1084,8 +1146,8 @@
                 <table class="tableFooter2">
                     <tr>
                         <td class="td-submit" colspan="4">
-                            <input class="button-normal" id="BtnBack" type="button" value="上一步" onclick="showTab(showTabIndex-1)"/>&nbsp;
-                            <input class="button-normal" id="BtnNext" type="button" value="下一步" onclick="showTab(showTabIndex+1)"/>&nbsp;
+                            <input class="button-normal" id="BtnBack" type="button" value="上一步" onclick="showTab(showTabIndex-1)" />&nbsp;
+                            <input class="button-normal" id="BtnNext" type="button" value="下一步" onclick="showTab(showTabIndex+1)" />&nbsp;
                             <asp:Button ID="BtnSave" Text="保存" OnClick="BtnSave_Click" runat="server" />&nbsp;
                             <input class="button-normal" id="btnCancel" type="button" value="取消" onclick="closeTab()" />
                         </td>

@@ -72,7 +72,11 @@
                                     <ContentTemplate>
                                         <asp:DropDownList ID="DdlCity" runat="server" AutoPostBack="True" Width="99%" OnSelectedIndexChanged="DdlCity_SelectedIndexChanged"></asp:DropDownList>
                                     </ContentTemplate>
-                                    <Triggers><asp:AsyncPostBackTrigger ControlID="DdlProvince" EventName="SelectedIndexChanged" runat="server" /><asp:AsyncPostBackTrigger ControlID="DdlProvince" EventName="SelectedIndexChanged" runat="server" /></Triggers></asp:UpdatePanel>
+                                    <Triggers>
+                                        <asp:AsyncPostBackTrigger ControlID="DdlProvince" EventName="SelectedIndexChanged" runat="server" />
+                                        <asp:AsyncPostBackTrigger ControlID="DdlProvince" EventName="SelectedIndexChanged" runat="server" />
+                                    </Triggers>
+                                </asp:UpdatePanel>
                             </td>
                             <td class="descTd">区域
                             </td>
@@ -81,7 +85,11 @@
                                     <ContentTemplate>
                                         <asp:DropDownList ID="DdlArea" runat="server" Width="99%"></asp:DropDownList>
                                     </ContentTemplate>
-                                    <Triggers><asp:AsyncPostBackTrigger ControlID="DdlCity" EventName="SelectedIndexChanged" runat="server" /><asp:AsyncPostBackTrigger ControlID="DdlCity" EventName="SelectedIndexChanged" runat="server" /></Triggers></asp:UpdatePanel>
+                                    <Triggers>
+                                        <asp:AsyncPostBackTrigger ControlID="DdlCity" EventName="SelectedIndexChanged" runat="server" />
+                                        <asp:AsyncPostBackTrigger ControlID="DdlCity" EventName="SelectedIndexChanged" runat="server" />
+                                    </Triggers>
+                                </asp:UpdatePanel>
                             </td>
                             <td class="descTd">地址
                             </td>
@@ -131,8 +139,8 @@
                             </td>
                             <td>
                                 <asp:TextBox ID="TxtBuildTimeEnd" onclick="WdatePicker()" runat="server"></asp:TextBox></td>
-                            <td colspan="2">
-                                <asp:Button ID="brnQuery" Text="查询" OnClick="btnSearch_Click" runat="server" />
+                            <td>
+                                <asp:Button ID="brnQuery" Text="查询" OnClick="BtnSearch_Click" runat="server" />
                             </td>
                         </tr>
                     </table>

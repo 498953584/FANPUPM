@@ -139,10 +139,12 @@ public partial class TowerStation_TowerStationEdit : NBasePage, IRequiresSession
                     SetIsRadio("ScIsContact", dr["ScIsContact"].ToString());
                     SetIsRadio("PowerState", dr["PowerState"].ToString());
                     SetIsRadio("AirconditionState", dr["AirconditionState"].ToString());
-                    if (!string.IsNullOrEmpty(dr["Photo"].ToString()))
-                    {
-                        imghead.Src =  dr["Photo"].ToString();
-                    }
+                    img360度全景拍摄.Src = dr["Photo"].ToString();
+                    img其他.Src = dr["Photo1"].ToString();
+                    img地点入口.Src = dr["Photo2"].ToString(); 
+                    img查看铁塔.Src = dr["Photo3"].ToString();
+                    img电源.Src = dr["Photo4"].ToString();
+                    img展示天线负荷.Src = dr["Photo5"].ToString();
                 }
                 break;
         }
@@ -152,10 +154,30 @@ public partial class TowerStation_TowerStationEdit : NBasePage, IRequiresSession
     {
         string strSql;
         var mode = Request.QueryString["mode"];
-        var photo = string.Empty;
-        if (FupImage.HasFile)
+        string photo = null, photo1 = null, photo2 = null, photo3 = null, photo4 = null, photo5 = null;
+        if (Fup360度全景拍摄.HasFile)
         {
-            photo = "data:image/" + Path.GetExtension(FupImage.FileName) + ";base64," + Convert.ToBase64String(FupImage.FileBytes);
+            photo = "data:image/" + Path.GetExtension(Fup360度全景拍摄.FileName) + ";base64," + Convert.ToBase64String(Fup360度全景拍摄.FileBytes);
+        }
+        if (Fup其他.HasFile)
+        {
+            photo1 = "data:image/" + Path.GetExtension(Fup其他.FileName) + ";base64," + Convert.ToBase64String(Fup其他.FileBytes);
+        }
+        if (Fup地点入口.HasFile)
+        {
+            photo2 = "data:image/" + Path.GetExtension(Fup地点入口.FileName) + ";base64," + Convert.ToBase64String(Fup地点入口.FileBytes);
+        }
+        if (Fup查看铁塔.HasFile)
+        {
+            photo3 = "data:image/" + Path.GetExtension(Fup查看铁塔.FileName) + ";base64," + Convert.ToBase64String(Fup查看铁塔.FileBytes);
+        }
+        if (Fup电源.HasFile)
+        {
+            photo4 = "data:image/" + Path.GetExtension(Fup电源.FileName) + ";base64," + Convert.ToBase64String(Fup电源.FileBytes);
+        }
+        if (Fup展示天线负荷.HasFile)
+        {
+            photo5 = "data:image/" + Path.GetExtension(Fup展示天线负荷.FileName) + ";base64," + Convert.ToBase64String(Fup展示天线负荷.FileBytes);
         }
         var hashtable = new Hashtable
         {
@@ -207,7 +229,7 @@ public partial class TowerStation_TowerStationEdit : NBasePage, IRequiresSession
             {"VehicleFlowrate", TxtVehicleFlowrate.Text}, {"LaunchCycle", TxtLaunchCycle.Text}, {"ReleaseBrand", TxtReleaseBrand.Text},
             {"OutdoorAdManufacturer", TxtOutdoorAdManufacturer.Text}, {"PowerSupplySubsystem", GetRadioText("PowerSupplySubsystem")},
             {"PowerSupplyManufacturer", TxtPowerSupplyManufacturer.Text}, {"RSUSubsystem", GetRadioText("RSUSubsystem")},
-            {"RSUManufacturer", TxtRSUManufacturer.Text},{"Name", TxtName.Text},{"Photo", photo},
+            {"RSUManufacturer", TxtRSUManufacturer.Text},{"Name", TxtName.Text},{"Photo", photo},{"Photo1", photo1},{"Photo2", photo2},{"Photo3", photo3},{"Photo4", photo4},{"Photo5", photo5},
         };
         switch (mode)
         {
@@ -230,7 +252,9 @@ public partial class TowerStation_TowerStationEdit : NBasePage, IRequiresSession
                 {
                     if (_.Value == null || string.IsNullOrEmpty(_.Value.ToString()))
                     {
-                        return _.Key + "=" + (new[] {"Photo"}.Contains(_.Key) ? _.Key.ToString() : "NULL");
+                        return _.Key + "=" + (new[] {"Photo", "Photo1", "Photo2", "Photo3", "Photo4", "Photo5",}.Contains(_.Key)
+                            ? _.Key.ToString()
+                            : "NULL");
                     }
 
                     return _.Key + "=" + (_.Value is string ? SqlStringConstructor.GetQuotedString(_.Value.ToString()) : _.Value.ToString());
@@ -315,7 +339,7 @@ public partial class TowerStation_TowerStationEdit : NBasePage, IRequiresSession
         foreach (var value in new[] {"0", "1"})
         {
             var c = FindControl(groupName + value) as RadioButton;
-            if (c != null)
+            if (c != null && c.Checked)
             {
                 return value;
             }

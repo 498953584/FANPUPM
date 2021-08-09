@@ -135,7 +135,7 @@ FROM dbo.TowerStationInfo tsi
         AllData_bind();
     }
 
-    protected void btnSearch_Click(object sender, System.EventArgs e)
+    protected void BtnSearch_Click(object sender, System.EventArgs e)
     {
         AllData_bind();
     }
@@ -193,33 +193,4 @@ FROM dbo.TowerStationInfo tsi
         DdlProvince.Items.Insert(0, new ListItem("", ""));
     }
 
-
-    /// <summary>
-    /// 获取多个选项的单选控件值
-    /// </summary>
-    /// <param name="groupName">按钮组名</param>
-    /// <returns></returns>
-    private string GetRadioText(string groupName)
-    {
-        var c = Form.Controls.OfType<RadioButton>().FirstOrDefault(_ => _.GroupName == groupName && _.Checked);
-        return c == null ? string.Empty : c.Text;
-    }
-
-    /// <summary>
-    /// 获取是否单选控件值
-    /// </summary>
-    /// <param name="groupName">按钮组名</param>
-    /// <returns></returns>
-    private string GetIsRadioValue(string groupName)
-    {
-        foreach (var value in new[] { "0", "1" })
-        {
-            var c = FindControl(groupName + value) as RadioButton;
-            if (c != null)
-            {
-                return value;
-            }
-        }
-        return string.Empty;
-    }
 }
