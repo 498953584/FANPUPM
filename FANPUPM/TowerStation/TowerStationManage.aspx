@@ -49,25 +49,48 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" EnablePartialRendering="true" runat="server"></asp:ScriptManager>
         <table width="100%" cellpadding="0" cellspacing="0">
             <tr>
                 <td>
                     <table class="queryTable" id="queryTable" cellpadding="3px" cellspacing="0px">
                         <tr>
+                            <td class="descTd">名称
+                            </td>
+                            <td>
+                                <asp:TextBox ID="TxtName" runat="server"></asp:TextBox>
+                            </td>
                             <td class="descTd">省
                             </td>
                             <td>
-                                <asp:TextBox ID="TxtProvince" runat="server"></asp:TextBox>
+                                <asp:DropDownList ID="DdlProvince" runat="server" AutoPostBack="True" Width="99%" OnSelectedIndexChanged="DdlProvince_SelectedIndexChanged"></asp:DropDownList>
                             </td>
                             <td class="descTd">地区（市）
                             </td>
                             <td>
-                                <asp:TextBox ID="TxtCity" runat="server"></asp:TextBox>
+                                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                                    <ContentTemplate>
+                                        <asp:DropDownList ID="DdlCity" runat="server" AutoPostBack="True" Width="99%" OnSelectedIndexChanged="DdlCity_SelectedIndexChanged"></asp:DropDownList>
+                                    </ContentTemplate>
+                                    <Triggers>
+                                        <asp:AsyncPostBackTrigger ControlID="DdlProvince" EventName="SelectedIndexChanged" runat="server" />
+                                        <asp:AsyncPostBackTrigger ControlID="DdlProvince" EventName="SelectedIndexChanged" runat="server" />
+                                    </Triggers>
+                                </asp:UpdatePanel>
                             </td>
                             <td class="descTd">区域
                             </td>
                             <td>
-                                <asp:TextBox ID="TxtArea" runat="server"></asp:TextBox></td>
+                                <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                                    <ContentTemplate>
+                                        <asp:DropDownList ID="DdlArea" runat="server" Width="99%"></asp:DropDownList>
+                                    </ContentTemplate>
+                                    <Triggers>
+                                        <asp:AsyncPostBackTrigger ControlID="DdlCity" EventName="SelectedIndexChanged" runat="server" />
+                                        <asp:AsyncPostBackTrigger ControlID="DdlCity" EventName="SelectedIndexChanged" runat="server" />
+                                    </Triggers>
+                                </asp:UpdatePanel>
+                            </td>
                             <td class="descTd">地址
                             </td>
                             <td>
@@ -91,31 +114,33 @@
                             <td class="descTd">地点获取方式
                             </td>
                             <td>
-                                <asp:DropDownList ID="DdlPlaceMode" runat="server">
+                                <asp:DropDownList ID="DdlPlaceMode" runat="server" Width="99%">
                                     <asp:ListItem Value="" Text=""></asp:ListItem>
                                     <asp:ListItem Value="购买" Text="购买"></asp:ListItem>
                                     <asp:ListItem Value="租赁" Text="租赁"></asp:ListItem>
                                     <asp:ListItem Value="共享" Text="共享"></asp:ListItem>
                                 </asp:DropDownList>
-                             <%--   <asp:RadioButton ID="PlaceMode购买" GroupName="PlaceMode" runat="server" Text="购买" />
-                                <asp:RadioButton ID="PlaceMode租赁" GroupName="PlaceMode" runat="server" Text="租赁" />
-                                <asp:RadioButton ID="PlaceMode共享" GroupName="PlaceMode" runat="server" Text="共享" />--%>
                             </td>
                             <td class="descTd">建设状态
                             </td>
                             <td>
-                                <asp:DropDownList ID="DdlBuildState" runat="server">
+                                <asp:DropDownList ID="DdlBuildState" runat="server" Width="99%">
                                     <asp:ListItem Value="" Text=""></asp:ListItem>
                                     <asp:ListItem Value="已建成" Text="已建成"></asp:ListItem>
                                     <asp:ListItem Value="建设中" Text="建设中"></asp:ListItem>
                                     <asp:ListItem Value="规划中" Text="规划中"></asp:ListItem>
                                 </asp:DropDownList>
-                               <%-- <asp:RadioButton ID="BuildState已建成" GroupName="BuildState" runat="server" Text="已建成" />
-                                <asp:RadioButton ID="BuildState建设中" GroupName="BuildState" runat="server" Text="建设中" />
-                                <asp:RadioButton ID="BuildState规划中" GroupName="BuildState" runat="server" Text="规划中" />--%>
                             </td>
-                            <td colspan="2">
-                                <asp:Button ID="brnQuery" Text="查询" OnClick="btnSearch_Click" runat="server" />
+                            <td class="descTd">建设时间
+                            </td>
+                            <td>
+                                <asp:TextBox ID="TxtBuildTimeStart" onclick="WdatePicker()" runat="server"></asp:TextBox></td>
+                            <td class="descTd">至
+                            </td>
+                            <td>
+                                <asp:TextBox ID="TxtBuildTimeEnd" onclick="WdatePicker()" runat="server"></asp:TextBox></td>
+                            <td>
+                                <asp:Button ID="brnQuery" Text="查询" OnClick="BtnSearch_Click" runat="server" />
                             </td>
                         </tr>
                     </table>
@@ -152,7 +177,7 @@
                             </asp:TemplateField>
                             <asp:TemplateField HeaderText="塔站名称">
                                 <ItemTemplate>
-                                    <%# Convert.ToString(Eval("Province")) %>
+                                    <%# Convert.ToString(Eval("Name")) %>
                                 </ItemTemplate>
                             </asp:TemplateField>
                             <asp:TemplateField HeaderText="地图坐标">
@@ -176,8 +201,6 @@
                         <HeaderStyle CssClass="header"></HeaderStyle>
                         <FooterStyle CssClass="footer"></FooterStyle>
                     </asp:GridView>
-                    <%--<webdiyer:AspNetPager ID="AspNetPager1" Width="100%" UrlPaging="false" ShowPageIndexBox="Always" PageIndexBoxType="DropDownList" TextBeforePageIndexBox="转到: " FirstPageText="首页" LastPageText="末页" PrevPageText="上一页" NextPageText="下一页" HorizontalAlign="Left" EnableTheming="true" OnPageChanged="AspNetPager1_PageChanged" runat="server">
-                    </webdiyer:AspNetPager>--%>
                 </td>
             </tr>
         </table>

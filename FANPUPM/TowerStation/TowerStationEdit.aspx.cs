@@ -1,19 +1,13 @@
-﻿using System;
+﻿using cn.justwin.BLL;
+using com.jwsoft.pm.data;
+using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Web;
 using System.Web.SessionState;
-using System.Web.UI;
 using System.Web.UI.WebControls;
-using cn.justwin.BLL;
-using cn.justwin.Domain.Services;
-using com.jwsoft.pm.data;
 
 public partial class TowerStation_TowerStationEdit : NBasePage, IRequiresSessionState
 {
@@ -25,7 +19,8 @@ public partial class TowerStation_TowerStationEdit : NBasePage, IRequiresSession
         }
         var mode = Request.QueryString["mode"];
         var oid = Request.QueryString["oid"];
-        BindProvice();
+        BindProvince();
+
         switch (mode)
         {
             case "1":
@@ -37,11 +32,12 @@ public partial class TowerStation_TowerStationEdit : NBasePage, IRequiresSession
                 if (dt != null && dt.Rows.Count > 0)
                 {
                     var dr = dt.Rows[0];
-                    TxtName.Text = dr["TowerName"].ToString();
-
-                    TxtProvince.Text = dr["Province"].ToString();
-                    TxtCity.Text = dr["City"].ToString();
-                    TxtArea.Text = dr["Area"].ToString();
+                    TxtName.Text = dr["Name"].ToString();
+                    DdlProvince.Text = dr["Province"].ToString();
+                    DdlProvince_SelectedIndexChanged(null, null);
+                    DdlCity.Text = dr["City"].ToString();
+                    DdlCity_SelectedIndexChanged(null, null);
+                    DdlArea.Text = dr["Area"].ToString();
                     TxtAddress.Text = dr["Address"].ToString();
                     TxtLiaison.Text = dr["Liaison"].ToString();
                     TxtPhone.Text = dr["Phone"].ToString();
@@ -143,47 +139,49 @@ public partial class TowerStation_TowerStationEdit : NBasePage, IRequiresSession
                     SetIsRadio("ScIsContact", dr["ScIsContact"].ToString());
                     SetIsRadio("PowerState", dr["PowerState"].ToString());
                     SetIsRadio("AirconditionState", dr["AirconditionState"].ToString());
+                    img360度全景拍摄.Src = dr["Photo"].ToString();
+                    img其他.Src = dr["Photo1"].ToString();
+                    img地点入口.Src = dr["Photo2"].ToString(); 
+                    img查看铁塔.Src = dr["Photo3"].ToString();
+                    img电源.Src = dr["Photo4"].ToString();
+                    img展示天线负荷.Src = dr["Photo5"].ToString();
                 }
                 break;
         }
-        
     }
-    private void BindProvice()
-    {
-        DataTable aLLProvince = new BasicProvinceService().GetALLProvince();
-        this.dropprovince.DataSource = aLLProvince;
-        this.dropprovince.DataValueField = "Id";
-        this.dropprovince.DataTextField = "Name";
-        this.dropprovince.DataBind();
-        this.dropprovince.Items.Insert(0, new ListItem("请选择", ""));
-        this.dropcity.Items.Add(new ListItem("请选择", ""));
-    }
+
     protected void BtnSave_Click(object sender, EventArgs e)
     {
         string strSql;
         var mode = Request.QueryString["mode"];
-        string filepath = string.Empty;
-        if (!string.IsNullOrEmpty(this.fplLoginLogo.PostedFile.FileName))
+        string photo = null, photo1 = null, photo2 = null, photo3 = null, photo4 = null, photo5 = null;
+        if (Fup360度全景拍摄.HasFile)
         {
-            string contentType = this.fplLoginLogo.PostedFile.ContentType;
-            if (contentType == "image/bmp" || contentType == "image/gif" || contentType == "image/x-png" || contentType == "image/jpeg")
-            {
-                string arg_72_0 = this.fplLoginLogo.PostedFile.FileName;
-                filepath = base.Server.MapPath("/UploadFiles/UserLogo/"+System.Guid.NewGuid().ToString()+arg_72_0);
-                //FileInfo fileInfo = new FileInfo(filepath);
-                
-                this.fplLoginLogo.SaveAs(filepath);
-                //base.RegisterScript("top.ui.show('上传成功')");
-            }
-            else
-            {
-                //base.RegisterScript("top.ui.alert('上传的登录页面的logo格式不正确')");
-            }
+            photo = "data:image/" + Path.GetExtension(Fup360度全景拍摄.FileName) + ";base64," + Convert.ToBase64String(Fup360度全景拍摄.FileBytes);
+        }
+        if (Fup其他.HasFile)
+        {
+            photo1 = "data:image/" + Path.GetExtension(Fup其他.FileName) + ";base64," + Convert.ToBase64String(Fup其他.FileBytes);
+        }
+        if (Fup地点入口.HasFile)
+        {
+            photo2 = "data:image/" + Path.GetExtension(Fup地点入口.FileName) + ";base64," + Convert.ToBase64String(Fup地点入口.FileBytes);
+        }
+        if (Fup查看铁塔.HasFile)
+        {
+            photo3 = "data:image/" + Path.GetExtension(Fup查看铁塔.FileName) + ";base64," + Convert.ToBase64String(Fup查看铁塔.FileBytes);
+        }
+        if (Fup电源.HasFile)
+        {
+            photo4 = "data:image/" + Path.GetExtension(Fup电源.FileName) + ";base64," + Convert.ToBase64String(Fup电源.FileBytes);
+        }
+        if (Fup展示天线负荷.HasFile)
+        {
+            photo5 = "data:image/" + Path.GetExtension(Fup展示天线负荷.FileName) + ";base64," + Convert.ToBase64String(Fup展示天线负荷.FileBytes);
         }
         var hashtable = new Hashtable
         {
-            {"Towername",TxtName.Text },{ "PhotoPath",filepath},
-            {"Province", TxtProvince.Text}, {"City", TxtCity.Text}, {"Area", TxtArea.Text}, {"Address", TxtAddress.Text},
+            {"Province", DdlProvince.Text}, {"City", DdlCity.Text}, {"Area", DdlArea.Text}, {"Address", TxtAddress.Text},
             {"Liaison", TxtLiaison.Text}, {"Phone", TxtPhone.Text}, {"Email", TxtEmail.Text}, {"PlaceMode", GetRadioText("PlaceMode")},
             {"BuildState", GetRadioText("BuildState")}, {"BuildTime", TxtBuildTime.Text},
             {"IsStateOwned", GetIsRadioValue("IsStateOwned")}, {"IsIntelligence", GetIsRadioValue("IsIntelligence")},
@@ -231,7 +229,7 @@ public partial class TowerStation_TowerStationEdit : NBasePage, IRequiresSession
             {"VehicleFlowrate", TxtVehicleFlowrate.Text}, {"LaunchCycle", TxtLaunchCycle.Text}, {"ReleaseBrand", TxtReleaseBrand.Text},
             {"OutdoorAdManufacturer", TxtOutdoorAdManufacturer.Text}, {"PowerSupplySubsystem", GetRadioText("PowerSupplySubsystem")},
             {"PowerSupplyManufacturer", TxtPowerSupplyManufacturer.Text}, {"RSUSubsystem", GetRadioText("RSUSubsystem")},
-            {"RSUManufacturer", TxtRSUManufacturer.Text},
+            {"RSUManufacturer", TxtRSUManufacturer.Text},{"Name", TxtName.Text},{"Photo", photo},{"Photo1", photo1},{"Photo2", photo2},{"Photo3", photo3},{"Photo4", photo4},{"Photo5", photo5},
         };
         switch (mode)
         {
@@ -246,7 +244,6 @@ public partial class TowerStation_TowerStationEdit : NBasePage, IRequiresSession
 
                     return _.Value is string ? SqlStringConstructor.GetQuotedString(_.Value.ToString()) : _.Value.ToString();
                 }));
-                
                 publicDbOpClass.ExecuteSQL("Insert Into TowerStationInfo(" + str + ")Values(" + strSql + ")");
                 break;
             case "2":
@@ -255,7 +252,9 @@ public partial class TowerStation_TowerStationEdit : NBasePage, IRequiresSession
                 {
                     if (_.Value == null || string.IsNullOrEmpty(_.Value.ToString()))
                     {
-                        return _.Key + "=NULL";
+                        return _.Key + "=" + (new[] {"Photo", "Photo1", "Photo2", "Photo3", "Photo4", "Photo5",}.Contains(_.Key)
+                            ? _.Key.ToString()
+                            : "NULL");
                     }
 
                     return _.Key + "=" + (_.Value is string ? SqlStringConstructor.GetQuotedString(_.Value.ToString()) : _.Value.ToString());
@@ -265,6 +264,58 @@ public partial class TowerStation_TowerStationEdit : NBasePage, IRequiresSession
                 break;
         }
         RegisterScript("top.ui.tabSuccess({ parentName: '_TowerStationManage'})");
+    }
+    /// <summary>
+    /// 省选择事件
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    protected void DdlProvince_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        var sql = @"SELECT  name, city_id, province_id FROM dbo.city WHERE province_id=@province_id";
+        SqlParameter[] paras =
+        {
+            new SqlParameter("@province_id", DdlProvince.SelectedValue)
+        };
+        var dt = publicDbOpClass.ExecuteDataTable(CommandType.Text, sql, paras);
+        DdlCity.DataSource = dt;
+        DdlCity.DataTextField = "name";
+        DdlCity.DataValueField = "city_id";
+        DdlCity.DataBind();
+        DdlCity.Items.Insert(0, new ListItem("请选择", ""));
+        DdlCity_SelectedIndexChanged(null, null);
+    }
+    /// <summary>
+    /// 市选择事件
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    protected void DdlCity_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        var sql = @"SELECT  name, country_id, city_id FROM dbo.country WHERE city_id=@city_id";
+        SqlParameter[] paras =
+        {
+            new SqlParameter("@city_id", DdlCity.SelectedValue)
+        };
+        var dt = publicDbOpClass.ExecuteDataTable(CommandType.Text, sql, paras);
+        DdlArea.DataSource = dt;
+        DdlArea.DataTextField = "name";
+        DdlArea.DataValueField = "country_id";
+        DdlArea.DataBind();
+        DdlArea.Items.Insert(0, new ListItem("请选择", ""));
+    }
+    /// <summary>
+    /// 省数据绑定
+    /// </summary>
+    private void BindProvince()
+    {
+        var strSql = "SELECT	 name, province_id FROM dbo.province";
+        var dt = publicDbOpClass.DataTableQuary(strSql);
+        DdlProvince.DataSource = dt;
+        DdlProvince.DataTextField = "name";
+        DdlProvince.DataValueField = "province_id";
+        DdlProvince.DataBind();
+        DdlProvince.Items.Insert(0, new ListItem("请选择", ""));
     }
 
     /// <summary>
@@ -288,7 +339,7 @@ public partial class TowerStation_TowerStationEdit : NBasePage, IRequiresSession
         foreach (var value in new[] {"0", "1"})
         {
             var c = FindControl(groupName + value) as RadioButton;
-            if (c != null)
+            if (c != null && c.Checked)
             {
                 return value;
             }

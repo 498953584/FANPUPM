@@ -7,6 +7,7 @@ BEGIN
 /*==============================================================*/
 CREATE TABLE [dbo].[TowerStationInfo](
 	[TowerStationGUID] uniqueidentifier  DEFAULT(newsequentialid()) NOT NULL  ,
+	[Name] nvarchar(128)   ,
 	[Province] nvarchar(50)   ,
 	[City] nvarchar(50)   ,
 	[Area] nvarchar(50)   ,
@@ -27,6 +28,7 @@ CREATE TABLE [dbo].[TowerStationInfo](
 	[MapDimension] nvarchar(50)   ,
 	[MapDatum] nvarchar(50)   ,
 	[PhotoType] nvarchar(50)   ,
+	[Photo] nvarchar(max)   ,
 	[HorizontalPosition] nvarchar(200)   ,
 	[ShootingPosition] nvarchar(200)   ,
 	[Altitude] nvarchar(50)   ,
@@ -219,6 +221,7 @@ execute sp_addextendedproperty 'MS_Description',  '充电供电子系统' ,'user
 execute sp_addextendedproperty 'MS_Description',  '充电供电系统的制造商' ,'user', @CurrentUser, 'table', 'TowerStationInfo', 'column', 'PowerSupplyManufacturer'
 execute sp_addextendedproperty 'MS_Description',  'RSU子系统' ,'user', @CurrentUser, 'table', 'TowerStationInfo', 'column', 'RSUSubsystem'
 execute sp_addextendedproperty 'MS_Description',  'RSU系统的制造商' ,'user', @CurrentUser, 'table', 'TowerStationInfo', 'column', 'RSUManufacturer'
-
+execute sp_addextendedproperty 'MS_Description',  '名称' ,'user', @CurrentUser, 'table', 'TowerStationInfo', 'column', 'Name'
+execute sp_addextendedproperty 'MS_Description',  '照片' ,'user', @CurrentUser, 'table', 'TowerStationInfo', 'column', 'Photo'
 END
 GO
