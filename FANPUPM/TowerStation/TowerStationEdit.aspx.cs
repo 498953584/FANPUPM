@@ -155,29 +155,48 @@ public partial class TowerStation_TowerStationEdit : NBasePage, IRequiresSession
         string strSql;
         var mode = Request.QueryString["mode"];
         string photo = null, photo1 = null, photo2 = null, photo3 = null, photo4 = null, photo5 = null;
-        if (Fup360度全景拍摄.HasFile)
+        try
         {
-            photo = "data:image/" + Path.GetExtension(Fup360度全景拍摄.FileName) + ";base64," + Convert.ToBase64String(Fup360度全景拍摄.FileBytes);
+            string path = "/TowerStation/imageUp";
+            string sPath = Server.MapPath("/");
+            if (!Directory.Exists(sPath + path)) {
+                Directory.CreateDirectory(sPath + path);
+            }
+            if (Fup360度全景拍摄.HasFile)
+            {
+                photo = path + "/" + Guid.NewGuid() + Path.GetExtension(Fup360度全景拍摄.FileName);
+                Fup360度全景拍摄.SaveAs(sPath+photo);
+            }
+            if (Fup其他.HasFile)
+            {
+                photo1 = path + "/" + Guid.NewGuid() + Path.GetExtension(Fup其他.FileName);
+                Fup其他.SaveAs(sPath + photo1);
+            }
+            if (Fup地点入口.HasFile)
+            {
+                photo2 = path + "/" + Guid.NewGuid() + Path.GetExtension(Fup地点入口.FileName);
+                Fup地点入口.SaveAs(sPath + photo2);
+            }
+            if (Fup查看铁塔.HasFile)
+            {
+                photo3 = path + "/" + Guid.NewGuid() + Path.GetExtension(Fup查看铁塔.FileName);
+                Fup查看铁塔.SaveAs(sPath + photo3);
+            }
+            if (Fup电源.HasFile)
+            {
+                photo4 = path + "/" + Guid.NewGuid() + Path.GetExtension(Fup电源.FileName);
+                Fup电源.SaveAs(sPath + photo4);
+            }
+            if (Fup展示天线负荷.HasFile)
+            {
+                photo5 = path + "/" + Guid.NewGuid() + Path.GetExtension(Fup展示天线负荷.FileName);
+                Fup展示天线负荷.SaveAs(sPath + photo5);
+            }
         }
-        if (Fup其他.HasFile)
+        catch (Exception)
         {
-            photo1 = "data:image/" + Path.GetExtension(Fup其他.FileName) + ";base64," + Convert.ToBase64String(Fup其他.FileBytes);
-        }
-        if (Fup地点入口.HasFile)
-        {
-            photo2 = "data:image/" + Path.GetExtension(Fup地点入口.FileName) + ";base64," + Convert.ToBase64String(Fup地点入口.FileBytes);
-        }
-        if (Fup查看铁塔.HasFile)
-        {
-            photo3 = "data:image/" + Path.GetExtension(Fup查看铁塔.FileName) + ";base64," + Convert.ToBase64String(Fup查看铁塔.FileBytes);
-        }
-        if (Fup电源.HasFile)
-        {
-            photo4 = "data:image/" + Path.GetExtension(Fup电源.FileName) + ";base64," + Convert.ToBase64String(Fup电源.FileBytes);
-        }
-        if (Fup展示天线负荷.HasFile)
-        {
-            photo5 = "data:image/" + Path.GetExtension(Fup展示天线负荷.FileName) + ";base64," + Convert.ToBase64String(Fup展示天线负荷.FileBytes);
+
+            throw;
         }
         var hashtable = new Hashtable
         {

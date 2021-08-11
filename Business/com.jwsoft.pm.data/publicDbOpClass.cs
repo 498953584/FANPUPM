@@ -461,7 +461,7 @@ namespace com.jwsoft.pm.data
             {
                 num = new SqlCommand(sqlString, connection).ExecuteNonQuery();
             }
-            catch
+            catch(Exception ex)
             {
                 num = -1;
             }
