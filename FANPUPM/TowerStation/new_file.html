@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			body,p{
+				padding: 0;
+				margin: 0;
+			}
+			ul{
+				list-style: none;
+				display: flex;
+				justify-content: space-between;
+			}
+			ul>li{
+				display: inline;
+				color: #FFF;
+			}
+			.center{
+				text-align: center;
+			}
+			.col{
+				border-right: solid 1px #333;
+			}
+			.col1{
+				flex-grow: 10%;
+			}
+			.col2{
+				flex-grow: 40%;
+			}
+			.col3{
+				flex-grow: 25%;
+			}
+			.col4{
+				flex-grow: 25%;
+			}
+			.tabGe{
+				width: 100%;
+			}
+			.hang{
+				border-top: solid 1px #333;
+				padding-top: 3px;
+				padding-bottom: 3px;
+			}
+			.col4 p{
+				display: inline-block;
+				color: #0000ff;
+				padding-left: 3px;
+				padding-right: 3px;
+			}
+			.col4 p:last-child{
+				color: #ff0000;
+			}
+			.hang div:first-child{
+				border-left: solid 1px #333333;
+			}
+			#table-sty:last-child{
+				border-bottom: solid 1px #333;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="">
+			<!--<div id="" style="background-color: rgba(51, 51, 51, 1);width: 100%;height: 54px;display: flex;justify-content: space-between;">
+				<div id="left" style="color: #fff;flex-grow: 1;align-self: center;">
+					<p style="text-align: center;">塔站共享</p>
+				</div>
+				<div id="" style="flex-grow:2;justify-content: space-between;">
+					<ul>
+						<li>设备</li>
+						<li>人力资源</li>
+						<li>制造</li>
+						<li>内容</li>
+						<li>目录</li>
+						<li>会计</li>
+						<li>应付账户</li>
+						<li>应收账</li>
+					</ul>
+				</div>
+				<div id="" style="display: flex;align-self: center;flex-grow: 1;justify-content: center;">
+					<img src="./u47.svg" style="width: 42px;height: 42px;">
+				</div>
+			</div>-->
+			<div id="">
+				<div id="" style="display: flex;margin-top: 15px;margin-left: 15px;">
+					<div id="" style="height: 36px;width: 142px;text-align: center;line-height: 36px;border: solid 1px #666666;" >
+						塔站分布图
+					</div>
+					<div id="" style="height: 36px;width: 142px;background-color: rgba(102, 102, 102, 1);
+					text-align: center;color: #FFF;line-height: 36px;border: solid 1px #666666;">
+						冲突排查
+					</div>
+				</div>
+				<div id="" style="margin-top: 15px;margin-left: 15px;height: 28px;display: flex;">
+					<div id="" style="border: solid 1px #666666;background-color: #666666;color: #FFFFFF;
+					font-size: 13px;height: 28px;width: 81px;border-radius: 3px;display: inline-block;line-height: 28px;
+					text-align: center;">
+						排查条件
+					</div>
+					<input type="" name="" id="" value="" style="margin-left: 15px;width: 318px;height: 25px;"
+					placeholder="排查条件1/排查条件2/排查条件3"/>
+					
+				</div>
+			</div>
+			<div id="" style="padding: 15px;">
+				<p>冲突1</p>
+				<div id="table-sty" >
+					<div id="" style="display: flex;width: 100%;justify-content: space-between;" class="hang">
+						<div id="" class="col1 center tabGe col">
+							序号
+						</div>
+						<div id="" class="col2 center tabGe col">
+							塔站名称
+						</div>
+						<div id="" class="col3 center tabGe col">
+							地图坐标
+						</div>
+						<div id="" class="col4 center tabGe col">
+							操作
+						</div>
+					</div>
+					<div id="" style="display: flex;width: 100%;justify-content: space-between;" class="hang">
+						<div id="" class="col1 center tabGe col">
+							1
+						</div>
+						<div id="" class="col2 center tabGe col" >
+							塔站1
+						</div>
+						<div id="" class="col3 center tabGe col">
+							东经27.38°、北纬48.23°
+						</div>
+						<div id="" class="col4 center tabGe col">
+							<p>查看</p>
+							<p>编辑</p>
+							<p>删除</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
