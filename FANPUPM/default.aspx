@@ -3,7 +3,7 @@
 
 <!DOCTYPE html >
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server"><title>欢迎使用泛普工程项目管理系统</title><link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+<head runat="server"><title>欢迎使用塔站共享项目管理系统</title><link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
 <link rel="Stylesheet" type="text/css" href="/Script/jquery.easyui/themes/default/easyui.css" />
 <link rel="Stylesheet" type="text/css" href="/Script/jquery.easyui/themes/icon.css" />
 <link rel="stylesheet" type="text/css" href="images2/login/css/login.css" />
@@ -21,10 +21,8 @@
 	<div class="login-box">
 		<div class="login-left">
 			<span>
-				<img src="images2/login/images/logo.jpg" /></span> <span class="login-pic">
-					<img src="UploadFiles\UserLogo\logo3.jpg" />
-				</span>
-		</div>
+				<%--<img src="images2/login/images/logo.jpg" />--%></span> <span class="login-pic">
+					&nbsp;</span></div>
 		<div class="login-right">
 			<span>
 				<img src="images2/login/images/login.jpg" width="85" height="22" /></span>
@@ -58,7 +56,7 @@
 				<li class="xx">率1024*768或以上。</li>
 			</ul>
 		</div>
-		<div class="login-bottom ">
+		<div class="login-bottom " style="display:none;">
 			<div class="copyright">
 				版权所有&copy;2003-2015 | <a href='http://www.fanpusoft.com' target="_blank">泛普软件有限公司</a>
 			</div>

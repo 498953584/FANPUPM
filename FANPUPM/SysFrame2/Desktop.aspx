@@ -3,7 +3,7 @@
 
 <!DOCTYPE html >
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server"><title>工程项目管理系统</title><link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+<head runat="server"><title>塔站共享项目管理系统</title><link rel="shortcut icon" href="" type="image/x-icon" />
 <link rel="Stylesheet" type="text/css" href="/Script/jquery.easyui/themes/default/easyui.css" />
 <link rel="Stylesheet" type="text/css" href="/Script/jquery.easyui/themes/icon.css" />
 <link rel="Stylesheet" type="text/css" href="../Script/jquery.easyui/jquery.easyui.extension.css" />
@@ -110,7 +110,7 @@
 		</div>
 	</div>
 	<!-- 关于软件-->
-	<div id="div_about" title="关于工程项目管理软件" style="font-size: 12px; color: #212121;" data-options="modal:true, collapsible:false, maximizable:false, minimizable:false">
+	<div id="div_about" title="关于工程项目管理软件" style="display:none;font-size: 12px; color: #212121;" data-options="modal:true, collapsible:false, maximizable:false, minimizable:false">
 		<div style="padding-left: 30px; padding-top: 20px;">
 			<img alt="泛普软件有限公司" src="/images/justwin.jpg" />
 		</div>
@@ -123,10 +123,10 @@
 			擅自复制或者散播本程序的部分或者全部，将承受严厉的民事<br />
 			刑事处罚，对已知的违反者将给法律范围内的全面制裁。
 		</div>
-		<div style="padding-left: 30px; padding-top: 50px; color: #666; width: 250px; float: left;">
+		<%--<div style="padding-left: 30px; padding-top: 50px; color: #666; width: 250px; float: left;">
 			版权所有 <span style="font-family: Arial;">&copy;2003-2015 </span>| <a id="a_about_jw"
 				target="_blank" href="http://www.fanpusoft.com">泛普软件有限公司</a>
-		</div>
+		</div>--%>
 		<div id="div_btnok">
 			<input id="btn_about_ok" type="button" onclick="btn_about_ok();" value="确定" />
 		</div>

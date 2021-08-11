@@ -19,6 +19,7 @@
         }
 
         .div {
+            
         }
 
         h3 {
@@ -43,96 +44,122 @@
             top: 50px;
             left: 20px;
         }
-
-
+		.left-list{
+			position: absolute;
+			z-index: 1999;
+			top: 150px;
+			left: 20px;
+		}
+		.car{
+			box-shadow:1px 1px 8px 0px  #c8c8c8;
+			border-radius: 5px;
+			background-color: #FFF;
+			padding: 15px;
+		}
         #left_1 {
             margin-top: 15px;
-            margin-left: 10px;
-            width: 300px;
-            height: 200px;
-            position: absolute;
-            background-color: #cccccc;
-            z-index: 1999;
-            top: 150px;
-            left: 20px;
+            margin-left:10px;
+            width: 270px;
         }
 
         #left_2 {
             margin-top: 15px;
-            margin-left: 10px;
-            width: 300px;
-            height: 130px;
-            position: absolute;
-            background-color: #cccccc;
-            z-index: 1999;
-            top: 360px;
-            left: 20px;
+            margin-left:10px;
+            width: 270px;
         }
 
         #left_3 {
             margin-top: 15px;
-            margin-left: 10px;
-            width: 300px;
-            height: 130px;
-            position: absolute;
-            background-color: #cccccc;
-            z-index: 1999;
-            top: 500px;
-            left: 20px;
+            margin-left:10px;
+            width: 270px;
         }
-
+		.right-list{
+			position: absolute;
+			z-index: 1999;
+			top: 150px;
+			right: 20px;
+		}
         #right_1 {
             margin-top: 15px;
-            margin-left: 10px;
-            width: 300px;
-            height: 130px;
-            position: absolute;
-            background-color: #cccccc;
-            z-index: 1999;
-            top: 150px;
-            right: 20px;
+            margin-left:10px;
+            width: 270px;
         }
 
         #right_2 {
             margin-top: 15px;
-            margin-left: 10px;
-            width: 300px;
-            height: 130px;
-            position: absolute;
-            background-color: #cccccc;
-            z-index: 1999;
-            top: 290px;
-            right: 20px;
+            margin-left:10px;
+            width: 270px;
         }
 
         #right_3 {
             margin-top: 15px;
-            margin-left: 10px;
-            width: 300px;
-            height: 170px;
-            position: absolute;
-            background-color: #cccccc;
-            z-index: 1999;
-            top: 430px;
-            right: 20px;
+            margin-left:10px;
+            width: 270px;
         }
 
 
         .btnclass {
-            position: absolute;
-            right: 25px;
-            background-color: #569cd5;
+            background-color: #317ffe;
             border-radius: 5px;
-            border-style: hidden;
+            border-style:hidden;
             width: 40px;
-            color: white;
-            
+            color:white;
         }
-        .btnclass:hover {cursor:hand;}
         .div {
-            margin-top: 15px;
-            margin-left: 10px;
+         margin-top: 15px;
+            margin-left:10px;
         }
+		.btn{
+			border-radius: 3px;
+			background-color: #317ffe;
+			border: none;
+			padding: 5px 20px;
+			color: #FFFFFF;
+		}
+		.car-title{
+			color: #317fff;
+			font-size: 15px;
+			margin: 0;
+		}
+		.flex{
+			display: flex;
+			justify-content: center;
+		}
+		.col{
+			flex-basis: 50%;
+			text-align: center;
+		}
+		.col .num{
+			font-size: 25px;
+			font-weight: bold;
+			color: #666;
+			margin: 10px;
+			margin-top: 15px;
+		}
+		.col .typeName{
+			color: #999;
+			font-size: 13px;
+			font-weight: 600;
+			margin-top: 0;
+		}
+		
+		.col30{
+			flex-basis: 33%;
+			text-align: center;
+		}
+		.col30 .num{
+			font-size: 25px;
+			font-weight: bold;
+			color: #666;
+			margin: 10px;
+			margin-top: 15px;
+		}
+		.col30 .typeName{
+			color: #999;
+			font-size: 13px;
+			font-weight: 600;
+			margin-top: 0;
+		}
     </style>
     <script>
         var map = null;
@@ -211,6 +238,9 @@
 
                     var strTemp = JSON.parse(str);
                     //"{"左上":[{"new":0,"old":0}],"新塔-国有情况":[{"非国有":0,"国有":0}],"旧塔-国有情况":[{"非国有":0,"国有":0}],"新塔-是否智能":[{"非智能":0,"智能":0}],"旧塔-是否智能":[{"非智能":0,"智能":0}],"新塔-建设状态":[{"已建成":0,"建设中":0,"规划中":0}]}"
+                    $("#num_new").text(strTemp.左上[0].new);
+                    $("#num_old").text(strTemp.左上[0].old);
+
                     $("#gy_new").text(strTemp.新塔国有情况[0].国有);
                     $("#fgy_new").text(strTemp.新塔国有情况[0].非国有);
 
@@ -297,53 +327,167 @@
         <div id="container">
         </div>
         <div class="SearchTool">
-            <input type="text" placeholder="名称" style="width: 240px" />
-            <input type="button" value="搜索" />
-            &nbsp;&nbsp;&nbsp;&nbsp;<select id="drop_gys" runat="server" name="drop_gys"></select>
-            <select id="drop_networktype" name="drop_networktype">
-                <option value="">请选择</option>
-                <option value="2G">2G</option>
-                <option value="3G">3G</option>
-                <option value="4G">4G</option>
-                <option value="5G">5G</option>
-                <option value="wifi">wifi</option>
-                <option value="应急通讯">应急通讯</option>
-                <option value="报警">报警</option>
-            </select>
-            <input type="button" onclick="SearchInfo();" value="搜索" />
-            <input type="reset" value="重置" />
+            <input type="text" placeholder="名称" style="width: 240px;height: 28px;border: 0;
+        outline: none;box-shadow:1px 1px 3px 0px #c8c8c8 ;border-radius: 3px;" />
+            <button type="button" class="btn">
+                <img src="sousou.png" width="15px" />
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <div id="" style="background-color: #FFFFFF;display: inline-block;box-shadow:1px 1px 3px 0px #c8c8c8 ;border-radius: 3px;padding: 0 10px;">
+                <div id="" style="background-color: #FFFFFF;display: inline-block;">
+
+                    <select id="drop_gys" runat="server" name="drop_gys"
+                            style="border: none;background-color: #FFFFFF;padding-right: 15px;outline: none;">
+                        
+                    </select>
+
+                </div>
+                <!-- <div id="" style="display: inline-block;">
+            <div style="width: 1px;background-color: #333333;"></div>
+        </div> -->
+                <div id="" style="background-color: #FFFFFF;display: inline-block;padding: 5px;">
+                    <select id="drop_networktype" name="drop_networktype"
+                            style="border:none; padding-right: 5px;border-left: solid 1px #bababa;outline: none;">
+                        <option value="">请选择</option>
+                        <option value="2G">2G</option>
+                        <option value="3G">3G</option>
+                        <option value="4G">4G</option>
+                        <option value="5G">5G</option>
+                        <option value="wifi">wifi</option>
+                        <option value="应急通讯">应急通讯</option>
+                        <option value="报警">报警</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <button type="button" style="" onclick="SearchInfo()" class="btn">
+                搜索
+            </button>
+            <button type="reset"  class="btn">
+                重置
+            </button>
         </div>
-        <div id="left_1">
-            <h3>塔站统计</h3>
-            <input class="btnclass" type="button" style="top: 22px; left: 130px; width: 60px;" onclick="openTowerStation(1,undefined,undefined,undefined,'新塔站信息')" value="新塔站" />
-            <input class="btnclass" type="button" style="top: 22px; left: 215px; width: 60px;" onclick="openTowerStation(0,undefined,undefined,undefined,'旧塔站信息')" value="旧塔站" />
+        <div class="left-list">
+			<div id="left_1" class="car">
+				<div id="" style="display: flex;align-items: center;">
+					<img src="statistics.png" style="width: 17px;height: 17px;" >
+					<h3 class="car-title">塔站统计</h3>
+				</div>
+				<div id="" class="flex">
+					<div id="" class="col">
+						<p id="num_new" class="num">28</p>
+						<p class="typeName">新塔站</p>
+                        <input class="btnclass" type="button" onclick="openTowerStation(1,undefined,undefined,undefined,'新塔站信息')" value="进入" />
+					</div>
+					<div id="" class="col">
+						<p id="num_old" class="num">28</p>
+						<p class="typeName">旧塔站</p>
+                        <input class="btnclass" type="button" onclick="openTowerStation(0,undefined,undefined,undefined,'旧塔站信息')" value="进入" />
+					</div>
+				</div>
+			</div>
+			
+			<div id="left_2" class="car">
+				<div id="" style="display: flex;align-items: center;">
+					<img src="statistics.png" style="width: 17px;height: 17px;" >
+					<h3 class="car-title">新塔站统计</h3>
+				</div>
+				<div id="" class="flex">
+					<div id="" class="col">
+						<p id="gy_new" class="num">111</p>
+						<p class="typeName">国有塔站</p>
+						<input class="btnclass" type="button" onclick="openTowerStation(1,undefined,undefined,1,'新国有塔站信息')"  value="进入" />
+					</div>
+					<div id="" class="col">
+						<p id="fgy_new" class="num">222</p>
+						<p class="typeName">非国有塔站</p>
+						<input class="btnclass" type="button" onclick="openTowerStation(1,undefined,undefined,0,'新非国有塔站信息')"  value="进入" />
+					</div>
+				</div>
+			</div>
+			<div id="left_3" class="car">
+				<div id="" style="display: flex;align-items: center;">
+					<img src="statistics.png" style="width: 17px;height: 17px;" >
+					<h3 class="car-title">旧塔站统计</h3>
+				</div>
+				<div id="" class="flex">
+					<div id="" class="col">
+						<p id="gy_old" class="num">333</p>
+						<p class="typeName">国有塔站</p>
+						<input class="btnclass" type="button" onclick="openTowerStation(0,undefined,undefined,1,'旧国有塔站信息')" value="进入" />
+					</div>
+					<div id="" class="col">
+						<p id="fgy_old" class="num">444</p>
+						<p class="typeName">非国有塔站</p>
+						<input class="btnclass" type="button" onclick="openTowerStation(0,undefined,undefined,0,'旧非国有塔站信息')"  value="进入" />
+					</div>
+				</div>
+			</div>
+		</div>
+       
+        <div id="" class="right-list">
+        	<div id="right_1" class="car">
+        		<div id="" style="display: flex;align-items: center;">
+        			<img src="statistics.png" style="width: 17px;height: 17px;" >
+        			<h3 class="car-title">新塔站统计</h3>
+        		</div>
+        	    <div id="" class="flex">
+        	    	<div id="" class="col">
+        	    		<p id="zn_new" class="num">333</p>
+        	    		<p class="typeName">智能塔站</p>
+        	    		<input class="btnclass" type="button"  onclick="openTowerStation(1,undefined,1,undefined,'新智能塔站信息')"  value="进入" />
+        	    	</div>
+        	    	<div id="" class="col">
+        	    		<p id="fzn_new" class="num">444</p>
+        	    		<p class="typeName">非智能塔站</p>
+        	    		<input class="btnclass" type="button"  onclick="openTowerStation(1,undefined,0,undefined,'新非智能塔站信息')"  value="进入" />
+        	    	</div>
+        	    </div>
+        	</div>
+        	<div id="right_2" class="car">
+        		<div id="" style="display: flex;align-items: center;">
+        			<img src="statistics.png" style="width: 17px;height: 17px;" >
+        			<h3 class="car-title">旧塔站统计</h3>
+        		</div>
+        	    <div id="" class="flex">
+        	    	<div id="" class="col">
+        	    		<p id="zn_old" class="num">333</p>
+        	    		<p class="typeName">智能塔站</p>
+        	    		<input class="btnclass" type="button" onclick="openTowerStation(0,undefined,1,undefined,'旧智能塔站信息')"  value="进入" />
+        	    	</div>
+        	    	<div id="" class="col">
+        	    		<p id="fzn_old" class="num">444</p>
+        	    		<p class="typeName">非智能塔站</p>
+        	    		<input class="btnclass" type="button" onclick="openTowerStation(1,undefined,0,undefined,'新非智能塔站信息')"  value="进入" />
+        	    	</div>
+        	    </div>
+        	</div>
+        	<div id="right_3" class="car">
+        		<div id="" style="display: flex;align-items: center;">
+        			<img src="statistics.png" style="width: 17px;height: 17px;" >
+        			<h3 class="car-title">新塔站状态统计</h3>
+        		</div>
+        	    <div id="" class="flex">
+        	    	<div id="" class="col30">
+        	    		<p id="buildState_1" class="num">333</p>
+        	    		<p class="typeName">已建成</p>
+        	    		<input class="btnclass" type="button" value="进入" />
+        	    	</div>
+        	    	<div id="" class="col30">
+        	    		<p id="buildState_2" class="num">444</p>
+        	    		<p class="typeName">建设中</p>
+        	    		<input class="btnclass" type="button" value="进入" />
+        	    	</div>
+        			<div id="" class="col30">
+        				<p id="buildState_3" class="num">444</p>
+        				<p class="typeName">规划中</p>
+        				<input class="btnclass" type="button" value="进入" />
+        			</div>
+        	    </div>
+        	</div>
         </div>
-        <div id="left_2">
-            <h3>新塔站统计</h3>
-            <div class="div">国有塔站：<span id="gy_new">111</span><input class="btnclass" onclick="openTowerStation(1,undefined,undefined,1,'新国有塔站信息')"  type="button" value="进入" /></div>
-            <div class="div">非国有塔站：<span id="fgy_new">222</span><input class="btnclass" onclick="openTowerStation(1,undefined,undefined,0,'新非国有塔站信息')"  type="button" value="进入" /></div>
-        </div>
-        <div id="left_3">
-            <h3>旧塔站统计</h3>
-            <div class="div">国有塔站：<span id="gy_old">333</span><input class="btnclass"  onclick="openTowerStation(0,undefined,undefined,1,'旧国有塔站信息')"  type="button" value="进入" /></div>
-            <div class="div">非国有塔站：<span id="fgy_old">444</span><input class="btnclass"  onclick="openTowerStation(0,undefined,undefined,0,'旧非国有塔站信息')"  type="button" value="进入" /></div>
-        </div>
-        <div id="right_1">
-            <h3>新塔站统计</h3>
-            <div class="div">智能塔站：<span id="zn_new"></span><input class="btnclass" onclick="openTowerStation(1,undefined,1,undefined,'新智能塔站信息')"  type="button" value="进入" /></div>
-            <div class="div">非智能塔站：<span id="fzn_new"></span><input class="btnclass" onclick="openTowerStation(1,undefined,0,undefined,'新非智能塔站信息')"   type="button" value="进入" /></div>
-        </div>
-        <div id="right_2">
-            <h3>旧塔站统计</h3>
-            <div class="div">智能塔站：<span id="zn_old"></span><input class="btnclass"  onclick="openTowerStation(0,undefined,1,undefined,'旧智能塔站信息')"  type="button" value="进入" /></div>
-            <div class="div">非智能塔站：<span id="fzn_old"></span><input class="btnclass"  onclick="openTowerStation(0,undefined,0,undefined,'旧非智能塔站信息')" type="button" value="进入" /></div>
-        </div>
-        <div id="right_3">
-            <h3>新塔站状态统计</h3>
-            <div class="div">已建成：<span id="buildState_1"></span><input class="btnclass" type="button" value="进入" /></div>
-            <div class="div">建设中：<span id="buildState_2"></span><input class="btnclass" type="button" value="进入" /></div>
-            <div class="div">规划中：<span id="buildState_3"></span><input class="btnclass" type="button" value="进入" /></div>
-        </div>
+        
     </form>
 </body>
 </html>

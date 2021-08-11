@@ -58,11 +58,11 @@ public class GetMapData : IHttpHandler
             context.Response.Write(JsonConvert.SerializeObject(ds));
         }
         else if (Action.Trim().Equals("GetTowerMapInfos"))
-        { 
+        {
             string gys = context.Request["gys"];
             string networktype = context.Request["networktype"];
-                context.Response.Write(JsonConvert.SerializeObject(GetMapData_Tower(gys,networktype)));
-            }
+            context.Response.Write(JsonConvert.SerializeObject(GetMapData_Tower(gys, networktype)));
+        }
 
     }
     /// <summary>
@@ -178,6 +178,15 @@ public class GetMapData : IHttpHandler
         if (!string.IsNullOrEmpty(networktype))
             where += " And NetworkSubsystem='" + networktype + "' ";
         return publicDbOpClass.DataTableQuary(sql + where);
+    }
+
+    private DataSet GetChongTu(string filterinfo)
+    {
+        DataSet ds = new DataSet();
+        string sql = "select * from V_TowerStation";
+        DataTable dt = publicDbOpClass.DataTableQuary(sql);
+        ds.Tables.Add(dt);
+        return ds;
     }
 
 }
