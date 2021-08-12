@@ -14,6 +14,7 @@ public partial class TowerStation_TowerMap : System.Web.UI.Page
         if (!IsPostBack)
         {
             BindGYSData();
+            BindNetSystem();
         }
         
     }
@@ -25,9 +26,25 @@ public partial class TowerStation_TowerMap : System.Web.UI.Page
         drop_gys.Items.Add(new ListItem(dr["NetworkManufacturer"].ToString(), dr["NetworkManufacturer"].ToString()));
         }
     }
+    private void BindNetSystem()
+    {
+        drop_networktype.Items.Clear();
+        drop_networktype.Items.Add(new ListItem("请选择", ""));
+        DataTable dt = GetNetSystem();
+        foreach (DataRow dr in dt.Rows)
+        {
+            drop_networktype.Items.Add(new ListItem(dr["CodeName"].ToString(), dr["CodeId"].ToString()));
+        }
+    }
     private DataTable GetGYSInfos()
     {
         string sql = "select distinct NetworkManufacturer from TowerStationInfo";
         return publicDbOpClass.DataTableQuary(sql);
+    }
+
+    private DataTable GetNetSystem() {
+        string sql = "select CodeId,CodeName from [dbo].[XPM_Basic_CodeList] where signCode2='NetworkSubsystem'";
+        return publicDbOpClass.DataTableQuary(sql);
+
     }
 }

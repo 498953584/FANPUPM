@@ -301,7 +301,7 @@
 
         //打开塔站信息列表
         //towertype   1为新塔站  2为旧塔站
-        //BuildState  为建设状态
+        //BuildState  为建设状态   1为已建成   2为建设中  3为规划中
         //IsIntelligence 为判断 是否智能   0为非智能，1为智能
         //IsStateOwned字段 为判断 是否国有   0为非国有，1为国有
         //title为打开的标签页名称
@@ -346,7 +346,7 @@
             <div style="width: 1px;background-color: #333333;"></div>
         </div> -->
                 <div id="" style="background-color: #FFFFFF;display: inline-block;padding: 5px;">
-                    <select id="drop_networktype" name="drop_networktype"
+                    <select id="drop_networktype" name="drop_networktype" runat="server"
                             style="border:none; padding-right: 5px;border-left: solid 1px #bababa;outline: none;">
                         <option value="">请选择</option>
                         <option value="2G">2G</option>
@@ -465,24 +465,24 @@
         	</div>
         	<div id="right_3" class="car">
         		<div id="" style="display: flex;align-items: center;">
-        			<img src="statistics.png" style="width: 17px;height: 17px;" >
+        			<img src="statistics.png" style="width: 17px;height: 17px;" />
         			<h3 class="car-title">新塔站状态统计</h3>
         		</div>
         	    <div id="" class="flex">
         	    	<div id="" class="col30">
         	    		<p id="buildState_1" class="num">333</p>
         	    		<p class="typeName">已建成</p>
-        	    		<input class="btnclass" type="button" value="进入" />
+        	    		<input class="btnclass"  onclick="openTowerStation(1,1,undefined,undefined,'新塔-已建成信息')"  type="button" value="进入" />
         	    	</div>
         	    	<div id="" class="col30">
         	    		<p id="buildState_2" class="num">444</p>
         	    		<p class="typeName">建设中</p>
-        	    		<input class="btnclass" type="button" value="进入" />
+        	    		<input class="btnclass" type="button"  onclick="openTowerStation(1,2,undefined,undefined,'新塔-建设中信息')"  value="进入" />
         	    	</div>
         			<div id="" class="col30">
         				<p id="buildState_3" class="num">444</p>
         				<p class="typeName">规划中</p>
-        				<input class="btnclass" type="button" value="进入" />
+        				<input class="btnclass" type="button"   onclick="openTowerStation(1,3,undefined,undefined,'新塔-规划中信息')"   value="进入" />
         			</div>
         	    </div>
         	</div>
