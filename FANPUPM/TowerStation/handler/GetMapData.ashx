@@ -160,7 +160,7 @@ public class GetMapData : IHttpHandler
             where += " And NetworkManufacturer='" + gys + "' ";
         if (!string.IsNullOrEmpty(networktype))
             where += " And NetworkSubsystem='" + networktype + "' ";
-        string sql = "select  (select COUNT(0) from dbo.TowerStationInfo where  BuildTime>'2020-06-01' And BuildState='已建成'  " + where + " )已建成 ,(select COUNT(0) from dbo.TowerStationInfo where  BuildTime>'2020-06-01' And  BuildState='建设中'  " + where + " )建设中,(select COUNT(0) from dbo.TowerStationInfo where  BuildTime>'2020-06-01' And  BuildState='规划中'  " + where + " )规划中";
+        string sql = "select  (select COUNT(0) from dbo.TowerStationInfo where  BuildTime>'2020-06-01' And BuildState='1'  " + where + " )已建成 ,(select COUNT(0) from dbo.TowerStationInfo where  BuildTime>'2020-06-01' And  BuildState='2'  " + where + " )建设中,(select COUNT(0) from dbo.TowerStationInfo where  BuildTime>'2020-06-01' And  BuildState='3'  " + where + " )规划中";
         return publicDbOpClass.DataTableQuary(sql);
     }
     /// <summary>

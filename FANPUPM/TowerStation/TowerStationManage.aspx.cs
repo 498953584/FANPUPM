@@ -107,6 +107,26 @@ public partial class TowerStation_TowerStationManage : NBasePage, IRequiresSessi
             strWhere += " AND BuildTime<='" + TxtBuildTimeEnd.Text + "'";
         }
 
+        string towertype = Request["towertype"];
+        string BuildState = Request["BuildState"];
+        string IsIntelligence = Request["IsIntelligence"];
+        string IsStateOwned = Request["IsStateOwned"];
+        if (!string.IsNullOrEmpty(towertype))
+        {
+            strWhere += " AND BuildTime"+ (towertype.Equals("1")? ">":"<=") +"'2020-06-01'";
+        }
+        if (!string.IsNullOrEmpty(BuildState))
+        {
+            strWhere += " AND BuildState="+ BuildState;
+        }
+        if (!string.IsNullOrEmpty(IsIntelligence))
+        {
+            strWhere += " AND IsIntelligence=" + IsIntelligence;
+        }
+        if (!string.IsNullOrEmpty(IsStateOwned))
+        {
+            strWhere += " AND IsStateOwned=" + IsStateOwned;
+        }
         var strSql = @"
 SELECT tsi.TowerStationGUID, p.name + c.name + cou.name AS Province,tsi.Name,
     ISNULL(tsi.MapLongitude, '')
