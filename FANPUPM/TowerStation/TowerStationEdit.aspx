@@ -14,6 +14,9 @@
     <script type="text/javascript" src="../Script/jquery.easyui/locale/easyui-lang-zh_CN.js"></script>
     <script type="text/javascript" src="/Script/My97DatePicker/WdatePicker.js"></script>
     <script type="text/javascript" src="../Script/DecimalInput.js"></script>
+    <script type="text/javascript" src="../Script/DecimalInput.js"></script>
+    <script type="text/javascript" src="../Script/zDialog/zDialog.js"></script>
+    <script type="text/javascript" src="../Script/zDialog/zDrag.js"></script>
     <style type="text/css">
         h1 {
             font-size: 18px; /* 18px / 12px = 1.5 */
@@ -233,6 +236,29 @@
             param.left = Math.round((maxWidth - param.width) / 2);
             param.top = Math.round((maxHeight - param.height) / 2);
             return param;
+        }
+
+        var mylatLng = "";
+        function btn_getlatLng() {
+            mylatLng = ""
+            var diag = new Dialog();
+	        diag.Width = 800;
+	        diag.Height = 450;
+	        diag.Title = "请选择塔台坐标";
+            diag.URL = "SelectMap.html";
+            diag.ShowButtonRow=true;
+            diag.CancelEvent = function () { diag.close(); };
+            diag.OKEvent = function () {
+                if (!mylatLng) {
+                    alert("请选择塔台坐标！");
+                    return;
+                }
+                var ary = mylatLng.split(",");
+                form1.TxtMapDimension.value = ary[0];
+                form1.TxtMapLongitude.value = ary[1];
+                diag.close();
+            }
+	        diag.show();
         }
     </script>
 </head>
@@ -491,6 +517,7 @@
                                 <td>维度</td>
                                 <td>
                                     <asp:TextBox ID="TxtMapDimension" Width="100px" Columns="21" MaxLength="50" runat="server"></asp:TextBox></td>
+                                <td> <button type="button" id="btn_Search" onclick="btn_getlatLng()">获取坐标</button></td>
                             </tr>
                         </table>
                     </td>
@@ -1090,6 +1117,7 @@
                 </table>
             </div>
         </div>
+
     </form>
 </body>
 </html>
