@@ -20,7 +20,7 @@ public partial class TowerStation_TowerStationEdit : NBasePage, IRequiresSession
         var mode = Request.QueryString["mode"];
         var oid = Request.QueryString["oid"];
         BindProvince();
-
+        BindRadioButtonList();
         switch (mode)
         {
             case "1":
@@ -101,32 +101,34 @@ public partial class TowerStation_TowerStationEdit : NBasePage, IRequiresSession
                     TxtOutdoorAdManufacturer.Text = dr["OutdoorAdManufacturer"].ToString();
                     TxtPowerSupplyManufacturer.Text = dr["PowerSupplyManufacturer"].ToString();
                     TxtRSUManufacturer.Text = dr["RSUManufacturer"].ToString();
-                    SetRadio("PlaceMode", dr["PlaceMode"].ToString());
-                    SetRadio("BuildState", dr["BuildState"].ToString());
+                    SetRadio(this.PlaceMode, dr["PlaceMode"].ToString());
+                    
+                    SetRadio(this.BuildState, dr["BuildState"].ToString());
                     SetIsRadio("IsStateOwned", dr["IsStateOwned"].ToString());
                     SetIsRadio("IsIntelligence", dr["IsIntelligence"].ToString());
+                    SetIsRadio("IsGatherArea", dr["IsGatherArea"].ToString());
                     SetRadio("PhotoType", dr["PhotoType"].ToString());
-                    SetRadio("RoadType", dr["RoadType"].ToString());
-                    SetRadio("PrivateRoadType", dr["PrivateRoadType"].ToString());
-                    SetRadio("NeedImprove", dr["NeedImprove"].ToString());
-                    SetRadio("BasicTerrain", dr["BasicTerrain"].ToString());
-                    SetRadio("BasicLandCategory", dr["BasicLandCategory"].ToString());
-                    SetRadio("Obstacle", dr["Obstacle"].ToString());
-                    SetRadio("PlaceNeedImprove", dr["PlaceNeedImprove"].ToString());
-                    SetRadio("BSTypeOfBS", dr["BSTypeOfBS"].ToString());
-                    SetRadio("BSBuildingUse", dr["BSBuildingUse"].ToString());
-                    SetRadio("ScPlanCableLayout", dr["ScPlanCableLayout"].ToString());
-                    SetRadio("PowerSource", dr["PowerSource"].ToString());
-                    SetRadio("NeedExtraDispose", dr["NeedExtraDispose"].ToString());
-                    SetRadio("IronTowerClass", dr["IronTowerClass"].ToString());
-                    SetRadio("IronTowerType", dr["IronTowerType"].ToString());
-                    SetRadio("LightingSubsystem", dr["LightingSubsystem"].ToString());
-                    SetRadio("MonitorSubsystem", dr["MonitorSubsystem"].ToString());
-                    SetRadio("SensingSubsystem", dr["SensingSubsystem"].ToString());
-                    SetRadio("NetworkSubsystem", dr["NetworkSubsystem"].ToString());
-                    SetRadio("OutdoorAdSubsystem", dr["OutdoorAdSubsystem"].ToString());
-                    SetRadio("PowerSupplySubsystem", dr["PowerSupplySubsystem"].ToString());
-                    SetRadio("RSUSubsystem", dr["RSUSubsystem"].ToString());
+                    SetRadio(this.RoadType, dr["RoadType"].ToString());
+                    SetRadio(this.PrivateRoadType, dr["PrivateRoadType"].ToString());
+                    SetRadio(this.NeedImprove, dr["NeedImprove"].ToString());
+                    SetRadio(this.BasicTerrain, dr["BasicTerrain"].ToString());
+                    SetRadio(this.BasicLandCategory, dr["BasicLandCategory"].ToString());
+                    SetRadio(this.Obstacle, dr["Obstacle"].ToString());
+                    SetRadio(this.PlaceNeedImprove, dr["PlaceNeedImprove"].ToString());
+                    SetRadio(this.BSTypeOfBS, dr["BSTypeOfBS"].ToString());
+                    SetRadio(this.BSBuildingUse, dr["BSBuildingUse"].ToString());
+                    SetRadio(this.ScPlanCableLayout, dr["ScPlanCableLayout"].ToString());
+                    SetRadio(this.PowerSource, dr["PowerSource"].ToString());
+                    SetRadio(this.NeedExtraDispose, dr["NeedExtraDispose"].ToString());
+                    SetRadio(this.IronTowerClass, dr["IronTowerClass"].ToString());
+                    SetRadio(this.IronTowerType, dr["IronTowerType"].ToString());
+                    SetRadio(this.LightingSubsystem, dr["LightingSubsystem"].ToString());
+                    SetRadio(this.MonitorSubsystem, dr["MonitorSubsystem"].ToString());
+                    SetRadio(this.SensingSubsystem, dr["SensingSubsystem"].ToString());
+                    SetRadio(this.NetworkSubsystem, dr["NetworkSubsystem"].ToString());
+                    SetRadio(this.OutdoorAdSubsystem, dr["OutdoorAdSubsystem"].ToString());
+                    SetRadio(this.PowerSupplySubsystem, dr["PowerSupplySubsystem"].ToString());
+                    SetRadio(this.RSUSubsystem, dr["RSUSubsystem"].ToString());
                     SetIsRadio("IsUseCrane", dr["IsUseCrane"].ToString());
                     SetIsRadio("IsStairsAvailable", dr["IsStairsAvailable"].ToString());
                     SetIsRadio("IsPassengerElevator", dr["IsPassengerElevator"].ToString());
@@ -201,22 +203,23 @@ public partial class TowerStation_TowerStationEdit : NBasePage, IRequiresSession
         var hashtable = new Hashtable
         {
             {"Province", DdlProvince.Text}, {"City", DdlCity.Text}, {"Area", DdlArea.Text}, {"Address", TxtAddress.Text},
-            {"Liaison", TxtLiaison.Text}, {"Phone", TxtPhone.Text}, {"Email", TxtEmail.Text}, {"PlaceMode", GetRadioText("PlaceMode")},
-            {"BuildState", GetRadioText("BuildState")}, {"BuildTime", TxtBuildTime.Text},
+            {"Liaison", TxtLiaison.Text}, {"Phone", TxtPhone.Text}, {"Email", TxtEmail.Text}, {"PlaceMode", GetRadioText(this.PlaceMode)},
+            {"BuildState", GetRadioText(this.BuildState)}, {"BuildTime", TxtBuildTime.Text},
             {"IsStateOwned", GetIsRadioValue("IsStateOwned")}, {"IsIntelligence", GetIsRadioValue("IsIntelligence")},
             {"NominalLongitude", TxtNominalLongitude.Text}, {"NominalDimension", TxtNominalDimension.Text},
             {"GPSLongitude", TxtGPSLongitude.Text}, {"GPSDimension", TxtGPSDimension.Text},
             {"MapLongitude", TxtMapLongitude.Text}, {"MapDimension", TxtMapDimension.Text}, {"MapDatum", TxtMapDatum.Text},
             {"PhotoType", GetRadioText("PhotoType")}, {"HorizontalPosition", TxtHorizontalPosition.Text},
             {"ShootingPosition", TxtShootingPosition.Text}, {"Altitude", TxtAltitude.Text}, {"MapPosition", TxtMapPosition.Text},
-            {"RoadDistance", TxtRoadDistance.Text}, {"RoadType", GetRadioText("RoadType")}, {"PrivateRoadLength", TxtPrivateRoadLength.Text},
-            {"PrivateRoadType", GetRadioText("PrivateRoadType")}, {"NeedImprove", GetRadioText("NeedImprove")},
-            {"BasicTerrain", GetRadioText("BasicTerrain")},
-            {"BasicLandCategory", GetRadioText("BasicLandCategory")}, {"Obstacle", GetRadioText("Obstacle")},
-            {"PlaceNeedImprove", GetRadioText("PlaceNeedImprove")},
+            {"RoadDistance", TxtRoadDistance.Text}, {"RoadType", GetRadioText(this.RoadType)}, {"PrivateRoadLength", TxtPrivateRoadLength.Text},
+            {"PrivateRoadType", GetRadioText(this.PrivateRoadType)}, {"NeedImprove", GetRadioText(this.NeedImprove)},
+            {"BasicTerrain", GetRadioText(this.BasicTerrain)},
+            {"BasicLandCategory", GetRadioText(this.BasicLandCategory)}, {"Obstacle", GetRadioText(this.Obstacle)},
+            {"PlaceNeedImprove", GetRadioText(this.PlaceNeedImprove)},
             {"BSHeight", TxtBSHeight.Text}, {"BSLayersNum", TxtBSLayersNum.Text}, {"BSType", TxtBSType.Text}, {"BSYears", TxtBSYears.Text},
-            {"BSTypeOfBS", GetRadioText("BSTypeOfBS")}, {"BSBuildingUse", GetRadioText("BSBuildingUse")},
+            {"BSTypeOfBS", GetRadioText(this.BSTypeOfBS)}, {"BSBuildingUse", GetRadioText(this.BSBuildingUse)},
             {"IsUseCrane", GetIsRadioValue("IsUseCrane")},
+            {"IsGatherArea", GetIsRadioValue("IsGatherArea")},
             {"IsStairsAvailable", GetIsRadioValue("IsStairsAvailable")}, {"SpecificationWidth", TxtSpecificationWidth.Text},
             {"SpecificationHeight", TxtSpecificationHeight.Text}, {"IsPassengerElevator", GetIsRadioValue("IsPassengerElevator")},
             {"PeLoadingCapacity", TxtPeLoadingCapacity.Text}, {"IsCargoElevator", GetIsRadioValue("IsCargoElevator")},
@@ -226,28 +229,28 @@ public partial class TowerStation_TowerStationEdit : NBasePage, IRequiresSession
             {"IsGrounded", GetIsRadioValue("IsGrounded")}, {"IsPossibleToUse", GetIsRadioValue("IsPossibleToUse")},
             {"IsMainGroundingSize", GetIsRadioValue("IsMainGroundingSize")},
             {"IsLightningProtection", GetIsRadioValue("IsLightningProtection")}, {"LpIsPossibleToUse", GetIsRadioValue("LpIsPossibleToUse")},
-            {"ScIsContact", GetIsRadioValue("ScIsContact")}, {"ScPlanCableLayout", GetRadioText("ScPlanCableLayout")},
+            {"ScIsContact", GetIsRadioValue("ScIsContact")}, {"ScPlanCableLayout", GetRadioText(this.ScPlanCableLayout)},
             {"CurrentAvailablePalletNum", TxtCurrentAvailablePalletNum.Text}, {"LastAvailablePalletNum", TxtLastAvailablePalletNum.Text},
             {"CurrentCableFeederNum", TxtCurrentCableFeederNum.Text}, {"LastCableFeederNum", TxtLastCableFeederNum.Text},
-            {"FeederType", TxtFeederType.Text}, {"PowerSource", GetRadioText("PowerSource")},
-            {"NeedExtraDispose", GetRadioText("NeedExtraDispose")},
+            {"FeederType", TxtFeederType.Text}, {"PowerSource", GetRadioText(this.PowerSource)},
+            {"NeedExtraDispose", GetRadioText(this.NeedExtraDispose)},
             {"PowerModel", TxtPowerModel.Text}, {"PowerSn", TxtPowerSn.Text}, {"PowerState", GetIsRadioValue("PowerState")},
             {"AirconditionOperatorName", TxtAirconditionOperatorName.Text}, {"AirconditionModel", TxtAirconditionModel.Text},
             {"AirconditionBrand", TxtAirconditionBrand.Text}, {"AirconditionSn", TxtAirconditionSn.Text},
             {"AirconditionCapacity", TxtAirconditionCapacity.Text}, {"AirconditionState", GetIsRadioValue("AirconditionState")},
-            {"IronTowerHeight", TxtIronTowerHeight.Text}, {"IronTowerClass", GetRadioText("IronTowerClass")},
-            {"IronTowerType", GetRadioText("IronTowerType")},
+            {"IronTowerHeight", TxtIronTowerHeight.Text}, {"IronTowerClass", GetRadioText(this.IronTowerClass)},
+            {"IronTowerType", GetRadioText(this.IronTowerType)},
             {"IronTowerLocation", TxtIronTowerLocation.Text}, {"IronTowerManufacturer", TxtIronTowerManufacturer.Text},
-            {"LightingSubsystem", GetRadioText("LightingSubsystem")}, {"LightingManufacturer", TxtLightingManufacturer.Text},
-            {"MonitorSubsystem", GetRadioText("MonitorSubsystem")}, {"MonitorManufacturer", TxtMonitorManufacturer.Text},
-            {"SensingSubsystem", GetRadioText("SensingSubsystem")}, {"SensingManufacturer", TxtSensingManufacturer.Text},
-            {"NetworkSubsystem", GetRadioText("NetworkSubsystem")}, {"NetworkManufacturer", TxtNetworkManufacturer.Text},
-            {"OutdoorAdSubsystem", GetRadioText("OutdoorAdSubsystem")}, {"VisualDistance", TxtVisualDistance.Text},
+            {"LightingSubsystem", GetRadioText(this.LightingSubsystem)}, {"LightingManufacturer", TxtLightingManufacturer.Text},
+            {"MonitorSubsystem", GetRadioText(this.MonitorSubsystem)}, {"MonitorManufacturer", TxtMonitorManufacturer.Text},
+            {"SensingSubsystem", GetRadioText(this.SensingSubsystem)}, {"SensingManufacturer", TxtSensingManufacturer.Text},
+            {"NetworkSubsystem", GetRadioText(this.NetworkSubsystem)}, {"NetworkManufacturer", TxtNetworkManufacturer.Text},
+            {"OutdoorAdSubsystem", GetRadioText(this.OutdoorAdSubsystem)}, {"VisualDistance", TxtVisualDistance.Text},
             {"VisitorsFlowrate", TxtVisitorsFlowrate.Text}, {"MediaSpecification", TxtMediaSpecification.Text},
             {"PublishingIndustry", TxtPublishingIndustry.Text}, {"GroundClearance", TxtGroundClearance.Text},
             {"VehicleFlowrate", TxtVehicleFlowrate.Text}, {"LaunchCycle", TxtLaunchCycle.Text}, {"ReleaseBrand", TxtReleaseBrand.Text},
-            {"OutdoorAdManufacturer", TxtOutdoorAdManufacturer.Text}, {"PowerSupplySubsystem", GetRadioText("PowerSupplySubsystem")},
-            {"PowerSupplyManufacturer", TxtPowerSupplyManufacturer.Text}, {"RSUSubsystem", GetRadioText("RSUSubsystem")},
+            {"OutdoorAdManufacturer", TxtOutdoorAdManufacturer.Text}, {"PowerSupplySubsystem", GetRadioText(this.PowerSupplySubsystem)},
+            {"PowerSupplyManufacturer", TxtPowerSupplyManufacturer.Text}, {"RSUSubsystem", GetRadioText(this.RSUSubsystem)},
             {"RSUManufacturer", TxtRSUManufacturer.Text},{"Name", TxtName.Text},{"Photo", photo},{"Photo1", photo1},{"Photo2", photo2},{"Photo3", photo3},{"Photo4", photo4},{"Photo5", photo5},
         };
         switch (mode)
@@ -349,6 +352,19 @@ public partial class TowerStation_TowerStationEdit : NBasePage, IRequiresSession
     }
 
     /// <summary>
+    /// 获取多个选项的单选控件值
+    /// </summary>
+    /// <param name="groupName">按钮组名</param>
+    /// <returns></returns>
+    private string GetRadioText(RadioButtonList radio)
+    {
+        if (radio.SelectedItem != null) {
+            return radio.SelectedItem.Value;
+        }
+        return "";
+    }
+
+    /// <summary>
     /// 获取是否单选控件值
     /// </summary>
     /// <param name="groupName">按钮组名</param>
@@ -380,6 +396,26 @@ public partial class TowerStation_TowerStationEdit : NBasePage, IRequiresSession
     }
 
     /// <summary>
+    /// 设置默认选项项
+    /// </summary>
+    /// <param name="radio"></param>
+    /// <param name="text"></param>
+    private void SetRadio(RadioButtonList radio, string text)
+    {
+        if (!string.IsNullOrEmpty(text)) {
+            foreach (ListItem item in radio.Items)
+            {
+                if (item.Value.Equals(text))
+                {
+                    item.Selected = true;
+                    break;
+                }
+            }
+        }
+        
+    }
+
+    /// <summary>
     /// 设置是否单选控件值
     /// </summary>
     /// <param name="groupName">按钮组名</param>
@@ -397,5 +433,38 @@ public partial class TowerStation_TowerStationEdit : NBasePage, IRequiresSession
             c.Checked = true;
         }
     }
-    
+
+    /// <summary>
+    /// 初始化2个以上的单选按钮，从字典取数
+    /// </summary>
+    private void BindRadioButtonList() {
+        DataTable codeList = publicDbOpClass.DataTableQuary("SELECT CodeID value,CodeName text,SignCode2 SignCode FROM [XPM_Basic_CodeList]");
+        BindRadioButton(this.PlaceMode, codeList, "PlaceMode");
+        BindRadioButton(this.BuildState, codeList, "BuildState");
+        BindRadioButton(this.BSTypeOfBS, codeList, "BSTypeOfBS");
+        BindRadioButton(this.BSBuildingUse, codeList, "BSBuildingUse");
+        BindRadioButton(this.RoadType, codeList, "RoadType");
+        BindRadioButton(this.PrivateRoadType, codeList, "RoadType");
+        BindRadioButton(this.NeedImprove, codeList, "NeedImprove");
+        BindRadioButton(this.BasicTerrain, codeList, "BasicTerrain");
+        BindRadioButton(this.BasicLandCategory, codeList, "BasicLandCategory");
+        BindRadioButton(this.Obstacle, codeList, "Obstacle");
+        BindRadioButton(this.PlaceNeedImprove, codeList, "PlaceNeedImprove");
+        BindRadioButton(this.ScPlanCableLayout, codeList, "ScPlanCableLayout");
+        BindRadioButton(this.IronTowerClass, codeList, "IronTowerClass");
+        BindRadioButton(this.LightingSubsystem, codeList, "LightingSubsystem");
+        BindRadioButton(this.PowerSource, codeList, "PowerSource");
+        BindRadioButton(this.NeedExtraDispose, codeList, "NeedExtraDispose");
+        BindRadioButton(this.MonitorSubsystem, codeList, "MonitorSubsystem");
+        BindRadioButton(this.NetworkSubsystem, codeList, "NetworkSubsystem");
+        BindRadioButton(this.OutdoorAdSubsystem, codeList, "OutdoorAdSubsystem");
+        BindRadioButton(this.PowerSupplySubsystem, codeList, "PowerSupplySubsystem");
+        BindRadioButton(this.RSUSubsystem, codeList, "RSUSubsystem");
+    }
+
+    private void BindRadioButton(RadioButtonList radio, DataTable codeList, string rodioName) {
+        DataTable dt = codeList.AsEnumerable().Where(p => p.Field<string>("SignCode") == rodioName).CopyToDataTable<DataRow>();
+        radio.DataSource = dt;
+        radio.DataBind();
+    }
 }

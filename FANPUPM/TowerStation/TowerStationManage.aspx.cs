@@ -17,6 +17,7 @@ public partial class TowerStation_TowerStationManage : NBasePage, IRequiresSessi
         {
             BindProvince();
             AllData_bind();
+            BindDropDownList();
         }
     }
     protected void BtnDel_Click(object sender, EventArgs e)
@@ -213,4 +214,22 @@ FROM dbo.TowerStationInfo tsi
         DdlProvince.Items.Insert(0, new ListItem("", ""));
     }
 
+
+    /// <summary>
+    /// 初始化2个以上的单选按钮，从字典取数
+    /// </summary>
+    private void BindDropDownList()
+    {
+        DataTable codeList = publicDbOpClass.DataTableQuary("SELECT CodeID value,CodeName text,SignCode2 SignCode FROM [XPM_Basic_CodeList]");
+        BindRadioButton(this.DdlPlaceMode, codeList, "PlaceMode");
+        BindRadioButton(this.DdlBuildState, codeList, "BuildState");
+    }
+
+    private void BindRadioButton(DropDownList ddl, DataTable codeList, string rodioName)
+    {
+        DataTable dt = codeList.AsEnumerable().Where(p => p.Field<string>("SignCode") == rodioName).CopyToDataTable<DataRow>();
+        ddl.DataSource = dt;
+        ddl.DataBind();
+        ddl.Items.Insert(0, new ListItem("", ""));
+    }
 }

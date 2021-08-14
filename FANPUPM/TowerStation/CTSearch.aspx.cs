@@ -30,7 +30,7 @@ public partial class TowerStation_CTSearch : System.Web.UI.Page
             {
                 html.Append("<div id='' class='flex-sty col50 flex-center'><div id = '' class='jianju'><span class='jianju'>" +
                     g["NetworkManufacturer"].ToString() + "</span><span class='jianju'>" + net["CodeName"].ToString() + "</span></div><div id = '' class='jianju jianju2'><span id = '' class='jianju'>塔间距</span><span id = '' class='jianju'>0--500m</span>" +
-                    "<input data-info='" + g["NetworkManufacturer"].ToString() + "_" + net["CodeName"].ToString() + "' name = 'Checkbox' type='checkbox' /></div></div>");
+                    "<input data-info='" + g["NetworkManufacturer"].ToString() + "_" + net["CodeId"].ToString() + "_" + net["CodeName"].ToString() + "' name = 'Checkbox' type='checkbox' /></div></div>");
             }
         }
         return html.ToString();

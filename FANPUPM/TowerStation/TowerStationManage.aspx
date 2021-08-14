@@ -114,21 +114,13 @@
                             <td class="descTd">地点获取方式
                             </td>
                             <td>
-                                <asp:DropDownList ID="DdlPlaceMode" runat="server" Width="99%">
-                                    <asp:ListItem Value="" Text=""></asp:ListItem>
-                                    <asp:ListItem Value="购买" Text="购买"></asp:ListItem>
-                                    <asp:ListItem Value="租赁" Text="租赁"></asp:ListItem>
-                                    <asp:ListItem Value="共享" Text="共享"></asp:ListItem>
+                                <asp:DropDownList ID="DdlPlaceMode" DataTextField="text" DataValueField="value" runat="server" Width="99%">
                                 </asp:DropDownList>
                             </td>
                             <td class="descTd">建设状态
                             </td>
                             <td>
-                                <asp:DropDownList ID="DdlBuildState" runat="server" Width="99%">
-                                    <asp:ListItem Value="" Text=""></asp:ListItem>
-                                    <asp:ListItem Value="已建成" Text="已建成"></asp:ListItem>
-                                    <asp:ListItem Value="建设中" Text="建设中"></asp:ListItem>
-                                    <asp:ListItem Value="规划中" Text="规划中"></asp:ListItem>
+                                <asp:DropDownList ID="DdlBuildState" DataTextField="text" DataValueField="value" runat="server" Width="99%">
                                 </asp:DropDownList>
                             </td>
                             <td class="descTd">建设时间

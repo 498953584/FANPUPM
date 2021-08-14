@@ -63,8 +63,93 @@ public class GetMapData : IHttpHandler
             string networktype = context.Request["networktype"];
             context.Response.Write(JsonConvert.SerializeObject(GetMapData_Tower(gys, networktype)));
         }
+        else if (Action.Trim().Equals("CTSearch"))
+        {
+            string para_jjq = context.Request["para_jjq"];
+            string para_fjjq = context.Request["para_fjjq"];
+            context.Response.Write(CreateHTML(GetCTInfo(para_jjq, para_fjjq)));
+        }
 
     }
+    private string CreateHTML(DataTable dt)
+    {
+        StringBuilder sthtml = new StringBuilder();
+        int i = 0;
+        foreach (DataRow dr in dt.Rows)
+        {
+            sthtml.AppendFormat("<div id='' style='display: flex;width: 100%;justify-content: space-between;' class='hang'><div id='' class='col1 center tabGe col table-first'>序号</div><div id='' class='col2 center tabGe col table-first'>塔站名称</div><div id='' class='col3 center tabGe col table-first'>地图坐标</div><div id='' class='col4 center tabGe col table-first'>操作</div></div><div id='' style='display: flex;width: 100%;justify-content: space-between;' class='hang'><div id='' class='col1 center tabGe col'>{0}</div><div id='' class='col2 center tabGe col' >{1}</div><div id='' class='col3 center tabGe col'>{2}°</div><div id='' class='col4 center tabGe col'><p onclick=\"showInfo('{6}',0)\">查看</p><p  onclick=\"showInfo('{6}',1)\">编辑</p></div></div><div id='' style='display: flex;width: 100%;justify-content: space-between;' class='hang'><div id='' class='col1 center tabGe col'>{3}</div><div id='' class='col2 center tabGe col' >{4}</div><div id='' class='col3 center tabGe col'>{5}</div><div id='' class='col4 center tabGe col'><p  onclick=\"showInfo('{7}',0)\">查看</p><p  onclick=\"showInfo('{7}',1)\">编辑</p></div></div></div>",
+                i*2+1,dr["Name"],dr["GPSLongitude"]+"   "+dr["GPSDimension"],i*2+2,dr["b_Name"],dr["b_GPSLongitude"]+"   "+dr["b_GPSDimension"],dr["TowerStationGUID"],dr["b_TowerStationGUID"]);
+                i++;
+        }
+        return sthtml.ToString(); ;
+    }
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="parajjq"></param>
+    /// <param name="parafjjq"></param>
+    /// <returns></returns>
+    private DataTable GetCTInfo(string parajjq, string parafjjq)
+    {
+        string sql = "select distinct NetworkManufacturer from TowerStationInfo";
+        string jjqSQL = "";
+        string jjqgys = "";
+        string jjqnetsystem = "";
+        if (!string.IsNullOrEmpty(parajjq))
+        {
+            string[] jjqsearchs = parajjq.Split(',');
+            foreach (string item in jjqsearchs)
+            {
+                if (!string.IsNullOrEmpty(item))
+                {
+                    string[] infos = item.Split('_');
+                    jjqgys += "'" + infos[1] + "',";
+                    jjqnetsystem += infos[2] + ",";
+                }
+            }
+            jjqgys = jjqgys.Substring(0, jjqgys.Length - 1);
+            jjqnetsystem = jjqnetsystem.Substring(0, jjqnetsystem.Length - 1);
+            if (!string.IsNullOrEmpty(jjqgys) && !string.IsNullOrEmpty(jjqnetsystem))
+            {
+                jjqSQL = string.Format("select * from V_TowerStation where  TowerStationGUID<>B_TowerStationGUID AND IsGatherArea=1 and NetworkManufacturer in ({0}) and B_NetworkManufacturer in({0}) and NetworkSubsystem in({1}) and B_NetworkSubsystem in({1}) and jl<500 ", jjqgys, jjqnetsystem);
+            }
+        }
+        string fjjqSQL = "";
+        string fjjqgys = "";
+        string fjjqnetsystem = "";
+        if (!string.IsNullOrEmpty(parafjjq))
+        {
+            string[] fjjqsearchs = parafjjq.Split(',');
+            foreach (string item in fjjqsearchs)
+            {
+                if (!string.IsNullOrEmpty(item))
+                {
+                    string[] infos = item.Split('_');
+                    fjjqgys += "'" + infos[1] + "',";
+                    fjjqnetsystem += infos[2] + ",";
+                }
+            }
+            fjjqgys = fjjqgys.Substring(0, fjjqgys.Length - 1);
+            fjjqnetsystem = fjjqnetsystem.Substring(0, fjjqnetsystem.Length - 1);
+            if (!string.IsNullOrEmpty(fjjqgys) && !string.IsNullOrEmpty(fjjqnetsystem))
+            {
+                fjjqSQL = string.Format("select * from V_TowerStation where IsGatherArea=0 and NetworkManufacturer in ({0}) and B_NetworkManufacturer in({0}) and NetworkSubsystem in({1}) and B_NetworkSubsystem in({1}) and jl<500 ", fjjqgys, fjjqnetsystem);
+            }
+        }
+        sql = jjqSQL;
+        if (!string.IsNullOrEmpty(sql) && !string.IsNullOrEmpty(fjjqSQL))
+        {
+            sql += " union " + fjjqSQL;
+        }
+
+        if (!string.IsNullOrEmpty(sql))
+        {
+            return publicDbOpClass.DataTableQuary(sql);
+        }
+        else
+            return new DataTable();
+    }
+    #region 塔站分布接口
     /// <summary>
     /// 获取网络供应商名单
     /// </summary>
@@ -179,7 +264,11 @@ public class GetMapData : IHttpHandler
             where += " And NetworkSubsystem='" + networktype + "' ";
         return publicDbOpClass.DataTableQuary(sql + where);
     }
-
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="filterinfo"></param>
+    /// <returns></returns>
     private DataSet GetChongTu(string filterinfo)
     {
         DataSet ds = new DataSet();
@@ -188,5 +277,7 @@ public class GetMapData : IHttpHandler
         ds.Tables.Add(dt);
         return ds;
     }
+    #endregion 
+
 
 }

@@ -377,21 +377,25 @@
                     </td>
                 </tr>
                 <tr>
+                    <td class="word">是否聚集区：
+                    </td>
+                    <td class="txt">
+                        <asp:RadioButton ID="IsGatherArea1" GroupName="IsGatherArea" runat="server" Text="是" />
+                        <asp:RadioButton ID="IsGatherArea0" GroupName="IsGatherArea" runat="server" Text="否" />
+                    </td>
+                </tr>
+                <tr>
                     <td class="word">地点获取方式：
                     </td>
                     <td class="txt">
-                        <asp:RadioButton ID="PlaceMode购买" GroupName="PlaceMode" runat="server" Text="购买" />
-                        <asp:RadioButton ID="PlaceMode租赁" GroupName="PlaceMode" runat="server" Text="租赁" />
-                        <asp:RadioButton ID="PlaceMode共享" GroupName="PlaceMode" runat="server" Text="共享" />
+                        <asp:RadioButtonList ID="PlaceMode" runat="server" DataTextField="text" DataValueField="value" RepeatColumns="5"  RepeatDirection="Horizontal" />
                     </td>
                 </tr>
                 <tr>
                     <td class="word">建设状态：
                     </td>
                     <td class="txt">
-                        <asp:RadioButton ID="BuildState已建成" GroupName="BuildState" runat="server" Text="已建成" />
-                        <asp:RadioButton ID="BuildState建设中" GroupName="BuildState" runat="server" Text="建设中" />
-                        <asp:RadioButton ID="BuildState规划中" GroupName="BuildState" runat="server" Text="规划中" />
+                        <asp:RadioButtonList ID="BuildState" runat="server" DataTextField="text" DataValueField="value" RepeatColumns="5"  RepeatDirection="Horizontal" />
                     </td>
                     <td class="word">大致水平位置：
                     </td>
@@ -513,9 +517,7 @@
                     <td class="word">建筑结构类型：
                     </td>
                     <td class="txt">
-                        <asp:RadioButton ID="BSTypeOfBS钢筋混凝土" GroupName="BSTypeOfBS" runat="server" Text="钢筋混凝土" />
-                        <asp:RadioButton ID="BSTypeOfBS钢" GroupName="BSTypeOfBS" runat="server" Text="钢" />
-                        <asp:RadioButton ID="BSTypeOfBS其他" GroupName="BSTypeOfBS" runat="server" Text="其他" />
+                        <asp:RadioButtonList ID="BSTypeOfBS" runat="server" DataTextField="text" DataValueField="value" RepeatColumns="5"  RepeatDirection="Horizontal" />
                     </td>
                 </tr>
                 <tr>
@@ -527,20 +529,14 @@
                     <td class="word">建筑用途：
                     </td>
                     <td class="txt">
-                        <asp:RadioButton ID="BSBuildingUse住宅" GroupName="BSBuildingUse" runat="server" Text="住宅" />
-                        <asp:RadioButton ID="BSBuildingUse办公" GroupName="BSBuildingUse" runat="server" Text="办公" />
-                        <asp:RadioButton ID="BSBuildingUse商场商厂" GroupName="BSBuildingUse" runat="server" Text="商场/商厂" />
-                        <asp:RadioButton ID="BSBuildingUse学校医院" GroupName="BSBuildingUse" runat="server" Text="学校/医院" />
+                        <asp:RadioButtonList ID="BSBuildingUse" runat="server" DataTextField="text" DataValueField="value" RepeatColumns="5"  RepeatDirection="Horizontal" />
                     </td>
                 </tr>
                 <tr>
                     <td class="word">路面类型：
                     </td>
                     <td class="txt">
-                        <asp:RadioButton ID="RoadType沥青" GroupName="RoadType" runat="server" Text="沥青" />
-                        <asp:RadioButton ID="RoadType混凝土" GroupName="RoadType" runat="server" Text="混凝土" />
-                        <asp:RadioButton ID="RoadType集料" GroupName="RoadType" runat="server" Text="集料" />
-                        <asp:RadioButton ID="RoadType土路" GroupName="RoadType" runat="server" Text="土路" />
+                        <asp:RadioButtonList ID="RoadType" runat="server" DataTextField="text" DataValueField="value" RepeatColumns="5"  RepeatDirection="Horizontal" />
                     </td>
                     <td class="txt" colspan="2">
                         <h3>4.屋顶通道</h3>
@@ -562,10 +558,7 @@
                     <td class="word">路面类型：
                     </td>
                     <td class="txt">
-                        <asp:RadioButton ID="PrivateRoadType沥青" GroupName="PrivateRoadType" runat="server" Text="沥青" />
-                        <asp:RadioButton ID="PrivateRoadType混凝土" GroupName="PrivateRoadType" runat="server" Text="混凝土" />
-                        <asp:RadioButton ID="PrivateRoadType集料" GroupName="PrivateRoadType" runat="server" Text="集料" />
-                        <asp:RadioButton ID="PrivateRoadType土路" GroupName="PrivateRoadType" runat="server" Text="土路" />
+                        <asp:RadioButtonList ID="PrivateRoadType" runat="server" DataTextField="text" DataValueField="value" RepeatColumns="5"  RepeatDirection="Horizontal" />
                     </td>
                     <td class="word">楼梯可用：
                     </td>
@@ -578,9 +571,7 @@
                     <td class="word">地面需改进的地：
                     </td>
                     <td class="txt">
-                        <asp:RadioButton ID="NeedImprove桥" GroupName="NeedImprove" runat="server" Text="桥" />
-                        <asp:RadioButton ID="NeedImprove路面" GroupName="NeedImprove" runat="server" Text="路面" />
-                        <asp:RadioButton ID="NeedImprove其他" GroupName="NeedImprove" runat="server" Text="其他" />
+                        <asp:RadioButtonList ID="NeedImprove" runat="server" DataTextField="text" DataValueField="value" RepeatColumns="5"  RepeatDirection="Horizontal" />
                     </td>
                     <td class="word">规格尺寸：
                     </td>
@@ -611,9 +602,7 @@
                     <td class="word">基本地形：
                     </td>
                     <td class="txt">
-                        <asp:RadioButton ID="BasicTerrain平地" GroupName="BasicTerrain" runat="server" Text="平地" />
-                        <asp:RadioButton ID="BasicTerrain湿地" GroupName="BasicTerrain" runat="server" Text="湿地" />
-                        <asp:RadioButton ID="BasicTerrain斜坡" GroupName="BasicTerrain" runat="server" Text="斜坡" />
+                        <asp:RadioButtonList ID="BasicTerrain" runat="server" DataTextField="text" DataValueField="value" RepeatColumns="5"  RepeatDirection="Horizontal" />
                     </td>
                     <td class="word">装载量：
                     </td>
@@ -625,10 +614,7 @@
                     <td class="word">土地基本类别：
                     </td>
                     <td class="txt">
-                        <asp:RadioButton ID="BasicLandCategory正常" GroupName="BasicLandCategory" runat="server" Text="正常" />
-                        <asp:RadioButton ID="BasicLandCategory岩石" GroupName="BasicLandCategory" runat="server" Text="岩石" />
-                        <asp:RadioButton ID="BasicLandCategory砂土" GroupName="BasicLandCategory" runat="server" Text="砂土" />
-                        <asp:RadioButton ID="BasicLandCategory黏土" GroupName="BasicLandCategory" runat="server" Text="黏土" />
+                        <asp:RadioButtonList ID="BasicLandCategory" runat="server" DataTextField="text" DataValueField="value" RepeatColumns="5"  RepeatDirection="Horizontal" />
                     </td>
                     <td class="word">货物电梯：
                     </td>
@@ -641,9 +627,7 @@
                     <td class="word">障碍：
                     </td>
                     <td class="txt">
-                        <asp:RadioButton ID="Obstacle无" GroupName="Obstacle" runat="server" Text="无" />
-                        <asp:RadioButton ID="Obstacle树" GroupName="Obstacle" runat="server" Text="树" />
-                        <asp:RadioButton ID="Obstacle建筑物" GroupName="Obstacle" runat="server" Text="建筑物" />
+                        <asp:RadioButtonList ID="Obstacle" runat="server" DataTextField="text" DataValueField="value" RepeatColumns="5"  RepeatDirection="Horizontal" />
                     </td>
                     <td class="word">装载量：
                     </td>
@@ -655,10 +639,7 @@
                     <td class="word">地点需改进：
                     </td>
                     <td class="txt">
-                        <asp:RadioButton ID="PlaceNeedImprove清空" GroupName="PlaceNeedImprove" runat="server" Text="清空" />
-                        <asp:RadioButton ID="PlaceNeedImprove拆除" GroupName="PlaceNeedImprove" runat="server" Text="拆除" />
-                        <asp:RadioButton ID="PlaceNeedImprove切割填充" GroupName="PlaceNeedImprove" runat="server" Text="切割/填充" />
-                        <asp:RadioButton ID="PlaceNeedImprove拆除现有" GroupName="PlaceNeedImprove" runat="server" Text="拆除现有" />
+                        <asp:RadioButtonList ID="PlaceNeedImprove" runat="server" DataTextField="text" DataValueField="value" RepeatColumns="5"  RepeatDirection="Horizontal" />
                     </td>
                     <td class="word">规格尺寸：
                     </td>
@@ -851,16 +832,12 @@
                     <td class="word">计划线缆布局：
                     </td>
                     <td class="txt">
-                        <asp:RadioButton ID="ScPlanCableLayout托盘" GroupName="ScPlanCableLayout" runat="server" Text="托盘" />
-                        <asp:RadioButton ID="ScPlanCableLayout固定夹" GroupName="ScPlanCableLayout" runat="server" Text="固定夹" />
-                        <asp:RadioButton ID="ScPlanCableLayout其他" GroupName="ScPlanCableLayout" runat="server" Text="其他" />
+                        <asp:RadioButtonList ID="ScPlanCableLayout" runat="server" DataTextField="text" DataValueField="value" RepeatColumns="5"  RepeatDirection="Horizontal" />
                     </td>
                     <td class="word">铁塔种类：
                     </td>
                     <td class="txt">
-                        <asp:RadioButton ID="IronTowerClass绿地" GroupName="IronTowerClass" runat="server" Text="绿地" />
-                        <asp:RadioButton ID="IronTowerClass屋顶" GroupName="IronTowerClass" runat="server" Text="屋顶" />
-                        <asp:RadioButton ID="IronTowerClass现存塔" GroupName="IronTowerClass" runat="server" Text="现存塔" />
+                        <asp:RadioButtonList ID="IronTowerClass" runat="server" DataTextField="text" DataValueField="value" RepeatColumns="5"  RepeatDirection="Horizontal" />
                     </td>
                 </tr>
                 <tr>
@@ -881,12 +858,7 @@
                     <td class="word">铁塔类型：
                     </td>
                     <td class="txt">
-                        <asp:RadioButton ID="IronTowerType自支撑铁塔" GroupName="IronTowerType" runat="server" Text="自支撑铁塔" />
-                        <asp:RadioButton ID="IronTowerType3脚" GroupName="IronTowerType" runat="server" Text="3脚" />
-                        <asp:RadioButton ID="IronTowerType4脚" GroupName="IronTowerType" runat="server" Text="4脚" />
-                        <asp:RadioButton ID="IronTowerType单极天线单管" GroupName="IronTowerType" runat="server" Text="单极天线/单管" />
-                        <asp:RadioButton ID="IronTowerType拉线铁塔" GroupName="IronTowerType" runat="server" Text="拉线铁塔" />
-                        <asp:RadioButton ID="IronTowerType其他" GroupName="IronTowerType" runat="server" Text="其他" />
+                        <asp:RadioButtonList ID="IronTowerType" runat="server" DataTextField="text" DataValueField="value" RepeatColumns="5"  RepeatDirection="Horizontal" />
                     </td>
                 </tr>
                 <tr>
@@ -934,24 +906,15 @@
                     </td>
                     <td class="word">照明子系统：
                     </td>
-                    <td class="txt">
-                        <asp:RadioButton ID="LightingSubsystem高压钠灯" GroupName="LightingSubsystem" runat="server" Text="高压钠灯" />
-                        <asp:RadioButton ID="LightingSubsystem荧光灯" GroupName="LightingSubsystem" runat="server" Text="荧光灯" />
-                        <asp:RadioButton ID="LightingSubsystem发光二极管" GroupName="LightingSubsystem" runat="server" Text="发光二极管" />
-                        <asp:RadioButton ID="LightingSubsystem陶瓷金属卤化物" GroupName="LightingSubsystem" runat="server" Text="陶瓷金属卤化物" /><br />
-                        <asp:RadioButton ID="LightingSubsystem其他" GroupName="LightingSubsystem" runat="server" Text="其他" />
-                        <asp:RadioButton ID="LightingSubsystem汇集网关" GroupName="LightingSubsystem" runat="server" Text="汇集网关" />
-                        <asp:RadioButton ID="LightingSubsystem控制功能" GroupName="LightingSubsystem" runat="server" Text="控制功能" />
-                        <asp:RadioButton ID="LightingSubsystem监控功能" GroupName="LightingSubsystem" runat="server" Text="监控功能" />
+                    <td class="txt">                        
+                        <asp:RadioButtonList ID="LightingSubsystem" runat="server" DataTextField="text" DataValueField="value" RepeatColumns="5"  RepeatDirection="Horizontal" />
                     </td>
                 </tr>
                 <tr>
                     <td class="word">电力来源：
                     </td>
                     <td class="txt">
-                        <asp:RadioButton ID="PowerSource建筑物提供" GroupName="PowerSource" runat="server" Text="建筑物提供" />
-                        <asp:RadioButton ID="PowerSource电力公司" GroupName="PowerSource" runat="server" Text="电力公司" />
-                        <asp:RadioButton ID="PowerSource不可用" GroupName="PowerSource" runat="server" Text="不可用" />
+                        <asp:RadioButtonList ID="PowerSource" runat="server" DataTextField="text" DataValueField="value" RepeatColumns="5"  RepeatDirection="Horizontal" />
                     </td>
                     <td class="word">照明系统制造商：
                     </td>
@@ -963,20 +926,12 @@
                     <td class="word">需要额外配置：
                     </td>
                     <td class="txt">
-                        <asp:RadioButton ID="NeedExtraDispose电线杆" GroupName="NeedExtraDispose" runat="server" Text="电线杆" />
-                        <asp:RadioButton ID="NeedExtraDispose线缆" GroupName="NeedExtraDispose" runat="server" Text="线缆" />
-                        <asp:RadioButton ID="NeedExtraDispose变压器" GroupName="NeedExtraDispose" runat="server" Text="变压器" />
-                        <asp:RadioButton ID="NeedExtraDispose其他" GroupName="NeedExtraDispose" runat="server" Text="其他" />
+                         <asp:RadioButtonList ID="NeedExtraDispose" runat="server" DataTextField="text" DataValueField="value" RepeatColumns="5"  RepeatDirection="Horizontal" />
                     </td>
                     <td class="word">监控子系统：
                     </td>
                     <td class="txt">
-                        <asp:RadioButton ID="MonitorSubsystem视频摄像头" GroupName="MonitorSubsystem" runat="server" Text="视频摄像头" />
-                        <asp:RadioButton ID="MonitorSubsystem数据传输网" GroupName="MonitorSubsystem" runat="server" Text="数据传输网" />
-                        <asp:RadioButton ID="MonitorSubsystem软件平台" GroupName="MonitorSubsystem" runat="server" Text="软件平台" />
-                        <asp:RadioButton ID="MonitorSubsystem公共安全机构" GroupName="MonitorSubsystem" runat="server" Text="公共安全机构" />
-                        <asp:RadioButton ID="MonitorSubsystem产权方" GroupName="MonitorSubsystem" runat="server" Text="产权方" />
-                        <asp:RadioButton ID="MonitorSubsystem其他" GroupName="MonitorSubsystem" runat="server" Text="其他" />
+                        <asp:RadioButtonList ID="MonitorSubsystem" runat="server" DataTextField="text" DataValueField="value" RepeatColumns="5"  RepeatDirection="Horizontal" />
                     </td>
                 </tr>
                 <tr>
@@ -1010,11 +965,7 @@
                     <td class="word">传感子系统：
                     </td>
                     <td class="txt">
-                        <asp:RadioButton ID="NetworkSubsystem温度" GroupName="NetworkSubsystem" runat="server" Text="温度" />
-                        <asp:RadioButton ID="NetworkSubsystem湿度" GroupName="NetworkSubsystem" runat="server" Text="湿度" />
-                        <asp:RadioButton ID="NetworkSubsystem噪声" GroupName="NetworkSubsystem" runat="server" Text="噪声" />
-                        <asp:RadioButton ID="NetworkSubsystem光照强度" GroupName="NetworkSubsystem" runat="server" Text="光照强度" />
-                        <asp:RadioButton ID="NetworkSubsystem产权方" GroupName="NetworkSubsystem" runat="server" Text="产权方" />
+                        <asp:RadioButtonList ID="NetworkSubsystem" runat="server" DataTextField="text" DataValueField="value" RepeatColumns="5"  RepeatDirection="Horizontal" />
                     </td>
                 </tr>
                 <tr>
@@ -1041,12 +992,7 @@
                     <td class="word3">网络服务子系统：
                     </td>
                     <td class="txt3">
-                        <asp:RadioButton ID="NetworkSubsystemWIFI" GroupName="NetworkSubsystem" runat="server" Text="WIFI" />
-                        <asp:RadioButton ID="NetworkSubsystem3G" GroupName="NetworkSubsystem" runat="server" Text="3G" />
-                        <asp:RadioButton ID="NetworkSubsystem4G" GroupName="NetworkSubsystem" runat="server" Text="4G" />
-                        <asp:RadioButton ID="NetworkSubsystem5G" GroupName="NetworkSubsystem" runat="server" Text="5G" />
-                        <asp:RadioButton ID="NetworkSubsystem应急通讯" GroupName="NetworkSubsystem" runat="server" Text="应急通讯" />
-                        <asp:RadioButton ID="NetworkSubsystem报警" GroupName="NetworkSubsystem" runat="server" Text="报警" />
+                        <asp:RadioButtonList ID="SensingSubsystem" runat="server" DataTextField="text" DataValueField="value" RepeatColumns="5"  RepeatDirection="Horizontal" />
                     </td>
                 </tr>
                 <tr>
@@ -1060,10 +1006,7 @@
                     <td class="word3">户外广告服务子系统：
                     </td>
                     <td class="txt3">
-                        <asp:RadioButton ID="OutdoorAdSubsystem有灯" GroupName="OutdoorAdSubsystem" runat="server" Text="有灯" />
-                        <asp:RadioButton ID="OutdoorAdSubsystem无灯" GroupName="OutdoorAdSubsystem" runat="server" Text="无灯" />
-                        <asp:RadioButton ID="OutdoorAdSubsystem自有媒体" GroupName="OutdoorAdSubsystem" runat="server" Text="自有媒体" />
-                        <asp:RadioButton ID="OutdoorAdSubsystem居住区" GroupName="OutdoorAdSubsystem" runat="server" Text="居住区" />
+                        <asp:RadioButtonList ID="OutdoorAdSubsystem" runat="server" DataTextField="text" DataValueField="value" RepeatColumns="5"  RepeatDirection="Horizontal" />
                         <table id="tbZiYouMeiTi">
                             <tr>
                                 <td>可视距离</td>
@@ -1109,12 +1052,7 @@
                     <td class="word3">充电供电子系统：
                     </td>
                     <td class="txt3">
-                        <asp:RadioButton ID="PowerSupplySubsystem充电桩" GroupName="PowerSupplySubsystem" runat="server" Text="充电桩" />
-                        <asp:RadioButton ID="PowerSupplySubsystem电动车换电柜" GroupName="PowerSupplySubsystem" runat="server" Text="电动车换电柜" />
-                        <asp:RadioButton ID="PowerSupplySubsystem共享充电宝" GroupName="PowerSupplySubsystem" runat="server" Text="共享充电宝" />
-                        <asp:RadioButton ID="PowerSupplySubsystem光伏子系统" GroupName="PowerSupplySubsystem" runat="server" Text="光伏子系统" />
-                        <asp:RadioButton ID="PowerSupplySubsystem直流" GroupName="PowerSupplySubsystem" runat="server" Text="直流" />
-                        <asp:RadioButton ID="PowerSupplySubsystem交流" GroupName="PowerSupplySubsystem" runat="server" Text="交流" />
+                        <asp:RadioButtonList ID="PowerSupplySubsystem" runat="server" DataTextField="text" DataValueField="value" RepeatColumns="5"  RepeatDirection="Horizontal" />
                     </td>
                 </tr>
                 <tr>
@@ -1128,10 +1066,7 @@
                     <td class="word3">RSU子系统：
                     </td>
                     <td class="txt3">
-                        <asp:RadioButton ID="RSUSubsystem有限网关" GroupName="RSUSubsystem" runat="server" Text="有限网关" />
-                        <asp:RadioButton ID="RSUSubsystem无线网络" GroupName="RSUSubsystem" runat="server" Text="无线网络" />
-                        <asp:RadioButton ID="RSUSubsystem边缘计算" GroupName="RSUSubsystem" runat="server" Text="边缘计算" />
-                        <asp:RadioButton ID="RSUSubsystem车联网系统" GroupName="RSUSubsystem" runat="server" Text="车联网系统" />
+                        <asp:RadioButtonList ID="RSUSubsystem" runat="server" DataTextField="text" DataValueField="value" RepeatColumns="5"  RepeatDirection="Horizontal" />
                     </td>
                 </tr>
                 <tr>
