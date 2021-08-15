@@ -254,8 +254,8 @@
                     return;
                 }
                 var ary = mylatLng.split(",");
-                form1.TxtMapDimension.value = ary[0];
-                form1.TxtMapLongitude.value = ary[1];
+                form1.TxtGPSDimension.value = ary[0];
+                form1.TxtGPSLongitude.value = ary[1];
                 diag.close();
             }
 	        diag.show();
@@ -501,6 +501,7 @@
                                 <td>维度</td>
                                 <td>
                                     <asp:TextBox ID="TxtGPSDimension" Width="100px" runat="server"></asp:TextBox></td>
+                                <td> <button type="button" id="btn_Search" onclick="btn_getlatLng()">获取坐标</button></td>
                             </tr>
                         </table>
                     </td>
@@ -517,7 +518,7 @@
                                 <td>维度</td>
                                 <td>
                                     <asp:TextBox ID="TxtMapDimension" Width="100px" Columns="21" MaxLength="50" runat="server"></asp:TextBox></td>
-                                <td> <button type="button" id="btn_Search" onclick="btn_getlatLng()">获取坐标</button></td>
+                                
                             </tr>
                         </table>
                     </td>
@@ -992,7 +993,7 @@
                     <td class="word">传感子系统：
                     </td>
                     <td class="txt">
-                        <asp:RadioButtonList ID="NetworkSubsystem" runat="server" DataTextField="text" DataValueField="value" RepeatColumns="5"  RepeatDirection="Horizontal" />
+                         <asp:RadioButtonList ID="SensingSubsystem" runat="server" DataTextField="text" DataValueField="value" RepeatColumns="5"  RepeatDirection="Horizontal" />
                     </td>
                 </tr>
                 <tr>
@@ -1019,7 +1020,8 @@
                     <td class="word3">网络服务子系统：
                     </td>
                     <td class="txt3">
-                        <asp:RadioButtonList ID="SensingSubsystem" runat="server" DataTextField="text" DataValueField="value" RepeatColumns="5"  RepeatDirection="Horizontal" />
+                        <asp:RadioButtonList ID="NetworkSubsystem" runat="server" DataTextField="text" DataValueField="value" RepeatColumns="5"  RepeatDirection="Horizontal" />
+                       
                     </td>
                 </tr>
                 <tr>

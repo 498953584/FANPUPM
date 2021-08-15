@@ -47,7 +47,7 @@
         .left-list {
             position: absolute;
             z-index: 1999;
-            top: 150px;
+            top: 100px;
             left: 20px;
         }
 
@@ -61,44 +61,44 @@
         #left_1 {
             margin-top: 15px;
             margin-left: 10px;
-            width: 270px;
+            width: 200px;
         }
 
         #left_2 {
             margin-top: 15px;
             margin-left: 10px;
-            width: 270px;
+            width: 200px;
         }
 
         #left_3 {
             margin-top: 15px;
             margin-left: 10px;
-            width: 270px;
+            width: 200px;
         }
 
         .right-list {
             position: absolute;
             z-index: 1999;
-            top: 150px;
+            top: 100px;
             right: 20px;
         }
 
         #right_1 {
             margin-top: 15px;
             margin-left: 10px;
-            width: 270px;
+            width: 200px;
         }
 
         #right_2 {
             margin-top: 15px;
             margin-left: 10px;
-            width: 270px;
+            width: 200px;
         }
 
         #right_3 {
             margin-top: 15px;
             margin-left: 10px;
-            width: 270px;
+            width: 200px;
         }
 
 
@@ -211,12 +211,19 @@
             infoWindow.close();//初始关闭信息窗关闭
             //监听标注点击事件
             marker.on("click", function (evt) {
+				var bulidstate="";
+				if(evt.geometry.contentItem.BuildState=="1")
+					bulidstate="已建成";
+				else if(evt.geometry.contentItem.BuildState=="2")
+					bulidstate="建设中";
+				else if(evt.geometry.contentItem.BuildState=="3")
+					bulidstate="规划中";
                 //设置infoWindow
                 infoWindow.open(); //打开信息窗
                 infoWindow.setPosition(evt.geometry.position);//设置信息窗位置
                 var html = "<div><p>塔站名称：" + evt.geometry.contentItem.Name + "</p><p>联系人：" +
                     evt.geometry.contentItem.Liaison + "</p><p>联系电话：" + evt.geometry.contentItem.Phone +
-                    "</p><p>建设状态：" + evt.geometry.contentItem.BuildState +
+                    "</p><p>建设状态：" + bulidstate +
                     "</p><p>是否国有：" + (evt.geometry.contentItem.IsStateOwned == 1 ? "是" : "否") + "</p><p>是否智能：" +
                     (evt.geometry.contentItem.IsIntelligence == 1 ? "是" : "否") + "</p></div>";
                 infoWindow.setContent(html);//设置信息窗内容

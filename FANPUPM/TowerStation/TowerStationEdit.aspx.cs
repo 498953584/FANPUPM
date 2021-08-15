@@ -456,6 +456,7 @@ public partial class TowerStation_TowerStationEdit : NBasePage, IRequiresSession
         BindRadioButton(this.PowerSource, codeList, "PowerSource");
         BindRadioButton(this.NeedExtraDispose, codeList, "NeedExtraDispose");
         BindRadioButton(this.MonitorSubsystem, codeList, "MonitorSubsystem");
+        BindRadioButton(this.SensingSubsystem, codeList, "SensingSubsystem");
         BindRadioButton(this.NetworkSubsystem, codeList, "NetworkSubsystem");
         BindRadioButton(this.OutdoorAdSubsystem, codeList, "OutdoorAdSubsystem");
         BindRadioButton(this.PowerSupplySubsystem, codeList, "PowerSupplySubsystem");
