@@ -129,10 +129,10 @@ public partial class TowerStation_TowerStationManage : NBasePage, IRequiresSessi
             strWhere += " AND IsStateOwned=" + IsStateOwned;
         }
         var strSql = @"
-SELECT tsi.TowerStationGUID, p.name + c.name + cou.name AS Province,tsi.Name,
-    ISNULL(tsi.MapLongitude, '')
-    + CASE WHEN ISNULL(tsi.MapLongitude, '') <> '' AND ISNULL(tsi.MapDimension, '') <> '' THEN '、' ELSE '' END
-    + ISNULL(tsi.MapDimension, '') AS MapCoordinates
+SELECT tsi.TowerStationGUID, p.name + c.name + cou.name AS Province,tsi.Name,tsi.BuildTime,tsi.IsIntelligence,tsi.IsStateOwned,
+    ISNULL(tsi.GPSLongitude, '')
+    + CASE WHEN ISNULL(tsi.GPSLongitude, '') <> '' AND ISNULL(tsi.GPSDimension, '') <> '' THEN '、' ELSE '' END
+    + ISNULL(tsi.GPSDimension, '') AS MapCoordinates
 FROM dbo.TowerStationInfo tsi
      LEFT JOIN dbo.province p ON tsi.Province = p.province_id
      LEFT JOIN dbo.city c ON tsi.City = c.city_id

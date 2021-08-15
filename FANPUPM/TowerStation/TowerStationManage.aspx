@@ -167,12 +167,27 @@
                                     <%# Container.DataItemIndex + 1 %>
                                 </ItemTemplate>
                             </asp:TemplateField>
-                            <asp:TemplateField HeaderText="塔站名称">
+                            <asp:TemplateField HeaderText="塔站名称" ItemStyle-VerticalAlign="Middle" ItemStyle-HorizontalAlign="Center">
                                 <ItemTemplate>
                                     <%# Convert.ToString(Eval("Name")) %>
                                 </ItemTemplate>
                             </asp:TemplateField>
-                            <asp:TemplateField HeaderText="地图坐标">
+                            <asp:TemplateField HeaderText="是否智能"  ItemStyle-VerticalAlign="Middle" ItemStyle-HorizontalAlign="Center">
+                                <ItemTemplate>
+                                    <%# Convert.ToString(Eval("IsIntelligence").ToString().Equals("1")?"智能":"非智能") %>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="是否国有"  ItemStyle-VerticalAlign="Middle" ItemStyle-HorizontalAlign="Center">
+                                <ItemTemplate>
+                                    <%# Convert.ToString(Eval("IsStateOwned").ToString().Equals("1")?"国有":"非国有") %>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="建造日期"  ItemStyle-VerticalAlign="Middle" ItemStyle-HorizontalAlign="Center">
+                                <ItemTemplate>
+                                    <%# Convert.ToString(Eval("BuildTime").ToString().Split(' ')[0]) %>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="地图坐标"  ItemStyle-HorizontalAlign="Center">
                                 <ItemTemplate>
                                     <%# Eval("MapCoordinates").ToString() %>
                                 </ItemTemplate>

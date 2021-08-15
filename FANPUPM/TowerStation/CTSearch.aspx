@@ -9,6 +9,7 @@
 	<script type="text/javascript" src="/Script/jquery.js"></script>
     <script type="text/javascript" src="/Script/json2.js"></script>
 	<script type="text/javascript" src="../SysFrame/jscript/JsControlMenuTool.js"></script>
+    <link href="../StockManage/skins/sm4.css" rel="stylesheet" />
 	<style type="text/css">
 			body,p{
 				padding: 0;
@@ -174,7 +175,7 @@
 				<div id="" style="margin-top: 15px;margin-left: 15px;height: 28px;display: flex;">
 					
 					<input type="text" name="" id="txt_search" value="" style="margin-left: 15px;width: 318px;height: 25px;"
-					placeholder="排查条件1,排查条件2,排查条件3"/><input type="button" id="" style="border: solid 1px #666666;background-color: #666666;color: #FFFFFF;
+					placeholder="排查条件1,排查条件2,排查条件3"/><input type="button" id="" style="border: solid 1px #666666;
 					font-size: 13px;height: 28px;width: 81px;border-radius: 3px;display: inline-block;
 					text-align: center;" onclick="troubleshoot()" value="排查条件" />
 					<input type="hidden" id="txt_jjq"  />
@@ -272,9 +273,9 @@
 						</div>
 					</div>
 				</div>
-				<div style="background-color: rgba(242,242,242,1); text-align:right;padding-bottom:5px;"><input type="button" style="border: solid 1px #666666;background-color: #666666;color: #FFFFFF;
+				<div style="background-color: rgba(242,242,242,1); text-align:right;padding-bottom:5px;"><input type="button" style="border: solid 1px #666666;
 					font-size: 13px;height: 28px;width: 81px;border-radius: 3px;display: inline-block;
-					text-align: center;" onclick="getSelectInfo();" value="确认" />&nbsp;&nbsp;<input type="button" style="border: solid 1px #666666;background-color: #666666;color: #FFFFFF;
+					text-align: center;" onclick="getSelectInfo();" value="确认" />&nbsp;&nbsp;<input type="button" style="border: solid 1px #666666;
 					font-size: 13px;height: 28px;width: 81px;border-radius: 3px;display: inline-block;
 					text-align: center;" onclick="closeAlert()" value="取消" />&nbsp;&nbsp;</div>
 			</div>
