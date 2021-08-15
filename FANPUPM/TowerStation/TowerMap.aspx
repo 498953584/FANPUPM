@@ -394,12 +394,12 @@
                 </div>
                 <div id="" class="flex">
                     <div id="" class="col">
-                        <p id="num_new" class="num">28</p>
+                        <p id="num_new" class="num"></p>
                         <p class="typeName">新塔站</p>
                         <input class="btnclass" type="button" onclick="openTowerStation(1,undefined,undefined,undefined,'新塔站信息')" value="进入" />
                     </div>
                     <div id="" class="col">
-                        <p id="num_old" class="num">28</p>
+                        <p id="num_old" class="num"></p>
                         <p class="typeName">旧塔站</p>
                         <input class="btnclass" type="button" onclick="openTowerStation(0,undefined,undefined,undefined,'旧塔站信息')" value="进入" />
                     </div>
@@ -413,12 +413,12 @@
                 </div>
                 <div id="" class="flex">
                     <div id="" class="col">
-                        <p id="gy_new" class="num">111</p>
+                        <p id="gy_new" class="num"></p>
                         <p class="typeName">国有塔站</p>
                         <input class="btnclass" type="button" onclick="openTowerStation(1,undefined,undefined,1,'新国有塔站信息')" value="进入" />
                     </div>
                     <div id="" class="col">
-                        <p id="fgy_new" class="num">222</p>
+                        <p id="fgy_new" class="num"></p>
                         <p class="typeName">非国有塔站</p>
                         <input class="btnclass" type="button" onclick="openTowerStation(1,undefined,undefined,0,'新非国有塔站信息')" value="进入" />
                     </div>
@@ -431,12 +431,12 @@
                 </div>
                 <div id="" class="flex">
                     <div id="" class="col">
-                        <p id="gy_old" class="num">333</p>
+                        <p id="gy_old" class="num"></p>
                         <p class="typeName">国有塔站</p>
                         <input class="btnclass" type="button" onclick="openTowerStation(0,undefined,undefined,1,'旧国有塔站信息')" value="进入" />
                     </div>
                     <div id="" class="col">
-                        <p id="fgy_old" class="num">444</p>
+                        <p id="fgy_old" class="num"></p>
                         <p class="typeName">非国有塔站</p>
                         <input class="btnclass" type="button" onclick="openTowerStation(0,undefined,undefined,0,'旧非国有塔站信息')" value="进入" />
                     </div>
@@ -452,12 +452,12 @@
                 </div>
                 <div id="" class="flex">
                     <div id="" class="col">
-                        <p id="zn_new" class="num">333</p>
+                        <p id="zn_new" class="num"></p>
                         <p class="typeName">智能塔站</p>
                         <input class="btnclass" type="button" onclick="openTowerStation(1,undefined,1,undefined,'新智能塔站信息')" value="进入" />
                     </div>
                     <div id="" class="col">
-                        <p id="fzn_new" class="num">444</p>
+                        <p id="fzn_new" class="num"></p>
                         <p class="typeName">非智能塔站</p>
                         <input class="btnclass" type="button" onclick="openTowerStation(1,undefined,0,undefined,'新非智能塔站信息')" value="进入" />
                     </div>
@@ -470,12 +470,12 @@
                 </div>
                 <div id="" class="flex">
                     <div id="" class="col">
-                        <p id="zn_old" class="num">333</p>
+                        <p id="zn_old" class="num"></p>
                         <p class="typeName">智能塔站</p>
                         <input class="btnclass" type="button" onclick="openTowerStation(0,undefined,1,undefined,'旧智能塔站信息')" value="进入" />
                     </div>
                     <div id="" class="col">
-                        <p id="fzn_old" class="num">444</p>
+                        <p id="fzn_old" class="num"></p>
                         <p class="typeName">非智能塔站</p>
                         <input class="btnclass" type="button" onclick="openTowerStation(1,undefined,0,undefined,'新非智能塔站信息')" value="进入" />
                     </div>
@@ -488,17 +488,17 @@
                 </div>
                 <div id="" class="flex">
                     <div id="" class="col30">
-                        <p id="buildState_1" class="num">333</p>
+                        <p id="buildState_1" class="num"></p>
                         <p class="typeName">已建成</p>
                         <input class="btnclass" onclick="openTowerStation(1,1,undefined,undefined,'新塔-已建成信息')" type="button" value="进入" />
                     </div>
                     <div id="" class="col30">
-                        <p id="buildState_2" class="num">444</p>
+                        <p id="buildState_2" class="num"></p>
                         <p class="typeName">建设中</p>
                         <input class="btnclass" type="button" onclick="openTowerStation(1,2,undefined,undefined,'新塔-建设中信息')" value="进入" />
                     </div>
                     <div id="" class="col30">
-                        <p id="buildState_3" class="num">444</p>
+                        <p id="buildState_3" class="num"></p>
                         <p class="typeName">规划中</p>
                         <input class="btnclass" type="button" onclick="openTowerStation(1,3,undefined,undefined,'新塔-规划中信息')" value="进入" />
                     </div>
