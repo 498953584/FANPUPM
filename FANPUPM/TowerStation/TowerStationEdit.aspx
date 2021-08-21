@@ -17,6 +17,12 @@
     <script type="text/javascript" src="../Script/DecimalInput.js"></script>
     <script type="text/javascript" src="../Script/zDialog/zDialog.js"></script>
     <script type="text/javascript" src="../Script/zDialog/zDrag.js"></script>
+        <script type="text/javascript" src="../Script/jquery.ui/jquery-ui-1.8.6.custom.js"></script>
+    <script src="../Script/jquery.ui/jquery.ui.core.js"></script>
+    <script src="../Script/jquery.ui/jquery.ui.widget.js"></script>
+    <script src="../Script/jquery.ui/jquery.ui.position.js"></script>
+    <script type="text/javascript" src="../Script/jquery.ui/jquery.ui.autocomplete.js"></script>
+    <link rel="stylesheet" href="../Script/themes/jquery-ui.min.css">
     <style type="text/css">
         h1 {
             font-size: 18px; /* 18px / 12px = 1.5 */
@@ -108,12 +114,24 @@
 
             $("input[type=radio][name=OutdoorAdSubsystem]").on('change', outdoorAdSubsystemChange);
             outdoorAdSubsystemChange();
+            photoDivChange();
+            var data = [
+                
+            ];
+
+            var json = $("#hidAutocompleteValue").val();
+            if (json) {
+                data = $.parseJSON(json);
+            }
+
+            $('#TxtNetworkManufacturer').autocomplete({ source: data });
+        });
+        window.onload = function () {
             $("input[type=radio][name=PhotoType]").on('change', photoTypeChange);
             photoTypeChange();
-        });
+        }
 
-        //照片类型切换
-        function photoTypeChange() {
+        function photoDivChange() {
             var value = $('input:radio[name="PhotoType"]:checked').val();
             $("#Fup360度全景拍摄").hide();
             $("#Fup其他").hide();
@@ -130,10 +148,15 @@
             $("#preview电源").hide();
             $("#preview展示天线负荷").hide();
             $(value.replace("PhotoType", "#preview")).show();
+        }
 
+        //照片类型切换
+        function photoTypeChange() {
+            photoDivChange();
+            var value = $('input:radio[name="PhotoType"]:checked').val();
             var img = document.getElementById(value.replace("PhotoType", "img"));
             if (img) {
-                var rect = clacImgZoomParam(maxWidth, maxHeight, img.offsetWidth, img.offsetHeight);
+                var rect = clacImgZoomParam(maxWidth, maxHeight, $(img).outerWidth(), $(img).outerHeight());
                 img.width = rect.width;
                 img.height = rect.height;
                 img.style.marginLeft = rect.left + 'px';
@@ -265,6 +288,7 @@
 <body>
     <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" EnablePartialRendering="true" runat="server"></asp:ScriptManager>
+        <asp:HiddenField ID="hidAutocompleteValue"  runat="server" />
         <div class="divContent2">
             <table class="tableContent2" id="tb1" cellspacing="0" cellpadding="5px" width="100%" border="0">
                 <tr>
@@ -285,22 +309,22 @@
                         <table>
                             <tr>
                                 <td rowspan="6" style="width: 200px; padding-right: 8px;">
-                                    <div id="preview360度全景拍摄" class="preview">
+                                    <div id="preview360度全景拍摄" class="preview" style="display:none;">
                                         <img alt="" id="img360度全景拍摄" class="imgPhoto" src="" runat="server" />
                                     </div>
-                                    <div id="preview其他" class="preview">
+                                    <div id="preview其他" class="preview" style="display:none;">
                                         <img alt="" id="img其他" class="imgPhoto" src="" runat="server" />
                                     </div>
-                                    <div id="preview地点入口" class="preview">
+                                    <div id="preview地点入口" class="preview" style="display:none;">
                                         <img alt="" id="img地点入口" class="imgPhoto" src="" runat="server" />
                                     </div>
-                                    <div id="preview查看铁塔" class="preview">
+                                    <div id="preview查看铁塔" class="preview" style="display:none;">
                                         <img alt="" id="img查看铁塔" class="imgPhoto" src="" runat="server" />
                                     </div>
-                                    <div id="preview电源" class="preview">
+                                    <div id="preview电源" class="preview" style="display:none;">
                                         <img alt="" id="img电源" class="imgPhoto" src="" runat="server" />
                                     </div>
-                                    <div id="preview展示天线负荷" class="preview">
+                                    <div id="preview展示天线负荷" class="preview" style="display:none;">
                                         <img alt="" id="img展示天线负荷" class="imgPhoto" src="" runat="server" />
                                     </div>
                                     <a id="a-upon" title="双击这里上传">

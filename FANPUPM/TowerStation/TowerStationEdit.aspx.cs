@@ -1,5 +1,6 @@
 ﻿using cn.justwin.BLL;
 using com.jwsoft.pm.data;
+using Newtonsoft.Json;
 using System;
 using System.Collections;
 using System.Data;
@@ -148,7 +149,17 @@ public partial class TowerStation_TowerStationEdit : NBasePage, IRequiresSession
                     img电源.Src = dr["Photo4"].ToString();
                     img展示天线负荷.Src = dr["Photo5"].ToString();
                 }
+
+                
                 break;
+        }
+        var strComSql = "select distinct NetworkManufacturer value from TowerStationInfo";
+        var Comdt = publicDbOpClass.ExecuteDataTable(CommandType.Text, strComSql, null);
+        if (Comdt != null && Comdt.Rows.Count > 0)
+        {
+            var list = Comdt.AsEnumerable().Select(t => t.Field<string>("value")).ToList();
+            hidAutocompleteValue.Value = JsonConvert.SerializeObject(list);
+
         }
     }
 
