@@ -298,6 +298,7 @@ public partial class TowerStation_TowerStationEdit : NBasePage, IRequiresSession
         }
         RegisterScript("top.ui.tabSuccess({ parentName: '_TowerStationManage'})");
     }
+
     /// <summary>
     /// 省选择事件
     /// </summary>
@@ -305,7 +306,8 @@ public partial class TowerStation_TowerStationEdit : NBasePage, IRequiresSession
     /// <param name="e"></param>
     protected void DdlProvince_SelectedIndexChanged(object sender, EventArgs e)
     {
-        var sql = @"SELECT  name, city_id, province_id FROM dbo.city WHERE province_id=@province_id";
+        var sql = @"SELECT name, city_id, province_id FROM dbo.city c WHERE province_id=@province_id
+                AND EXISTS(SELECT TOP(1)1 FROM dbo.UserJurisdiction WHERE CityId=c.city_id AND v_yhdm='" + UserCode + "') ORDER BY c.city_id";
         SqlParameter[] paras =
         {
             new SqlParameter("@province_id", DdlProvince.SelectedValue)
@@ -325,7 +327,8 @@ public partial class TowerStation_TowerStationEdit : NBasePage, IRequiresSession
     /// <param name="e"></param>
     protected void DdlCity_SelectedIndexChanged(object sender, EventArgs e)
     {
-        var sql = @"SELECT  name, country_id, city_id FROM dbo.country WHERE city_id=@city_id";
+        var sql = @"SELECT name, country_id, city_id FROM dbo.country c WHERE city_id=@city_id 
+                AND EXISTS(SELECT TOP(1)1 FROM dbo.UserJurisdiction WHERE AreaId=c.country_id AND v_yhdm='" + UserCode + "') ORDER BY c.country_id";
         SqlParameter[] paras =
         {
             new SqlParameter("@city_id", DdlCity.SelectedValue)
@@ -342,7 +345,9 @@ public partial class TowerStation_TowerStationEdit : NBasePage, IRequiresSession
     /// </summary>
     private void BindProvince()
     {
-        var strSql = "SELECT	 name, province_id FROM dbo.province";
+        var strSql =
+            "SELECT name, province_id FROM dbo.province p WHERE EXISTS(SELECT TOP(1)1 FROM dbo.UserJurisdiction WHERE ProvinceId=p.province_id AND v_yhdm='" +
+            UserCode + "') ORDER BY p.province_id";
         var dt = publicDbOpClass.DataTableQuary(strSql);
         DdlProvince.DataSource = dt;
         DdlProvince.DataTextField = "name";

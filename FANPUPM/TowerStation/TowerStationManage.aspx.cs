@@ -137,6 +137,9 @@ FROM dbo.TowerStationInfo tsi
      LEFT JOIN dbo.province p ON tsi.Province = p.province_id
      LEFT JOIN dbo.city c ON tsi.City = c.city_id
      LEFT JOIN dbo.country cou ON tsi.Area = cou.country_id";
+        strWhere +=
+            " AND EXISTS(SELECT TOP(1)1 FROM dbo.UserJurisdiction WHERE ProvinceId=tsi.Province AND AreaId=tsi.Area AND CityId=tsi.City AND v_yhdm='" +
+            UserCode + "')";
         if (!string.IsNullOrEmpty(strWhere))
         {
             strSql += " WHERE " + (strWhere.StartsWith(" AND ") ? "1=1" : string.Empty) + strWhere;
@@ -168,7 +171,8 @@ FROM dbo.TowerStationInfo tsi
     /// <param name="e"></param>
     protected void DdlProvince_SelectedIndexChanged(object sender, EventArgs e)
     {
-        var sql = @"SELECT  name, city_id, province_id FROM dbo.city WHERE province_id=@province_id";
+        var sql = @"SELECT name, city_id, province_id FROM dbo.city c WHERE province_id=@province_id
+                AND EXISTS(SELECT TOP(1)1 FROM dbo.UserJurisdiction WHERE CityId=c.city_id AND v_yhdm='" + UserCode + "') ORDER BY c.city_id";
         SqlParameter[] paras =
         {
             new SqlParameter("@province_id", DdlProvince.SelectedValue)
@@ -188,7 +192,8 @@ FROM dbo.TowerStationInfo tsi
     /// <param name="e"></param>
     protected void DdlCity_SelectedIndexChanged(object sender, EventArgs e)
     {
-        var sql = @"SELECT  name, country_id, city_id FROM dbo.country WHERE city_id=@city_id";
+        var sql = @"SELECT name, country_id, city_id FROM dbo.country c WHERE city_id=@city_id
+                AND EXISTS(SELECT TOP(1)1 FROM dbo.UserJurisdiction WHERE AreaId=c.country_id AND v_yhdm='" + UserCode + "') ORDER BY c.country_id";
         SqlParameter[] paras =
         {
             new SqlParameter("@city_id", DdlCity.SelectedValue)
@@ -205,7 +210,9 @@ FROM dbo.TowerStationInfo tsi
     /// </summary>
     private void BindProvince()
     {
-        var strSql = "SELECT	 name, province_id FROM dbo.province";
+        var strSql =
+            "SELECT name, province_id FROM dbo.province p WHERE EXISTS(SELECT TOP(1)1 FROM dbo.UserJurisdiction WHERE ProvinceId=p.province_id AND v_yhdm='" +
+            UserCode + "') ORDER BY p.province_id";
         var dt = publicDbOpClass.DataTableQuary(strSql);
         DdlProvince.DataSource = dt;
         DdlProvince.DataTextField = "name";

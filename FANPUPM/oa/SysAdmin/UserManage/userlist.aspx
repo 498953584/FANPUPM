@@ -30,8 +30,14 @@
 	            top.ui._userlist = window;
 	            top.ui.openWin({ title: '修改', url: url });
 	        });
-
-	    });
+			//JurisdictionSettings.aspx
+            $(".editJurisdiction").click(function() {
+                var tr = jw.getParentUntil(this, 'TR');
+                var url = '/oa/SysAdmin/UserManage/JurisdictionSettings.aspx?id=' + tr.id;
+                top.ui._userlist = window;
+                top.ui.openWin({ title: '管辖区域设置', url: url, width: 400, height: 654 });
+            });
+        });
 
 	    function changeall(id) {
 	        var inputs = document.forms[0].elements;
@@ -48,7 +54,7 @@
 	            }
 	        }
 	    }
-	</script>
+    </script>
 </head>
 <body class="body_frame" scroll="no">
 	<form id="Form1" method="post" runat="server">
@@ -71,7 +77,9 @@
 						<asp:DataGrid ID="dgUserList" CellPadding="5" AutoGenerateColumns="false" Width="100%" HorizontalAlign="Center" CssClass="grid" DataKeyField="v_yhdm" runat="server"><SelectedItemStyle BackColor="Maroon"></SelectedItemStyle><AlternatingItemStyle HorizontalAlign="Center"></AlternatingItemStyle><ItemStyle HorizontalAlign="Center" CssClass="grid_row"></ItemStyle><HeaderStyle HorizontalAlign="Center" CssClass="grid_head"></HeaderStyle><Columns><asp:BoundColumn DataField="i_xh" HeaderStyle-Width="40px" HeaderText="序号" DataFormatString="{0}"></asp:BoundColumn><asp:BoundColumn HeaderStyle-Width="100px" DataField="v_yhdm" HeaderText="用户代码" DataFormatString="{0}"></asp:BoundColumn><asp:BoundColumn DataField="v_xm" HeaderText="姓名" DataFormatString="{0}"></asp:BoundColumn>
                         <asp:TemplateColumn HeaderStyle-Width="80px"><ItemTemplate>
 										<span class="edit-priv link">修改权限</span>
-									</ItemTemplate></asp:TemplateColumn><asp:TemplateColumn HeaderStyle-Width="60px"><ItemTemplate>
+									</ItemTemplate></asp:TemplateColumn><asp:TemplateColumn HeaderStyle-Width="80px"><ItemTemplate>
+                                <span class="editJurisdiction link">管辖区域</span>
+                            </ItemTemplate></asp:TemplateColumn><asp:TemplateColumn HeaderStyle-Width="60px"><ItemTemplate>
 										<span class="edit link">修改</span>
 									</ItemTemplate></asp:TemplateColumn><asp:ButtonColumn Text="冻结" CommandName="Delete"></asp:ButtonColumn></Columns></asp:DataGrid>
 						<asp:DataGrid ID="dgInvalidUser" Visible="false" CellPadding="5" AutoGenerateColumns="false" Width="100%" CssClass="grid" DataKeyField="v_yhdm" HorizontalAlign="Center" runat="server"><SelectedItemStyle BackColor="Maroon"></SelectedItemStyle><AlternatingItemStyle HorizontalAlign="Center"></AlternatingItemStyle><ItemStyle HorizontalAlign="Center" CssClass="grid_row"></ItemStyle><HeaderStyle HorizontalAlign="Center" CssClass="grid_head"></HeaderStyle><Columns><asp:TemplateColumn>

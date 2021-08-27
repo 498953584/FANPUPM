@@ -137,6 +137,7 @@
     <Compile Include="cn.justwin.Domain.EasyUI\DepEmployee.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="cn.justwin.Domain.EasyUI\Jurisdiction.cs" />
     <Compile Include="cn.justwin.Domain.EasyUI\Project.cs">
       <SubType>Code</SubType>
     </Compile>

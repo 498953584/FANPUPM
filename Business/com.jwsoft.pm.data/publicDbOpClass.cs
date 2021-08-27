@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using System.Linq;
+
 namespace com.jwsoft.pm.data
 {
     using com.jwsoft.common.data;
@@ -461,7 +464,7 @@ namespace com.jwsoft.pm.data
             {
                 num = new SqlCommand(sqlString, connection).ExecuteNonQuery();
             }
-            catch(Exception ex)
+            catch
             {
                 num = -1;
             }
@@ -874,6 +877,75 @@ namespace com.jwsoft.pm.data
             str = str + " ";
             string str2 = "Update " + TableName + " set " + str + Where;
             return ExecuteSQL(new string[] { str2 });
+        }
+
+        /// <summary>
+        /// 批量插入
+        /// </summary>
+        /// <param name="sqlString"></param>
+        /// <param name="dt"></param>
+        /// <param name="destTableName"></param>
+        /// <param name="destFieldsName"></param>
+        /// <returns></returns>
+        public static bool SqlBulkCopy(string[] sqlString, DataTable dt, string destTableName, List<string> destFieldsName)
+        {
+            var flag = true;
+            using (var connection = new Conn().SqlConnectionSystem())
+            {
+                var command = new SqlCommand();
+                var transaction = connection.BeginTransaction();
+                command.Connection = connection;
+                command.Transaction = transaction;
+                try
+                {
+                    var copy = new SqlBulkCopy(connection, SqlBulkCopyOptions.Default, transaction)
+                    {
+                        DestinationTableName = destTableName
+                    };
+                    if (destFieldsName == null || !destFieldsName.Any())
+                    {
+                        foreach (DataColumn column in dt.Columns)
+                        {
+                            copy.ColumnMappings.Add(column.ColumnName, column.ColumnName);
+                        }
+                    }
+                    else
+                    {
+                        if (dt.Columns.Count != destFieldsName.Count)
+                        {
+                            throw new ArgumentException("无效参数destFieldsName");
+                        }
+
+                        var i = 0;
+                        foreach (DataColumn column in dt.Columns)
+                        {
+                            copy.ColumnMappings.Add(column.ColumnName, destFieldsName[i]);
+                            i++;
+                        }
+                    }
+
+                    foreach (var str in sqlString)
+                    {
+                        if (str.Trim().Length == 0) continue;
+                        command.CommandText = str;
+                        command.ExecuteNonQuery();
+                    }
+
+                    copy.WriteToServer(dt, DataRowState.Added);
+                    transaction.Commit();
+                }
+                catch
+                {
+                    flag = false;
+                    transaction.Rollback();
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+
+            return flag;
         }
     }
 }
